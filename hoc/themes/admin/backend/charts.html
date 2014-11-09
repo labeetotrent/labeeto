@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title>The Kamarel v. 1.3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body class="charts">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- ==================== TOP MENU ==================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="#"><strong class="brandBold">THE</strong>KAMAREL</a>
+                    <div class="nav pull-right">
+                        <form class="navbar-form">
+                            <div class="input-append">
+                                <input class="inp-mini inp-dark span2" type="text" placeholder="search...">
+                                <span class="add-on add-on-first add-on-mini add-on-dark" id="search"><i class="icon-search"></i></span>
+                                <div class="collapsibleContent">
+                                    <a href="#tasksContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="tasks"><i class="icon-tasks"></i><span class="notifyCircle cyan">3</span></span></a>
+                                    <a href="#notificationsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="notifications"><i class="icon-bell-alt"></i><span class="notifyCircle orange">9</span></span></a>
+                                    <a href="#messagesContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="messages"><i class="icon-comments-alt"></i><span class="notifyCircle red">12</span></span></a>
+                                    <a href="#settingsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="settings"><i class="icon-cog"></i></span></a>
+                                    <a href="#profileContent" class="sidebar"><span class="add-on add-on-mini add-on-dark" id="profile"><i class="icon-user"></i><span class="username">Ing. Imrich Kamarel</span></span></a>
+                                </div>
+                                <a href="#collapsedSidebarContent" class="collapseHolder sidebar"><span class="add-on add-on-mini add-on-dark"><i class="icon-sort-down"></i></span></a>
+                            </div>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- ==================== END OF TOP MENU ==================== -->
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <div class="hiddenContent">
+            <!-- ==================== SIDEBAR COLLAPSED ==================== -->
+            <div id="collapsedSidebarContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <ul class="collapsedSidebarMenu">
+                        <li><a href="#tasksContent" class="sidebar">Tasks <div class="notifyCircle cyan">3</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#notificationsContent" class="sidebar">Notifications <div class="notifyCircle orange">9</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#messagesContent" class="sidebar">Messages <div class="notifyCircle red">12</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#settingsContent" class="sidebar">Settings<i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#profileContent" class="sidebar">Ing. Imrich Kamarel<i class="icon-chevron-sign-right"></i></a></li>
+                        <li class="sublevel"><a href="#">edit profile<i class="icon-user"></i></a></li>
+                        <li class="sublevel"><a href="#">change password<i class="icon-lock"></i></a></li>
+                        <li class="sublevel"><a href="#">logout<i class="icon-off"></i></a></li>
+                    </ul>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR COLLAPSED ==================== -->
+            <!-- ==================== SIDEBAR TASKS ==================== -->
+            <div id="tasksContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Tasks</h1></a>
+                    <h1>Tasks</h1>
+                    <div class="sidebarInfo">
+                        <div class="progressTasks"><span class="label">11</span> tasks in progress</div>
+                        <div class="newTasks"><span class="label cyan">3</span> new tasks</div>
+                    </div>
+                    <ul class="tasksList">
+                        <li class="new">
+                            <h3>Update database</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>    
+                        </li>
+                        <li class="new">
+                            <h3>Clean CSS</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>  
+                        </li> 
+                        <li class="new">
+                            <h3>Clean JavaScript</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a backup</h3>
+                            <span class="taskProgress">75%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 75%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Clean HTML</h3>
+                            <span class="taskProgress">50%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 50%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a coffee</h3>
+                            <span class="taskProgress">25%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 25%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>THEKAMAREL project</h3>
+                            <span class="taskProgress">100%</span>
+                            <div class="progress progress-striped">
+                              <div class="bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status grey">Finished task</div>
+                            </div> 
+                        </li>   
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR TASKS ==================== -->
+
+            <!-- ==================== SIDEBAR NOTIFICATIONS ==================== -->
+            <div id="notificationsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Notifications</h1></a>
+                    <h1>Notifications</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">32</span> notifications</div>
+                        <div><span class="label orange">9</span> new notifications</div>
+                    </div>
+                    <ul class="notificationsList">
+                        <li class="new first">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">1 minute ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">15 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">5 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">6 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">10 hour ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 hours ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">03.03.2013</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>      
+            </div>
+            <!-- ==================== END OF SIDEBAR NOTIFICATIONS ==================== -->
+
+            <!-- ==================== SIDEBAR MESSAGES ==================== -->
+            <div id="messagesContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Messages</h1></a>
+                    <h1>Messages</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">128</span> messages</div>
+                        <div><span class="label red">12</span> unreaded messages</div>
+                    </div>
+                    <ul class="messagesList">
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/homer-avatar.jpg" alt=""></div>
+                            <h3>John Doe</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/zoidberg-avatar.jpg" alt=""></div>
+                            <h3>George McCain</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>  
+            </div>
+            <!-- ==================== END OF SIDEBAR MESSAGES ==================== -->
+
+            <!-- ==================== SIDEBAR SETTINGS ==================== -->
+            <div id="settingsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Settings</h1></a>
+                    <h1>Settings</h1>
+                    <ul class="settingsList">
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> Slider</h3>
+                                <div class="sl1"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> RangeSlider</h3>
+                                <div class="sl2"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingToggler">
+                                <i class="icon-leaf"></i><h3> Toggler</h3>
+                                <label class="checkbox toggle well" onclick="">
+                                    <input id="toggler" type="checkbox" checked />
+                                    <span class="slider-selection"></span>
+                                    <span class="toggleStatus">
+                                        <span><i class="icon-ok toggleOn"></i></span>
+                                        <span><i class="icon-remove toggleOff"></i></span>
+                                    </span>
+
+                                    <a class="btn btn-primary slide-button"></a>
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="fontSize">
+                            <h2>Font Size</h2>
+                            <div class="fontSizeBlock fontSizeSmall active"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeMedium"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeBig"><span>A</span></div>
+                        </li>
+
+                        <li class="fontStyle">
+                            <h2>Font Style</h2>
+                            <div class="fontStyleBlock fontStyleSansSerif active"><span>Aa</span></div>
+                            <div class="fontStyleBlock fontStyleSerif"><span>Aa</span></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR SETTINGS ==================== -->
+
+            <!-- ==================== SIDEBAR PROFILE ==================== -->
+            <div id="profileContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> My account</h1></a>
+                    <h1>My account</h1>
+                    <div class="profileBlock">
+                        <div class="profilePhoto">
+                            <div class="usernameHolder">Ing. Imrich Kamarel</div>
+                        </div>
+                        <div class="profileInfo">
+                            <p><i class="icon-map-marker"></i> Piestany, SK</p>
+                            <p><i class="icon-envelope-alt"></i> ici.kamarel@tattek.com</p>
+                            <p><i class="icon-globe"></i> tattek.com</p>
+                            <p class="aboutMe">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <footer>
+                            <div class="profileSettingBlock editProfile"><i class="icon-user"></i>edit profile</div>
+                            <div class="profileSettingBlock changePassword"><i class="icon-lock"></i>change password</div>
+                            <div class="profileSettingBlock logout"><i class="icon-off"></i>logout</div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR PROFILE ==================== -->
+
+        </div>
+        <!-- ==================== END OF SIDEBAR ==================== -->
+
+        <!-- ==================== MAIN MENU ==================== -->
+        <div class="mainmenu">
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="collapseMenu"><a href="#"><i class="icon-double-angle-left"></i>hide menu<i class="icon-double-angle-right deCollapse"></i></a></li>
+                    <li class="divider-vertical firstDivider"></li>
+                    <li class="left-side" id="dashboard"><a href="index.html"><i class="icon-dashboard"></i> DASHBOARD</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="formElements"><i class="icon-list"></i> FORMS <span class="label label-pressed">3</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="common-form.html">COMMON ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="validation-form.html">VALIDATION</a></li>
+                            <li><a tabindex="-1" href="form-wizard.html">WIZARD</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="interface"><i class="icon-pencil"></i> INTERFACE <span class="label label-pressed">2</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="interface.html">UI ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="typography.html">TYPOGRAPHY</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li id="buttonsIcons"><a href="buttons.html"><i class="icon-tint"></i> BUTTONS & ICONS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="gridLayout"><a href="grid.html"><i class="icon-th"></i> GRID LAYOUT</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="tables"><a href="tables.html"><i class="icon-th-large"></i> TABLES</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> EXAMPLE PAGES <span class="label label-pressed">7</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="login.html">LOGIN PAGE</a></li>
+                            <li><a tabindex="-1" href="calendar.html">CALENDAR</a></li>
+                            <li><a tabindex="-1" href="404.html">PAGE 404</a></li>
+                            <li><a tabindex="-1" href="gallery.html">GALLERY</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAIL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="mail.html">Vertical View</a></li>
+                                    <li><a href="mail-horizontal.html">Horizontal View</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAPS</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="vectormaps.html">Vector Maps</a></li>
+                                    <li><a href="gmaps.html">Google Maps</a></li>
+                                </ul>
+                            </li>                            <li class="dropdown-submenu">
+                                <a href="#">SECOND LEVEL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#">THIRD LEVEL</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" href="timeline.html">TIMELINE</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="widgets.html" id="widgets"><i class="icon-play-circle"></i> WIDGETS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="chartsGraphs" class="right-side active"><a href="charts.html"><i class="icon-bar-chart"></i> CHARTS & GRAPHS </a></li>
+                    <li class="divider-vertical"></li>
+                </ul>
+           </div>
+        </div>
+        <!-- ==================== END OF MAIN MENU ==================== -->
+
+        <!-- ==================== DROPDOWN MENU FOR MOREOPTIONS ICON (hidden state) ==================== -->
+        <ul class="dropdown-menu" id="moreOptionsMenu">
+            <li class="dropdown-submenu">
+                <a href="#">More options</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+        </ul>
+        <!-- ==================== END OF DROPDOWN MENU ==================== -->
+
+        <!-- ==================== PAGE CONTENT ==================== -->
+        <div class="content">
+
+            <!-- ==================== TITLE LINE FOR HEADLINE ==================== -->
+            <div class="titleLine">
+                <div class="container-fluid">
+                    <div class="titleIcon"><i class="icon-bar-chart"></i></div>
+                    <ul class="titleLineHeading">
+                        <li class="heading"><h1>Charts & Graphs</h1></li>
+                    </ul>
+                    <ul class="titleLineOnRight pull-right">
+                        <li>
+                            <span class="usersBar">100,235,549,222,639,335,800</span>
+                            <h2 class="cyanText">1254<span class="greyText">users</span></h2>
+                        </li>
+                        <li>
+                            <span class="visitsBar">20,35,10,80,52,34,74,99,45,68</span>
+                            <h2 class="redText">758<span class="greyText">visits</span></h2>
+                        </li>
+                        <li>
+                            <span class="ordersBar">254,159,480,531,214,984,671</span>
+                            <h2 class="greenText">3541<span class="greyText">orders</span></h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF TITLE LINE ==================== -->
+
+            <!-- ==================== BREADCRUMBS / DATETIME ==================== -->
+            <ul class="breadcrumb">
+                <li><i class="icon-home"></i><a href="index.html"> Home</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">Charts & Graphs</li>
+                <li class="moveDown pull-right">
+                    <span class="time"></span>
+                    <span class="date"></span>
+                </li>   
+            </ul>
+            <!-- ==================== END OF BREADCRUMBS / DATETIME ==================== -->
+
+            <!-- ==================== WIDGETS CONTAINER ==================== -->
+            <div class="container-fluid">
+                <div class="row-fluid">
+                <!-- ==================== LINE CHART CONTAINER ==================== -->
+                    <div class="span12">
+                        <!-- ==================== LINE CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Line Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF LINE CHART HEADLINE ==================== -->
+
+                        <!-- ==================== LINE CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoChart" id="lineChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF LINE CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF LINE CHART CONTAINER ==================== -->
+                </div>
+                <div class="row-fluid">
+                <!-- ==================== GAUGE GRAPHS CONTAINER ==================== -->
+                    <div class="span12">
+                        <!-- ==================== GAUGE GRAPHS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Gauge Graphs (JustGage.js)</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF GAUGE GRAPHS HEADLINE ==================== -->
+
+                        <!-- ==================== GAUGE GRAPHS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <ul class="gaugeContainers">
+                                    <li id="gaugeDemo3"></li>
+                                    <li id="gaugeDemo2"></li>
+                                    <li id="gaugeDemo4"></li>
+                                    <li id="gaugeDemo5"></li>
+                                    <li id="gaugeDemo6"></li>
+                                    <li id="gaugeDemo1"></li>
+                                    <li id="gaugeDemo7" style="width:100px; height:140px"></li>
+                                    <li id="gaugeDemo8" style="width:100px; height:130px"></li>
+                                </ul>
+                                <button id="gaugeDemos_refresh" class="btn btn-small btn-primary">Random Refresh</button>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF GAUGE GRAPHS FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF GAUGE GRAPHS CONTAINER ==================== -->
+                </div>
+                <div class="row-fluid">
+                <!-- ==================== BAR CHART CONTAINER ==================== -->
+                    <div class="span6">
+                        <!-- ==================== BAR CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Bar Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF BAR CHART HEADLINE ==================== -->
+
+                        <!-- ==================== BAR CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoChart" id="barChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF BAR CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF BAR CHART CONTAINER ==================== -->
+                    <!-- ==================== REALTIME CHART CONTAINER ==================== -->
+                    <div class="span6">
+                        <!-- ==================== REALTIME CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Real-time Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF REALTIME CHART HEADLINE ==================== -->
+
+                        <!-- ==================== REALTIME CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoChart" id="realTimeChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF REALTIME CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF REALTIME CHART CONTAINER ==================== -->
+                </div>
+                <div class="row-fluid">
+                    <!-- ==================== PIE CHART CONTAINER ==================== -->
+                    <div class="span4">
+                        <!-- ==================== PIE CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Pie Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF PIE CHART HEADLINE ==================== -->
+
+                        <!-- ==================== PIE CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoPieChart" id="firstPieChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF PIE CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF PIE CHART CONTAINER ==================== -->
+                    <!-- ==================== PIE CHART CONTAINER ==================== -->
+                    <div class="span4">
+                        <!-- ==================== PIE CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Pie Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF PIE CHART HEADLINE ==================== -->
+
+                        <!-- ==================== PIE CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoPieChart" id="secondPieChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF PIE CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF PIE CHART CONTAINER ==================== -->
+                    <!-- ==================== DONUT CHART CONTAINER ==================== -->
+                    <div class="span4">
+                        <!-- ==================== DONUT CHART HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bar-chart"></i><h2>Donut Chart</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF DONUT CHART HEADLINE ==================== -->
+
+                        <!-- ==================== DONUT CHART FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <div class="demoPieChart" id="thirdPieChart"></div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF DONUT CHART FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF DONUT CHART CONTAINER ==================== -->
+                </div>
+            </div>
+            <!-- ==================== END OF WIDGETS CONTAINER ==================== -->
+        </div>
+        <!-- ==================== END OF PAGE CONTENT ==================== -->
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
+        <script src="js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
+        <script src="js/vendor/jquery.flot.min.js"></script>                    <!-- charts plugin -->
+        <script src="js/vendor/jquery.flot.resize.min.js"></script>             <!-- charts plugin / resizing extension -->
+        <script src="js/vendor/jquery.flot.pie.min.js"></script>                <!-- charts plugin / pie chart extension -->
+        <script src="js/vendor/justgage.js"></script>                           <!-- justgage plugin -->
+        <script src="js/vendor/raphael.2.1.0.min.js"></script>                  <!-- vector graphic plugin / for justgage.js -->
+    
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/thekamarel.min.js"></script>                            <!-- main project js file -->
+
+        <script>
+        $(function (){
+            var sin = [],
+                cos = [];
+
+            for (var i = 0; i < 14; i += 0.5) {
+                sin.push([i, Math.sin(i)]);
+                cos.push([i, Math.cos(i)]);
+            }
+            
+            var plot = $.plot($("#lineChart"), [ 
+                { data: sin, label: "sin(x)"},
+                { data: cos, label: "cos(x)"}
+            ], {
+                series: {
+                    lines: {
+                        show: true
+                    },
+                    points: {
+                        show: true
+                    }
+                },
+                grid: {
+                    color: 'rgba(0,0,0, .3)',
+                    borderColor: 'rgba(0,0,0, .3)',
+                    borderWidth: 1,
+                    hoverable: true
+                },
+                yaxis: {
+                    min: -1.2,
+                    max: 1.2
+                }
+            }); 
+
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css({
+                    top: y - 16,
+                    left: x + 20
+                }).appendTo('body').fadeIn();
+            };
+
+            $('#lineChart').bind('plothover', function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(2),
+                        y = item.datapoint[1].toFixed(2);
+
+                        showTooltip(item.pageX, item.pageY,
+                            item.series.label + " of " + x + " = " + y);
+                    }
+                } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;            
+                }
+            });
+
+            var gaugeDemo1 = new JustGage({
+                id: "gaugeDemo1",
+                value : 72,
+                title : "Donut Style",
+                min: 0,
+                max: 100,
+                donut: true,
+                gaugeWidthScale: 1,
+                counter: true
+            }); 
+
+            var gaugeDemo2 = new JustGage({
+                id: "gaugeDemo2",
+                value : 30,
+                title : "Custom Width",
+                min: 0,
+                max: 100,
+                donut: false,
+                gaugeWidthScale: .3,
+                counter: true
+            }); 
+
+            var gaugeDemo3 = new JustGage({
+                id: "gaugeDemo3",
+                value : 57,
+                title : "Default Style",
+                min: 0,
+                max: 100,
+            });
+
+            var gaugeDemo4 = new JustGage({
+                id: "gaugeDemo4",
+                value : 5,
+                title : "Custom Shadow",
+                min: 0,
+                max: 100,
+                showInnerShadow: true,
+                shadowOpacity: 1,
+                shadowSize: 5,
+                shadowVerticalOffset: 2
+            });
+
+            var gaugeDemo5 = new JustGage({
+                id: "gaugeDemo5",
+                value : 65,
+                title : "Custom Colors",
+                min: 0,
+                max: 100,
+                titleFontColor: 'red',
+                valueFontColor: 'red',
+                gaugeColor: '#b2b2b2',
+                labelFontColor: 'pink',
+                levelColorsGradient: false,
+                levelColors: ['black']
+            });
+
+            var gaugeDemo6 = new JustGage({
+                id: "gaugeDemo6",
+                value : 92,
+                title : "Animation",
+                min: 0,
+                max: 100,
+                startAnimationType: 'bounce',
+                refreshAnimationType: 'bounce',
+                refreshAnimationTime: 2500
+            });
+
+            var gaugeDemo7 = new JustGage({
+                id: "gaugeDemo7",
+                value : 28,
+                title : "Small Gauge",
+                min: 0,
+                max: 100,
+                gaugeWidthScale: .3
+            });
+
+            var gaugeDemo8 = new JustGage({
+                id: "gaugeDemo8",
+                value : 16,
+                title : "Small Donut",
+                min: 0,
+                max: 100,
+                gaugeWidthScale: .3,
+                donut: true
+
+            });
+
+            $('#gaugeDemos_refresh').bind('click', function() {
+              gaugeDemo1.refresh(getRandomInt(0, 100));
+              gaugeDemo2.refresh(getRandomInt(0, 100));
+              gaugeDemo3.refresh(getRandomInt(0, 100));
+              gaugeDemo4.refresh(getRandomInt(0, 100));
+              gaugeDemo5.refresh(getRandomInt(0, 100));
+              gaugeDemo6.refresh(getRandomInt(0, 100));
+              gaugeDemo7.refresh(getRandomInt(0, 100));
+              gaugeDemo8.refresh(getRandomInt(0, 100));
+              return false;
+            }); 
+
+            var months = ["January", "February", "March", "April", "May", "Juny", "July", "August", "September", "October", "November", "December"];
+            var randomData = [{
+                data: [ [1, 18], [2, 12], [3, 62], [4, 54], [5, 20], [6, 100], [7, 235], [8, 549], [9, 222], [10, 639], [11, 335], [12, 800] ],
+                color: '#33B5E5'
+            }];
+
+            // Bars
+            $.plot($('#barChart'), randomData, {
+                series: {
+                    bars: {
+                        show: true,
+                        barWidth: .8,
+                        align: 'center'
+                    },
+                    shadowSize: 0
+                },
+                grid: {
+                    color: 'rgba(0,0,0, .3)',
+                    borderColor: 'rgba(0,0,0, .3)',
+                    borderWidth: 1,
+                    hoverable: true
+                },
+                xaxis: {
+                    ticks: [[1,"Jan"], [2, "Feb"], [3, "Mar"], [4, "Apr"], [5, "May"], [6, "Jun"], [7, "Jul"], [8, "Aug"], [9, "Sep"], [10, "Oct"], [11, "Nov"], [12, "Dec"]],
+                    tickColor: 'transparent',
+                    tickDecimals: 2
+                },
+                yaxis: {
+                    tickSize: 200
+                }
+            });
+
+            var previousPoint = null;
+
+            $('#barChart').bind('plothover', function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+                        $('#tooltip').remove();
+                        var x = item.datapoint[0],
+                            y = item.datapoint[1];
+                            showTooltip(item.pageX, item.pageY, months[x-  1] + '<br/>' + '<strong class="cyanText">' + y + '</strong>' + ' ' + 'new users registered');
+                    }
+                } else {
+                    $('#tooltip').remove();
+                    previousPoint = null;
+                }
+            });
+
+            /* realtime chart */
+
+            var container = $("#realTimeChart");
+
+            // Determine how many data points to keep based on the placeholder's initial size;
+            // this gives us a nice high-res plot while avoiding more than one point per pixel.
+
+            var maximum = container.outerWidth() / 2 || 300;
+
+            //
+
+            var data = [];
+
+            function getRandomData() {
+
+                if (data.length) {
+                    data = data.slice(1);
+                }
+
+                while (data.length < maximum) {
+                    var previous = data.length ? data[data.length - 1] : 50;
+                    var y = previous + Math.random() * 10 - 5;
+                    data.push(y < 0 ? 0 : y > 100 ? 100 : y);
+                }
+
+                // zip the generated y values with the x values
+
+                var res = [];
+                for (var i = 0; i < data.length; ++i) {
+                    res.push([i, data[i]])
+                }
+
+                return res;
+            }
+
+            //
+
+            series = [{
+                data: getRandomData(),
+                lines: {
+                    fill: true,
+                    fillColor: '#e2e2e2'
+                },
+                color: '#b2b2b2'
+            }];
+
+            //
+
+            var plot = $.plot(container, series, {
+                grid: {
+                    color: 'rgba(0,0,0, .3)',
+                    borderColor: 'rgba(0,0,0, .3)',
+                    borderWidth: 1,
+                    minBorderMargin: 20,
+                    labelMargin: 10,
+                    backgroundColor: {
+                        colors: ["#fff", "#e2e2e2"]
+                    },
+                    margin: {
+                        top: 8,
+                        bottom: 20,
+                        left: 20
+                    },
+                    markings: function(axes) {
+                        var markings = [];
+                        var xaxis = axes.xaxis;
+                        for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
+                            markings.push({ xaxis: { from: x, to: x + xaxis.tickSize }, color: "rgba(232, 232, 255, 0.2)" });
+                        }
+                        return markings;
+                    }
+                },
+                xaxis: {
+                    tickFormatter: function() {
+                        return "";
+                    }
+                },
+                yaxis: {
+                    min: 0,
+                    max: 110
+                },
+                legend: {
+                    show: true
+                }
+            });
+
+            // Create the demo X and Y axis labels
+
+            var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
+                .text("Response Time (ms)")
+                .appendTo(container);
+
+            // Since CSS transforms use the top-left corner of the label as the transform origin,
+            // we need to center the y-axis label by shifting it down by half its width.
+            // Subtract 20 to factor the chart's bottom margin into the centering.
+
+            yaxisLabel.css("margin-top", -20);
+
+            // Update the random dataset at 25FPS for a smoothly-animating chart
+
+            setInterval(function updateRandom() {
+                series[0].data = getRandomData();
+                plot.setData(series);
+                plot.draw();
+            }, 40);
+
+
+            /* pie charts */
+
+            var dataPie = [],
+                pieSeries = Math.floor(Math.random() * 6) + 3;
+
+            for (var i = 0; i < pieSeries; i++) {
+                dataPie[i] = {
+                    label: "Series" + (i + 1),
+                    data: Math.floor(Math.random() * 100) + 1
+                }
+            }
+
+            $.plot('#firstPieChart', dataPie, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                legend: {
+                    show: true
+                }
+            });
+
+            $.plot('#secondPieChart', dataPie, {
+                series: {
+                    pie: {
+                        show: true,
+                        radius: 1,
+                        label: {
+                            show: true,
+                            radius: 1,
+                            formatter: labelFormatter,
+                            background: {
+                                opacity: 0.8
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    show: false
+                }
+            });
+
+            $.plot('#thirdPieChart', dataPie, {
+                series: {
+                    pie: {
+                        innerRadius: 0.5,
+                        show: true
+                    }
+                },
+                legend: {
+                    show: true
+                }
+            });
+
+            // A custom label formatter used by several of the plots
+
+            function labelFormatter(label, series) {
+                return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+            }
+
+ 
+        })
+        </script>
+    </body>
+</html>

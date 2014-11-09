@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title>The Kamarel v. 1.3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body class="grid">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- ==================== TOP MENU ==================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="#"><strong class="brandBold">THE</strong>KAMAREL</a>
+                    <div class="nav pull-right">
+                        <form class="navbar-form">
+                            <div class="input-append">
+                                <input class="inp-mini inp-dark span2" type="text" placeholder="search...">
+                                <span class="add-on add-on-first add-on-mini add-on-dark" id="search"><i class="icon-search"></i></span>
+                                <div class="collapsibleContent">
+                                    <a href="#tasksContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="tasks"><i class="icon-tasks"></i><span class="notifyCircle cyan">3</span></span></a>
+                                    <a href="#notificationsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="notifications"><i class="icon-bell-alt"></i><span class="notifyCircle orange">9</span></span></a>
+                                    <a href="#messagesContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="messages"><i class="icon-comments-alt"></i><span class="notifyCircle red">12</span></span></a>
+                                    <a href="#settingsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="settings"><i class="icon-cog"></i></span></a>
+                                    <a href="#profileContent" class="sidebar"><span class="add-on add-on-mini add-on-dark" id="profile"><i class="icon-user"></i><span class="username">Ing. Imrich Kamarel</span></span></a>
+                                </div>
+                                <a href="#collapsedSidebarContent" class="collapseHolder sidebar"><span class="add-on add-on-mini add-on-dark"><i class="icon-sort-down"></i></span></a>
+                            </div>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- ==================== END OF TOP MENU ==================== -->
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <div class="hiddenContent">
+            <!-- ==================== SIDEBAR COLLAPSED ==================== -->
+            <div id="collapsedSidebarContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <ul class="collapsedSidebarMenu">
+                        <li><a href="#tasksContent" class="sidebar">Tasks <div class="notifyCircle cyan">3</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#notificationsContent" class="sidebar">Notifications <div class="notifyCircle orange">9</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#messagesContent" class="sidebar">Messages <div class="notifyCircle red">12</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#settingsContent" class="sidebar">Settings<i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#profileContent" class="sidebar">Ing. Imrich Kamarel<i class="icon-chevron-sign-right"></i></a></li>
+                        <li class="sublevel"><a href="#">edit profile<i class="icon-user"></i></a></li>
+                        <li class="sublevel"><a href="#">change password<i class="icon-lock"></i></a></li>
+                        <li class="sublevel"><a href="#">logout<i class="icon-off"></i></a></li>
+                    </ul>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR COLLAPSED ==================== -->
+            <!-- ==================== SIDEBAR TASKS ==================== -->
+            <div id="tasksContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Tasks</h1></a>
+                    <h1>Tasks</h1>
+                    <div class="sidebarInfo">
+                        <div class="progressTasks"><span class="label">11</span> tasks in progress</div>
+                        <div class="newTasks"><span class="label cyan">3</span> new tasks</div>
+                    </div>
+                    <ul class="tasksList">
+                        <li class="new">
+                            <h3>Update database</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>    
+                        </li>
+                        <li class="new">
+                            <h3>Clean CSS</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>  
+                        </li> 
+                        <li class="new">
+                            <h3>Clean JavaScript</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a backup</h3>
+                            <span class="taskProgress">75%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 75%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Clean HTML</h3>
+                            <span class="taskProgress">50%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 50%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a coffee</h3>
+                            <span class="taskProgress">25%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 25%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>THEKAMAREL project</h3>
+                            <span class="taskProgress">100%</span>
+                            <div class="progress progress-striped">
+                              <div class="bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status grey">Finished task</div>
+                            </div> 
+                        </li>   
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR TASKS ==================== -->
+
+            <!-- ==================== SIDEBAR NOTIFICATIONS ==================== -->
+            <div id="notificationsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Notifications</h1></a>
+                    <h1>Notifications</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">32</span> notifications</div>
+                        <div><span class="label orange">9</span> new notifications</div>
+                    </div>
+                    <ul class="notificationsList">
+                        <li class="new first">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">1 minute ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">15 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">5 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">6 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">10 hour ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 hours ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">03.03.2013</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>      
+            </div>
+            <!-- ==================== END OF SIDEBAR NOTIFICATIONS ==================== -->
+
+            <!-- ==================== SIDEBAR MESSAGES ==================== -->
+            <div id="messagesContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Messages</h1></a>
+                    <h1>Messages</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">128</span> messages</div>
+                        <div><span class="label red">12</span> unreaded messages</div>
+                    </div>
+                    <ul class="messagesList">
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/homer-avatar.jpg" alt=""></div>
+                            <h3>John Doe</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/zoidberg-avatar.jpg" alt=""></div>
+                            <h3>George McCain</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>  
+            </div>
+            <!-- ==================== END OF SIDEBAR MESSAGES ==================== -->
+
+            <!-- ==================== SIDEBAR SETTINGS ==================== -->
+            <div id="settingsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Settings</h1></a>
+                    <h1>Settings</h1>
+                    <ul class="settingsList">
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> Slider</h3>
+                                <div class="sl1"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> RangeSlider</h3>
+                                <div class="sl2"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingToggler">
+                                <i class="icon-leaf"></i><h3> Toggler</h3>
+                                <label class="checkbox toggle well" onclick="">
+                                    <input id="toggler" type="checkbox" checked />
+                                    <span class="slider-selection"></span>
+                                    <span class="toggleStatus">
+                                        <span><i class="icon-ok toggleOn"></i></span>
+                                        <span><i class="icon-remove toggleOff"></i></span>
+                                    </span>
+
+                                    <a class="btn btn-primary slide-button"></a>
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="fontSize">
+                            <h2>Font Size</h2>
+                            <div class="fontSizeBlock fontSizeSmall active"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeMedium"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeBig"><span>A</span></div>
+                        </li>
+
+                        <li class="fontStyle">
+                            <h2>Font Style</h2>
+                            <div class="fontStyleBlock fontStyleSansSerif active"><span>Aa</span></div>
+                            <div class="fontStyleBlock fontStyleSerif"><span>Aa</span></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR SETTINGS ==================== -->
+
+            <!-- ==================== SIDEBAR PROFILE ==================== -->
+            <div id="profileContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> My account</h1></a>
+                    <h1>My account</h1>
+                    <div class="profileBlock">
+                        <div class="profilePhoto">
+                            <div class="usernameHolder">Ing. Imrich Kamarel</div>
+                        </div>
+                        <div class="profileInfo">
+                            <p><i class="icon-map-marker"></i> Piestany, SK</p>
+                            <p><i class="icon-envelope-alt"></i> ici.kamarel@tattek.com</p>
+                            <p><i class="icon-globe"></i> tattek.com</p>
+                            <p class="aboutMe">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <footer>
+                            <div class="profileSettingBlock editProfile"><i class="icon-user"></i>edit profile</div>
+                            <div class="profileSettingBlock changePassword"><i class="icon-lock"></i>change password</div>
+                            <div class="profileSettingBlock logout"><i class="icon-off"></i>logout</div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR PROFILE ==================== -->
+
+        </div>
+        <!-- ==================== END OF SIDEBAR ==================== -->
+
+        <!-- ==================== MAIN MENU ==================== -->
+        <div class="mainmenu">
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="collapseMenu"><a href="#"><i class="icon-double-angle-left"></i>hide menu<i class="icon-double-angle-right deCollapse"></i></a></li>
+                    <li class="divider-vertical firstDivider"></li>
+                    <li class="left-side" id="dashboard"><a href="index.html"><i class="icon-dashboard"></i> DASHBOARD</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="formElements"><i class="icon-list"></i> FORMS <span class="label label-pressed">3</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="common-form.html">COMMON ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="validation-form.html">VALIDATION</a></li>
+                            <li><a tabindex="-1" href="form-wizard.html">WIZARD</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="interface"><i class="icon-pencil"></i> INTERFACE <span class="label label-pressed">2</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="interface.html">UI ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="typography.html">TYPOGRAPHY</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li id="buttonsIcons"><a href="buttons.html"><i class="icon-tint"></i> BUTTONS & ICONS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="gridLayout"><a href="grid.html"><i class="icon-th"></i> GRID LAYOUT</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="tables"><a href="tables.html"><i class="icon-th-large"></i> TABLES</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> EXAMPLE PAGES <span class="label label-pressed">7</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="login.html">LOGIN PAGE</a></li>
+                            <li><a tabindex="-1" href="calendar.html">CALENDAR</a></li>
+                            <li><a tabindex="-1" href="404.html">PAGE 404</a></li>
+                            <li><a tabindex="-1" href="gallery.html">GALLERY</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAIL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="mail.html">Vertical View</a></li>
+                                    <li><a href="mail-horizontal.html">Horizontal View</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAPS</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="vectormaps.html">Vector Maps</a></li>
+                                    <li><a href="gmaps.html">Google Maps</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown-submenu">
+                                <a href="#">SECOND LEVEL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#">THIRD LEVEL</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" href="timeline.html">TIMELINE</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="widgets.html" id="widgets"><i class="icon-play-circle"></i> WIDGETS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="right-side" id="chartsGraphs"><a href="charts.html"><i class="icon-bar-chart"></i> CHARTS & GRAPHS </a></li>
+                    <li class="divider-vertical"></li>
+                </ul>
+           </div>
+        </div>
+        <!-- ==================== END OF MAIN MENU ==================== -->
+
+        <!-- ==================== DROPDOWN MENU FOR MOREOPTIONS ICON (hidden state) ==================== -->
+        <ul class="dropdown-menu" id="moreOptionsMenu">
+            <li class="dropdown-submenu">
+                <a href="#">More options</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+        </ul>
+        <!-- ==================== END OF DROPDOWN MENU ==================== -->
+
+        <!-- ==================== PAGE CONTENT ==================== -->
+        <div class="content">
+
+            <!-- ==================== TITLE LINE FOR HEADLINE ==================== -->
+            <div class="titleLine">
+                <div class="container-fluid">
+                    <div class="titleIcon"><i class="icon-map-marker"></i></div>
+                    <ul class="titleLineHeading">
+                        <li class="heading"><h1>Vector Maps</h1></li>
+                    </ul>
+                    <ul class="titleLineOnRight pull-right">
+                        <li>
+                            <span class="usersBar">100,235,549,222,639,335,800</span>
+                            <h2 class="cyanText">1254<span class="greyText">users</span></h2>
+                        </li>
+                        <li>
+                            <span class="visitsBar">20,35,10,80,52,34,74,99,45,68</span>
+                            <h2 class="redText">758<span class="greyText">visits</span></h2>
+                        </li>
+                        <li>
+                            <span class="ordersBar">254,159,480,531,214,984,671</span>
+                            <h2 class="greenText">3541<span class="greyText">orders</span></h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF TITLE LINE ==================== -->
+
+            <!-- ==================== BREADCRUMBS / DATETIME ==================== -->
+            <ul class="breadcrumb">
+                <li><i class="icon-home"></i><a href="index.html"> Home</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">Maps <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">Vector Maps </li>
+                <li class="moveDown pull-right">
+                    <span class="time"></span>
+                    <span class="date"></span>
+                </li>    
+            </ul>
+            <!-- ==================== END OF BREADCRUMBS / DATETIME ==================== -->
+
+            <!-- ==================== WIDGETS CONTAINER ==================== -->
+            <div class="container-fluid">
+
+                <!-- ==================== ROW ==================== -->
+                <div class="row-fluid">
+                    <!-- ==================== VECTOR MAPS CONTAINER ==================== -->
+                    <div class="span12 allwayTab allwayTab-left w-200" id="vmaps">
+                        <!-- ==================== VECTOR MAPS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-map-marker"></i><h2>Vector Maps</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF VECTOR MAPS HEADLINE ==================== -->
+
+                        <!-- ==================== VECTOR MAPS FLOATING BOX ==================== -->
+                        <div class="floatingBox vmaps">
+                            <!-- ==================== VECTOR MAPS TABS ==================== -->
+                            <ul class="nav nav-tabs nav-tabs-normal verticalTab">
+                                <li class="active"><a href="#gdpContainer" data-id="gdp">GDP by country visualization</a></li>
+                                <li><a href="#markersContainer" data-id="markers">Markers on the world map</a></li>
+                                <li><a href="#unemploymentContainer" data-id="unemployment">USA unemployment</a></li>
+                                <li><a href="#regionsContainer" data-id="regions">Regions selection</a></li>
+                                <li><a href="#franceContainer" data-id="france">France elections</a></li>
+                                <li><a href="#colorsContainer" data-id="colors">Random colors</a></li>
+                                <li><a href="#mallContainer" data-id="mall">Map of the mall</a></li>
+                                <li><a href="#reverseContainer" data-id="reverse">Reverse projection</a></li>
+                            </ul>
+                            <!-- ==================== END OF VECTOR MAPS TABS ==================== -->
+                            <div class="container-fluid">
+                                <div id="gdpContainer">
+                                    <div id="gdp" style="height: 400px;"></div>
+                                </div>
+
+                                <div id="markersContainer" style="display:none">
+                                    <div id="markers" style="height: 400px"></div>
+                                </div>
+
+                                <div id="unemploymentContainer" style="display:none" style="display:none">
+                                    <div id="unemployment" style="height: 400px"></div>
+                                    <div id="slider"></div>
+                                </div>
+                            
+                                <div id="regionsContainer" style="display:none">
+                                    <div id="regions" style="height: 400px"></div>
+                                </div>
+
+                                <div id="franceContainer" style="display:none">
+                                    <div id="france" style="height: 400px"></div>
+                                </div>  
+
+                                <div id="colorsContainer" style="display:none">
+                                    <div id="colors" style="height: 400px"></div>
+                                    <button id="randomColors" class="btn btn-primary">Random Colors</button>
+                                </div>
+
+                                <div id="mallContainer" style="display:none">
+                                    <div id="mall" style="height: 400px"></div>
+                                </div>
+
+                                <div id="reverseContainer" style="display:none">
+                                    <div id="reverse" style="height: 400px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF VECTOR MAPS FLOATING BOX ==================== -->
+                    </div>
+                    <!-- ==================== END OF VECTOR MAPS CONTAINER ==================== --> 
+
+                </div>
+                <!-- ==================== END OF ROW ==================== -->
+
+            </div>
+            <!-- ==================== END OF WIDGETS CONTAINER ==================== -->
+        </div>
+        <!-- ==================== END OF PAGE CONTENT ==================== -->
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
+        <script src="js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
+        <script src="js/vendor/jquery-jvectormap-1.2.2.min.js"></script>        <!-- vector maps plugin -->
+        <script src="js/vendor/gdp-data.js"></script>                           <!-- vector maps data -->
+        <script src="js/vendor/jquery-jvectormap-world-mill-en.js"></script>    <!-- vector map -->
+        <script src="js/vendor/jquery-jvectormap-us-aea-en.js"></script>        <!-- vector map -->
+        <script src="js/vendor/jquery-jvectormap-de-merc-en.js"></script>       <!-- vector map -->
+        <script src="js/vendor/jquery-jvectormap-fr-merc-en.js"></script>       <!-- vector map -->
+        <script src="js/vendor/jquery-jvectormap-es-merc-en.js"></script>       <!-- vector map -->
+        <script src="js/vendor/mall-map.js"></script>                           <!-- vector map -->
+        <script src="js/vendor/jquery-jvectormap-us-lcc-en.js"></script>        <!-- vector map -->
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/thekamarel.min.js"></script>                            <!-- main project js file -->
+
+        <script>
+
+            $(function() {
+
+                var tabMenuHeight = 0;
+
+                $(".verticalTab li").each(function() {
+                   tabMenuHeight += $(this).height();
+                });
+
+                $('.verticalTab').parent().css('min-height', tabMenuHeight);
+
+                $('#gdp').vectorMap({
+                    map: 'world_mill_en',
+                    series: {
+                      regions: [{
+                        values: gdpData,
+                        scale: ['#C8EEFF', '#0071A4'],
+                        normalizeFunction: 'polynomial'
+                      }]
+                    },
+                    onLabelShow: function(e, el, code){
+                      el.html(el.html()+' (GDP - '+gdpData[code]+')');
+                    }
+                });
+
+                var initMarkersMap = function() {
+                    $('#markers').vectorMap({
+                    map: 'world_mill_en',
+                    scaleColors: ['#C8EEFF', '#0071A4'],
+                    normalizeFunction: 'polynomial',
+                    hoverOpacity: 0.7,
+                    hoverColor: false,
+                    markerStyle: {
+                      initial: {
+                        fill: '#F8E23B',
+                        stroke: '#383f47'
+                      }
+                    },
+                    backgroundColor: '#383f47',
+                    markers: [
+                      {latLng: [41.90, 12.45], name: 'Vatican City'},
+                      {latLng: [43.73, 7.41], name: 'Monaco'},
+                      {latLng: [-0.52, 166.93], name: 'Nauru'},
+                      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
+                      {latLng: [43.93, 12.46], name: 'San Marino'},
+                      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
+                      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
+                      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
+                      {latLng: [3.2, 73.22], name: 'Maldives'},
+                      {latLng: [35.88, 14.5], name: 'Malta'},
+                      {latLng: [12.05, -61.75], name: 'Grenada'},
+                      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
+                      {latLng: [13.16, -59.55], name: 'Barbados'},
+                      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
+                      {latLng: [-4.61, 55.45], name: 'Seychelles'},
+                      {latLng: [7.35, 134.46], name: 'Palau'},
+                      {latLng: [42.5, 1.51], name: 'Andorra'},
+                      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
+                      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
+                      {latLng: [1.3, 103.8], name: 'Singapore'},
+                      {latLng: [1.46, 173.03], name: 'Kiribati'},
+                      {latLng: [-21.13, -175.2], name: 'Tonga'},
+                      {latLng: [15.3, -61.38], name: 'Dominica'},
+                      {latLng: [-20.2, 57.5], name: 'Mauritius'},
+                      {latLng: [26.02, 50.55], name: 'Bahrain'},
+                      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
+                    ]
+                  });    
+                };
+
+                var initUnemploymentMap = function() {
+                    $.getJSON('js/vendor/jvectormap/us-unemployment.json', function(data){
+                    var val = 2009;
+                        statesValues = jvm.values.apply({}, jvm.values(data.states)),
+                        metroPopValues = Array.prototype.concat.apply([], jvm.values(data.metro.population)),
+                        metroUnemplValues = Array.prototype.concat.apply([], jvm.values(data.metro.unemployment));
+
+                    $('#unemployment').vectorMap({
+                      map: 'us_aea_en',
+                      markers: data.metro.coords,
+                      series: {
+                        markers: [{
+                          attribute: 'fill',
+                          scale: ['#FEE5D9', '#A50F15'],
+                          values: data.metro.unemployment[val],
+                          min: jvm.min(metroUnemplValues),
+                          max: jvm.max(metroUnemplValues)
+                        },{
+                          attribute: 'r',
+                          scale: [5, 20],
+                          values: data.metro.population[val],
+                          min: jvm.min(metroPopValues),
+                          max: jvm.max(metroPopValues)
+                        }],
+                        regions: [{
+                          scale: ['#DEEBF7', '#08519C'],
+                          attribute: 'fill',
+                          values: data.states[val],
+                          min: jvm.min(statesValues),
+                          max: jvm.max(statesValues)
+                        }]
+                      },
+                      onMarkerLabelShow: function(event, label, index){
+                        label.html(
+                           '<b>'+data.metro.names[index]+'</b><br/>'+'<b>Population: </b>'+data.metro.population[val][index]+'</br>'+'<b>Unemployment rate: </b>'+data.metro.unemployment[val][index]+'%'
+                        );
+                      },
+                      onRegionLabelShow: function(event, label, code){
+                        label.html(
+                          '<b>'+label.html()+'</b></br>'+'<b>Unemployment rate: </b>'+data.states[val][code]+'%'
+                        );
+                      }
+                    });
+
+                    var mapObject = $('#unemployment').vectorMap('get', 'mapObject');
+
+                    $("#slider").slider({
+                      value: val,
+                      min: 2005,
+                      max: 2009,
+                      step: 1
+                    }).on('slide', function(e){
+                        val = e.value;
+                        mapObject.series.regions[0].setValues(data.states[e.value]);
+                        mapObject.series.markers[0].setValues(data.metro.unemployment[e.value]);
+                        mapObject.series.markers[1].setValues(data.metro.population[e.value]);
+                    });
+                  });
+                };
+
+                var initRegionsMap = function() {
+                    var map,
+                        markers = [
+                          {latLng: [52.50, 13.39], name: 'Berlin'},
+                          {latLng: [53.56, 10.00], name: 'Hamburg'},
+                          {latLng: [48.13, 11.56], name: 'Munich'},
+                          {latLng: [50.95, 6.96], name: 'Cologne'},
+                          {latLng: [50.11, 8.68], name: 'Frankfurt am Main'},
+                          {latLng: [48.77, 9.17], name: 'Stuttgart'},
+                          {latLng: [51.23, 6.78], name: 'Düsseldorf'},
+                          {latLng: [51.51, 7.46], name: 'Dortmund'},
+                          {latLng: [51.45, 7.01], name: 'Essen'},
+                          {latLng: [53.07, 8.80], name: 'Bremen'}
+                        ],
+                        cityAreaData = [
+                          887.70,
+                          755.16,
+                          310.69,
+                          405.17,
+                          248.31,
+                          207.35,
+                          217.22,
+                          280.71,
+                          210.32,
+                          325.42
+                        ]
+
+                    map = new jvm.WorldMap({
+                      container: $('#regions'),
+                      map: 'de_merc_en',
+                      regionsSelectable: true,
+                      markersSelectable: true,
+                      markers: markers,
+                      markerStyle: {
+                        initial: {
+                          fill: '#4DAC26'
+                        },
+                        selected: {
+                          fill: '#CA0020'
+                        }
+                      },
+                      regionStyle: {
+                        initial: {
+                          fill: '#B8E186'
+                        },
+                        selected: {
+                          fill: '#F4A582'
+                        }
+                      },
+                      series: {
+                        markers: [{
+                          attribute: 'r',
+                          scale: [5, 15],
+                          values: cityAreaData
+                        }]
+                      },
+                      onRegionSelected: function(){
+                        if (window.localStorage) {
+                          window.localStorage.setItem(
+                            'jvectormap-selected-regions',
+                            JSON.stringify(map.getSelectedRegions())
+                          );
+                        }
+                      },
+                      onMarkerSelected: function(){
+                        if (window.localStorage) {
+                          window.localStorage.setItem(
+                            'jvectormap-selected-markers',
+                            JSON.stringify(map.getSelectedMarkers())
+                          );
+                        }
+                      }
+                    });
+                    map.setSelectedRegions( JSON.parse( window.localStorage.getItem('jvectormap-selected-regions') || '[]' ) );
+                    map.setSelectedMarkers( JSON.parse( window.localStorage.getItem('jvectormap-selected-markers') || '[]' ) );
+                };
+
+                var initFranceMap = function() {
+                    $.getJSON('js/vendor/jvectormap/france-elections.json', function(data){
+                        new jvm.WorldMap({
+                          map: 'fr_merc_en',
+                          container: $('#france'),
+                          series: {
+                            regions: [{
+                              scale: {
+                                '1': '#4169E1',
+                                '2': '#FF69B4'
+                              },
+                              attribute: 'fill',
+                              values: data['year2012'].results
+                            }]
+                          }
+                        });
+                    });
+                };
+
+                var initColorsMap = function() {
+                    var palette = ['#66C2A5', '#FC8D62', '#8DA0CB', '#E78AC3', '#A6D854'],
+                        generateColors = function(){
+                          var colors = {},
+                              key;
+
+                          for (key in map.regions) {
+                            colors[key] = palette[Math.floor(Math.random()*palette.length)];
+                          }
+                          return colors;
+                        },
+                        map;
+
+                    map = new jvm.WorldMap({
+                      map: 'es_merc_en',
+                      container: $('#colors'),
+                      series: {
+                        regions: [{
+                          attribute: 'fill'
+                        }]
+                      }
+                    });
+                    map.series.regions[0].setValues(generateColors());
+                    $('#randomColors').click(function(e){
+                      e.preventDefault();
+                      map.series.regions[0].setValues(generateColors());
+                    });
+                };
+
+                var initMallMap = function() {
+                    $('#mall').vectorMap({
+                      map: 'mall',
+                      backgroundColor: 'transparent',
+                      markers: [{
+                        coords: [60, 110],
+                        name: 'Escalator 1',
+                        style: {fill: 'yellow'}
+                      },{
+                        coords: [260, 95],
+                        name: 'Escalator 2',
+                        style: {fill: 'yellow'}
+                      },{
+                        coords: [434, 95],
+                        name: 'Escalator 3',
+                        style: {fill: 'yellow'}
+                      },{
+                        coords: [634, 110],
+                        name: 'Escalator 4',
+                        style: {fill: 'yellow'}
+                      }],
+                      series: {
+                        regions: [{
+                          values: {
+                            F102: 'SPORTS & OUTDOOR',
+                            F103: 'HOME DECOR',
+                            F105: 'FASHION',
+                            F106: 'OTHER',
+                            F108: 'BEAUTY & SPA',
+                            F109: 'FASHION',
+                            F110: 'BEAUTY & SPA',
+                            F111: 'URBAN FAVORITES',
+                            F114: 'SERVICES',
+                            F166: 'DINING',
+                            F167: 'FASHION',
+                            F169: 'DINING',
+                            F170: 'ENTERTAINMENT',
+                            F172: 'DINING',
+                            F174: 'DINING',
+                            F115: 'KIDS STUFF',
+                            F117: 'LIFESTYLE',
+                            F118: 'URBAN FAVORITES',
+                            F119: 'FASHION',
+                            F120: 'FASHION',
+                            F122: 'KIDS STUFF',
+                            F124: 'KIDS STUFF',
+                            F125: 'KIDS STUFF',
+                            F126: 'KIDS STUFF',
+                            F128: 'KIDS STUFF',
+                            F129: 'LIFESTYLE',
+                            F130: 'HOME DECOR',
+                            F132: 'DINING',
+                            F133: 'SPORTS & OUTDOOR',
+                            F134: 'KIDS STUFF',
+                            F135: 'LIFESTYLE',
+                            F136: 'LIFESTYLE',
+                            F139: 'KIDS STUFF',
+                            F153: 'DINING',
+                            F155: 'FASHION',
+                            F156: 'URBAN FAVORITES',
+                            F157: 'URBAN FAVORITES',
+                            F158: 'LINGERIE & UNDERWEAR',
+                            F159: 'FASHION',
+                            F160: 'FASHION',
+                            F162: 'FASHION',
+                            F164: 'FASHION',
+                            F165: 'FASHION',
+                            FR01: 'REST ROOMS',
+                            FR02: 'REST ROOMS',
+                            FR03: 'REST ROOMS',
+                            FR04: 'REST ROOMS',
+                            FFC: 'DINING'
+                          },
+                          scale: {
+                            "FASHION": "#2761ad",
+                            "LINGERIE & UNDERWEAR": "#d58aa3",
+                            "BEAUTY & SPA": "#ee549f",
+                            "URBAN FAVORITES": "#15bbba",
+                            "SPORTS & OUTDOOR": "#8864ab",
+                            "KIDS STUFF": "#ef4e36",
+                            "ENTERTAINMENT": "#e47325",
+                            "HOME DECOR": "#a2614f",
+                            "LIFESTYLE": "#8a8934",
+                            "DINING": "#73bb43",
+                            "REST ROOMS": "#6c260f",
+                            "SERVICES": "#504d7c",
+                            "OTHER": "#c7b789"
+                          }
+                        }]
+                      },
+                      onRegionLabelShow: function(e, el, code){
+                        if (el.html() === '') {
+                          e.preventDefault();
+                        }
+                      }
+                    });
+                };
+
+                var initReverseMap = function() {
+                    var map,
+                        markerIndex = 0,
+                        markersCoords = {};
+
+                    map = new jvm.WorldMap({
+                        map: 'us_lcc_en',
+                        markerStyle: {
+                          initial: {
+                            fill: 'red'
+                          }
+                        },
+                        container: $('#reverse'),
+                        onMarkerLabelShow: function(e, label, code){
+                          map.label.text(markersCoords[code].lat.toFixed(2)+', '+markersCoords[code].lng.toFixed(2));
+                        },
+                        onMarkerClick: function(e, code){
+                          map.removeMarkers([code]);
+                          map.label.hide();
+                        }
+                    });
+
+                    map.container.click(function(e){
+                        var latLng = map.pointToLatLng(e.offsetX, e.offsetY),
+                            targetCls = $(e.target).attr('class');
+
+                        if (latLng && (!targetCls || (targetCls && $(e.target).attr('class').indexOf('jvectormap-marker') === -1))) {
+                          markersCoords[markerIndex] = latLng;
+                          map.addMarker(markerIndex, {latLng: [latLng.lat, latLng.lng]});
+                          markerIndex += 1;
+                        }
+                    });
+                };
+
+                $('a[data-id="markers"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initMarkersMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="unemployment"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initUnemploymentMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="regions"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initRegionsMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="france"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initFranceMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="colors"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initColorsMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="mall"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initMallMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+                $('a[data-id="reverse"]').click(function(){
+                    
+                    if (!$(this).hasClass('active')) {
+                        initReverseMap();
+                    };
+
+                    $(this).addClass('active');
+
+                });
+
+            })
+
+        </script>
+    </body>
+</html>

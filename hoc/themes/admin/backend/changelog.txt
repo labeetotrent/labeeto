@@ -1,0 +1,62 @@
+The Kamarel v. 1.3a 
+
+	Fixed Modal Responsiveness
+
+The Kamarel v. 1.3
+
+	Fixed bug with validation in formWizard
+
+	Timeline added
+
+The Kamarel v. 1.2
+
+	Added "white-space: nowrap" to TitleLine heading - thekamarel.css row 740
+
+	Mail page vertical - added jLayout plugin
+
+	Mail page horizontal - added jLayout plugin
+
+	Carousel implemented at widgets category
+
+	AllWay Tabs tweaks - added 200px width support to tabs by setting class '.w-200'
+
+	Vector Maps added - jvectormaps plugin
+
+	Google Maps added - jquery ui map plugin
+
+	Added hero-unit example to typography page
+
+	Added Check list and Cross list to typography page
+
+	Fixed issues on table page
+
+	Fixed opacity issue on TitleLine in IE8
+
+	Top bar icons adjusted
+
+The Kamarel v. 1.1
+
+	thekamarel.css - Focused inputs border color changed to #bee147 - row 1627 (old color rgba(0,0,0,.4))
+
+	MasterActions - removed jquery plugin for animating box shadow on hover - actually it use css3 transitions - row 982 in thekamarel.css
+
+	Improved tabs jquery actions - row 100 in thekamarel.js
+
+	Added All-way tabs to Widgets Category - css changes are made on row 1052 in thekamarel.css
+
+	Titleline heading layout changes (only one heading now)
+
+	Fixed some bugs
+
+	Updated fontawesome to version 3.2.1
+
+	Fixed problem with placing anything else than titleLineCharts on the right side of TitleLine, you must use class .titleLineOnRight (example on widgets page with search bar) - thekamarel.css row 737
+
+	Minor changes of tablesorter css - theme.default.css row 19
+
+	Fixed some js errors
+
+	Added 3-level submenu example into "Example Pages" menu
+
+	Added Typography page (under Interface) - thekamarel.css row 3456
+

@@ -1,0 +1,52 @@
+2014/05/30 06:00:21 [error] [exception.CDbException] exception 'CDbException' with message 'The table "members" for active record class "Members" cannot be found in the database.' in D:\netbiz\supplements\trunk\framework\db\ar\CActiveRecord.php:2310
+Stack trace:
+#0 D:\netbiz\supplements\trunk\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Members))
+#1 D:\netbiz\supplements\trunk\protected\models\Members.php(92): CActiveRecord::model('Members')
+#2 D:\netbiz\supplements\trunk\protected\commands\SyncCommand.php(43): Members::model()
+#3 D:\netbiz\supplements\trunk\framework\console\CConsoleCommandRunner.php(67): SyncCommand->run(Array)
+#4 D:\netbiz\supplements\trunk\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#5 D:\netbiz\supplements\trunk\framework\base\CApplication.php(169): CConsoleApplication->processRequest()
+#6 D:\netbiz\supplements\trunk\cron.php(17): CApplication->run()
+#7 {main}
+---
+2014/05/30 06:02:34 [error] [exception.CDbException] exception 'CDbException' with message 'The table "products" for active record class "Products" cannot be found in the database.' in D:\netbiz\supplements\trunk\framework\db\ar\CActiveRecord.php:2310
+Stack trace:
+#0 D:\netbiz\supplements\trunk\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Products))
+#1 D:\netbiz\supplements\trunk\protected\models\Products.php(64): CActiveRecord::model('Products')
+#2 D:\netbiz\supplements\trunk\protected\commands\SyncCommand.php(43): Products::model()
+#3 D:\netbiz\supplements\trunk\framework\console\CConsoleCommandRunner.php(67): SyncCommand->run(Array)
+#4 D:\netbiz\supplements\trunk\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#5 D:\netbiz\supplements\trunk\framework\base\CApplication.php(169): CConsoleApplication->processRequest()
+#6 D:\netbiz\supplements\trunk\cron.php(17): CApplication->run()
+#7 {main}
+---
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "id" of "Products".
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "video" of "Products".
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "start_time" of "Products".
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "end_time" of "Products".
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "tag" of "Products".
+2014/05/30 06:11:52 [warning] [application] Failed to set unsafe attribute "flag" of "Products".
+2014/05/30 06:11:53 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "id" of "Products".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "video" of "Products".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "start_time" of "Products".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "end_time" of "Products".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "tag" of "Products".
+2014/05/30 06:19:35 [warning] [application] Failed to set unsafe attribute "flag" of "Products".
+2014/05/30 06:19:36 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+2014/05/30 06:19:36 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/05/30 06:19:36 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+2014/05/30 06:19:36 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/05/30 06:19:36 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/05/30 06:19:37 [warning] [application] Failed to set unsafe attribute "id" of "ProductCategories".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "id" of "Products".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "video" of "Products".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "start_time" of "Products".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "end_time" of "Products".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "tag" of "Products".
+2014/06/03 04:43:07 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+2014/06/03 04:43:08 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/06/03 04:43:08 [warning] [application] Failed to set unsafe attribute "id" of "Groups".
+2014/06/03 04:43:08 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/06/03 04:43:08 [warning] [application] Failed to set unsafe attribute "id" of "ProductPackage".
+2014/06/03 04:43:09 [warning] [application] Failed to set unsafe attribute "id" of "ProductCategories".

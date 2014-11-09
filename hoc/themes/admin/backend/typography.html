@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title>The Kamarel v. 1.3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body class="typography">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- ==================== TOP MENU ==================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="#"><strong class="brandBold">THE</strong>KAMAREL</a>
+                    <div class="nav pull-right">
+                        <form class="navbar-form">
+                            <div class="input-append">
+                                <input class="inp-mini inp-dark span2" type="text" placeholder="search...">
+                                <span class="add-on add-on-first add-on-mini add-on-dark" id="search"><i class="icon-search"></i></span>
+                                <div class="collapsibleContent">
+                                    <a href="#tasksContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="tasks"><i class="icon-tasks"></i><span class="notifyCircle cyan">3</span></span></a>
+                                    <a href="#notificationsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="notifications"><i class="icon-bell-alt"></i><span class="notifyCircle orange">9</span></span></a>
+                                    <a href="#messagesContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="messages"><i class="icon-comments-alt"></i><span class="notifyCircle red">12</span></span></a>
+                                    <a href="#settingsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="settings"><i class="icon-cog"></i></span></a>
+                                    <a href="#profileContent" class="sidebar"><span class="add-on add-on-mini add-on-dark" id="profile"><i class="icon-user"></i><span class="username">Ing. Imrich Kamarel</span></span></a>
+                                </div>
+                                <a href="#collapsedSidebarContent" class="collapseHolder sidebar"><span class="add-on add-on-mini add-on-dark"><i class="icon-sort-down"></i></span></a>
+                            </div>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- ==================== END OF TOP MENU ==================== -->
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <div class="hiddenContent">
+            <!-- ==================== SIDEBAR COLLAPSED ==================== -->
+            <div id="collapsedSidebarContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <ul class="collapsedSidebarMenu">
+                        <li><a href="#tasksContent" class="sidebar">Tasks <div class="notifyCircle cyan">3</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#notificationsContent" class="sidebar">Notifications <div class="notifyCircle orange">9</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#messagesContent" class="sidebar">Messages <div class="notifyCircle red">12</div><i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#settingsContent" class="sidebar">Settings<i class="icon-chevron-sign-right"></i></a></li>
+                        <li><a href="#profileContent" class="sidebar">Ing. Imrich Kamarel<i class="icon-chevron-sign-right"></i></a></li>
+                        <li class="sublevel"><a href="#">edit profile<i class="icon-user"></i></a></li>
+                        <li class="sublevel"><a href="#">change password<i class="icon-lock"></i></a></li>
+                        <li class="sublevel"><a href="#">logout<i class="icon-off"></i></a></li>
+                    </ul>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR COLLAPSED ==================== -->
+            <!-- ==================== SIDEBAR TASKS ==================== -->
+            <div id="tasksContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Tasks</h1></a>
+                    <h1>Tasks</h1>
+                    <div class="sidebarInfo">
+                        <div class="progressTasks"><span class="label">11</span> tasks in progress</div>
+                        <div class="newTasks"><span class="label cyan">3</span> new tasks</div>
+                    </div>
+                    <ul class="tasksList">
+                        <li class="new">
+                            <h3>Update database</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>    
+                        </li>
+                        <li class="new">
+                            <h3>Clean CSS</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div>  
+                        </li> 
+                        <li class="new">
+                            <h3>Clean JavaScript</h3>
+                            <span class="taskProgress">0%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                                <div class="tag status cyan">New task</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a backup</h3>
+                            <span class="taskProgress">75%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 75%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority green">Low priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Clean HTML</h3>
+                            <span class="taskProgress">50%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 50%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>Make a coffee</h3>
+                            <span class="taskProgress">25%</span>
+                            <div class="progress progress-striped active">
+                              <div class="bar" style="width: 25%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority orange">Normal priority</div>
+                            </div> 
+                        </li> 
+                        <li>
+                            <h3>THEKAMAREL project</h3>
+                            <span class="taskProgress">100%</span>
+                            <div class="progress progress-striped">
+                              <div class="bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="appendedTags">
+                                <div class="tag priority red">High priority</div>
+                                <div class="tag status grey">Finished task</div>
+                            </div> 
+                        </li>   
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>   
+            </div>
+            <!-- ==================== END OF SIDEBAR TASKS ==================== -->
+
+            <!-- ==================== SIDEBAR NOTIFICATIONS ==================== -->
+            <div id="notificationsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Notifications</h1></a>
+                    <h1>Notifications</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">32</span> notifications</div>
+                        <div><span class="label orange">9</span> new notifications</div>
+                    </div>
+                    <ul class="notificationsList">
+                        <li class="new first">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">1 minute ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">15 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 minutes ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">1 hour ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">3 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">5 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li class="new">
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">6 hours ago <span class="pull-right notificationStatus">new</span></span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">10 hour ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">23 hours ago</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">yesterday</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-comments"></i> New comment</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">01.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> New user registered</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-user"></i> User account cancelled</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> New order</div>
+                            <span class="notificationDate">02.03.2013</span>
+                        </li>
+                        <li>
+                            <div><i class="icon-shopping-cart"></i> Order cancelled</div>
+                            <span class="notificationDate">03.03.2013</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>      
+            </div>
+            <!-- ==================== END OF SIDEBAR NOTIFICATIONS ==================== -->
+
+            <!-- ==================== SIDEBAR MESSAGES ==================== -->
+            <div id="messagesContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Messages</h1></a>
+                    <h1>Messages</h1>
+                    <div class="sidebarInfo">
+                        <div><span class="label">128</span> messages</div>
+                        <div><span class="label red">12</span> unreaded messages</div>
+                    </div>
+                    <ul class="messagesList">
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/homer-avatar.jpg" alt=""></div>
+                            <h3>John Doe</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/zoidberg-avatar.jpg" alt=""></div>
+                            <h3>George McCain</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/peter-avatar.jpg" alt=""></div>
+                            <h3>Peter Kay</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                        <li class="unreaded">
+                            <div class="messageAvatar"><img src="img/rimmer-avatar.jpg" alt=""></div>
+                            <h3>Arnold Karlsberg</h3>
+                            <span class="messageDate">05.03.2013 17:55 <span class="pull-right messageStatus">unreaded</span></span> 
+                            <div class="messageContent">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad..."</div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">View all</button>
+                </div>  
+            </div>
+            <!-- ==================== END OF SIDEBAR MESSAGES ==================== -->
+
+            <!-- ==================== SIDEBAR SETTINGS ==================== -->
+            <div id="settingsContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Settings</h1></a>
+                    <h1>Settings</h1>
+                    <ul class="settingsList">
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> Slider</h3>
+                                <div class="sl1"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> RangeSlider</h3>
+                                <div class="sl2"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingToggler">
+                                <i class="icon-leaf"></i><h3> Toggler</h3>
+                                <label class="checkbox toggle well" onclick="">
+                                    <input id="toggler" type="checkbox" checked />
+                                    <span class="slider-selection"></span>
+                                    <span class="toggleStatus">
+                                        <span><i class="icon-ok toggleOn"></i></span>
+                                        <span><i class="icon-remove toggleOff"></i></span>
+                                    </span>
+
+                                    <a class="btn btn-primary slide-button"></a>
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="fontSize">
+                            <h2>Font Size</h2>
+                            <div class="fontSizeBlock fontSizeSmall active"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeMedium"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeBig"><span>A</span></div>
+                        </li>
+
+                        <li class="fontStyle">
+                            <h2>Font Style</h2>
+                            <div class="fontStyleBlock fontStyleSansSerif active"><span>Aa</span></div>
+                            <div class="fontStyleBlock fontStyleSerif"><span>Aa</span></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR SETTINGS ==================== -->
+
+            <!-- ==================== SIDEBAR PROFILE ==================== -->
+            <div id="profileContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> My account</h1></a>
+                    <h1>My account</h1>
+                    <div class="profileBlock">
+                        <div class="profilePhoto">
+                            <div class="usernameHolder">Ing. Imrich Kamarel</div>
+                        </div>
+                        <div class="profileInfo">
+                            <p><i class="icon-map-marker"></i> Piestany, SK</p>
+                            <p><i class="icon-envelope-alt"></i> ici.kamarel@tattek.com</p>
+                            <p><i class="icon-globe"></i> tattek.com</p>
+                            <p class="aboutMe">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <footer>
+                            <div class="profileSettingBlock editProfile"><i class="icon-user"></i>edit profile</div>
+                            <div class="profileSettingBlock changePassword"><i class="icon-lock"></i>change password</div>
+                            <div class="profileSettingBlock logout"><i class="icon-off"></i>logout</div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR PROFILE ==================== -->
+
+        </div>
+        <!-- ==================== END OF SIDEBAR ==================== -->
+
+        <!-- ==================== MAIN MENU ==================== -->
+        <div class="mainmenu">
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="collapseMenu"><a href="#"><i class="icon-double-angle-left"></i>hide menu<i class="icon-double-angle-right deCollapse"></i></a></li>
+                    <li class="divider-vertical firstDivider"></li>
+                    <li class="left-side" id="dashboard"><a href="index.html"><i class="icon-dashboard"></i> DASHBOARD</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="formElements"><i class="icon-list"></i> FORMS <span class="label label-pressed">3</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="common-form.html">COMMON ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="validation-form.html">VALIDATION</a></li>
+                            <li><a tabindex="-1" href="form-wizard.html">WIZARD</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="interface"><i class="icon-pencil"></i> INTERFACE <span class="label label-pressed">2</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="interface.html">UI ELEMENTS</a></li>
+                            <li><a tabindex="-1" href="typography.html">TYPOGRAPHY</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li id="buttonsIcons"><a href="buttons.html"><i class="icon-tint"></i> BUTTONS & ICONS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="gridLayout"><a href="grid.html"><i class="icon-th"></i> GRID LAYOUT</a></li>
+                    <li class="divider-vertical"></li>
+                    <li id="tables"><a href="tables.html"><i class="icon-th-large"></i> TABLES</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> EXAMPLE PAGES <span class="label label-pressed">7</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="login.html">LOGIN PAGE</a></li>
+                            <li><a tabindex="-1" href="calendar.html">CALENDAR</a></li>
+                            <li><a tabindex="-1" href="404.html">PAGE 404</a></li>
+                            <li><a tabindex="-1" href="gallery.html">GALLERY</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAIL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="mail.html">Vertical View</a></li>
+                                    <li><a href="mail-horizontal.html">Horizontal View</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="#">MAPS</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="vectormaps.html">Vector Maps</a></li>
+                                    <li><a href="gmaps.html">Google Maps</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown-submenu">
+                                <a href="#">SECOND LEVEL</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li><a href="#">Second level link</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#">THIRD LEVEL</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                            <li><a href="#">Second level link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" href="timeline.html">TIMELINE</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="widgets.html" id="widgets"><i class="icon-play-circle"></i> WIDGETS</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="right-side" id="chartsGraphs"><a href="charts.html"><i class="icon-bar-chart"></i> CHARTS & GRAPHS </a></li>
+                    <li class="divider-vertical"></li>
+                </ul>
+           </div>
+        </div>
+        <!-- ==================== END OF MAIN MENU ==================== -->
+
+        <!-- ==================== DROPDOWN MENU FOR MOREOPTIONS ICON (hidden state) ==================== -->
+        <ul class="dropdown-menu" id="moreOptionsMenu">
+            <li class="dropdown-submenu">
+                <a href="#">More options</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                    <li><a href="#">Second level link</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+        </ul>
+        <!-- ==================== END OF DROPDOWN MENU ==================== -->
+
+        <!-- ==================== PAGE CONTENT ==================== -->
+        <div class="content">
+
+            <!-- ==================== TITLE LINE FOR HEADLINE ==================== -->
+            <div class="titleLine">
+                <div class="container-fluid">
+                    <div class="titleIcon"><i class="icon-font"></i></div>
+                    <ul class="titleLineHeading">
+                        <li class="heading"><h1>Typography</h1></li>
+                    </ul>
+                    <ul class="titleLineOnRight pull-right">
+                        <li>
+                            <span class="usersBar">100,235,549,222,639,335,800</span>
+                            <h2 class="cyanText">1254<span class="greyText">users</span></h2>
+                        </li>
+                        <li>
+                            <span class="visitsBar">20,35,10,80,52,34,74,99,45,68</span>
+                            <h2 class="redText">758<span class="greyText">visits</span></h2>
+                        </li>
+                        <li>
+                            <span class="ordersBar">254,159,480,531,214,984,671</span>
+                            <h2 class="greenText">3541<span class="greyText">orders</span></h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF TITLE LINE ==================== -->
+
+            <!-- ==================== BREADCRUMBS / DATETIME ==================== -->
+            <ul class="breadcrumb">
+                <li><i class="icon-home"></i><a href="index.html"> Home</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li>Interface <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">Typography</li>
+                <li class="moveDown pull-right">
+                    <span class="time"></span>
+                    <span class="date"></span>
+                </li>    
+            </ul>
+            <!-- ==================== END OF BREADCRUMBS / DATETIME ==================== -->
+
+            <!-- ==================== WIDGETS CONTAINER ==================== -->
+            <div class="container-fluid">
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="hero-unit centerize">
+                            <h1 class="separator bottom">Hello, world!</h1>
+                            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                            <p><a class="btn btn-danger btn-large">Learn more</a></p>
+                        </div>
+                    </div>  
+                </div>
+
+                <!-- ==================== ROW ==================== -->
+                <div class="row-fluid"> 
+
+                    <div class="span4">
+
+                        <!-- ==================== HEADINGS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-font"></i><h2>Headings</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF HEADINGS HEADLINE ==================== -->
+
+                        <!-- ==================== HEADINGS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h1>h1. Heading 1</h1> 
+                                <h2>h2. Heading 2</h2>
+                                <h3>h3. Heading 3</h3>
+                                <h4>h4. Heading 4</h4>
+                                <h5>h5. Heading 5</h5>
+                                <h6>h6. Heading 6</h6>  
+                            </div>
+                        </div>
+                        <!-- ==================== END OF HEADINGS FLOATING BOX ==================== --> 
+
+                        <!-- ==================== FILLED HEADINGS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-font"></i><h2>Filled Headings</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF FILLED HEADINGS HEADLINE ==================== -->
+
+                        <!-- ==================== FILLED HEADINGS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h1 class="filled">h1. Heading</h1> 
+                                <h2 class="filled success">h2. Heading Success</h2>
+                                <h3 class="filled danger">h3. Heading Danger</h3>
+                                <h4 class="filled warning">h4. Heading Warning</h4>
+                                <h5 class="filled primary">h5. Heading Primary</h5>
+                                <h6 class="filled info">h6. Heading Info</h6>  
+                            </div>
+                        </div>
+                        <!-- ==================== END OF FILLED HEADINGS FLOATING BOX ==================== --> 
+
+                        <!-- ==================== TEXT FORMAT HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-bold"></i><h2>Text Emhasis</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF TEXT FORMAT HEADLINE ==================== -->
+
+                        <!-- ==================== TEXT FORMAT FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4 class="filled">De-Emphasizing</h4>
+                                <p class="filled">
+                                  <small>This line of text is meant to be treated as fine print.</small>
+                                </p>
+                                <h4 class="filled">Bold</h4>
+                                <p class="filled">
+                                  The following snippet of text is <strong>rendered as bold text</strong>.
+                                </p>
+                                <h4 class="filled">Italics</h4>
+                                <p class="filled">
+                                  The following snippet of text is <em>rendered as italicized text</em>.
+                                </p>  
+                                <h4>Emhasis Classes</h4> 
+                                <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+                                <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
+                                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p> 
+                            </div>
+                        </div>
+                        <!-- ==================== END OF TEXT FORMAT FLOATING BOX ==================== --> 
+
+                        <!-- ==================== ABBREVIATIONS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-question"></i><h2>Abbreviations</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF ABBREVIATIONSHEADLINE ==================== -->
+
+                        <!-- ==================== ABBREVIATIONS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4 class="filled">Default Abbreviation</h4>
+                                <p class="filled">An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+                                <h4 class="filled">Little Smaller Text Abbreviation</h4></h4>
+                                <p class="filled"><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF ABBREVIATIONS FLOATING BOX ==================== --> 
+
+                        <!-- ==================== ADDRESSES HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-map-marker"></i><h2>Addresses</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF ADDRESSES HEADLINE ==================== -->
+
+                        <!-- ==================== ADDRESSES FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <address>
+                                  <strong>Twitter, Inc.</strong><br>
+                                  795 Folsom Ave, Suite 600<br>
+                                  San Francisco, CA 94107<br>
+                                  <abbr title="Phone">P:</abbr> (123) 456-7890
+                                </address>
+                                 
+                                <address>
+                                  <strong>Full Name</strong><br>
+                                  <a href="mailto:#">first.last@example.com</a>
+                                </address>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF ADDRESSES FLOATING BOX ==================== -->
+
+                        <!-- ==================== FILLED ADDRESSES HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-map-marker"></i><h2>Filled Addresses</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF FILLED ADDRESSES HEADLINE ==================== -->
+
+                        <!-- ==================== FILLED ADDRESSES FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <address class="filled">
+                                  <strong>Twitter, Inc.</strong><br>
+                                  795 Folsom Ave, Suite 600<br>
+                                  San Francisco, CA 94107<br>
+                                  <abbr title="Phone">P:</abbr> (123) 456-7890
+                                  <i class="icon-map-marker pull-right"></i>
+                                </address>
+                                 
+                                <address class="filled filled-append primary">
+                                  <strong>Full Name</strong><br>
+                                  <a href="mailto:#">first.last@example.com</a>
+                                </address>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF FILLED ADDRESSES FLOATING BOX ==================== -->
+
+                        <!-- ==================== UNORDERED LIST HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-list-ul"></i><h2>Unordered List</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF UNORDERED LIST HEADLINE ==================== -->
+
+                        <!-- ==================== UNORDERED LIST FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <ul>
+                                  <li>Lorem ipsum dolor sit amet</li>
+                                  <li>Consectetur adipiscing elit</li>
+                                  <li>Integer molestie lorem at massa</li>
+                                  <li>Facilisis in pretium nisl aliquet</li>
+                                  <li>Nulla volutpat aliquam velit
+                                    <ul>
+                                      <li>Phasellus iaculis neque</li>
+                                      <li>Purus sodales ultricies</li>
+                                      <li>Vestibulum laoreet porttitor sem</li>
+                                      <li>Ac tristique libero volutpat at</li>
+                                    </ul>
+                                  </li>
+                                  <li>Faucibus porta lacus fringilla vel</li>
+                                  <li>Aenean sit amet erat nunc</li>
+                                  <li>Eget porttitor lorem</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF UNORDERED LIST FLOATING BOX ==================== -->
+
+                        <!-- ==================== ORDERED LIST HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-list-ol"></i><h2>Ordered List</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF ORDERED LIST HEADLINE ==================== -->
+
+                        <!-- ==================== ORDERED LIST FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <ol>
+                                  <li>Lorem ipsum dolor sit amet</li>
+                                  <li>Consectetur adipiscing elit</li>
+                                  <li>Integer molestie lorem at massa</li>
+                                  <li>Facilisis in pretium nisl aliquet</li>
+                                  <li>Nulla volutpat aliquam velit</li>
+                                  <li>Faucibus porta lacus fringilla vel</li>
+                                  <li>Aenean sit amet erat nunc</li>
+                                  <li>Eget porttitor lorem</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF ORDERED LIST FLOATING BOX ==================== -->
+
+                        <!-- ==================== UNSTYLED LIST HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-list-ul"></i><h2>Unstyled List</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF UNSTYLED LIST HEADLINE ==================== -->
+
+                        <!-- ==================== UNSTYLED LIST FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <ul class="unstyled">
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetur adipiscing elit</li>
+                                    <li>Integer molestie lorem at massa</li>
+                                    <li>Facilisis in pretium nisl aliquet</li>
+                                    <li>Nulla volutpat aliquam velit
+                                      <ul>
+                                        <li>Phasellus iaculis neque</li>
+                                        <li>Purus sodales ultricies</li>
+                                        <li>Vestibulum laoreet porttitor sem</li>
+                                        <li>Ac tristique libero volutpat at</li>
+                                      </ul>
+                                    </li>
+                                    <li>Faucibus porta lacus fringilla vel</li>
+                                    <li>Aenean sit amet erat nunc</li>
+                                    <li>Eget porttitor lorem</li>
+                                  </ul>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF UNSTYLED LIST FLOATING BOX ==================== -->
+
+                    </div>
+
+                    <div class="span8">
+
+                        <!-- ==================== PARAGRAPHS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-indent-right"></i><h2>Paragraphs</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF PARAGRAPHS HEADLINE ==================== -->
+
+                        <!-- ==================== PARAGRAPHS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4>Normal Paragraph</h4>
+                                <p>
+                                    Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+                                </p>
+                                <p>
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <p>
+                                    Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                </p>
+                                <h4>Leading Paragraph</h4>
+                                <p class="lead">
+                                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+                                <p>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF PARAGRAPHS FLOATING BOX ==================== --> 
+
+                        <!-- ==================== FILLED PARAGRAPHS HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-indent-right"></i><h2>Filled Paragraphs</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF FILLED PARAGRAPHS HEADLINE ==================== -->
+
+                        <!-- ==================== FILLED PARAGRAPHS FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4 class="filled">Normal Paragraph</h4>
+                                <p class="filled">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <h4 class="filled success">Success Paragraph</h4>
+                                <p class="filled success">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <h4 class="filled danger">Danger Paragraph</h4>
+                                <p class="filled danger">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <h4 class="filled warning">Warning Paragraph</h4>
+                                <p class="filled warning">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <h4 class="filled primary">Primary Paragraph</h4>
+                                <p class="filled primary">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                                <h4 class="filled info">Info Paragraph</h4>
+                                <p class="filled info">
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF FILLED PARAGRAPHS FLOATING BOX ==================== --> 
+
+                        <!-- ==================== TEXT ALIGNMENT HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-align-center"></i><h2>Text Alignment</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF TEXT ALIGNMENT HEADLINE ==================== -->
+
+                        <!-- ==================== TEXT ALIGNMENT FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <p class="text-left">Left aligned text.</p>
+                                <p class="text-center">Center aligned text.</p>
+                                <p class="text-right">Right aligned text.</p>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF TEXT ALIGNMENT FLOATING BOX ==================== -->
+
+                        <!-- ==================== BLOCKQUOTES HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-quote-right"></i><h2>Blockquotes</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF BLOCKQUOTES HEADLINE ==================== -->
+
+                        <!-- ==================== BLOCKQUOTES FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4>Default blockquote</h4>
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                </blockquote>
+                                <h4>Blockquote with source</h4>
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                                <h4 class="text-right">Blockquote with source pulled-right</h4>
+                                <blockquote class="pull-right">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF BLOCKQUOTES FLOATING BOX ==================== -->
+
+                        <!-- ==================== FILLED BLOCKQUOTES HEADLINE ==================== -->
+                        <div class="containerHeadline">
+                            <i class="icon-quote-right"></i><h2>Filled Blockquotes</h2>
+                            <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                            <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                        </div>
+                        <!-- ==================== END OF FILLED BLOCKQUOTES HEADLINE ==================== -->
+
+                        <!-- ==================== FILLED BLOCKQUOTES FLOATING BOX ==================== -->
+                        <div class="floatingBox">
+                            <div class="container-fluid">
+                                <h4 class="filled">Default blockquote</h4>
+                                <blockquote class="filled">
+                                    <p><i class="icon-quote-left pull-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                </blockquote>
+                                <h4 class="filled success">Blockquote with source</h4>
+                                <blockquote class="filled success">
+                                    <p><i class="icon-quote-left pull-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                                <h4 class="filled danger text-right">Blockquote with source pulled-right</h4>
+                                <blockquote class="filled danger text-right">
+                                    <p><i class="icon-quote-right pull-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF FILLED BLOCKQUOTES FLOATING BOX ==================== -->
+                        
+                        <div class="row-fluid">
+
+                            <div class="span6">
+                                <!-- ==================== DESCRIPTION HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-comments"></i><h2>Description</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF DESCRIPTION HEADLINE ==================== -->
+
+                                <!-- ==================== DESCRIPTION FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <dl>
+                                            <dt>Description lists</dt>
+                                            <dd>A description list is perfect for defining terms.</dd>
+                                            <dt>Euismod</dt>
+                                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                            <dt>Malesuada porta</dt>
+                                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF DESCRIPTION FLOATING BOX ==================== -->
+
+                                <!-- ==================== FILLED DESCRIPTION HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-comments"></i><h2>Filled Description</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF FILLED DESCRIPTION HEADLINE ==================== -->
+
+                                <!-- ==================== FILLED DESCRIPTION FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <dl class="filled">
+                                            <dt>Description lists</dt>
+                                            <dd>A description list is perfect for defining terms.</dd>
+                                            <dt>Euismod</dt>
+                                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                            <dt>Malesuada porta</dt>
+                                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF FILLED DESCRIPTION FLOATING BOX ==================== -->
+
+                                <!-- ==================== INLINE LIST HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-list-ul"></i><h2>Inline List</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF INLINE LIST HEADLINE ==================== -->
+
+                                <!-- ==================== INLINE LIST FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <ul class="inline">
+                                            <li>Lorem ipsum</li>
+                                            <li>Phasellus iaculis</li>
+                                            <li>Nulla volutpat</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF INLINE LIST FLOATING BOX ==================== -->
+
+                                <!-- ==================== CHECK LIST HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-list-ul"></i><h2>Check List</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF CHECK LIST HEADLINE ==================== -->
+
+                                <!-- ==================== CHECK LIST FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <ul class="icons-ul">
+                                            <li><i class="icon-li icon-ok"></i>Lorem ipsum dolor sit amet</li>
+                                            <li><i class="icon-li icon-ok"></i>Consectetur adipiscing elit</li>
+                                            <li><i class="icon-li icon-ok"></i>Integer molestie lorem at massa</li>
+                                            <li><i class="icon-li icon-ok"></i>Facilisis in pretium nisl aliquet</li>
+                                            <li><i class="icon-li icon-ok"></i>Nulla volutpat aliquam velit
+                                              <ul class="icons-ul">
+                                                <li><i class="icon-li icon-ok"></i>Phasellus iaculis neque</li>
+                                                <li><i class="icon-li icon-ok"></i>Purus sodales ultricies</li>
+                                                <li><i class="icon-li icon-ok"></i>Vestibulum laoreet porttitor sem</li>
+                                                <li><i class="icon-li icon-ok"></i>Ac tristique libero volutpat at</li>
+                                              </ul>
+                                            </li>
+                                            <li><i class="icon-li icon-ok"></i>Faucibus porta lacus fringilla vel</li>
+                                            <li><i class="icon-li icon-ok"></i>Aenean sit amet erat nunc</li>
+                                            <li><i class="icon-li icon-ok"></i>Eget porttitor lorem</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF CHECK LIST FLOATING BOX ==================== -->
+                                
+                            </div>
+
+                        
+                            <div class="span6">
+                                <!-- ==================== HORIZONTAL DESCRIPTION HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-comments"></i><h2>Horizontal Description</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF HORIZONTAL DESCRIPTION HEADLINE ==================== -->
+
+                                <!-- ==================== HORIZONTAL DESCRIPTION FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <dl class="dl-horizontal">
+                                            <dt>Description lists</dt>
+                                            <dd>A description list is perfect for defining terms.</dd>
+                                            <dt>Euismod</dt>
+                                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                            <dt>Malesuada porta</dt>
+                                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF HORIZONTAL DESCRIPTION FLOATING BOX ==================== -->
+
+                                <!-- ==================== FILLED HORIZONTAL DESCRIPTION HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-comments"></i><h2>Filled Horizontal Description</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF FILLED HORIZONTAL DESCRIPTION HEADLINE ==================== -->
+
+                                <!-- ==================== FILLED HORIZONTAL DESCRIPTION FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <dl class="dl-horizontal filled success">
+                                            <dt>Description lists</dt>
+                                            <dd>A description list is perfect for defining terms.</dd>
+                                            <dt>Euismod</dt>
+                                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                            <dt>Malesuada porta</dt>
+                                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF FILLED HORIZONTAL DESCRIPTION FLOATING BOX ==================== -->
+
+                                <!-- ==================== CODE HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-code"></i><h2>Code</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF CODEHEADLINE ==================== -->
+
+                                <!-- ==================== CODE FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <h4 class="filled">Inline Code</h4>
+                                        <p class="filled">For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
+                                        <h4 class="filled">Block Code</h4>
+                                        <div class="filled"><pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre></div>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF CODE FLOATING BOX ==================== -->
+
+                                <!-- ==================== CROSS LIST HEADLINE ==================== -->
+                                <div class="containerHeadline">
+                                    <i class="icon-list-ul"></i><h2>Cross List</h2>
+                                    <div class="controlButton pull-right"><i class="icon-remove removeElement"></i></div>
+                                    <div class="controlButton pull-right"><i class="icon-caret-down minimizeElement"></i></div>
+                                </div>
+                                <!-- ==================== END OF CROSS LIST HEADLINE ==================== -->
+
+                                <!-- ==================== CROSS LIST FLOATING BOX ==================== -->
+                                <div class="floatingBox">
+                                    <div class="container-fluid">
+                                        <ul class="icons-ul">
+                                            <li><i class="icon-li icon-remove"></i>Lorem ipsum dolor sit amet</li>
+                                            <li><i class="icon-li icon-remove"></i>Consectetur adipiscing elit</li>
+                                            <li><i class="icon-li icon-remove"></i>Integer molestie lorem at massa</li>
+                                            <li><i class="icon-li icon-remove"></i>Facilisis in pretium nisl aliquet</li>
+                                            <li><i class="icon-li icon-remove"></i>Nulla volutpat aliquam velit
+                                              <ul class="icons-ul">
+                                                <li><i class="icon-li icon-remove"></i>Phasellus iaculis neque</li>
+                                                <li><i class="icon-li icon-remove"></i>Purus sodales ultricies</li>
+                                                <li><i class="icon-li icon-remove"></i>Vestibulum laoreet porttitor sem</li>
+                                                <li><i class="icon-li icon-remove"></i>Ac tristique libero volutpat at</li>
+                                              </ul>
+                                            </li>
+                                            <li><i class="icon-li icon-remove"></i>Faucibus porta lacus fringilla vel</li>
+                                            <li><i class="icon-li icon-remove"></i>Aenean sit amet erat nunc</li>
+                                            <li><i class="icon-li icon-remove"></i>Eget porttitor lorem</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ==================== END OF CROSS LIST FLOATING BOX ==================== -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- ==================== END OF WIDGETS CONTAINER ==================== -->
+        </div>
+        <!-- ==================== END OF PAGE CONTENT ==================== -->
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
+        <script src="js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/thekamarel.min.js"></script>                            <!-- main project js file -->
+
+        <script>
+
+        $(function () {
+
+
+        })
+
+        </script>
+    </body>
+</html>
