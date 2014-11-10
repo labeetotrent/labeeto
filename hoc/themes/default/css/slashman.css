@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Proxima Nova SemiBold";
+    src: url('../fonts/proximanova-semibold-webfont.ttf');
+}
+@font-face {
+    font-family: "Proxima Nova Bold";
+    src: url('../fonts/proximanova-bold-webfont.ttf');
+}
+@font-face {
+    font-family: "Proxima Nova Regular";
+    src: url('../fonts/ProximaNova-Regular.ttf');
+}
+
+body,
+.label-text {
+    font-family: "Proxima Nova Bold" !important;
+}
+
+.label-text {
+    font-size: 14px;
+    font-style: normal;
+    width: 100%;
+    color: #a4a4a4;
+    margin-bottom: 10px;
+}
+
+#wrapper {
+    background-color: white;
+}
+
+.container {
+    background-color: #f1f1f1;
+}
+.settings-header-blue {
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #2d3c46;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 14pt;
+    line-height: 60px;
+    color: #74808f;
+    text-shadow: 1px 1px black;
+    font-family: "Proxima Nova SemiBold";
+    margin-top: 100px;
+}
+
+ul.settings-categories {
+    background-color: #f8f7f7;
+    padding: 0;
+}
+ul.settings-categories > li {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    height: 50px;
+    list-style: none;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 0;
+}
+ul.settings-categories > li.active {
+    background-color: #f0eeee;
+}
+
+ul.settings-categories > li:hover {
+    background-color: #f0eeee;
+}
+
+ul.settings-categories > li > a {
+    display: block;
+    font-size: 12.23px;
+    font-family: "Proxima Nova SemiBold";
+    color: rgb(49, 53, 65);
+    margin: 0 auto;
+}
+
+div.setting-detail {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: white;
+}
+
+button.btn-save-st,
+button.btn-cancel-st {
+    height: 30px;
+    border: none;
+    color: #ffffff;
+    font: normal 18px/normal Proxima Nova Bold;
+    font-family: "Proxima Nova Bold";
+    text-transform: none;
+}
+
+button.btn-save-st {
+    background: url('../images/ok-btn-bg.png') repeat-x !important;
+}
+
+button.btn-cancel-st {
+    background: url('../images/cancel-btn-bg.png') repeat-x !important;
+    margin-left: 0;
+}
+.contennt-btn-form {
+    float: right;
+}
+.btn-row > div {
+    padding-left: 0;
+    padding-right: 0;
+}

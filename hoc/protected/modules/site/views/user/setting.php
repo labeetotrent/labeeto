@@ -2,21 +2,23 @@
     <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>-->
 <div class="content-main-setting">
-    
-    <div class="menu-nav-setting">
-            <ul style="float: right;">
-                <li class="settings-icon">Settings</li>
-                <li class="li-GeneralSettings"><a href="#" class="link-GeneralSettings" style="border-bottom: 3px solid #5dc1ea"><?php echo Yii::t('global', 'GENERAL') ?></a>
-                <li class="li-SearchReferences"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
-                <li class="li-Notifications"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
-                <li class="li-Blocklist"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
-            </ul>
+
+    <div class="menu-nav-setting col-md-12">
+        <div class="col-md-12 settings-header-blue text-center">
+            SETTINGS
         </div>
-    <div class="settings-header">
-        <div style="height: 700px;">
+        <ul class="settings-categories col-md-12">
+            <li class="li-GeneralSettings col-md-3 active"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'GENERAL') ?></a>
+            <li class="li-SearchReferences col-md-3"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
+            <li class="li-Notifications col-md-3"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
+            <li class="li-Blocklist col-md-3"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
+        </ul>
+    </div>
+    <div class="settings-header col-md-12">
+        <div>
         <!-- General Settings -->
-        <div id="GeneralSettings" style="display: block;">
-            <div class="setting-header">General Settings</div>
+        <div id="GeneralSettings">
+            <!--<div class="setting-header">General Settings</div>-->
             <div class="setting-detail">
                 <form role="form" class="form-setting">
                     <div class="form-group">
@@ -80,7 +82,7 @@
                         <input type="hidden" id="ss_zipcode" value="<?php echo $this->user->zipcode ?>" />
                         <span class="check-block" id="ok_Zipcode" style="display: none;"></span>
                         <p style="color: red; font-size: 12px; margin-top: 15px; margin-left: 20px; display: none;" id="error_Zipcode">Zip Code must is number</p>
-                      
+
                       </div>
                       <div class="form-group">
                         <label for="CitySuburb" class="label-text">City/Suburb</label>
@@ -88,9 +90,13 @@
                         <input type="hidden" id="ss_address" value="<?php echo $this->user->address ?>" />
                         <div id="maps-test-setting"></div>
                       </div>
-                      <div style="padding: 20px 0px;">
-                            <button type="submit" class="btn btn-default btn-save-st" id="save_general_settings">SAVE</button>
-                            <button class="btn btn-default btn-cancel-st"  >CANCEL</button>
+                      <div class="form-group col-md-offset-5 col-md-7 pull-right btn-row">
+                          <div class="col-md-5">
+                              <button type="submit" class="btn btn-default btn-save-st col-md-12" id="save_general_settings">Save</button>
+                          </div>
+                          <div class="col-md-5">
+                              <button class="btn btn-default btn-cancel-st col-md-12" style="margin-left: 5px;">Cancel</button>
+                          </div>
                       </div>
                 </form>
             </div>
@@ -104,7 +110,7 @@
                 $arr = explode(",",$report->blocked_user);
                 $arr = array_slice($arr, 0, -1);
         }*/ ?>
-            <div class="setting-header">Blocklist</div>
+            <!--<div class="setting-header">Blocklist</div>-->
             <div class="setting-detail">
                 <div class="content-blocklist">
                     <span class="block">Block Users</span>
@@ -167,7 +173,7 @@
         
         <!-- Notifications -->
         <div id="Notifications" style="display: none;">
-            <div class="setting-header">Notifications</div>
+            <!--<div class="setting-header">Notifications</div>-->
             <div class="setting-detail">
                 <div class="content-notification">
                     <form class="form-horizontal" role="form">
@@ -216,8 +222,8 @@
                         </div>
                       </div>
                       <div class="contennt-btn-form" style="padding-top: 100px;">
-                        <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
-                        <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                        <button type="submit" class="btn btn-default btn-save-st">Save</button>
+                        <button type="submit" class="btn btn-default btn-cancel-st">Cancel</button>
                       </div>
                     </form>
                 </div>
@@ -227,7 +233,7 @@
     
         <!-- SearchReferences -->
         <div id="SearchReferences" style="display: none;">
-            <div class="setting-header">Search References</div>
+            <!--<div class="setting-header">Search References</div>-->
             <div class="setting-detail">
                 <div class="content-references row">
                     <form action="#">
@@ -278,8 +284,8 @@
                         </div>
                         
                         <div class="contennt-btn-form">
-                            <button type="submit" class="btn btn-default btn-save-st">SAVE</button>
-                            <button type="submit" class="btn btn-default btn-cancel-st">CANCEL</button>
+                            <button type="submit" class="btn btn-default btn-save-st">Save</button>
+                            <button type="submit" class="btn btn-default btn-cancel-st">Cancel</button>
                         </div>
                     </form>
                 </div>

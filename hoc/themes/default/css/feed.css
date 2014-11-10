@@ -169,7 +169,7 @@
     fieldset, form, label, legend,
     table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
     border: 0;
     font-size: 100%;
     font: inherit;
@@ -2144,14 +2144,14 @@ input[type="range"]::-ms-fill-lower {
     float: right;
     background: #2d3c46;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46'); /* IE */
-    border-radius: 5px 5px 0px 0px;
+    /*border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;*/
 }
-.menu-nav-setting ul li{
+/*.menu-nav-setting ul li{
     list-style: none;
     float: left;
-    /*padding: 17px 31px 0px;*/
+    padding: 17px 31px 0px;
     border-left: 1px solid #1f2a32;
     height: 50px;
 }
@@ -2162,21 +2162,21 @@ input[type="range"]::-ms-fill-lower {
     padding: 17px 31px 14px;
     border-bottom: 3px solid transparent;
     float: left;
-}
+}*/
 .menu-nav-setting ul li a:hover{
     text-decoration: none;
 }
-.menu-nav-setting ul li:first-child{
+/*.menu-nav-setting ul li:first-child{
     text-transform: uppercase;
     font: normal 18px/normal Helvetica Neue LTPro Md;
     color: #e2d4c0;
-     background: url('../images/setting-2.png') no-repeat 10px 15px;
+    background: url('../images/setting-2.png') no-repeat 10px 15px;
     border-left: none !important;
     float: left !important;
     padding-right: 70px;
     margin-top: -3px;
     text-indent: 10px;
-}
+}*/
 
 .label-add-media{
     cursor: pointer;
@@ -2218,12 +2218,12 @@ input[type="range"]::-ms-fill-lower {
     padding-left: 20px;
     padding-top: 10px;
 }
-.label-text{
+/*.label-text{
     font: normal 14px/normal Proxima Nova Bold;
     color: #7b7777;
     padding-bottom: 5px;
     width: 100%;
-}
+}*/
 .btn-save-st{
     background: url('../images/save.png') no-repeat !important;
     color: #ffffff !important;
@@ -2233,14 +2233,14 @@ input[type="range"]::-ms-fill-lower {
     margin-left: 5px;
     color: #ffffff !important;
 }
-.btn-save-st,
+/*.btn-save-st,
 .btn-cancel-st{
     width: 125px;
     height: 45px;
     border: none;
     color: #ffffff;
     font: normal 18px/normal Proxima Nova Bold;
-}
+}*/
 .btn-save-st:hover,
 .btn-cancel-st:hover{
     color: #ffffff;
