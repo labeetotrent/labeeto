@@ -17,6 +17,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/validationEngine.jquery.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/rangejs/rangeslider.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/chat.css" />
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/blue/jplayer.blue.monday.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman.css" rel="stylesheet">
@@ -34,6 +35,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/jPlayer/jquery.jplayer.min.js">
     <script type="text/javascript">jwplayer.key="YLh0EpQST8/bQUTi3GDUFWxfaIaeKorWSL5ihzmIxDSdoJDoz9fLSJZrt9g=";</script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <?php Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl . '/js/chat.js' ); ?>
     <script type="text/javascript">
     function ratings( score, id){    
          $.get('/user/saveRating?score='+score+'&id='+id, function(html) {
@@ -66,6 +68,25 @@
     <footer class="clearfix">
         <?php echo $this->renderPartial('../elements/footer-feed') ?>
     </footer>
+    <!-- Modal WantToChat -->
+    <div class="modal fade" id="WantToChat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content special-border">
+                <div class="modal-header header-report">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title request-title">Do you wish to chat with this person? </h4>
+
+                </div>
+                <div class="modal-footer footer-report">
+                    <div class="avatar-model">
+                        <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
+                        <span class="request-romeo username-chat-system"></span>
+                    </div>
+                    <a type="button" class="btn btn-primary my-report" data-id="">Send Chat Request</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/feed.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/profile.js"></script>
@@ -153,13 +174,22 @@
 
         });
 
-        function updateCheckStatus()
+       function updateCheckStatus()
         {
             $.get('/user/checkStatusOnline', function() {
 
             });
         }
         setInterval("updateCheckStatus()", 10000);
+
+
+        $('.my-report').click(function() {
+            $('#WantToChat').modal('hide');
+            var moderator = $(this).attr("data-id");
+            chatWith(moderator, '');
+            return false;
+        });
+
 
         $('textarea').placeholder();
         <?php if(!Yii::app()->user->isGuest){ ?>

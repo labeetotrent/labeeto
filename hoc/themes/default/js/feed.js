@@ -378,21 +378,38 @@ $(document).ready(function(){
         showImageReport(avatar);
     })
     
-    
+    /** Chat System **/
+    $('.chat-system').live('click', function(){
+        var infor = $(this).attr("data-id");
+        var infor_common   = infor.split('--');
+        $('.my-report').attr('data-id',infor_common[1]);
+        $('.username-chat-system').text(infor_common[1]);
+        showImageChatSystem(infor_common[2]);
+    });
+
+    function showImageChatSystem(name_image){
+        if (name_image == '' || name_image == 'undefined' ){
+            $('#WantToChat img').attr('src', '/themes/default/images/no-avatar.png');
+        }else{
+            $('#WantToChat img').attr('src', '');
+            $('#WantToChat img').attr('src', '/uploads/avatar/'+ name_image);
+        }
+    }
+
     /**Send Message**/
     $('.message').live('click' ,function(){
         var id = $(this).attr("data-id");
         var avatar = $('#avatar_hidien_'+id).val();
         var username = $('#name_hidien_'+id).val();
         $('#SendaMessage').val(id);
-        $('#txt_username').text(username);
+        $('.user-kaka').text(username);
         $('#SendaMessage .agreed input').addClass('checked_'+id);
         $('#SendaMessage textarea').val('');
         showImageSendMessage(avatar);
     })
     
     function showImageReport(name_image){
-        if ($('#ReportUser img').attr('src') == '' || $('#ReportUser img').attr('src') == 'undefined' ){
+        if ( name_image == '' || name_image == 'undefined' ){
                 $('#ReportUser img').attr('src', '/themes/default/images/no-avatar.png');
         }else{
             $('#ReportUser img').attr('src', '');
@@ -401,7 +418,7 @@ $(document).ready(function(){
      }
      
      function showImageSendMessage(name_image){
-        if ($('#SendaMessage img').attr('src') == '' || $('#ReportUser img').attr('src') == 'undefined' ){
+        if ( name_image == '' || name_image == 'undefined' ){
                 $('#SendaMessage img').attr('src', '/themes/default/images/no-avatar.png');
         }else{
             $('#SendaMessage img').attr('src', '');

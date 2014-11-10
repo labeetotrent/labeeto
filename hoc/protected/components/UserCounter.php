@@ -17,15 +17,11 @@ class UserCounter extends CComponent{
     	$time = time(); 	//We assign the current time to the variable $time    	
     	$time_limit = $time-600;	//We give the session only 10 minutes if it exists
         
-        if (!Yii::app()->user->isGuest && Yii::app()->user->role == 'mod'){
+        if (!Yii::app()->user->isGuest ){
             $num = Yii::app()->db->createCommand("SELECT COUNT(*) c FROM online_visitors WHERE session_id='{$session_id}' LIMIT 1")->queryScalar();
             
             if($num != 1){
-                $session = Yii::app()->Tokbox->create_session();
-                $sessionId = $session->getSessionId();
-                $token = Yii::app()->Tokbox->generate_token($sessionId, 'moderator');
-                                                            
-        		$sql = "INSERT INTO online_visitors VALUES('{$session_id}','{$time}', '".Yii::app()->user->id."', '".$sessionId."', '".$token."')";            
+        		$sql = "INSERT INTO online_visitors(session_id,time,user_id) VALUES('{$session_id}','{$time}', ".Yii::app()->user->id.")";
         	}else{
         		$sql = "UPDATE online_visitors SET time='{$time}' WHERE session_id='{$session_id}'";
         	}

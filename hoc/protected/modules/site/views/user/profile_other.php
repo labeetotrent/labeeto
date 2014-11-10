@@ -386,9 +386,9 @@
                         </div>
                         <div class="vote">
                             <ul>
-                                <li class="upvote" id="upvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="upvote" id="upvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></span></li>
                                 <li><span class="change_vote_<?php echo $value->id; ?>"><?php echo Achievements::model()->getCore($value->id); ?></span></li>
-                                <li class="downvote" id="downvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="downvote" id="downvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></span></li>
                             </ul>
                         </div>
                     </div>

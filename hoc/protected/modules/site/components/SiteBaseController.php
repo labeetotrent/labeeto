@@ -23,6 +23,7 @@ class SiteBaseController extends BaseController {
 		Yii::app()->clientScript->registerMetaTag( 'all', 'robots' );
 		Yii::app()->clientScript->registerMetaTag( Yii::app()->language, 'language', 'content-language' );
 		/* Run init */
+        Yii::app()->counter->refresh();
 		parent::init();
 	}
 

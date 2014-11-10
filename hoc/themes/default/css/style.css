@@ -208,14 +208,14 @@ h2.tag-line{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
 }
-.username-input{
+#signup-form .username-input{
     background: #ffffff url(../images/icon_user.png) no-repeat 12px center;
 }
-.email-input{
+#signup-form .email-input{
     background: #ffffff url(../images/icon_email.png) no-repeat 12px center;
         
 }
-.password-input{
+#signup-form .password-input{
     background: #ffffff url(../images/icon_password.png) no-repeat 12px center;
 }
 .inner-fancybox .username-input{

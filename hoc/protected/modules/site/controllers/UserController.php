@@ -1070,7 +1070,7 @@ class UserController extends SiteBaseController {
                     $video->description = $_POST['description'];
                     $video->is_public = 0;
                     $video->is_approval = 1;
-                    $video->date = date('Y-m-d h:s');
+                    $video->date = date('Y:m:d H:m:s');
                     $video->user_id = Yii::app()->user->id;
                     $video->save();
                 }
@@ -1123,31 +1123,41 @@ class UserController extends SiteBaseController {
         $achievements = Achievements::model()->findByPk($id);
         if($achievements){
             if($type == 1){
-                $vote = new Vote();
-                $vote->user_id = Yii::app()->user->id;
-                $vote->achievements_id = $id;
-                $vote->down_vote = 0;
-                $vote->up_vote = 1;
-                $vote->created = date('Y:m:d H:h:s');
-                $vote->updated = date('Y:m:d H:h:s');
-                $vote->ip = $_SERVER['REMOTE_ADDR'];
-                $vote->save();
-                $final_core = Achievements::model()->getCore($id);
-                Achievements::model()->updateByPk($achievements->id, array('vote'=>$final_core));
-                echo $final_core;
+                $check = Vote::model()->findByAttributes(array('user_id'=>Yii::app()->user->id, 'achievements_id'=>$id));
+                if($check == NULL){
+                    $vote = new Vote();
+                    $vote->user_id = Yii::app()->user->id;
+                    $vote->achievements_id = $id;
+                    $vote->down_vote = 0;
+                    $vote->up_vote = 1;
+                    $vote->created = date('Y:m:d H:m:s');
+                    $vote->updated = date('Y:m:d H:m:s');
+                    $vote->ip = $_SERVER['REMOTE_ADDR'];
+                    $vote->save();
+                    $final_core = Achievements::model()->getCore($id);
+                    Achievements::model()->updateByPk($achievements->id, array('vote'=>$final_core));
+                    echo $final_core;
+                }else{
+                    echo 0;
+                }
             }else{
-                $vote = new Vote();
-                $vote->user_id = Yii::app()->user->id;
-                $vote->achievements_id = $id;
-                $vote->down_vote = 1;
-                $vote->up_vote = 0;
-                $vote->created = date('Y:m:d H:h:s');
-                $vote->updated = date('Y:m:d H:h:s');
-                $vote->ip = $_SERVER['REMOTE_ADDR'];
-                $vote->save();
-                $final_core = Achievements::model()->getCore($id);
-                Achievements::model()->updateByPk($achievements->id, array('vote'=>$final_core));
-                echo $final_core;
+                $check = Vote::model()->findByAttributes(array('user_id'=>Yii::app()->user->id, 'achievements_id'=>$id));
+                if($check == NULL){
+                    $vote = new Vote();
+                    $vote->user_id = Yii::app()->user->id;
+                    $vote->achievements_id = $id;
+                    $vote->down_vote = 1;
+                    $vote->up_vote = 0;
+                    $vote->created = date('Y:m:d H:m:s');
+                    $vote->updated = date('Y:m:d H:m:s');
+                    $vote->ip = $_SERVER['REMOTE_ADDR'];
+                    $vote->save();
+                    $final_core = Achievements::model()->getCore($id);
+                    Achievements::model()->updateByPk($achievements->id, array('vote'=>$final_core));
+                    echo $final_core;
+                }else{
+                    echo 0;
+                }
             }
         }else{
             echo 0;
@@ -1269,5 +1279,15 @@ class UserController extends SiteBaseController {
             echo 1;
         else
             echo 0;
+    }
+    
+    public function actionAddComment(){
+        $comment = new AchievementComments();
+        $comment->achievement_id = $_GET['achievement_id'];
+        $comment->comments = $_GET['comments'];
+        $comment->user_id = Yii::app()->user->id;
+        $comment->created = date('Y:m:d H:m:s');
+        $comment->ip = $_SERVER['REMOTE_ADDR'];
+        $comment->save();
     }
 }

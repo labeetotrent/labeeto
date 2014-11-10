@@ -5,8 +5,8 @@
  *
  * The followings are the available columns in table 'chat':
  * @property integer $id
- * @property integer $to
- * @property integer $from
+ * @property string $user_to
+ * @property string $user_from
  * @property string $message
  * @property integer $is_read
  * @property string $created
@@ -45,8 +45,9 @@ class Chat extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('to, from', 'required'),
-			array('to, from, is_read', 'numerical', 'integerOnly'=>true),
+            array('user_to, user_from', 'required'),
+			array('is_read', 'numerical', 'integerOnly'=>true),
+            array('user_to, user_from', 'length', 'max'=>100),
 			array('message, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -72,12 +73,12 @@ class Chat extends CActiveRecord
 	{
 		return array(
 			'id' => Yii::t('global', 'ID'),
-			'to' => Yii::t('global', 'To'),
-			'from' => Yii::t('global', 'From'),
-			'message' => Yii::t('global', 'Message'),
-			'is_read' => Yii::t('global', 'Is Read'),
-			'created' => Yii::t('global', 'Created'),
-			'updated' => Yii::t('global', 'Updated'),
+            'user_to'  => Yii::t('global','User To'),
+            'user_from'=> Yii::t('global','User From'),
+			'message'  => Yii::t('global', 'Message'),
+			'is_read'  => Yii::t('global', 'Is Read'),
+			'created'  => Yii::t('global', 'Created'),
+			'updated'  => Yii::t('global', 'Updated'),
 		);
 	}
 
@@ -93,8 +94,8 @@ class Chat extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('t.id',$this->id);
-		$criteria->compare('t.to',$this->to);
-		$criteria->compare('t.from',$this->from);
+        $criteria->compare('user_to',$this->user_to,true);
+        $criteria->compare('user_from',$this->user_from,true);
 		$criteria->compare('message',$this->message,true);
 		$criteria->compare('is_read',$this->is_read);
         if ($this->created)
@@ -126,6 +127,9 @@ class Chat extends CActiveRecord
         if( $this->is_read != self::STATUS_READ )
             $name = '<b>'.$name.'</b>';
         return $name;
+    }
+    function getUsername(){
+        return Yii::app()->user->username;
     }
 
 }

@@ -393,25 +393,7 @@
   </div>
 </div>
 
-<!-- Modal WantToChat -->
-<div class="modal fade" id="WantToChat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content special-border">
-      <div class="modal-header header-report">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title request-title">Do you wish to chat with this person? </h4>
-        
-      </div>
-      <div class="modal-footer footer-report">
-        <div class="avatar-model">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-            <span class="request-romeo">Romeo</span>
-        </div>
-        <a type="button" class="btn btn-primary my-report">Send Chat Request</a>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Modal Save Search -->
 <div class="modal fade" id="save_search_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

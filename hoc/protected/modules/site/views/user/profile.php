@@ -496,6 +496,7 @@
                         <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
                             <div class="crycle-img">
                                 <h2 class="h2-name">
+                                    <?php error_reporting(0);?>
                                     <a href="/user/detail/<?php echo $model->id; ?>"><?php echo $model->username ?></a>
                                     <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
                                     <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
@@ -508,9 +509,9 @@
                         </div>
                         <div class="vote">
                             <ul>
-                                <li class="upvote" id="upvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="upvote" id="upvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></span></li>
                                 <li><span class="change_vote_<?php echo $value->id; ?>"><?php echo Achievements::model()->getCore($value->id); ?></span></li>
-                                <li class="downvote" id="downvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></li>
+                                <li><span class="downvote" id="downvote_<?php echo $value->id; ?>" data-id=<?php echo $value->id; ?>></span></li>
                             </ul>
                         </div>
                     </div>
