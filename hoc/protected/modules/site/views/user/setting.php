@@ -388,7 +388,11 @@
         $("#mixedContent").smoothDivScroll({
             autoScrollingMode: "onStart",
             autoScrollingStep: 1,
-            manualContinuousScrolling: true
+            manualContinuousScrolling: true,
+            hiddenOnStart: false
+        });
+        $("#mixedContent .contentBox").on('hover', function(){
+            $("#mixedContent").smoothDivScroll("stopAutoScrolling");
         });
     });
 </script>

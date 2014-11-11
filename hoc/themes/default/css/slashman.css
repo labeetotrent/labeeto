@@ -213,8 +213,9 @@ input[type="radio"]:checked + label
 }
 #mixedContent {
     width: 100%;
-    height: auto;
+    height: 120px;
     position: relative;
+    overflow-y: hidden;
 }
 
 #mixedContent .contentBox {
@@ -224,6 +225,7 @@ input[type="radio"]:checked + label
     display: block;
     padding: 10px;
     margin: 0px 5px;
+    margin-bottom: 200px;
     /* If you don't want the images in the scroller to be selectable, try the following
        block of code. It's just a nice feature that prevent the images from
        accidentally becoming selected/inverted when the user interacts with the scroller. */
@@ -237,6 +239,7 @@ input[type="radio"]:checked + label
 
 #mixedContent .contentBox img {
     margin-bottom: 10px;
+    cursor: pointer;
 }
 div.featured-scroll-header {
     font-size: 11pt;
@@ -249,11 +252,13 @@ p.f-nick {
     font-family: "HelveticaNueveLtPro Bd";
     font-size: 15px;
     color: #4d5a63;
+    cursor: pointer;
 }
 p.f-data {
     font-family: "HelveticaNueveLtPro Roman";
     font-size: 12px;
     color: #a39c9c;
+    cursor: pointer;
 }
 .input-text {
     width: 560px;
