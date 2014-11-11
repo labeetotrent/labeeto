@@ -255,3 +255,6 @@ p.f-data {
     font-size: 12px;
     color: #a39c9c;
 }
+.input-text {
+    width: 560px;
+}
