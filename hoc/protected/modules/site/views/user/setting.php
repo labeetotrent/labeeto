@@ -3,6 +3,9 @@
 </div>-->
 <div class="content-main-setting">
 <div class="scroll-container">
+    <div class="col-md-12 text-center featured-scroll-header">
+        Featured Users
+    </div>
     <div id="mixedContent">
         <div class="contentBox">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>

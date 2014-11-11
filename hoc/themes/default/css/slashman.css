@@ -213,7 +213,7 @@ input[type="radio"]:checked + label
 }
 #mixedContent {
     width: 100%;
-    height: 100px;
+    height: auto;
     position: relative;
 }
 
@@ -238,7 +238,13 @@ input[type="radio"]:checked + label
 #mixedContent .contentBox img {
     margin-bottom: 10px;
 }
-
+div.featured-scroll-header {
+    font-size: 11pt;
+    font-family: "Proxima Nova SemiBold";
+    color: rgb(49, 53, 65);
+    text-transform: uppercase;
+    padding: 10px 0;
+}
 p.f-nick {
     font-family: "HelveticaNueveLtPro Bd";
     font-size: 15px;
