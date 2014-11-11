@@ -2,7 +2,55 @@
     <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
 </div>-->
 <div class="content-main-setting">
-
+<div class="scroll-container">
+    <div id="mixedContent">
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@AGuyWithAPrettyLongNameSoLoooongName</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">LOOOoOOOOOOOOOOOOOOONG DATA</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+        <div class="contentBox">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+            <p class="f-nick">@BrenWintonBren</p>
+            <p class="f-data">38, Tules, MI</p>
+        </div>
+    </div>
+</div>
 <div class="menu-nav-setting col-md-12">
     <div class="col-md-12 settings-header-blue text-center">
         SETTINGS
@@ -221,9 +269,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="contennt-btn-form" style="padding-top: 100px;">
-                    <button type="submit" class="btn btn-default btn-save-st">Save</button>
-                    <button type="submit" class="btn btn-default btn-cancel-st">Cancel</button>
+                <div class="form-group col-md-offset-5 col-md-7 pull-right btn-row">
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default btn-save-st col-md-12" id="save_general_settings">Save</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button class="btn btn-default btn-cancel-st col-md-12" style="margin-left: 5px;">Cancel</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -237,19 +289,48 @@
     <div class="setting-detail">
         <div class="content-references row">
             <form action="#">
-                <div>
+                <div class="col-md-12 gender-block">
                     <label class="col-md-12 label-gender">I am a</label>
-                    <label class="radio-inline special-label">
+                    <select class="form-control select-gender" id="days">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    <!--<label class="radio-inline special-label">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Male
                     </label>
                     <label class="radio-inline special-label">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Famale
-                    </label>
+                    </label>-->
+
                 </div>
 
-                <div style="margin-top: 40px;">
+                <div class="col-md-12 who-is-block">
                     <label class="col-md-12 label-gender">Who is</label>
-                    <label class="radio-inline special-label">
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        <label for="optionsRadios1">
+                            Friendship
+                        </label>
+                    </div>
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <label for="optionsRadios2">
+                            Something serious
+                        </label>
+                    </div>
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                        <label for="optionsRadios3">
+                            Casual
+                        </label>
+                    </div>
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+                        <label for="optionsRadios4">
+                            Long term
+                        </label>
+                    </div>
+                    <!--<label class="radio-inline special-label">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Straight
                     </label>
                     <label class="radio-inline special-label">
@@ -257,40 +338,57 @@
                     </label>
                     <label class="radio-inline special-label">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Bi
-                    </label>
+                    </label>-->
                 </div>
 
-                <div style="margin-top: 40px;">
-                    <label class="col-md-12 label-gender">I am looking for</label>
-                    <label class="radio-inline special-label">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Friendship
+                <div class="col-md-12 interested-block">
+                    <label class="col-md-12 label-gender">Im interested in training partner</label>
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios1" id="optionsRadios11" value="option1" checked>
+                        <label for="optionsRadios1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio col-md-12">
+                        <input type="radio" name="optionsRadios1" id="optionsRadios22" value="option2">
+                        <label for="optionsRadios2">
+                            No
+                        </label>
+                    </div>
+                    <!--<label class="radio-inline special-label">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="radio-inl"> Straight
                     </label>
                     <label class="radio-inline special-label">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Something Serious
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="radio-inl"> Gay
                     </label>
                     <label class="radio-inline special-label">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Casual
-                    </label>
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" class="radio-inl"> Bi
+                    </label>-->
                 </div>
 
-                <div style="margin-top: 40px;">
-                    <label class="col-md-12 label-gender">I am interested for a training partner</label>
-                    <label class="radio-inline yes-no">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin: 0;height: 20px; width: 30px; padding-left: 10px;"> Yes
-                    </label>
-                    <label class="radio-inline yes-no" style="padding-left: 30px;" >
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="margin: 0;height: 20px; width: 30px; padding-left: 10px;"> No
-                    </label>
-                </div>
-
-                <div class="contennt-btn-form">
-                    <button type="submit" class="btn btn-default btn-save-st">Save</button>
-                    <button type="submit" class="btn btn-default btn-cancel-st">Cancel</button>
+                <div class="form-group col-md-offset-5 col-md-7 pull-right btn-row">
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default btn-save-st col-md-12" id="save_general_settings">Save</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button class="btn btn-default btn-cancel-st col-md-12" style="margin-left: 5px;">Cancel</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    // Initialize the plugin with no custom options
+    $(document).ready(function() {
+        $("#mixedContent").smoothDivScroll({
+            autoScrollingMode: "onStart",
+            autoScrollingStep: 1,
+            manualContinuousScrolling: true
+        });
+    });
+</script>
 <!--End Search References--!>
     </div>
     </div>

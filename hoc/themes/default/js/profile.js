@@ -362,12 +362,10 @@ $(document).ready(function(){
                     /*******Menu Setting*******/
 
     $('.link-GeneralSettings').click(function(){
-        $('.li-GeneralSettings a').css('background', '#f0eeee');
-        $('.li-GeneralSettings a').css('width', '230px');
-        $('.li-GeneralSettings a').css('height', '42px');
-        $('.li-SearchReferences a').css('background', 'none');
-        $('.li-Notifications a').css('background', 'none');
-        $('.li-Blocklist a').css('background', 'none');
+        $('.li-GeneralSettings').addClass('active');
+        $('.li-SearchReferences').removeClass('active');
+        $('.li-Notifications').removeClass('active');
+        $('.li-Blocklist').removeClass('active');
         $('#SearchReferences').hide();
         $('#Notifications').hide();
         $('#Blocklist').hide();
@@ -376,12 +374,10 @@ $(document).ready(function(){
     });
     
     $('.link-SearchReferences').click(function(){
-        $('.li-SearchReferences a').css('background', '#f0eeee');
-        $('.li-SearchReferences a').css('width', '230px');
-        $('.li-SearchReferences a').css('height', '42px');
-        $('.li-GeneralSettings a').css('background', 'none');
-        $('.li-Notifications a').css('background', 'none');
-        $('.li-Blocklist a').css('background', 'none');
+        $('.li-SearchReferences').addClass('active');
+        $('.li-GeneralSettings').removeClass('active');
+        $('.li-Notifications').removeClass('active');
+        $('.li-Blocklist').removeClass('active');
         $('#GeneralSettings').hide();
         $('#Notifications').hide();
         $('#Blocklist').hide();
@@ -390,12 +386,10 @@ $(document).ready(function(){
     });
     
     $('.link-Notifications').click(function(){
-        $('.li-Notifications a').css('background', '#f0eeee');
-        $('.li-Notifications a').css('width', '230px');
-        $('.li-Notifications a').css('height', '42px');
-        $('.li-SearchReferences a').css('background', 'none');
-        $('.li-GeneralSettings a').css('background', 'none');
-        $('.li-Blocklist a').css('background', 'none');
+        $('.li-Notifications').addClass('active');
+        $('.li-SearchReferences').removeClass('active');
+        $('.li-GeneralSettings').removeClass('active');
+        $('.li-Blocklist').removeClass('active');
         $('#SearchReferences').hide();
         $('#GeneralSettings').hide();
         $('#Blocklist').hide();
@@ -404,12 +398,10 @@ $(document).ready(function(){
     });
     
     $('.link-Blocklist').click(function(){
-        $('.li-Blocklist a').css('background', '#f0eeee');
-        $('.li-Blocklist a').css('width', '235px');
-        $('.li-Blocklist a').css('height', '42px');
-        $('.li-SearchReferences a').css('background', 'none');
-        $('.li-GeneralSettings a').css('background', 'none');
-        $('.li-Notifications a').css('background', 'none');
+        $('.li-Blocklist').addClass('active');
+        $('.li-SearchReferences').removeClass('active');
+        $('.li-GeneralSettings').removeClass('active');
+        $('.li-Notifications').removeClass('active');
         $('#SearchReferences').hide();
         $('#Notifications').hide();
         $('#GeneralSettings').hide();

@@ -10,6 +10,14 @@
     font-family: "Proxima Nova Regular";
     src: url('../fonts/ProximaNova-Regular.ttf');
 }
+@font-face {
+    font-family: "HelveticaNueveLtPro Bd";
+    src: url('../fonts/HelveticaNeueLTPro-Bd.ttf');
+}
+@font-face {
+    font-family: "HelveticaNueveLtPro Roman";
+    src: url('../fonts/HelveticaNeueLTPro-Roman.ttf');
+}
 
 body,
 .label-text {
@@ -43,7 +51,6 @@ body,
     color: #74808f;
     text-shadow: 1px 1px black;
     font-family: "Proxima Nova SemiBold";
-    margin-top: 100px;
 }
 
 ul.settings-categories {
@@ -106,4 +113,139 @@ button.btn-cancel-st {
 .btn-row > div {
     padding-left: 0;
     padding-right: 0;
+}
+
+.select-day,
+.select-month,
+.select-gender {
+    width: 180px;
+    float: left;
+    -webkit-appearance: none;
+    background: #ffffff url('../images/icon-textbox.png') no-repeat 97% center;
+}
+.select-month {
+    margin-left: 10px;
+}
+input,
+select {
+    color: #a4a4a4 !important;
+    font-family: "Proxima Nova Regular" !important;
+}
+
+.content-notification .col-sm-12 .checkbox label {
+     padding-left: 5px;
+     top: 2px;
+     position: relative;
+     font-family: "Proxima Nova Regular";
+     color: #a4a4a4;
+ }
+
+.content-notification .form-group {
+    margin-bottom: 350px;
+}
+
+.gender-block {
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+.gender-block > label {
+    padding-left: 3px;
+}
+.label-gender {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+.content-references > form > div,
+.content-references > form > div > label {
+    padding-left: 0;
+}
+
+.who-is-block {
+    margin-bottom: 20px;
+}
+.radio > label{
+    color: #a4a4a4;
+    font-family: "Proxima Nova Regular";
+    font-size: 16px;
+    top: 10px;
+    position: relative;
+}
+
+input[type="radio"] {
+    display:none;
+}
+.who-is-block .label-gender {
+    margin-bottom: 0;
+}
+div.radio {
+    padding-left: 0;
+}
+input[type="radio"] + label
+{
+    background: url('../images/radio.png') no-repeat;
+    height: 26px;
+    line-height: 26px;
+    width: 100%;
+    display:inline-block;
+    padding: 0 0 0 40px;
+}
+
+input[type="radio"]:checked + label
+{
+    background: url('../images/radio-active.png') no-repeat;
+    height: 26px;
+    line-height: 26px;
+    width: 100%;
+    display: inline-block;
+    padding: 0 0 0 40px;
+}
+
+.radio {
+    margin-top: 0;
+}
+.interested-block .label-gender {
+    margin-top: 0;
+}
+.scroll-container {
+    margin: 20px 30px;
+    background-color: white;
+    border: 1px solid #e8e5e8;
+}
+#mixedContent {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+#mixedContent .contentBox {
+    position: relative;
+    width: auto;
+    float: left;
+    display: block;
+    padding: 10px;
+    margin: 0px 5px;
+    /* If you don't want the images in the scroller to be selectable, try the following
+       block of code. It's just a nice feature that prevent the images from
+       accidentally becoming selected/inverted when the user interacts with the scroller. */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+#mixedContent .contentBox img {
+    margin-bottom: 10px;
+}
+
+p.f-nick {
+    font-family: "HelveticaNueveLtPro Bd";
+    font-size: 15px;
+    color: #4d5a63;
+}
+p.f-data {
+    font-family: "HelveticaNueveLtPro Roman";
+    font-size: 12px;
+    color: #a39c9c;
 }

@@ -2132,8 +2132,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .menu-nav-setting{
     display: inline-block;
-    padding: 55px 30px 0 30.2px;
-    border-top: 1px solid #cbcbcb;
+    /*padding: 55px 30px 0 30.2px;*/
+    padding: 0 30px 0 30px;
+    /*border-top: 1px solid #cbcbcb;*/
    /*  border-bottom: 1px solid #cbcbcb; */
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
