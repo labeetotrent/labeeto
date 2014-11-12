@@ -8,7 +8,7 @@
             <div class="main-search">
                 <div class="search-block first-block">
                     <div class="text-explore">
-                        <input type="text" id="search"  placeholder="EXPLOER" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
+                        <input type="text" id="search"  placeholder="EXPLORE" name="Search[username]" value="<?php echo isset($username)?$username:''; ?>" class="username"/>
                     </div>
                     <div class="text-explore">
                         <select name="Search[looking_friendship]" id="education" class="username">
@@ -192,20 +192,21 @@
                         
                        
                     </div>
-                    <div class="search-block-02">
-                        <div style="margin-top: 20px;">
-                            <label>
-                                <input type="checkbox" class="ss_online" value="1"> Only show users that are online
-
-                            </label>
+                    <div class="col-md-12 checkbox-row">
+                        <div class="search-block-02">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="ss_online" value="1"> Only show users that are online
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="search-block-02">
-                        <div style="margin-left: 20px; margin-top: 20px;">
-                            <label>
-                                <input type="checkbox" class="ss_verified" value="1"> Only show users that are verified
+                        <div class="search-block-02">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="ss_verified" value="1"> Only show users that are verified
 
-                            </label>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="clear"></div>

@@ -2655,43 +2655,35 @@ input[type="range"]::-ms-fill-lower {
     height: 42px;
     border-radius: 4px;
 }
-.search-block-03 .list-age span,
-.search-block-02 .list-age span{
-    float: left;
-    color: #a4a4a4;
-    padding: 12px 10px;
-    font-weight: bold;
-    font: normal 14px/normal  ProximaNova-BoldIt;
-}
-.search-block-03 .list-age input, .search-block-02 .list-age input{
-    color: #a4a4a4; 
-    font:normal 14px/normal ProximaNova Regular; 
-    padding: 10px 15px;
-    background: #fff;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); /* IE */
-    border: 1px solid #a4a4a4;
-    width: 65px;
-    font-size: 14px;
-    float: left;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    behavior: url('../pie/PIE.htc');
-    text-align: center;
-    height: 42px;
-}
+/*.search-block-03 .list-age input, .search-block-02 .list-age input{*/
+    /*color: #a4a4a4; */
+    /*font:normal 14px/normal ProximaNova Regular; */
+    /*padding: 10px 15px;*/
+    /*background: #fff;*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff'); *//* IE */
+    /*border: 1px solid #a4a4a4;*/
+    /*width: 65px;*/
+    /*font-size: 14px;*/
+    /*float: left;*/
+    /*border-radius: 4px;*/
+    /*-webkit-border-radius: 4px;*/
+    /*-moz-border-radius: 4px;*/
+    /*behavior: url('../pie/PIE.htc');*/
+    /*text-align: center;*/
+    /*height: 42px;*/
+/*}*/
 .search-block ul{
     overflow: hidden;
 }
-.search-block ul li{
-    float:left;
-    font: normal 12.5px/normal Proxima Nova Semi Bold
-}
-.search-block ul li.simple{
-    width: 20%;
-    float:left;
-    font: normal 12.5px/normal Proxima Nova Semi Bold
-}
+/*.search-block ul li{*/
+    /*float:left;*/
+    /*font: normal 12.5px/normal Proxima Nova Semi Bold*/
+/*}*/
+/*.search-block ul li.simple{*/
+    /*width: 20%;*/
+    /*float:left;*/
+    /*font: normal 12.5px/normal Proxima Nova Semi Bold*/
+/*}*/
 .search-block ul li.last{
     margin-top:4px;
 }

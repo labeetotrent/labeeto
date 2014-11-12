@@ -18,6 +18,10 @@
     font-family: "HelveticaNueveLtPro Roman";
     src: url('../fonts/HelveticaNeueLTPro-Roman.ttf');
 }
+@font-face {
+    font-family: "Proxima Nova BoldIt";
+    src: url('../fonts/ProximaNova-BoldIt.ttf');
+}
 
 body,
 .label-text {
@@ -99,8 +103,11 @@ button.btn-cancel-st {
     text-transform: none;
 }
 
-button.btn-save-st {
+button.btn-save-st,
+.btn-save-search,
+.btn-search-page {
     background: url('../images/ok-btn-bg.png') repeat-x !important;
+    border-radius: 4px;
 }
 
 button.btn-cancel-st {
@@ -262,4 +269,86 @@ p.f-data {
 }
 .input-text {
     width: 560px;
+}
+
+.main-search label {
+    color: #a4a4a4;
+    font-family: "Proxima Nova Bold";
+    padding-left: 1px;
+}
+.main-search span {
+    font-family: "Proxima Nova BoldIt";
+    font-size: 13px;
+    color: #a4a4a4;
+    float: left;
+    line-height: 42px;
+    padding: 0 10px;
+}
+
+.main-search input {
+    font-family: "Proxima Nova Regular";
+    color: #a4a4a4;
+    padding: 10px 15px;
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff');
+    border: 1px solid #a4a4a4;
+    width: 65px;
+    font-size: 14px;
+    float: left;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    behavior: url('../pie/PIE.htc');
+    text-align: center;
+    height: 42px;
+}
+.text-explore input {
+    text-align: left;
+}
+
+.checkbox input {
+    width:20px;
+    height: auto;
+    vertical-align:middle;
+    position: relative;
+    bottom: 2px;
+}
+
+.checkbox > label {
+    display:inline-block;
+    vertical-align:middle;
+    font-family: "Proxima Nova Bold";
+}
+
+.checkbox-row {
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.checkbox-row > .search-block-02 {
+    margin-right: 16px;
+}
+.checkbox-row > .search-block-02 > div > label > input {
+    right: 4px;
+}
+
+.main-search .search-block {
+    padding: 30px 0 15px 20px;
+}
+
+.main-search .search-block ul li {
+    font-family: "Proxima Nova SemiBold";
+    font-size: 13px;
+    float: left;
+}
+.main-search .search-block ul li.simple {
+    width: 20%;
+}
+.main-search .search-block .text-explore input,
+.main-search .search-block .text-explore select {
+    border-radius: 0;
+}
+
+.main-search .last-block {
+    padding: 30px 0;
 }
