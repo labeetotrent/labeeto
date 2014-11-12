@@ -1,0 +1,15 @@
+.content_all_user .featured {
+    font-family: "Proxima Nova SemiBold";
+    font-size: 14px;
+    color: #74808f;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.45);
+}
+.content_all_user ul {
+    padding-left: 0;
+}
+
+.post-btn {
+    font-family: "Proxima Nova Regular" !important;
+    background: #ea5a5a repeat-x !important;
+    font-size: 16px;
+}
