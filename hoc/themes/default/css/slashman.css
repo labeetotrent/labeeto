@@ -22,6 +22,10 @@
     font-family: "Proxima Nova BoldIt";
     src: url('../fonts/ProximaNova-BoldIt.ttf');
 }
+@font-face {
+    font-family: "Proxima Nova ExtraBold";
+    src: url('../fonts/ProximaNova-Extrabold.otf');
+}
 
 body,
 .label-text {

@@ -18,10 +18,12 @@
             <div class="footer-post">
                 <span class="add-media">
                    <!-- <input type="file" name="media_post" id="media" style="display: none;" />-->
-                    <label for="media" class="label-add-media"></label>
+                    <!--<label for="media" class="label-add-media"></label>-->
+                    <i class="fa fa-camera"></i>
                 </span>
-                <span class="add-location" style="margin-top: 10px;">
-                    <label for="location" style="margin-top: 5px;" class="lable-add-location"></label>
+                <span class="add-location">
+                    <label for="location" class="lable-add-location"></label>
+                    <i class="fa fa-map-marker"></i>
                 </span>
                 <input type="submit" class="post-btn" value="Post" />
             </div>

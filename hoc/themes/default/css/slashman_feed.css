@@ -10,6 +10,158 @@
 
 .post-btn {
     font-family: "Proxima Nova Regular" !important;
-    background: #ea5a5a repeat-x !important;
+    /*    background: #ea5a5a repeat-x !important;*/
     font-size: 16px;
+}
+.footer-post span.add-location {
+    margin-top: 13px;
+    margin-left: 0;
+}
+
+input.seach-tab {
+    font-family: "Proxima Nova SemiBold" !important;
+}
+.content-post h3.my_posted {
+    font-family: "Proxima Nova Regular";
+    font-size: 20px;
+    color: #404040;
+}
+.content-post h3 span.link_1 {
+    font-family: "Proxima Nova ExtraBold";
+    color: rgb(234, 90, 90);
+    text-shadow: 1px 1.732px 0px rgba(223, 218, 218, 1);
+    font-size: 20pt;
+}
+.comment_post_txt {
+    background-position: 98% center;
+}
+.post {
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.25);
+}
+.comment-post-home ul li {
+    padding-right: 0;
+}
+.user_comment_post > div {
+    padding: 0;
+}
+.comment-post-home ul {
+    padding-left: 0;
+}
+.comment_detail_post {
+    font-family: "Proxima Nova Regular";
+    color: #4d5a63;
+    font-size: 14px;
+}
+.user_comment_post .dots img {
+    height: 8px;
+    width: 20px;
+    margin-top: 12px;
+    float: right;
+}
+.comment_detail_post {
+    width: 100%;
+}
+.infor_comment h5 span {
+    font-family: "Proxima Nova SemiBold", Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ea5a5a;
+}
+.infor_comment h6 span {
+    font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+    font-size: 12px;
+}
+.comment-post-home ul li div.infor_comment {
+    margin-left: 0;
+}
+.crycle-img h2 a {
+    position: relative;
+    top: 3px;
+    font-family: "HelveticaNueveLtPro Bd";
+    font-size: 16px;
+    color: #4d5a63;
+}
+.first-infor .profile .crycle-img h2 span {
+    font-family: "HelveticaNueveLtPro Roman";
+    font-size: 14px;
+    color: #a39c9c;
+}
+.first-infor .profile .crycle-img h2 span.dot-icon {
+    color: #cbc4c4;
+    height: 14px;
+    line-height: 14px;
+    background-position: left 30%;
+    background-size: 4px 4px;
+    vertical-align: middle;
+    top: 1px;
+    position: relative;
+}
+.comment-post-home p span {
+    font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+textarea.post-textarea {
+    font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+    padding-top: 15px;
+    font-size: 12pt;
+    resize: none;
+    border: none;
+}
+textarea.post-textarea::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #d2dbe2;
+}
+textarea.post-textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #d2dbe2;
+    opacity:  1;
+}
+textarea.post-textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #d2dbe2;
+    opacity:  1;
+}
+textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #d2dbe2;
+}
+
+.footer-post {
+    border-top: 1px solid #cbcbcb;
+}
+.first-infor {
+    padding-bottom: 0;
+}
+/* Убрать геолокацию */
+.comment_post_txt {
+    background-image: none;
+}
+.footer-post span.add-media,
+.footer-post span.add-location {
+    margin-left: 0;
+    margin-top: 8px;
+    background: none;
+    text-indent: 0;
+    font-size: 20pt;
+    color: #cdc7c7;
+}
+
+.footer-post span.add-media > i,
+.footer-post span.add-location > i {
+    background-color: #949494;
+    color: transparent;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+.footer-post span.add-location {
+    position: relative;
+    top: 1px;
+}
+
+.footer-post span.add-media > i:hover,
+.footer-post span.add-location > i:hover {
+    background-color: #EF2929;
+    color: transparent;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
 }

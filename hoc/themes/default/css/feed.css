@@ -534,7 +534,7 @@ a{
      border-right: 0;
      height: 100px;
      padding: 10px;
-     font: normal 12pt/normal Arial;
+     /*font: normal 12pt/normal Arial;*/
      border-radius: 0px 5px 0px 0px;
      -webkit-border-radius: 0px 5px 0px 0px;
     -moz-border-radius: 0px 5px 0px 0px;
@@ -963,12 +963,12 @@ span.minuten{
     margin:6px 0 ;
     padding:0;
 }
-.first-infor .profile .crycle-img h2 span{
+/*.first-infor .profile .crycle-img h2 span{
     font: normal 14px/normal Helvetica Neue LT Pro;
 }
 .first-infor .profile .crycle-img h2 span.dot-icon{
     font:italic normal 14px/normal Helvetica Neue LT Pro;
-}
+}*/
 .first-infor .refesh{
     float: right;
     background: url(../images/icon-global.png) no-repeat 0px 0px;
@@ -1980,9 +1980,9 @@ span.check-ok{
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     color: #676b6d;
 }
-.profile .crycle-img h2 a{
+/*.profile .crycle-img h2 a{
     color: black;
-}
+}*/
 .bit-and-bit span.add-question-1{
     text-transform: uppercase;
     float: right;
@@ -3660,9 +3660,9 @@ li.message_search input{
     padding: 10px 10px 0px 10px;
     background: #fefefe;
 }
-.comment-post-home p span{
+/*.comment-post-home p span{
     font: normal 14px/normal Proxima Nova Regular; 
-}
+}*/
 .comment-post-home p span.comment_txt{
     color: #ea5a5a;
 }
@@ -3690,16 +3690,16 @@ li.message_search input{
     margin-top: 3px;
 
 }
-.infor_comment h5 span{
+/*.infor_comment h5 span{
     font: normal 14px/normal Proxima Nova Semi Bold; 
     color: #ea5a5a;
-}
+}*/
 .infor_comment h5{
     padding-bottom: 5px;
 }
-.infor_comment h6 span{
+/*.infor_comment h6 span{
     font: normal 11.01px/normal Proxima Nova Regular; 
-}
+}*/
 .infor_comment h6 span.minus_1{
     color: #4d5a63;
 }
@@ -3712,10 +3712,10 @@ li.message_search input{
     margin-top: 5px;
     width: 65%;
 }
-.comment_detail_post span{
+/*.comment_detail_post span{
     font: normal 13.76px/normal Proxima Nova Regular;
     color: #4d5a63;
-}
+}*/
 .comment_detail_post a img{
     float: right !important;
     height: 8px !important;
