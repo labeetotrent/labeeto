@@ -1,15 +1,199 @@
-<!--<div class="banner-ad-top">
-    <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>-->
 <div class="content-main-1">
-    <?php //$this->widget('widgets.admin.notifications'); ?>
-    
-    
-    <div class="infor-user">
-        <div class="report-user-1">
-            <!--<a class="report-user user-report">Report User</a>-->
+    <div class="row col-md-12 profile-header">
+        <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="avatar-image img-circle"/>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/online-circle.png" class="online-circle"/>
         </div>
-
+        <div class="col-md-4 col-sm-4 col-xs-4 profile-info">
+            <div class="row col-md-12 user-name">
+                ACandiceS
+            </div>
+            <div class="row col-md-12 profile-data">
+                24, Female
+            </div>
+            <div class="row col-md-12 job">
+                Supermodel
+            </div>
+            <div class="row col-md-12 location">
+                New York, NY
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 photos">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    PHOTOS
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 private">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    PRIVATE
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 videos">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    VIDEOS
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12 profile-description">
+        <div class="col-md-7 desc-text">
+            I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.
+        </div>
+        <div class="col-md-2 col-md-offset-3 desc-buttons">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/message-icon.png"/>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/chat-icon.png"/>
+        </div>
+    </div>
+    <div class="row col-md-12 looking-for-stripe">
+        <div class="col-md-3 text">
+            LOOKING FOR:
+        </div>
+        <div class="col-md-3 param">
+            <div class="col-md-3 text">
+                Gender:
+            </div>
+            <div class="col-md-3 text">
+                Male
+            </div>
+            <div class="col-md-2">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+            </div>
+        </div>
+        <div class="col-md-3 param">
+            <div class="col-md-7 text">
+                Relationship:
+            </div>
+            <div class="col-md-3 text">
+                Serious
+            </div>
+            <div class="col-md-2">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+            </div>
+        </div>
+        <div class="col-md-3 param">
+            <div class="col-md-4 text">
+                <span class="pull-right">Age:</span>
+            </div>
+            <div class="col-md-4 text">
+                24 - 35
+            </div>
+            <div class="col-md-4">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 profile-left">
+        <div class="col-md-12 info-block">
+            <div class="col-md-12 name">
+                About
+            </div>
+            <div class="col-md-12 value">
+                Small town girl who loves country music.
+                Single for almost 4 years. Loves pickles.
+            </div>
+        </div>
+        <div class="col-md-12 info-block">
+            <div class="col-md-12 name">
+                About
+            </div>
+            <div class="col-md-12 value">
+                Small town girl who loves country music.
+                Single for almost 4 years. Loves pickles.
+            </div>
+        </div>
+        <div class="col-md-12 info-block">
+            <div class="col-md-12 name">
+                About
+            </div>
+            <div class="col-md-12 value">
+                Small town girl who loves country music.
+                Single for almost 4 years. Loves pickles.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 profile-right">
+        <div class="col-md-12 right-element photos">
+            <div class="col-md-12 header">
+                Photos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 right-element featured-users">
+            <div class="col-md-12 header">
+                Featured users
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="infor-user">
         <div class="avartar">
             <?php error_reporting(0);?>
             <?php  if(($model->photo =='') || ($model->photo =='undefined')){ ?>
@@ -83,25 +267,9 @@
                 
             </div>
         </div>
-        
     </div>
-    <div class="left-profile">
-        <!--Post 1-->
-        <!--<span class="arrow-up"></span>-->
-        <div class="post" style="border: none; position: relative;" > 
-            <!--<div class="looking-for">
-                <span class="looking_img">LOOKING FOR</span> <span class="stick-green-profile"></span>
-                <a href="#"><span class="check-ok"></span></a>-->
-                <!--<p>
-                <span class="txt-female-profile">
-                    <?php //if($model->training == 0) echo 'No,'; else echo "Yes,"; ?>
-                    <?php //echo $model->relations. ',' ?>
-                    <?php // if($model->gender == 1) echo "Female,"; else echo 'Male,'; ?>
-                    <?php //echo "Ages: ".  $model->age  ?>
-                    
-                </span>
-                
-                </p>-->
+    <div class="left-profile" style="display: none;">
+        <div class="post" style="border: none; position: relative;" >
                  <div class="looking-for">
                     <span class="looking_img">LOOKING FOR</span>
                     <p>
@@ -145,7 +313,6 @@
                         <?php }?>
                     </p>
                 </div>
-                <!--</div>-->
             <div class="looking-about">
                 <span class="looking_about">about</span>
                 <p><?php echo $model->about; ?></p>
@@ -255,111 +422,12 @@
         </div>
         <!--End Post 1 -->
     </div>
-    <div class="right-profile">
-        
-        <!--Photo Page-->
-        <!--<div class="content-photo" style="display: none;">
-            <div class="title-photo">
-                <h3>Photos <span>(243 Photos)</span></h3>
-                <p>
-                    <a href="#">Upload</a>
-                    <a href="#">delete</a>
-                    <a href="#" class="close-icon"></a>
-                </p>
-                
-            </div>
-            <ul>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_1.png"></a></li>
-                <li><a href="#"><img src="<?php ///echo Yii::app()->themeManager->baseUrl; ?>/images/photo_2.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_3.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_4.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_5.png"></a></li>
-                <li><a href="#"><img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/photo_6.png"></a></li>
-            </ul>
-        </div>-->
-        
-        
-        <!--<div class="content-video" style="display: none;">
-            <div class="title-photo">
-                <h3>Videos <span>(2 Videos)</span></h3>
-                <p>
-                    <a href="#" class="close-icon"></a>
-                </p>
-                
-            </div>
-            
-            <div class="post-video"> 
-                <!--<div class="title-video">
-                    <!--<h2>This is my title</h2>
-                </div>-->
-                <!--<div class="content-post">
-                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
-                    <span class="hour-post">1 hr</span>
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>
-            
-            <div class="post-video video-border"> 
-                <!--<div class="title-video">
-                   <!-- <h2>This is my title</h2>
-                </div>-->
-               <!-- <div class="content-post">
-                    <h3><span class="link_3">Workout like a pro in 3 minutes.</span></h3>
-                    <span class="hour-post">1 hr</span>
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>
-            
-        </div>-->
+    <div class="right-profile" style="display: none;">
         <?php $this->renderPartial('/user/video',compact('video')) ?>
         <?php $this->renderPartial('/user/photo_profile_other',compact('photos','private')) ?>
         <!--Home Page-->
         <div class="content-profile">
-        <!--Post 1-->
-            <!--<div class="post"> 
-                <div class="first-infor infor-pro">
-                    <div class="profile">
-                        <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/avatart-step2.png">
-                        <div class="crycle-img">
-                            <h2 class="h2-name">Rome Martin J. Rosales<span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
-                        </div>
-                    </div>
-                    <span class="refesh">1002</span>
-                </div>
-                <div class="content-post">
-                    <h3><span class="link_3">ICEBUCKET CHALLENGE</span> <span class="link_2">#ALSawareness </span><span class="link_1">#LOL</span></h3>
-                    <iframe title="YouTube video player" class="youtube-player" type="text/html" style="padding-left: 10px; padding-bottom: 10px;"
-                    width="98%" height="390" src="http://www.youtube.com/embed/uIbkLjjlMV8"
-                    frameborder="0" allowFullScreen></iframe>
-                </div>
-            </div>->
-            <!--End Post 1 -->
-            
-            <!--<div class="post"> 
-                <div class="first-infor infor-pro">
-                    <div class="profile">
-                        <img src="/themes/default/images/avatart-step2.png">
-                        <div class="crycle-img">
-                            <h2 class="h2-name">Rome Martin J. Rosales<span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
-                        </div>
-                    </div>
-                    <span class="refesh">12</span>
-                </div>
-                <div class="content-post">
-                    <h3 style="padding-left: 10px;"><span class="link_1">yumMmm</span> <span class="link_3">#burger #7200cal</span> <span class="link_2">#LOL #depressed </span></h3>
-                    <img style="padding-left: 10px; padding-right: 10px;" src="/themes/default/images/break.png">
-                </div>
-            </div>-->
+
             <?php if($achievements) { 
                 foreach($achievements as $value){
                 ?>

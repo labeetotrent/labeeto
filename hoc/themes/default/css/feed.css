@@ -1564,13 +1564,13 @@ span.text-cancel{
     font-weight: bold;
 }
 .location{
-    text-transform: uppercase;
-    color: #9f8787;
-    font: normal 13pt/normal Proxima Nova Semi Bold;
-    width: 105%;
-    float: right;
-    padding: 10px 0px 5px 0px;
-    font-weight: bold;
+    /*text-transform: uppercase;*/
+    /*color: #9f8787;*/
+    /*font: normal 13pt/normal Proxima Nova Semi Bold;*/
+    /*width: 105%;*/
+    /*float: right;*/
+    /*padding: 10px 0px 5px 0px;*/
+    /*font-weight: bold;*/
 }
 .photo-private{
     float: left;

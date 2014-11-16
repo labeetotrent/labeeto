@@ -11,6 +11,10 @@
     src: url('../fonts/ProximaNova-Regular.ttf');
 }
 @font-face {
+    font-family: "Proxima Nova Regular Italic";
+    src: url('../fonts/ProximaNova-RegularItalic.otf');
+}
+@font-face {
     font-family: "HelveticaNueveLtPro Bd";
     src: url('../fonts/HelveticaNeueLTPro-Bd.ttf');
 }
