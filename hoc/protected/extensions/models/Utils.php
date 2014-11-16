@@ -26,7 +26,7 @@
         return number_format($value, 2, '.', '.');
     }
     
-    function  short_description( $tieude = '', $limit = 600 ){
+    function short_description( $tieude = '', $limit = 600 ){
    	    if (strlen($tieude) > $limit) {
                $tieude=substr($tieude, 0, $limit)."...";
         }
