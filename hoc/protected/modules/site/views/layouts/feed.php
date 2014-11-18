@@ -22,6 +22,8 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/blue/jplayer.blue.monday.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/smoothDivScroll.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fa/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/nouislider/jquery.nouislider.min.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_slider_override.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_feed.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_profile_other.css" rel="stylesheet">
@@ -41,6 +43,7 @@
 
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.smoothdivscroll-1.3-min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/nouislider/jquery.nouislider.all.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/jPlayer/jquery.jplayer.min.js">
     <script type="text/javascript">jwplayer.key="YLh0EpQST8/bQUTi3GDUFWxfaIaeKorWSL5ihzmIxDSdoJDoz9fLSJZrt9g=";</script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>

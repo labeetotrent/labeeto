@@ -1,0 +1,56 @@
+.slider-container {
+    padding: 0;
+}
+.noUi-target {
+    border-radius: 8px;
+    border: 4px solid #D3D3D3;
+    box-shadow: inset 0 1px 1px #F0F0F0,0 3px 6px -5px #BBB;
+}
+.noUi-horizontal {
+    height: 14px;
+}
+.noUi-base {
+    border: 1px solid #919191;
+    border-radius: 10px;
+}
+
+.noUi-handle {
+    background: #eb6060;
+    box-shadow: none;
+}
+
+.noUi-active {
+    box-shadow: none;
+}
+.noUi-horizontal .noUi-handle {
+    width: 17px;
+    height: 16px;
+    left: -17px;
+    top: -6px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+.noUi-handle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 1px;
+    background: #E8E7E6;
+    left: 5px;
+    top: 3px;
+}
+.noUi-handle:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 1px;
+    background: #E8E7E6;
+    left: 9px;
+    top: 3px;
+}
+
+.noUi-origin {
+    padding-left: 5%;
+    padding-right: 5%;
+}

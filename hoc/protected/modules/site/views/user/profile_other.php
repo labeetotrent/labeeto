@@ -1,3 +1,8 @@
+<?php
+    $cs = Yii::app()->clientScript;
+    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_profile_other.js');
+    $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_slider_override.css');
+?>
 <div class="content-main-1">
     <div class="row col-md-12 profile-header">
         <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
@@ -97,36 +102,106 @@
         </div>
     </div>
     <div class="col-md-5 profile-left">
-        <div class="col-md-12 info-block">
-            <div class="col-md-12 name">
-                About
+        <div class="left-info col-md-12">
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    About
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
             </div>
-            <div class="col-md-12 value">
-                Small town girl who loves country music.
-                Single for almost 4 years. Loves pickles.
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    About
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    About
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    How often do you exercise?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Do you drink?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Do you smoke?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-12 info-block">
-            <div class="col-md-12 name">
-                About
+        <div class="left-custom col-md-12">
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Bits and Bits!
+                </div>
+                <div class="col-md-12 value text-center">
+                    <button class="custom-question-btn">Add custom question</button>
+                </div>
             </div>
-            <div class="col-md-12 value">
-                Small town girl who loves country music.
-                Single for almost 4 years. Loves pickles.
-            </div>
-        </div>
-        <div class="col-md-12 info-block">
-            <div class="col-md-12 name">
-                About
-            </div>
-            <div class="col-md-12 value">
-                Small town girl who loves country music.
-                Single for almost 4 years. Loves pickles.
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    About
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-7 profile-right">
-        <div class="col-md-12 right-element photos">
+
+        <div class="col-md-12 right-element photos" id="photos-tab">
             <div class="col-md-12 header">
                 Photos
             </div>
@@ -145,6 +220,45 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
+            <div class="col-md-12 header">
+                Private Photos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
+            <div class="col-md-12 header">
+                Videos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+
         <div class="col-md-12 right-element featured-users">
             <div class="col-md-12 header">
                 Featured users
