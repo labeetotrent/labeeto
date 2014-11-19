@@ -1,0 +1,20 @@
+.my-profile .looking-for-stripe .text > i {
+  font-size: 14pt;
+  font-weight: bold;
+  padding-right: 15px;
+  cursor: pointer;
+}
+.my-profile .description-edit-buttons {
+  margin-top: 12px;
+}
+.my-profile .custom-question-btn {
+  background-color: #ed4c5f;
+}
+.my-profile .info-block .name div {
+  padding: 0;
+}
+.my-profile .info-block .name div i.edit-info-block {
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+}

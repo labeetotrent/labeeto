@@ -1,4 +1,328 @@
-<div class="content-main-1">
+<?php
+$cs = Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_profile.js');
+$cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_slider_override.css');
+$cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.css');
+?>
+<div class="content-main-1 my-profile">
+    <div class="row col-md-12 profile-header">
+        <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="avatar-image img-circle"/>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/online-circle.png" class="online-circle"/>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 profile-info">
+            <div class="row col-md-12 user-name">
+                ACandiceS
+            </div>
+            <div class="row col-md-12 profile-data">
+                24, Female
+            </div>
+            <div class="row col-md-12 job">
+                Supermodel
+            </div>
+            <div class="row col-md-12 location">
+                New York, NY
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 photos">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    PHOTOS
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 private">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    PRIVATE
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
+            <div class="header-container col-md-12 videos">
+                <div class="col-md-12 photos-thumb">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                </div>
+                <div class="col-md-12 desc">
+                    VIDEOS
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12 profile-description">
+        <div class="col-md-7 desc-text">
+            I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.
+        </div>
+        <div class="col-md-4 col-md-offset-1 description-edit-buttons">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12 looking-for-stripe">
+        <div class="col-md-3 text">
+            LOOKING FOR:
+        </div>
+        <div class="col-md-2 param">
+            <div class="col-md-6 text">
+                Gender:
+            </div>
+            <div class="col-md-3 text">
+                Male
+            </div>
+        </div>
+        <div class="col-md-2 param">
+            <div class="col-md-6 text">
+                Relationship:
+            </div>
+            <div class="col-md-6 text">
+                Serious
+            </div>
+        </div>
+        <div class="col-md-5 param">
+            <div class="col-md-2 text">
+                <span class="pull-right">Age:</span>
+            </div>
+            <div class="col-md-2 text">
+                24 - 35
+            </div>
+            <div class="col-md-8 text edit">
+                <i class="fa fa-pencil-square-o pull-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 profile-left">
+        <div class="left-info col-md-12">
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        About
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        About
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        About
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    How often do you exercise?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Do you drink?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Do you smoke?
+                </div>
+                <div class="col-md-12 value">
+                    <div class="col-md-2">
+                        Nope
+                    </div>
+                    <div class="col-md-8 slider-container">
+                        <div class="slider" id="slider"></div>
+                    </div>
+                    <div class="col-md-2" id="v">
+                        Often
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left-custom col-md-12">
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    Bits and Bits!
+                </div>
+                <div class="col-md-12 value text-center">
+                    <button class="custom-question-btn">Add custom question</button>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    About
+                </div>
+                <div class="col-md-12 value">
+                    Small town girl who loves country music.
+                    Single for almost 4 years. Loves pickles.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 profile-right">
+
+        <div class="col-md-12 right-element photos" id="photos-tab">
+            <div class="col-md-12 header">
+                Photos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
+            <div class="col-md-12 header">
+                Private Photos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
+            <div class="col-md-12 header">
+                Videos
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-4 photo-container">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 right-element featured-users">
+            <div class="col-md-12 header">
+                Featured users
+            </div>
+            <div class="col-md-12 body">
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+                <div class="col-md-3 featured-person">
+                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
+                    <p class="f-nick">BrenWinton</p>
+                    <p class="f-data">38, Tules, MI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="infor-user" style="display: none;">
         <div class="avartar">
             

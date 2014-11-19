@@ -185,7 +185,9 @@ div.avatar-container {
 .profile-left .left-info {
     margin-bottom: 15px;
 }
-
+.profile-right {
+    padding-right: 0;
+}
 .profile-right .header {
     background-color: #f8f8f7;
     padding: 10px 15px;
