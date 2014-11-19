@@ -23,6 +23,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/smoothDivScroll.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fa/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/nouislider/jquery.nouislider.min.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/sticky-footer.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_slider_override.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_feed.css" rel="stylesheet">
@@ -77,9 +78,6 @@
 
 
 
-    <footer class="clearfix">
-        <?php echo $this->renderPartial('../elements/footer-feed') ?>
-    </footer>
     <!-- Modal WantToChat -->
     <div class="modal fade" id="WantToChat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -99,6 +97,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<footer class="clearfix">
+    <?php echo $this->renderPartial('../elements/footer-feed') ?>
+</footer>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/feed.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/profile.js"></script>

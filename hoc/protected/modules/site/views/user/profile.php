@@ -1,15 +1,5 @@
-<!--<div class="banner-ad-top">
-    <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>-->
 <div class="content-main-1">
-    <?php //$this->widget('widgets.admin.notifications'); ?>
-    
-    
-    <div class="infor-user">
-        <div class="report-user-1">
-            <!--<a class="report-user user-report">Report User</a>-->
-        </div>
-
+    <div class="infor-user" style="display: none;">
         <div class="avartar">
             
             <?php if($this->user->photo =='undefined'){ ?>
@@ -39,11 +29,6 @@
                 <ul style="float: right;">
                     <li><a href="/profile_other"><?php echo Yii::t('global', 'preview profile') ?></a></li>
                     <li><a href="#"><?php echo Yii::t('global', 'verify profile') ?></a></li>
-                    <!--
-                    <li><a href="#"><span class="span-chat"></span>CHAT</a></li>
-                    <li><a href="#"><span class="span-message"></span>Message</a></li>
-                    <li><a href="#"><span class="span-favorite"></span>Favorite</a></li>
-                    <li><a href="#"><span class="span-rate"></span>Rate</a></li> -->
                 </ul>
             </div>
         </div>
@@ -83,9 +68,7 @@
         </div>
         
     </div>
-    <div class="left-profile">
-        <!--Post 1-->
-        <!--<span class="arrow-up"></span>-->
+    <div class="left-profile" style="display: none;">
         <div class="post" style="border: none; position: relative;" > 
             <div class="looking-for">
                 <span class="looking_img"><?php echo Yii::t('global', 'LOOKING FOR') ?></span>
@@ -472,7 +455,7 @@
         </div>
         <!--End Post 1 -->
     </div>
-    <div class="right-profile">
+    <div class="right-profile" style="display: none;">
     
         
         <?php $this->renderPartial('/user/video',compact('video')) ?>
@@ -607,38 +590,6 @@
                     </div>
                 </div>
             <?php } }?>
-            
-           <!-- <div class="post"> 
-                <div class="first-infor infor-pro">
-                    <div class="profile">
-                        <img src="/themes/default/images/avatart-step2.png">
-                        <div class="crycle-img">
-                            <h2 class="h2-name">Rome Martin J. Rosales<span class="time-location">18 F, CA,</span> <span class="dot-icon"> 2 hr</span></h2>
-                        </div>
-                    </div>
-                    <span class="refesh">12</span>
-                </div>
-                <div class="content-post">
-                    <h3 style="padding-left: 10px;"><span class="link_1">yumMmm</span> <span class="link_3">#burger #7200cal</span> <span class="link_2">#LOL #depressed </span></h3>
-                    <img style="padding-left: 10px; padding-right: 10px;" src="/themes/default/images/break.png">
-                </div>
-            </div>
-            
-            <div class="post"> 
-                <div class="first-infor infor-pro">
-                    <div class="profile">
-                        <img src="/themes/default/images/avatart-step2.png">
-                        <div class="crycle-img">
-                            <h2 class="h2-name">Martin Rosales<span class="time-location">33 M, NY,</span> <span class="dot-icon">Yesterday</span></h2>
-                        </div>
-                    </div>
-                    <div class="refesh">75</div>
-                </div>
-                <div class="content-post">
-                    <h4>Shoutout to my nigga Manny Pacman Pacquiao for
-                    helping in my weight-loss programme.<span class="link_1">#LOL</span></h4>
-                </div>
-            </div>-->
         </div>
         <div class="post" style="padding-bottom: 0px;"> 
             <div class="bit-and-bit">

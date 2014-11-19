@@ -1,0 +1,12 @@
+html, body, #wrapper {height: 100%;}
+
+body > #wrapper {height: auto; min-height: 100%;}
+
+#wrapper {padding-bottom: 130px;}  /* отступ должен быть равен высоте футера */
+
+footer {
+    position: relative;
+    margin-top: -130px; /* отрицательное значение высоты футера */
+    height: 130px;
+    clear:both;
+}
