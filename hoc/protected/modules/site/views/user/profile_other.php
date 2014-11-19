@@ -139,7 +139,7 @@
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="slider" disabled></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -155,7 +155,7 @@
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="slider" disabled></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -171,7 +171,7 @@
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="slider" disabled></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often

@@ -17,6 +17,7 @@
 .noUi-handle {
     background: #eb6060;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .noUi-active {
@@ -53,4 +54,7 @@
 .noUi-origin {
     padding-left: 5%;
     padding-right: 5%;
+}
+[disabled] .noUi-handle {
+    cursor: default;
 }
