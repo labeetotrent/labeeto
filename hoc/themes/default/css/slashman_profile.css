@@ -4,6 +4,26 @@
   padding-right: 15px;
   cursor: pointer;
 }
+.my-profile .profile-description .description-edit {
+  margin-top: 15px;
+}
+.my-profile .profile-description .description-edit i.description-edit-icon {
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  font-size: 14pt;
+}
+.my-profile .profile-description .desc-textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  resize: none;
+}
+.my-profile .looking-for-stripe i.edit-looking-for {
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+}
 .my-profile .description-edit-buttons {
   margin-top: 12px;
 }
@@ -17,4 +37,37 @@
   cursor: pointer;
   font-weight: bold;
   opacity: 0;
+}
+.my-profile .info-block .value textarea.value-textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
+  resize: none;
+}
+.my-profile .new-question input.custom-question-input {
+  width: 100%;
+  margin: 5px 0;
+}
+.my-profile .new-question textarea.custom-question-textarea {
+  width: 100%;
+  min-height: 50px;
+  margin: 5px 0;
+  resize: none;
+}
+.my-profile .right-element .header {
+  line-height: 10px;
+}
+.my-profile .right-element .header span {
+  padding: 8px 0;
+  position: absolute;
+}
+.my-profile .right-element .header .add-new-btn {
+  background-color: #313541;
+  color: #FFFFFF;
+  padding: 8px;
+  font-family: "Proxima Nova Regular";
+  font-size: 8pt;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
 }

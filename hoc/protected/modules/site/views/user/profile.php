@@ -56,10 +56,16 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         </div>
     </div>
     <div class="row col-md-12 profile-description">
-        <div class="col-md-7 desc-text">
+        <div class="col-md-7 desc-text view">
             I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.
         </div>
-        <div class="col-md-4 col-md-offset-1 description-edit-buttons">
+        <div class="col-md-7 desc-text edit hidden-element">
+            <textarea class="desc-textarea">I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.</textarea>
+        </div>
+        <div class="col-md-4 col-md-offset-1 description-edit">
+            <i class="fa fa-pencil-square-o pull-right description-edit-icon"></i>
+        </div>
+        <div class="col-md-4 col-md-offset-1 description-edit-buttons hidden-element">
             <div class="col-md-6">
                 <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
             </div>
@@ -96,7 +102,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 24 - 35
             </div>
             <div class="col-md-8 text edit">
-                <i class="fa fa-pencil-square-o pull-right"></i>
+                <i class="fa fa-pencil-square-o pull-right edit-looking-for"></i>
             </div>
         </div>
     </div>
@@ -111,9 +117,19 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
                     </div>
                 </div>
-                <div class="col-md-12 value">
-                    Small town girl who loves country music.
-                    Single for almost 4 years. Loves pickles.
+                <div class="col-md-12 value view">
+                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -125,9 +141,19 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
                     </div>
                 </div>
-                <div class="col-md-12 value">
-                    Small town girl who loves country music.
-                    Single for almost 4 years. Loves pickles.
+                <div class="col-md-12 value view">
+                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -139,9 +165,19 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
                     </div>
                 </div>
-                <div class="col-md-12 value">
-                    Small town girl who loves country music.
-                    Single for almost 4 years. Loves pickles.
+                <div class="col-md-12 value view">
+                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -194,30 +230,61 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             </div>
         </div>
         <div class="left-custom col-md-12">
-            <div class="col-md-12 info-block">
+            <div class="col-md-12 new-question">
                 <div class="col-md-12 name">
                     Bits and Bits!
                 </div>
-                <div class="col-md-12 value text-center">
+                <div class="col-md-12 value text-center view">
                     <button class="custom-question-btn">Add custom question</button>
+                </div>
+                <div class="col-md-12 edit hidden-element">
+                    <div class="col-md-12">
+                        <input type="text" class="custom-question-input" placeholder="Question">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="custom-question-textarea" placeholder="Answer"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
-                    About
+                    <div class="col-md-10">
+                        About
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
                 </div>
-                <div class="col-md-12 value">
-                    Small town girl who loves country music.
-                    Single for almost 4 years. Loves pickles.
+                <div class="col-md-12 value view">
+                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-7 profile-right">
-
         <div class="col-md-12 right-element photos" id="photos-tab">
             <div class="col-md-12 header">
-                Photos
+                <span>Photos</span>
+                <button class="add-new-btn pull-right">Add Photo</button>
             </div>
             <div class="col-md-12 body">
                 <div class="col-md-4 photo-container">
@@ -236,7 +303,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         </div>
         <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
             <div class="col-md-12 header">
-                Private Photos
+                <span>Private Photos</span>
+                <button class="add-new-btn pull-right">Add Photo</button>
             </div>
             <div class="col-md-12 body">
                 <div class="col-md-4 photo-container">
@@ -255,7 +323,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         </div>
         <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
             <div class="col-md-12 header">
-                Videos
+                <span>Videos</span>
+                <button class="add-new-btn pull-right">Add Video</button>
             </div>
             <div class="col-md-12 body">
                 <div class="col-md-4 photo-container">

@@ -182,14 +182,6 @@
         <div class="left-custom col-md-12">
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
-                    Bits and Bits!
-                </div>
-                <div class="col-md-12 value text-center">
-                    <button class="custom-question-btn">Add custom question</button>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
                     About
                 </div>
                 <div class="col-md-12 value">
