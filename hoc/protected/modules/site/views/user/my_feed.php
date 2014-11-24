@@ -21,13 +21,17 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.j
                     <img src="" class="hidden" id="media-post-thumb"/>
                 </div>
                 <input type="file" class="hidden" name="media_post" id="post-photo" />
+                <input type="file" class="hidden" name="video_file" id="post-video" />
                 <div class="col-md-4 col-md-offset-2">
                     <span class="add-media">
-                        <i class="fa fa-camera"></i>
+                        <i class="fa fa-camera no-file"></i>
+                    </span>
+                    <span class="add-video">
+                        <i class="fa fa-film no-file"></i>
                     </span>
                     <span class="add-location">
                         <label for="location" class="lable-add-location"></label>
-                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-map-marker no-file"></i>
                     </span>
                 </div>
                 <div class="col-md-2 pull-right">

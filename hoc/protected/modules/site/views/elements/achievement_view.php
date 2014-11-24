@@ -61,6 +61,13 @@ if($user){?>
             <img src="<?=Yii::app()->request->baseUrl.'/uploads/photo/'.$data->media;?>"/>
     </div>
     <?php } ?>
+    <?php if($data->video) { ?>
+    <div class="col-md-12">
+        <video class="projekktor" style="margin: 0 auto;" height="360" title="this is projekktor" controls>
+            <source src="<?=Yii::app()->request->baseUrl.'/uploads/video/'.$data->video;?>" />
+        </video>
+    </div>
+    <?php } ?>
     <div class="comment-post-home">
         <p style="padding-bottom: 10px;"><span class="comment_txt">Comment</span> <span class="comment_count">(2)</span></p>
         <ul>

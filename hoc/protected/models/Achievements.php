@@ -14,6 +14,7 @@
  * @property integer $user_id
  * @property string $created
  * @property string $updated
+ * @property string $video
  *
  * The followings are the available model relations:
  * @property Users $user
@@ -57,7 +58,7 @@ class Achievements extends CActiveRecord
 			array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, content, vote, location, media, status, user_id, created, updated, username', 'safe', 'on'=>'search'),
+			array('id, name, alias, content, vote, location, media, status, user_id, created, updated, username, video', 'safe', 'on'=>'search'),
 		);
 	}
 

@@ -2,11 +2,19 @@ $(document).ready(function(){
     $('.add-media i').click(function(){
         $('#post-photo').trigger('click');
     });
+    $('.add-video i').click(function(){
+        $('#post-video').trigger('click');
+    });
 
     $("#post-photo").change(function(){
         readURL(this);
+        $('.add-media i').addClass('has-file').removeClass('no-file');
+    });
+    $("#post-video").change(function(){
+        $('.add-video i').addClass('has-file').removeClass('no-file');
     });
     //$('.img-container > img').fakecrop({wrapperWidth : 120, wrapperHeight : 120});
+    projekktor('video.projekktor', {plugins: ['display', 'controlbar']});
 });
 
 

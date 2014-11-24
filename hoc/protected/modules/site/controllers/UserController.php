@@ -213,6 +213,15 @@ class UserController extends SiteBaseController {
                 $achievement->media = $filename;
             }
         }
+        //@todo Костыльно, братан
+        if(isset($_FILES['video_file'])){
+            $folder = Yii::app()->basePath.'/../uploads/video/';
+
+            $filename = $this->generateRandomString().$_FILES['video_file']['name'];
+            if (move_uploaded_file($_FILES['video_file']['tmp_name'], $folder.$filename)){
+                $achievement->video = $filename;
+            }
+        }
         $this->user     = User::model()->findByPk(Yii::app()->user->id);
         $content        = $_POST['content'];
         $achievement->content = $content;

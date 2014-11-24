@@ -33,7 +33,6 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <?php //Yii::app()->clientScript->registerCoreScript('jquery'); ?>
-    <title>Labeeto</title>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -42,6 +41,9 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jwplayer.js"></script>
 
+    <!-- PROJEKKTOR -->
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/projekktor/projekktor.js"></script>
+    <link rel="stylesheet" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/projekktor/themes/maccaco/projekktor.style.css" type="text/css" media="screen" />
 
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.smoothdivscroll-1.3-min.js"></script>
@@ -50,6 +52,8 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/jPlayer/jquery.jplayer.min.js">
     jwplayer.key="YLh0EpQST8/bQUTi3GDUFWxfaIaeKorWSL5ihzmIxDSdoJDoz9fLSJZrt9g=";</script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <title>Labeeto</title>
+
     <?php Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl . '/js/chat.js' ); ?>
     <script type="text/javascript">
     function ratings( score, id){    
