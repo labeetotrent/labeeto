@@ -543,14 +543,14 @@ a{
  .footer-post {
      float: left;
      width: 100%;
-     height: 50px;
+     /*height: 50px;*/
      background-color: #f6f6f6;
      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f6f6f6', endColorstr='#f6f6f6'); /* IE */
      border-radius: 0px 0px 5px 5px;
      -webkit-border-radius: 0px 0px 5px 5px;
     -moz-border-radius: 0px 0px 5px 5px;
     behavior: url('../pie/PIE.htc');
-     padding-left: 95px;
+     /*padding-left: 95px;*/
  }
 .footer-post span.add-media {
     color: #b9adad;

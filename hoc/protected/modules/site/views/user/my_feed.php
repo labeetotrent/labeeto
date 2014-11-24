@@ -1,6 +1,7 @@
-<!--<div class="banner-ad-top">
-    <img src="<?php // echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>-->
+<?php
+$cs = Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.js');
+?>
 <div class="content-main-1" >
     <?php //$this->widget('widgets.admin.notifications'); ?>
      <!-- Content Left  -->
@@ -15,17 +16,23 @@
             <div class="content-textarea">
                 <textarea class="post-textarea" placeholder="Post an achievement..." name="content"></textarea>
             </div>
-            <div class="footer-post">
-                <span class="add-media">
-                   <!-- <input type="file" name="media_post" id="media" style="display: none;" />-->
-                    <!--<label for="media" class="label-add-media"></label>-->
-                    <i class="fa fa-camera"></i>
-                </span>
-                <span class="add-location">
-                    <label for="location" class="lable-add-location"></label>
-                    <i class="fa fa-map-marker"></i>
-                </span>
-                <input type="submit" class="post-btn" value="Post" />
+            <div class="col-md-12 footer-post">
+                <div class="thumb-container col-md-1 col-md-offset-1">
+                    <img src="" class="hidden" id="media-post-thumb"/>
+                </div>
+                <input type="file" class="hidden" name="media_post" id="post-photo" />
+                <div class="col-md-4 col-md-offset-2">
+                    <span class="add-media">
+                        <i class="fa fa-camera"></i>
+                    </span>
+                    <span class="add-location">
+                        <label for="location" class="lable-add-location"></label>
+                        <i class="fa fa-map-marker"></i>
+                    </span>
+                </div>
+                <div class="col-md-2 pull-right">
+                    <input type="submit" class="post-btn" value="Post" />
+                </div>
             </div>
         </form>
 

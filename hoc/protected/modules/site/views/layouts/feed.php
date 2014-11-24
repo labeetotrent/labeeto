@@ -33,9 +33,11 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <?php //Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+    <title>Labeeto</title>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.fakecrop.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.placeholder.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fancybox/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jwplayer.js"></script>
@@ -43,10 +45,10 @@
 
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.smoothdivscroll-1.3-min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.blImageCenter.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/nouislider/jquery.nouislider.all.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/jPlayer/jquery.jplayer.min.js">
     jwplayer.key="YLh0EpQST8/bQUTi3GDUFWxfaIaeKorWSL5ihzmIxDSdoJDoz9fLSJZrt9g=";</script>
-    <title>Labeeto</title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <?php Yii::app()->clientScript->registerScriptFile( Yii::app()->themeManager->baseUrl . '/js/chat.js' ); ?>
     <script type="text/javascript">
@@ -206,7 +208,7 @@
         });
 
 
-        $('textarea').placeholder();
+        //$('textarea').placeholder();
         <?php if(!Yii::app()->user->isGuest){ ?>
         var lastest_visit = '<?php echo Yii::app()->session['lastest_visit']; ?>'
         <?php } ?>

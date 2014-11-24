@@ -35,25 +35,32 @@ if($user){?>
         </div>
     </div>
     <div class="content-post">
-      <h3 class="my_posted"> 
-      <?php 
-      $arr = $data->content;
-      $search = array(); $replace = array();
-      for($i = 0; $i < strlen($arr) - 1; $i++){
-            if($arr[$i] == '#'){
-                $str = '';
-                for($j = $i; $j< (strlen($arr) ); $j++){
-                    if($arr[$j] != ' '){
-                        $str.= $arr[$j];
-                    }else{
-                        break;
+    <div class="col-md-12">
+        <h3 class="my_posted">
+            <?php
+            $arr = $data->content;
+            $search = array(); $replace = array();
+            for($i = 0; $i < strlen($arr) - 1; $i++){
+                if($arr[$i] == '#'){
+                    $str = '';
+                    for($j = $i; $j< (strlen($arr) ); $j++){
+                        if($arr[$j] != ' '){
+                            $str.= $arr[$j];
+                        }else{
+                            break;
+                        }
                     }
+                    $search[] = $str;
+                    $replace[] = '<span class="link_2">'. $str .'</span>';
                 }
-                $search[] = $str;
-                $replace[] = '<span class="link_2">'. $str .'</span>';
             }
-      }
-      echo str_replace($search, $replace, $data->content); ?> </h3>
+            echo str_replace($search, $replace, $data->content); ?> </h3>
+    </div>
+    <?php if($data->media) { ?>
+    <div class="col-md-12">
+            <img src="<?=Yii::app()->request->baseUrl.'/uploads/photo/'.$data->media;?>"/>
+    </div>
+    <?php } ?>
     <div class="comment-post-home">
         <p style="padding-bottom: 10px;"><span class="comment_txt">Comment</span> <span class="comment_count">(2)</span></p>
         <ul>
