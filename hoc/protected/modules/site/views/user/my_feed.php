@@ -1,6 +1,9 @@
 <?php
+
 $cs = Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/foursquare.autocomplete.js');
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.js');
+$cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css');
 ?>
 <div class="content-main-1" >
     <?php //$this->widget('widgets.admin.notifications'); ?>
@@ -22,6 +25,10 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.j
                 </div>
                 <input type="file" class="hidden" name="media_post" id="post-photo" />
                 <input type="file" class="hidden" name="video_file" id="post-video" />
+                <input type="hidden" class="hidden" name="Location[lon]" id="geo-lon" />
+                <input type="hidden" class="hidden" name="Location[lat]" id="geo-lat" />
+                <input type="hidden" class="hidden" name="Location[name]" id="geo-name" />
+                <input type="hidden" class="hidden" name="Location[address]" id="geo-address" />
                 <div class="col-md-4 col-md-offset-2">
                     <span class="add-media">
                         <i class="fa fa-camera no-file"></i>
@@ -36,6 +43,14 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.j
                 </div>
                 <div class="col-md-2 pull-right">
                     <input type="submit" class="post-btn" value="Post" />
+                </div>
+                <div class="geo-tag-container hidden col-md-12">
+                    <div class="col-md-12 find-place">
+                        <input type="text" class="form-control" id="place-name"/>
+                    </div>
+                    <div class="col-md-12 set-geo hidden" id="set-geo">
+
+                    </div>
                 </div>
             </div>
         </form>

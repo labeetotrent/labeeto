@@ -41,7 +41,7 @@
         </div>
     </fieldset>
 </div>
-<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+<?php //Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 <script>window.jQuery || document.write('<script src="<?php echo Yii::app()->homeUrl . 'themes/admin/default/js/vendor/jquery-1.9.1.min.js'; ?>"><\/script>')</script>
 
 <script src="<?php echo Yii::app()->homeUrl . 'themes/admin/default/js/vendor/bootstrap.min.js'; ?>"></script>

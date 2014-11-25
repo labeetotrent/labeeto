@@ -194,3 +194,19 @@ textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
 .projekktor {
     width: 100% !important;
 }
+.geo-tag-container,
+.geo-tag-container div {
+    padding-left: 0;
+    padding-right: 0;
+}
+.set-geo {
+    padding: 9px 5px;
+    font-size: 12pt;
+    font-family: "Proxima Nova Regular";
+    color: #EB4E62;
+    text-align: center;
+}
+.set-geo .fa-close {
+    padding-left: 20px;
+    cursor: pointer;
+}

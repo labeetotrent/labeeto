@@ -50,7 +50,7 @@ return array(
                             ),
             'gii'=>array(
                 'class'=>'system.gii.GiiModule',
-                'password'=>'admin123',
+                'password'=>'123',
             ),
         ),
         'import' => array(

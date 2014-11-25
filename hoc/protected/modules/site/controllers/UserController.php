@@ -222,6 +222,16 @@ class UserController extends SiteBaseController {
                 $achievement->video = $filename;
             }
         }
+        if(isset($_POST['Location']))
+        {
+            $location = new Location();
+            $location->attributes = $_POST['Location'];
+            if($location->validate())
+            {
+                if($location->save())
+                    $achievement->location_id = $location->getPrimaryKey();
+            }
+        }
         $this->user     = User::model()->findByPk(Yii::app()->user->id);
         $content        = $_POST['content'];
         $achievement->content = $content;
@@ -229,6 +239,13 @@ class UserController extends SiteBaseController {
         $achievement->save();
         $this->redirect('/my_feed');
 
+    }
+
+    public function actionTest()
+    {
+        $fs = new Foursquare();
+        $places = $fs->getPlaces(array('near' => 'Moscow'));
+        CVarDumper::dump($places,100, true);
     }
 
     public function actionLogin(){

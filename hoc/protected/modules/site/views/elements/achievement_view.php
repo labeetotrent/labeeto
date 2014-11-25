@@ -68,6 +68,11 @@ if($user){?>
         </video>
     </div>
     <?php } ?>
+    <?php if($data->location) { ?>
+    <div class="col-md-12 set-geo">
+        <i class="fa fa-map-marker"></i>&nbsp;<?=$data->location->name;?>
+    </div>
+    <?php } ?>
     <div class="comment-post-home">
         <p style="padding-bottom: 10px;"><span class="comment_txt">Comment</span> <span class="comment_count">(2)</span></p>
         <ul>

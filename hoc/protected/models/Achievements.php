@@ -8,13 +8,13 @@
  * @property string $name
  * @property string $alias
  * @property string $content
- * @property string $location
  * @property string $media
  * @property integer $status
  * @property integer $user_id
  * @property string $created
  * @property string $updated
  * @property string $video
+ * @property int $location_id
  *
  * The followings are the available model relations:
  * @property Users $user
@@ -54,11 +54,11 @@ class Achievements extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('status, user_id', 'numerical', 'integerOnly'=>true),
-			array('name, alias, location, media', 'length', 'max'=>255),
+			array('name, alias, media', 'length', 'max'=>255),
 			array('content, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, alias, content, vote, location, media, status, user_id, created, updated, username, video', 'safe', 'on'=>'search'),
+			array('id, name, alias, content, vote, media, status, user_id, created, updated, username, video, location_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +71,7 @@ class Achievements extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
           'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+          'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
 		);
 	}
 
@@ -111,7 +112,6 @@ class Achievements extends CActiveRecord
 		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('t.alias',$this->alias,true);
 		$criteria->compare('t.content',$this->content,true);
-        $criteria->compare('t.location',$this->location,true);
 		$criteria->compare('t.status',$this->status);
         $criteria->compare('t.user_id',$this->user_id);
         $criteria->compare('t.vote',$this->vote);
