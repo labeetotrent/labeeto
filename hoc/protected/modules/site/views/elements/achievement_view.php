@@ -12,6 +12,9 @@ if($user){?>
             <div class="crycle-img">
                 <h2>
                     <a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a>
+                    <?php if ($data->location) { ?>
+                    <span class="geo-info">at <span class="at-location"><?=$data->location->name;?></span></span>
+                    <?php } ?>
                     <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
                     <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
                 </h2>
@@ -66,11 +69,6 @@ if($user){?>
         <video class="projekktor" style="margin: 0 auto;" height="360" title="this is projekktor" controls>
             <source src="<?=Yii::app()->request->baseUrl.'/uploads/video/'.$data->video;?>" />
         </video>
-    </div>
-    <?php } ?>
-    <?php if($data->location) { ?>
-    <div class="col-md-12 set-geo">
-        <i class="fa fa-map-marker"></i>&nbsp;<?=$data->location->name;?>
     </div>
     <?php } ?>
     <div class="comment-post-home">

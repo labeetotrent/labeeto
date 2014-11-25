@@ -210,3 +210,16 @@ textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
     padding-left: 20px;
     cursor: pointer;
 }
+
+.geo-info {
+    top: 2px;
+    position: relative;
+    padding-right: 10px;
+}
+.first-infor .profile .crycle-img .geo-info .at-location {
+    color: #EB4E62;
+}
+.first-infor .profile .crycle-img .geo-info .at-location:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
