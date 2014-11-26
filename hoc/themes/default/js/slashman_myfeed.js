@@ -58,6 +58,7 @@ $(document).ready(function(){
     //@todo Изменить все, тут очень костыльно, доработать AJAX
     $('[rel=popover]').popover({
         html:true,
+        trigger: 'hover',
         placement:'top',
         content:function(){
             return $($(this).data('contentwrapper')).html();
