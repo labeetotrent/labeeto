@@ -16,7 +16,7 @@ if($user){?>
                         //@todo Изменить все, тут очень костыльно, доработать AJAX
                         ?>
 
-                    <div id="ach-<?=$data->id;?>" class="hidden"><img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$data->location->lat.','.$data->location->lon;?>&zoom=14&size=100x100&markers=color:red|<?=$data->location->lat.','.$data->location->lon;?>" width="100" style="width: 100px; height: 100px;"/></div>
+                    <div id="ach-<?=$data->id;?>" class="hidden"><img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$data->location->lat.','.$data->location->lon;?>&zoom=16s&size=100x100&markers=color:red|<?=$data->location->lat.','.$data->location->lon;?>" width="100" style="width: 100px; height: 100px;"/></div>
                     <span class="geo-info">at <span class="at-location" data-contentwrapper="#ach-<?=$data->id;?>" rel="popover"><?=$data->location->name;?></span></span>
                     <?php } ?>
                     <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
