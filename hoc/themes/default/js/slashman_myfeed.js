@@ -55,6 +55,14 @@ $(document).ready(function(){
         $('#set-geo').addClass('hidden');
         $('.find-place').removeClass('hidden');
     });
+    //@todo Изменить все, тут очень костыльно, доработать AJAX
+    $('[rel=popover]').popover({
+        html:true,
+        placement:'top',
+        content:function(){
+            return $($(this).data('contentwrapper')).html();
+        }
+    });
 });
 
 

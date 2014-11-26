@@ -12,8 +12,12 @@ if($user){?>
             <div class="crycle-img">
                 <h2>
                     <a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a>
-                    <?php if ($data->location) { ?>
-                    <span class="geo-info">at <span class="at-location"><?=$data->location->name;?></span></span>
+                    <?php if ($data->location) {
+                        //@todo Изменить все, тут очень костыльно, доработать AJAX
+                        ?>
+
+                    <div id="ach-<?=$data->id;?>" class="hidden"><img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$data->location->lat.','.$data->location->lon;?>&zoom=14&size=100x100&markers=color:red|<?=$data->location->lat.','.$data->location->lon;?>" width="100" style="width: 100px; height: 100px;"/></div>
+                    <span class="geo-info">at <span class="at-location" data-contentwrapper="#ach-<?=$data->id;?>" rel="popover"><?=$data->location->name;?></span></span>
                     <?php } ?>
                     <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
                     <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
@@ -71,6 +75,8 @@ if($user){?>
         </video>
     </div>
     <?php } ?>
+        <?php if ($data->location) { ?>
+        <?php } ?>
     <div class="comment-post-home">
         <p style="padding-bottom: 10px;"><span class="comment_txt">Comment</span> <span class="comment_count">(2)</span></p>
         <ul>

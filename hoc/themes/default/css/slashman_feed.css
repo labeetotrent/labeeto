@@ -223,3 +223,13 @@ textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
     text-decoration: underline;
     cursor: pointer;
 }
+
+.popover {
+    position: fixed;
+}
+.first-infor .profile .popover img {
+    border-radius: 0;
+}
+.popover-content {
+    padding: 0;
+}
