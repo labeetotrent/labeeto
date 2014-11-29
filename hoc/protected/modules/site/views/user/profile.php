@@ -7,21 +7,26 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
 <div class="content-main-1 my-profile">
     <div class="row col-md-12 profile-header">
         <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="avatar-image img-circle"/>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/online-circle.png" class="online-circle"/>
+            <!--<img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/avatar.png" class="avatar-image img-circle"/>-->
+
+            <?php if($this->user->photo =='undefined'){ ?>
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png" class="avatar-image img-circle">
+            <?php } else { ?>
+                <img src="/uploads/avatar/<?php echo $this->user->photo ?>" class="avatar-image img-circle" />
+            <?php } ?>
+            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'online-circle.png' :'offline-circle.png'; ?>" class="online-circle"/>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4 profile-info">
             <div class="row col-md-12 user-name">
-                ACandiceS
+                <?=$this->user->username;?>
             </div>
             <div class="row col-md-12 profile-data">
-                24, Female
+                <?= date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
             <div class="row col-md-12 job">
-                Supermodel
+                <?php if($this->user->career) echo $this->user->career; ?>
             </div>
-            <div class="row col-md-12 location">
-                New York, NY
+            <div class="row col-md-12 location"><?php if($this->user->address) echo $this->user->address; ?>
             </div>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2 container-element">
@@ -83,7 +88,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 Gender:
             </div>
             <div class="col-md-3 text">
-                Male
+                <?php if($this->user->gender_look == 1) echo "Female"; else echo 'Male'; ?>
             </div>
         </div>
         <div class="col-md-2 param">
@@ -91,7 +96,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 Relationship:
             </div>
             <div class="col-md-6 text">
-                Serious
+                <?php if($this->user->relations_look) echo $this->user->relations_look; ?>
             </div>
         </div>
         <div class="col-md-5 param">
@@ -99,7 +104,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <span class="pull-right">Age:</span>
             </div>
             <div class="col-md-2 text">
-                24 - 35
+                <?php if($this->user->age) echo $this->user->age; ?>
             </div>
             <div class="col-md-8 text edit">
                 <i class="fa fa-pencil-square-o pull-right edit-looking-for"></i>
@@ -118,10 +123,264 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     </div>
                 </div>
                 <div class="col-md-12 value view">
-                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                    <?php if($this->user->about) echo $this->user->about; ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                    <textarea class="value-textarea"><?php if($this->user->about) echo $this->user->about; ?></textarea>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="about-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Education
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->education) echo Education::model()->getNameEducation($this->user->education); ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <select name="education" id="education" class="form-control">
+                        <?php $education = Education::model()->findAll();
+                        foreach($education as $value){
+                            $l = '';
+                            if($value->id == $this->user->education)
+                                $l = 'selected';
+                            echo "<option ". $l ." value='".$value->id."'>".$value->name."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="education-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Religion
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->religion) echo Religion::model()->getNameReligion($this->user->religion) ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <select name="religion" id="religion" class="form-control">
+                        <?php $religion = Religion::model()->findAll();
+                        foreach($religion as $value){
+                            $l = '';
+                            if($value->id == $this->user->religion)
+                                $l = 'selected';
+                            echo "<option ". $l ." value='".$value->id."'>".$value->name."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="religion-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Ethnicity
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->ehtnicity) echo Ethnicity::model()->getNameEthnicity($this->user->ehtnicity) ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <select name="ehtnicity" id="ethnicity" class="form-control">
+                        <?php $ethnicity = Ethnicity::model()->findAll();
+                        foreach($ethnicity as $value){
+                            $l = '';
+                            if($value->id == $this->user->ehtnicity)
+                                $l = 'selected';
+                            echo "<option ". $l ." value='".$value->id."'>".$value->name."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="ethnicity-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Height
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->height) echo $this->user->height . Yii::t('global', ' FEET')?>
+                    <?php $arr = explode(".",$this->user->height); //@todo Костыль ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <div class="col-md-6">
+                        <select class="form-control" name="feet">
+                            <?php
+
+                            for($i=0; $i<=10; $i++) {
+                                if($arr[0] == $i)
+                                    $l = 'selected';
+                                else
+                                    $l = '';
+                                echo "<option ". $l ." value='".$i."'>".$i."</option>";
+                            }?>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" id="inches" name="inches">
+                            <?php
+                                for($i=0; $i<=9; $i++) {
+                                    if($arr[1] == $i)
+                                        $h = 'selected';
+                                    else
+                                        $h = '';
+                                    echo "<option ". $h ." value='".$i."'>".$i."</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="height-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Children
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->children) echo Children::model()->getNameChildren($this->user->children) ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <select class="form-control" name="children">
+                        <?php $religion = Children::model()->findAll();
+                        foreach($religion as $value){
+                            $l = '';
+                            if($value->id == $this->user->religion)
+                                $l = 'selected';
+                            echo "<option ". $l ." value='".$value->id."'>".$value->name."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="children-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Fitness passion
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->passion) echo $this->user->passion ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <input type="text" name="passion" id="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="passion-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Gym membership
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->gym) echo $this->user->gym ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <input type="text" name="gym" id="gym" class="form-control" value="<?php if($this->user->gym) echo $this->user->gym; ?>"/>
+                </div>
+                <div class="col-md-12 edit-buttons hidden-element">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="gym-save">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 info-block">
+                <div class="col-md-12 name">
+                    <div class="col-md-10">
+                        Diet
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 value view">
+                    <?php if($this->user->diet) echo $this->user->diet ?>
+                </div>
+                <div class="col-md-12 value edit hidden-element">
+                    <input type="text" name="diet" id="diet" class="form-control" value="<?php if($this->user->diet) echo $this->user->diet; ?>"/>
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">
@@ -135,41 +394,17 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     <div class="col-md-10">
-                        About
+                        Goals
                     </div>
                     <div class="col-md-2">
                         <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
                     </div>
                 </div>
                 <div class="col-md-12 value view">
-                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                    <?php if($this->user->goal) echo $this->user->goal ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
-                </div>
-                <div class="col-md-12 edit-buttons hidden-element">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    <div class="col-md-10">
-                        About
-                    </div>
-                    <div class="col-md-2">
-                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
-                    </div>
-                </div>
-                <div class="col-md-12 value view">
-                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
-                </div>
-                <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                    <input type="text" name="goal" id="goals" class="form-control" value="<?php if($this->user->goal) echo $this->user->goal; ?>"/>
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">
@@ -189,7 +424,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="exercise-slider"></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -205,7 +440,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="drink-slider"></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -221,7 +456,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         Nope
                     </div>
                     <div class="col-md-8 slider-container">
-                        <div class="slider" id="slider"></div>
+                        <div class="slider" id="smoke-slider"></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -264,10 +499,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     </div>
                 </div>
                 <div class="col-md-12 value view">
-                    Small town girl who loves country music. Single for almost 4 years. Loves pickles.
+                    <?php if($this->user->about) echo $this->user->about; ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea">Small town girl who loves country music. Single for almost 4 years. Loves pickles.</textarea>
+                    <textarea class="value-textarea"><?php if($this->user->about) echo $this->user->about; ?></textarea>
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">
@@ -390,6 +625,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('#exercise-slider').val(<?php if($this->user->excercise) echo $this->user->excercise;?>);
+            $('#drink-slider').val(<?php if($this->user->drink) echo $this->user->drink;?>);
+            $('#smoke-slider').val(<?php if($this->user->smoke) echo $this->user->smoke;?>);
+        });
+    </script>
+
 
 
     <div class="infor-user" style="display: none;">
@@ -1152,7 +1395,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
     </div>
   </div>
 </div>
-
 <script>
     var type = '<?php echo isset($_GET['type'])?$_GET['type']:'' ?>';
     if(type=='photos'){

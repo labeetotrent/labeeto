@@ -34,7 +34,107 @@ $(document).ready(function(){
             'max': 100
         }
     });
-
+    /* SAVE FROM LEFT */
+    $('#about-save').click(function(){
+        var about = $(this).parent().parent().parent().find('.value.edit textarea').val();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateAbout'),
+            {
+                about: about
+            }).done(function(response){
+                $(replaceText).text(about);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#education-save').click(function(){
+        var education = $(this).parent().parent().parent().find('.value.edit select').val();
+        var replaceWith = $(this).parent().parent().parent().find('.value.edit select option:selected').text();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateEducation'),
+            {
+                education: education
+            }).done(function(response){
+                $(replaceText).text(replaceWith);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#religion-save').click(function(){
+        var religion = $(this).parent().parent().parent().find('.value.edit select').val();
+        var replaceWith = $(this).parent().parent().parent().find('.value.edit select option:selected').text();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateReligion'),
+            {
+                religion: religion
+            }).done(function(response){
+                $(replaceText).text(replaceWith);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#ethnicity-save').click(function(){
+        var ethnicity = $(this).parent().parent().parent().find('.value.edit select').val();
+        var replaceWith = $(this).parent().parent().parent().find('.value.edit select option:selected').text();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateEthnicity'),
+            {
+                ethnicity: ethnicity
+            }).done(function(response){
+                $(replaceText).text(replaceWith);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#height-save').click(function(){
+        var height = $(this).parent().parent().parent().find('.value.edit select[name=feet]').val() + '.' + $(this).parent().parent().parent().find('.value.edit select[name=inches]').val();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateHeight'),
+            {
+                height: height
+            }).done(function(response){
+                $(replaceText).text(height + ' FEET');
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#children-save').click(function(){
+        var children = $(this).parent().parent().parent().find('.value.edit select').val();
+        var replaceWith = $(this).parent().parent().parent().find('.value.edit select option:selected').text();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateChildren'),
+            {
+                children: children
+            }).done(function(response){
+                $(replaceText).text(replaceWith);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#passion-save').click(function(){
+        var passion = $(this).parent().parent().parent().find('.value.edit input').val();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdatePassion'),
+            {
+                passion: passion
+            }).done(function(response){
+                $(replaceText).text(passion);
+                hideInfoBlock(infoBlock);
+            });
+    });
+    $('#gym-save').click(function(){
+        var gym = $(this).parent().parent().parent().find('.value.edit input').val();
+        var infoBlock = $(this).parent().parent().parent();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        $.post( Yii.app.createUrl('ajax/userUpdateGym'),
+            {
+                gym: gym
+            }).done(function(response){
+                $(replaceText).text(gym);
+                hideInfoBlock(infoBlock);
+            });
+    });
 
     /* EDIT BUTTONS */
     $('.description-edit-icon').click(function(){
@@ -61,11 +161,7 @@ $(document).ready(function(){
     });
     $('.info-block .btn-cancel-st').click(function(){
         var infoBlock = $(this).parent().parent().parent();
-
-        $(this).parent().parent().hide();
-        infoBlock.find('.edit').hide();
-        infoBlock.find('.view').show();
-        infoBlock.find('i').show();
+        hideInfoBlock(infoBlock);
     });
     $('.left-custom .new-question .custom-question-btn').click(function(){
         var infoBlock = $(this).parent().parent();
@@ -80,3 +176,11 @@ $(document).ready(function(){
         infoBlock.find('.view').show();
     });
 });
+
+function hideInfoBlock(infoBlock)
+{
+    $(infoBlock).find('.edit-buttons').hide();
+    infoBlock.find('.edit').hide();
+    infoBlock.find('.view').show();
+    infoBlock.find('i').show();
+}

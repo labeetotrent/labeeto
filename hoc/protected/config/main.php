@@ -37,7 +37,7 @@ else
 // Required system configuration. There should be no edit performed here.
 require_once( dirname(__FILE__) . '/../components/Helpers.php');
 return array(
-        'preload' => array('log', 'session', 'db', 'cache'),
+        'preload' => array('log', 'session', 'db', 'cache','EJSUrlManager'),
         'basePath' => ROOT_PATH . 'protected/',
         'modules' => array(
             'admin' => array(
@@ -142,6 +142,9 @@ return array(
 				),
                 'counter' => array(
                     'class' => 'UserCounter',
-                ),                
+                ),
+                'EJSUrlManager' => array(
+                    'class' => 'ext.JSUrlManager.src.EJSUrlManager'
+                ),
         ),
 );
