@@ -1,3 +1,4 @@
+@pink: #EA5A5A;
 .my-profile {
   .looking-for-stripe .text > i {
     font-size: 14pt;
@@ -90,5 +91,29 @@
         border: none;
       }
     }
+  }
+  #avatar-form {
+    display: none;
+  }
+
+  .avatar-upload-popover {
+    opacity: 0;
+    font-size: 20pt;
+    position: relative;
+    bottom: 58%;
+    left: 42%;
+    cursor: pointer;
+  }
+  .avatar-upload-popover i {
+    color: @pink;
+  }
+  .set-profile {
+    opacity: 0;
+    font-size: 20pt;
+    position: absolute;
+    bottom: 39%;
+    left: 44%;
+    cursor: pointer;
+    color: @pink;
   }
 }

@@ -487,4 +487,13 @@ class User extends CActiveRecord
 
     }
 
+    public static function current()
+    {
+        $user = self::model()->findByPk(Yii::app()->user->getId());
+        if($user)
+            return $user;
+        else
+            return false;
+    }
+
 }

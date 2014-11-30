@@ -191,8 +191,37 @@ $(document).ready(function(){
     $('#add-private-photo-button').click(function(){
         $('#private_photo').modal('show');
     });
+    /* VIDEO UPLOAD */
     $('#add-video-button').click(function(){
         $('#UploadVideo').modal('show');
+    });
+
+    /* SET PROFILE IMAGE */
+
+    $(document).on({
+        mouseenter: function () {
+            $(this).find('.set-profile').animate({
+                opacity: 1
+            }, 500);
+        },
+        mouseleave: function () {
+            $(this).find('.set-profile').animate({
+                opacity: 0
+            }, 500);
+        }
+    }, '.photo-container');
+
+    $(document).on('click', '.set-profile i', function(){
+        $.post( Yii.app.createUrl('ajax/setAvatar'),
+            {
+                photoId: $(this).attr('photo-id')
+            }).done(function(response){
+                response = JSON.parse(response);
+                if(response.result == 'OK')
+                {
+                    $('img.avatar-image').attr('src','/uploads/avatar/' + response.photo + '?' + Math.random());
+                }
+            });
     });
 
     /* EDIT BUTTONS */

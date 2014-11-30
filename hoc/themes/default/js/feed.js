@@ -355,11 +355,11 @@ $(document).ready(function(){
     /*Upload public photo*/
     $('.public-photo').click(function(){
        $('#public_photo').modal('show');
-    })
+    });
     /*Upload Private photo*/
     $('.private-photo').click(function(){
         $('#private_photo').modal('show');
-    })
+    });
 
     /**Report user**/
     $('.report-user').live('click' ,function(){
@@ -376,7 +376,7 @@ $(document).ready(function(){
         $('#ReportUser textarea').val('');
         $('#achievements_id').val(achievements_id);     
         showImageReport(avatar);
-    })
+    });
     
     /** Chat System **/
     $('.chat-system').live('click', function(){

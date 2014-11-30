@@ -45,16 +45,14 @@
   resize: none;
 }
 .my-profile .new-question input.custom-question-input {
-    font-family: "Proxima Nova Regular";
   width: 100%;
   margin: 5px 0;
 }
 .my-profile .new-question textarea.custom-question-textarea {
-    font-family: "Proxima Nova Regular";
-    width: 100%;
-    min-height: 50px;
-    margin: 5px 0;
-    resize: none;
+  width: 100%;
+  min-height: 50px;
+  margin: 5px 0;
+  resize: none;
 }
 .my-profile .right-element .header {
   line-height: 10px;
@@ -73,18 +71,26 @@
   border-radius: 5px;
   border: none;
 }
-#avatar-form {
-    display: none;
+.my-profile #avatar-form {
+  display: none;
 }
-
-.avatar-upload-popover {
-    opacity: 0;
-    font-size: 20pt;
-    position: relative;
-    bottom: 58%;
-    left: 42%;
-    cursor: pointer;
+.my-profile .avatar-upload-popover {
+  opacity: 0;
+  font-size: 20pt;
+  position: relative;
+  bottom: 58%;
+  left: 42%;
+  cursor: pointer;
 }
-.avatar-upload-popover i {
-    color: #EA5A5A;
+.my-profile .avatar-upload-popover i {
+  color: #ea5a5a;
+}
+.my-profile .set-profile {
+  opacity: 0;
+  font-size: 20pt;
+  position: absolute;
+  bottom: 39%;
+  left: 44%;
+  cursor: pointer;
+  color: #ea5a5a;
 }

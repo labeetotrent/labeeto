@@ -134,4 +134,22 @@ class AjaxController extends SiteBaseController {
             }
         }
     }
+    public function actionSetAvatar()
+    {
+        $folder = Yii::app()->basePath.'/../uploads/';
+        if(isset($_POST['photoId']))
+        {
+            $photo = Photo::model()->findByAttributes(array('id' => $_POST['photoId'], 'user_id' => Yii::app()->user->getId()));
+            if($photo !== null)
+            {
+                if($user = User::model()->current());
+                {
+                    $img = WideImage::load($folder.'photo/'.$photo->photo);
+                    $img = $img->resizeDown('120','120', 'fill');
+                    $img->saveToFile($folder.'/avatar/'.$user->photo);
+                    print json_encode(array('result' => 'OK', 'photo' => $user->photo));
+                }
+            }
+        }
+    }
 }

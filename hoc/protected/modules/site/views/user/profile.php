@@ -498,9 +498,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     {
                 ?>
                 <div class="col-md-4 photo-container">
-                    <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo" class="photo">
-                        <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
-                    </a>
+                    <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
+                    <div class="set-profile">
+                        <i class="fa fa-user" photo-id="<?=$photo->id;?>"></i>
+                    </div>
                 </div>
                 <?php } ?>
             </div>
@@ -513,9 +514,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <div class="col-md-12 body">
                 <?php foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => Yii::app()->user->getId())) as $photo) { ?>
                     <div class="col-md-4 photo-container">
-                        <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo" class="photo">
-                            <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
-                        </a>
+                        <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
                     </div>
                 <?php } ?>
             </div>
