@@ -6,7 +6,12 @@
     <meta name="description" content="Annuaire audition">
     <meta name="author" content="">
     <meta name="google-site-verification" content="" />
-    <title><?php echo ( count( $this->pageTitle ) ) ? implode( ' - ', array_reverse( $this->pageTitle ) ) : $this->pageTitle; ?></title>
+    <title>
+        <?php
+        //echo ( count( $this->pageTitle ) ) ? implode( ' - ', array_reverse( $this->pageTitle ) ) : $this->pageTitle;
+        echo $this->pageTitle;
+        ?>
+    </title>
     <link rel="stylesheet" href="<?php echo Yii::app()->homeUrl . 'themes/admin/default/css/styles.css'; ?>">
 
 </head>

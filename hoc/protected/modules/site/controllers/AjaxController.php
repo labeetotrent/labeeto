@@ -96,4 +96,42 @@ class AjaxController extends SiteBaseController {
             }
         }
     }
+
+    public function actionUserUpdateCustom()
+    {
+        if(isset($_POST['questionId']) && isset($_POST['answer']))
+        {
+            $question = Question::model()->findByPk($_POST['questionId']);
+            if($question !== null)
+            {
+                $answer = Answer::model()->findByAttributes(array('question_id' => $question->id)); //@todo В принципе можно тянуть сразу по $_POST['questionId']
+                if($answer !== null)
+                {
+                    $answer->answer = $_POST['answer'];
+                    $answer->save();
+                }
+            }
+        }
+    }
+
+    public function actionCreateCustomQuestion()
+    {
+        if(isset($_POST['question']) && isset($_POST['answer']))
+        {
+            $question = new Question();
+            $question->default = 0; //@todo Unknown
+            $question->question = $_POST['question'];
+            $question->user_id = Yii::app()->user->getId();
+            if($question->validate() && $question->save())
+            {
+                $answer = new Answer();
+                $answer->answer = $_POST['answer'];
+                $answer->question_id = $question->getPrimaryKey();
+                $answer->user_id = Yii::app()->user->getId();
+                $answer->save();
+
+                print $this->renderPartial('/elements/custom_question', array('customQuestion' => $question));
+            }
+        }
+    }
 }

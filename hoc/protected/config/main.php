@@ -55,6 +55,7 @@ return array(
         ),
         'import' => array(
                             'application.components.*',
+                            'application.components.WideImage.*',
                             'application.models.*',
                             'application.extensions.*',
         ),

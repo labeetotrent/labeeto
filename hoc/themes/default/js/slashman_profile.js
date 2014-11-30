@@ -36,9 +36,9 @@ $(document).ready(function(){
     });
     /* SAVE FROM LEFT */
     $('#about-save').click(function(){
-        var about = $(this).parent().parent().parent().find('.value.edit textarea').val();
+        var about = $(this).parent().parent().parent().find('.edit textarea').val();
         var infoBlock = $(this).parent().parent().parent();
-        var replaceText = $(this).parent().parent().parent().find('.value.view');
+        var replaceText = $(this).parent().parent().parent().find('.view');
         $.post( Yii.app.createUrl('ajax/userUpdateAbout'),
             {
                 about: about
@@ -135,6 +135,55 @@ $(document).ready(function(){
                 hideInfoBlock(infoBlock);
             });
     });
+
+    /* ADD NEW CUSTOM QUESTION */
+
+    $('#custom-create').click(function(){
+        var question = $(this).parent().parent().parent().find('input').val();
+        var answer = $(this).parent().parent().parent().find('textarea').val();
+        if(question !== '' && answer !== '')
+        {
+            $.post( Yii.app.createUrl('ajax/createCustomQuestion'),
+                {
+                    question: question,
+                    answer: answer
+                }).done(function(response){
+                    $('.left-custom > div:last').after(response);
+                });
+        }
+    });
+
+    /* SAVE CUSTOM QUESTION */
+
+    $('.custom-save').click(function(){
+        var infoBlock = $(this).parent().parent().parent();
+        var questionId = $(this).parent().parent().parent().attr('question-id');
+        var answer = $(this).parent().parent().parent().find('textarea').val();
+        var replaceText = $(this).parent().parent().parent().find('.value.view');
+
+        $.post( Yii.app.createUrl('ajax/userUpdateCustom'),
+            {
+                questionId: questionId,
+                answer: answer
+            }).done(function(response){
+                $(replaceText).text(answer);
+                hideInfoBlock(infoBlock);
+            });
+    });
+
+    /* AVATAR UPLOAD */
+    $(document).on({
+        mouseenter: function () {
+            $('.avatar-upload-popover').animate({
+                opacity: 1
+            }, 500);
+        },
+        mouseleave: function () {
+            $('.avatar-upload-popover').animate({
+                opacity: 0
+            }, 500);
+        }
+    }, '.avatar-container');
 
     /* EDIT BUTTONS */
     $('.description-edit-icon').click(function(){

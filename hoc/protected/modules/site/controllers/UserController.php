@@ -241,13 +241,6 @@ class UserController extends SiteBaseController {
 
     }
 
-    public function actionTest()
-    {
-        $fs = new Foursquare();
-        $places = $fs->getPlaces(array('near' => 'Moscow'));
-        CVarDumper::dump($places,100, true);
-    }
-
     public function actionLogin(){
         Yii::app()->Facebook->facebook();
         echo '<script type="text/javascript"> window.close();</script>';
@@ -612,10 +605,7 @@ class UserController extends SiteBaseController {
     
     public function actionChangeAvatar(){
         if (isset($_FILES['photo-change'])){
-            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
-            'image/tiff', 'image/tiff', 'application/octet-stream',
-            'image/jp2', 'application/octet-stream', 'application/octet-stream',
-            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $allowed_extensions = array("image/jpeg", "image/png");
             $file_type = $_FILES['photo-change']['type'];
             $check = 1;
             foreach($allowed_extensions as $value){
@@ -630,11 +620,24 @@ class UserController extends SiteBaseController {
                 $filename = $this->generateRandomString().$_FILES['photo-change']['name'];
                 move_uploaded_file($_FILES['photo-change']['tmp_name'], $folder.$filename);
                 User::model()->updateByPk(Yii::app()->user->id, array('photo'=>$filename));
+
+                $image = WideImage::load($folder.$filename);
+                $image = $image->resize(120, 120, 'fill');
+                $image = $image->saveToFile($folder.$filename);
+
                 echo $check; 
             }else{
                 echo $check; 
             }
         }
+    }
+
+    public function actionTest()
+    {
+        $image = Yii::app()->baseUrl.'../uploads/avatar/7Vi8C6hc2wSnapshot_20120421.JPG';
+        $img = WideImage::load($image);
+        //$img
+        echo '<img src="'.$image.'">';
     }
 
     public function actionUpdateQuestions(){

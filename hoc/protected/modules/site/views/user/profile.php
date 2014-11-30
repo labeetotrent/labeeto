@@ -7,6 +7,9 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
 <div class="content-main-1 my-profile">
     <div class="row col-md-12 profile-header">
         <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
+            <form id="avatar-form" enctype="multipart/form-data">
+                <input type="file" name="avatar-file" id="avatar-file"/>
+            </form>
             <!--<img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/avatar.png" class="avatar-image img-circle"/>-->
 
             <?php if($this->user->photo =='undefined'){ ?>
@@ -14,6 +17,11 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <?php } else { ?>
                 <img src="/uploads/avatar/<?php echo $this->user->photo ?>" class="avatar-image img-circle" />
             <?php } ?>
+            <div class="avatar-upload-popover">
+                <a href="#" data-toggle="modal" data-target="#ChangeAvatar">
+                    <i class="fa fa-upload"></i>
+                </a>
+            </div>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'online-circle.png' :'offline-circle.png'; ?>" class="online-circle"/>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4 profile-info">
@@ -62,17 +70,17 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
     </div>
     <div class="row col-md-12 profile-description">
         <div class="col-md-7 desc-text view">
-            I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.
+            <?php if($this->user->about) echo $this->user->about; ?>
         </div>
         <div class="col-md-7 desc-text edit hidden-element">
-            <textarea class="desc-textarea">I am a small town girl. Country music is a must! I love being outdoors & enjoy camping, fishing and fourwheeling. I absolutely love my job but it comes with long hours and consists of shift work.</textarea>
+            <textarea class="desc-textarea"><?php if($this->user->about) echo $this->user->about; ?></textarea>
         </div>
         <div class="col-md-4 col-md-offset-1 description-edit">
             <i class="fa fa-pencil-square-o pull-right description-edit-icon"></i>
         </div>
         <div class="col-md-4 col-md-offset-1 description-edit-buttons hidden-element">
             <div class="col-md-6">
-                <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="about-save">Save</button>
             </div>
             <div class="col-md-6">
                 <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
@@ -113,30 +121,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
     </div>
     <div class="col-md-5 profile-left">
         <div class="left-info col-md-12">
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    <div class="col-md-10">
-                        About
-                    </div>
-                    <div class="col-md-2">
-                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
-                    </div>
-                </div>
-                <div class="col-md-12 value view">
-                    <?php if($this->user->about) echo $this->user->about; ?>
-                </div>
-                <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea"><?php if($this->user->about) echo $this->user->about; ?></textarea>
-                </div>
-                <div class="col-md-12 edit-buttons hidden-element">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="about-save">Save</button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     <div class="col-md-10">
@@ -474,14 +458,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 </div>
                 <div class="col-md-12 edit hidden-element">
                     <div class="col-md-12">
-                        <input type="text" class="custom-question-input" placeholder="Question">
+                        <input type="text" class="custom-question-input form-control" placeholder="Question">
                     </div>
                     <div class="col-md-12">
-                        <textarea class="custom-question-textarea" placeholder="Answer"></textarea>
+                        <textarea class="custom-question-textarea form-control" placeholder="Answer"></textarea>
                     </div>
                     <div class="col-md-12">
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
+                            <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="custom-create">Save</button>
                         </div>
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
@@ -489,30 +473,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    <div class="col-md-10">
-                        About
-                    </div>
-                    <div class="col-md-2">
-                        <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
-                    </div>
-                </div>
-                <div class="col-md-12 value view">
-                    <?php if($this->user->about) echo $this->user->about; ?>
-                </div>
-                <div class="col-md-12 value edit hidden-element">
-                    <textarea class="value-textarea"><?php if($this->user->about) echo $this->user->about; ?></textarea>
-                </div>
-                <div class="col-md-12 edit-buttons hidden-element">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12">Save</button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
-                    </div>
-                </div>
-            </div>
+            <?php
+                $customQuestions = Question::model()->findAllByAttributes(array('user_id' => Yii::app()->user->getId()));
+
+                foreach($customQuestions as $customQuestion)
+                {
+                    $this->renderPartial('/elements/custom_question', compact('customQuestion'));
+                }
+            ?>
         </div>
     </div>
     <div class="col-md-7 profile-right">
@@ -522,18 +490,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <button class="add-new-btn pull-right">Add Photo</button>
             </div>
             <div class="col-md-12 body">
+                <?php
+                    foreach(Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => Yii::app()->user->getId())) as $photo)
+                    {
+                ?>
                 <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
+                    <img src="/uploads/photo/<?=$photo->photo;?>" class="img-responsive"/>
                 </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
@@ -542,18 +506,11 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <button class="add-new-btn pull-right">Add Photo</button>
             </div>
             <div class="col-md-12 body">
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/avatar.png" class="img-responsive"/>
-                </div>
+                <?php foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => Yii::app()->user->getId())) as $photo) { ?>
+                    <div class="col-md-4 photo-container">
+                        <img src="/uploads/photo/<?=$photo->photo;?>" class="img-responsive"/>
+                    </div>
+                <?php } ?>
             </div>
         </div>
         <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
@@ -562,18 +519,13 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <button class="add-new-btn pull-right">Add Video</button>
             </div>
             <div class="col-md-12 body">
+                <?php foreach(Video::model()->findAllByAttributes(array('user_id' => Yii::app()->user->getId())) as $video) { ?>
                 <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
+                    <video class="projekktor" style="margin: 0 auto; width: " title="this is projekktor" controls>
+                        <source src="<?=Yii::app()->request->baseUrl.'/uploads/video/'.$video->video;?>" />
+                    </video>
                 </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-4 photo-container">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/video.png" class="img-responsive"/>
-                </div>
+                <?php } ?>
             </div>
         </div>
 
@@ -1094,7 +1046,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
     <div class="right-profile" style="display: none;">
     
         
-        <?php $this->renderPartial('/user/video',compact('video')) ?>
+        <?php //$this->renderPartial('/user/video',compact('video')) ?>
         
         <?php $this->renderPartial('/user/photo',compact('photos','private')) ?>
         
