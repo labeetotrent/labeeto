@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'photo':
  * @property integer $id
  * @property string $photo
+ * @property string $thumb
  * @property integer $is_public
  * @property integer $user_id
  * @property string $date
@@ -50,7 +51,7 @@ class Photo extends CActiveRecord
 			array('date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, photo, is_public, user_id, date, is_approval', 'safe', 'on'=>'search'),
+			array('id, photo, thumb, is_public, user_id, date, is_approval', 'safe', 'on'=>'search'),
 		);
 	}
 

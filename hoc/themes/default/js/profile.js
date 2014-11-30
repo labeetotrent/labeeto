@@ -527,8 +527,8 @@ $(document).ready(function(){
 
         e.preventDefault();
         var formData = new FormData(this);
-        $('.photo-up').addClass('loading');
-        $('.photo-up').html('');
+        $('.btn.btn-primary.my-report-1 i').addClass('fa').addClass('fa-spin').addClass('fa-circle-o-notch');
+        //$('.photo-up').html('');
         
         $.ajax({
             type:'POST',
@@ -539,6 +539,7 @@ $(document).ready(function(){
             processData: false,
             success:function(data){
                 $('#public_photo').modal('hide');
+                $('.btn.btn-primary.my-report-1 i').removeClass('fa').removeClass('fa-spin').removeClass('fa-circle-o-notch');
                 if(data == 1){
                     alert('Invalid image format.');
                 }else{
@@ -559,7 +560,7 @@ $(document).ready(function(){
     $('#form-private').submit(function(e){
         e.preventDefault();
         var formData = new FormData(this);
-        $('.private-up').addClass('loading');
+        $('.btn.btn-primary.my-report-1 i').addClass('fa').addClass('fa-spin').addClass('fa-circle-o-notch');
         $('.private-up').html('');
         $.ajax({
             type:'POST',
@@ -571,6 +572,7 @@ $(document).ready(function(){
             success:function(data){
                 console.log(data);
                 $('#private_photo').modal('hide');
+                $('.btn.btn-primary.my-report-1 i').removeClass('fa').removeClass('fa-spin').removeClass('fa-circle-o-notch');
                 if(data == 1){
                      alert('Invalid image format.');
                 }else{
@@ -671,8 +673,7 @@ $(document).ready(function(){
      $('#form-upload-video').submit(function(e){
          e.preventDefault();
             var formData = new FormData(this);
-            $('.video-up').addClass('loading');
-            $('.video-up').html('');
+            $('.btn.btn-primary.my-report-1 i').addClass('fa').addClass('fa-spin').addClass('fa-circle-o-notch');
             $.ajax({
                 type:'POST',
                 url: '/user/UploadVideo',
@@ -682,6 +683,7 @@ $(document).ready(function(){
                 processData: false,
                 success:function(data){
                     $('#UploadVideo').modal('hide');
+                    $('.btn.btn-primary.my-report-1 i').removeClass('fa').removeClass('fa-spin').removeClass('fa-circle-o-notch');
                     console.log(data);
                     if(data == 1){
                         alert('Invalid video format.');

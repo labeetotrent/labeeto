@@ -632,14 +632,6 @@ class UserController extends SiteBaseController {
         }
     }
 
-    public function actionTest()
-    {
-        $image = Yii::app()->baseUrl.'../uploads/avatar/7Vi8C6hc2wSnapshot_20120421.JPG';
-        $img = WideImage::load($image);
-        //$img
-        echo '<img src="'.$image.'">';
-    }
-
     public function actionUpdateQuestions(){
         $id_question = $_GET['id'];
         $checkQuestion = Question::model()->findByPk($id_question);
@@ -684,23 +676,28 @@ class UserController extends SiteBaseController {
     public function actionUploadPhoto(){
         if (isset($_FILES['photos'])){
             
-            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
-            'image/tiff', 'image/tiff', 'application/octet-stream',
-            'image/jp2', 'application/octet-stream', 'application/octet-stream',
-            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $allowed_extensions = array("image/jpeg", "image/png");
             $file_type = $_FILES['photos']['type'];
             $check = 1;
+
             foreach($allowed_extensions as $value){
                 if($file_type == $value){
                    $check = 0;
                 }
             }
+
             if($check == 0){
                 $folder = Yii::app()->basePath.'/../uploads/photo/';
                 $filename = $this->generateRandomString().$_FILES['photos']['name'];
                 if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+
+                    $img = WideImage::load($folder.$filename);
+                    $img = $img->resizeDown(140,140,'fill');
+                    $img->saveToFile($folder.'tb-'.$filename);
+
                     $photo = new Photo();
                     $photo->photo = $filename;
+                    $photo->thumb = 'tb-'.$filename;
                     $photo->is_public = 1;
                     $photo->date = date('Y-m-d h:s');
                     $photo->user_id = Yii::app()->user->id;
@@ -712,13 +709,11 @@ class UserController extends SiteBaseController {
             }
         }
     }
+
     public function actionUploadPrivate(){
         if (isset($_FILES['photos'])){
             
-            $allowed_extensions = array("image/jpeg", "image/png", "image/gif", 'application/x-shockwave-flash', 'image/psd', 'image/bmp',
-            'image/tiff', 'image/tiff', 'application/octet-stream',
-            'image/jp2', 'application/octet-stream', 'application/octet-stream',
-            'application/x-shockwave-flash', 'image/iff', 'image/vnd.wap.wbmp', 'image/xbm');
+            $allowed_extensions = array("image/jpeg", "image/png");
             $file_type = $_FILES['photos']['type'];
             $check = 1;
             foreach($allowed_extensions as $value){
@@ -730,8 +725,13 @@ class UserController extends SiteBaseController {
                 $folder = Yii::app()->basePath.'/../uploads/photo/';
                 $filename = $this->generateRandomString().$_FILES['photos']['name'];
                 if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
+                    $img = WideImage::load($folder.$filename);
+                    $img = $img->resizeDown(140,140,'fill');
+                    $img->saveToFile($folder.'tb-'.$filename);
+
                     $photo = new Photo();
                     $photo->photo = $filename;
+                    $photo->thumb = 'tb-'.$filename;
                     $photo->is_public = 0;
                     $photo->date = date('Y-m-d h:s');
                     $photo->user_id = Yii::app()->user->id;

@@ -184,6 +184,16 @@ $(document).ready(function(){
             }, 500);
         }
     }, '.avatar-container');
+    /* PHOTO UPLOAD */
+    $('#add-photo-button').click(function(){
+        $('#public_photo').modal('show');
+    });
+    $('#add-private-photo-button').click(function(){
+        $('#private_photo').modal('show');
+    });
+    $('#add-video-button').click(function(){
+        $('#UploadVideo').modal('show');
+    });
 
     /* EDIT BUTTONS */
     $('.description-edit-icon').click(function(){
@@ -223,6 +233,11 @@ $(document).ready(function(){
 
         infoBlock.find('.edit').hide();
         infoBlock.find('.view').show();
+    });
+
+    $('.photo').fancybox({
+        nextEffect	: 'fade',
+        prevEffect	: 'fade'
     });
 });
 

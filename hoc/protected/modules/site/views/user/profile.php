@@ -487,7 +487,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         <div class="col-md-12 right-element photos" id="photos-tab">
             <div class="col-md-12 header">
                 <span>Photos</span>
-                <button class="add-new-btn pull-right">Add Photo</button>
+                <form id="add-photo-form" enctype="multipart/form-data" class="hidden">
+                    <input type="file" id="add-photo-input" name="add-photo-input"/>
+                </form>
+                <button class="add-new-btn pull-right" id="add-photo-button">Add Photo</button>
             </div>
             <div class="col-md-12 body">
                 <?php
@@ -495,7 +498,9 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     {
                 ?>
                 <div class="col-md-4 photo-container">
-                    <img src="/uploads/photo/<?=$photo->photo;?>" class="img-responsive"/>
+                    <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo" class="photo">
+                        <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
+                    </a>
                 </div>
                 <?php } ?>
             </div>
@@ -503,12 +508,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
             <div class="col-md-12 header">
                 <span>Private Photos</span>
-                <button class="add-new-btn pull-right">Add Photo</button>
+                <button class="add-new-btn pull-right" id="add-private-photo-button">Add Photo</button>
             </div>
             <div class="col-md-12 body">
                 <?php foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => Yii::app()->user->getId())) as $photo) { ?>
                     <div class="col-md-4 photo-container">
-                        <img src="/uploads/photo/<?=$photo->photo;?>" class="img-responsive"/>
+                        <a href="/uploads/photo/<?php echo $photo->photo ?>" rel="content-photo" class="photo">
+                            <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
+                        </a>
                     </div>
                 <?php } ?>
             </div>
@@ -516,7 +523,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
             <div class="col-md-12 header">
                 <span>Videos</span>
-                <button class="add-new-btn pull-right">Add Video</button>
+                <button class="add-new-btn pull-right" id="add-video-button">Add Video</button>
             </div>
             <div class="col-md-12 body">
                 <?php foreach(Video::model()->findAllByAttributes(array('user_id' => Yii::app()->user->getId())) as $video) { ?>
@@ -1048,8 +1055,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
         
         <?php //$this->renderPartial('/user/video',compact('video')) ?>
         
-        <?php $this->renderPartial('/user/photo',compact('photos','private')) ?>
-        
+        <?php //$this->renderPartial('/user/photo',compact('photos','private')) ?>
+
         <!--Home Page-->
         <div class="content-profile">
         <!--Post 1-->
@@ -1336,7 +1343,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
           </div>
             <div style="width: 50%; float: left;">
                 <input type="file" id="video-new" name="videos" style="display: none;">
-                <label for="video-new" class="btn btn-primary my-report-1">From My Computer </label>
+                <label for="video-new" class="btn btn-primary my-report-1"><i></i>From My Computer </label>
             </div>
         </form>
             <div style="width: 50%; float: left;">
@@ -1347,6 +1354,57 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
     </div>
   </div>
 </div>
+    <!-- Modal Upload Public Photo--->
+    <div class="modal fade" id="public_photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content special-border">
+                <div class="modal-header header-report">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <span>Upload Photo</span>
+
+                </div>
+
+                <div class="modal-footer footer-report footer-upgarde photo-up">
+                    <form method="post" id="form-photo">
+                        <div style="width: 50%; float: left;">
+                            <input type="file" id="photos" name="photos" style="display: none;">
+                            <label for="photos" class="btn btn-primary my-report-1"><i></i>From My Computer </label>
+                        </div>
+                    </form>
+                    <div style="width: 50%; float: left;">
+                        <a type="button" class="btn btn-primary my-report-1">From Facbook</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Upload Public Photo--->
+    <div class="modal fade" id="private_photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content special-border">
+                <div class="modal-header header-report">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <span>Upload Photo</span>
+
+                </div>
+
+                <div class="modal-footer footer-report footer-upgarde private-up">
+                    <form method="post" id="form-private">
+                        <div style="width: 50%; float: left;">
+                            <input type="file" id="private" name="photos" style="display: none;">
+                            <label for="private" class="btn btn-primary my-report-1"><i></i>From My Computer </label>
+                        </div>
+                    </form>
+                    <div style="width: 50%; float: left;">
+                        <a type="button" class="btn btn-primary my-report-1">From Facbook</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 <script>
     var type = '<?php echo isset($_GET['type'])?$_GET['type']:'' ?>';
     if(type=='photos'){
