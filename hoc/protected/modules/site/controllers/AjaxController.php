@@ -170,4 +170,80 @@ class AjaxController extends SiteBaseController {
 
         print json_encode(array('query' => $query, 'suggestions' => $gyms));
     }
+
+    public function actionVote()
+    {
+        $response = array('result' => 'NOT_VOTED');
+        if(isset($_POST['id']) && isset($_POST['vote']))
+        {
+            $achievement = Achievements::model()->findByPk($_POST['id']);
+
+            if(in_array($_POST['vote'], array('0','1')) && $achievement !== null)
+            {
+                $vote = Vote::model()->findByAttributes(array('user_id' => Yii::app()->user->getId(), 'achievements_id' => $_POST['id']));
+                if($vote === null)
+                {
+                    $vote = new Vote();
+                    $vote->achievements_id = $achievement->getPrimaryKey();
+                    $vote->user_id = Yii::app()->user->getId();
+                    $vote->created = date('Y-m-d H:i:s');
+                    $vote->ip = $_SERVER['REMOTE_ADDR'];
+                    $vote->down_vote = -1;
+                    $vote->up_vote = -1;
+                }
+                if($_POST['vote'] == '1')
+                {
+                    $vote->down_vote = 0;
+                    $vote->up_vote = 1;
+                    $vote->updated = date('Y-m-d H:i:s');
+                    $vote->save();
+                    $core = Achievements::model()->getCore($achievement->id);
+                    Achievements::model()->updateByPk($achievement->id, array('vote' => $core));
+                    $response['result'] = 'VOTED';
+                    $response['amount'] = $core;
+                    $response['direction'] = 'UP';
+                }
+                elseif($_POST['vote'] == '0')
+                {
+                    if($vote->up_vote == -1 && $vote->down_vote == -1)
+                    {
+                        if(($achievement->vote - 1) >= 0)
+                        {
+                            $vote->down_vote = 1;
+                            $vote->up_vote = 0;
+                            $vote->updated = date('Y-m-d H:i:s');
+                            $vote->save();
+                        }
+                        else
+                            $vote->delete();
+                        $core = Achievements::model()->getCore($achievement->id);
+                        Achievements::model()->updateByPk($achievement->id, array('vote' => $core));
+                        $response['result'] = 'VOTED';
+                        $response['amount'] = $core;
+                        $response['direction'] = 'DOWN';
+                    }
+                    elseif($vote->up_vote == '1' && $vote->down_vote == '0')
+                    {
+                        if(($achievement->vote - 2) >= 0)
+                        {
+                            $vote->down_vote = 1;
+                            $vote->up_vote = 0;
+                            $vote->updated = date('Y-m-d H:i:s');
+                            $vote->save();
+                        }
+                        else
+                            $vote->delete();
+
+                        $core = Achievements::model()->getCore($achievement->id);
+                        Achievements::model()->updateByPk($achievement->id, array('vote' => $core));
+                        $response['result'] = 'VOTED';
+                        $response['amount'] = $core;
+                        $response['direction'] = 'DOWN';
+                    }
+                }
+            }
+        }
+
+        print json_encode($response);
+    }
 }

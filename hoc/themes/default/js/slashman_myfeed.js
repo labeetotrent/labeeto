@@ -64,6 +64,30 @@ $(document).ready(function(){
             return $($(this).data('contentwrapper')).html();
         }
     });
+
+    $(document).on('click', '.upvote, .downvote', function(){
+
+        var vote = 0;
+
+        if($(this).hasClass('upvote'))
+            vote = 1;
+
+        var id = $(this).attr('data-id');
+        var ul = $(this).parent().parent();
+
+        $.post( Yii.app.createUrl('ajax/vote'),
+            {
+                id: id,
+                vote: vote
+            }).done(function(response){
+                response = JSON.parse(response);
+
+                if(response.result == 'VOTED')
+                {
+                    $(ul).find('span.vote_amount').text(response.amount);
+                }
+            });
+    });
 });
 
 

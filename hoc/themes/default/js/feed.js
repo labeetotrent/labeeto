@@ -531,7 +531,7 @@ $(document).ready(function(){
         }
     });
      
-     $('.upvote').click(function(){
+     /*$('.upvote').click(function(){
         var id = $(this).attr('data-id');
         $.get('/user/checkVote?id='+id+'&type=1' ,function(data){
             console.log(data);
@@ -559,5 +559,5 @@ $(document).ready(function(){
             }
         });
         
-     });
+     });*/
 });
