@@ -880,7 +880,7 @@ $(document).ready(function(){
         
        //location.reload(true);
     })
-    
+    /*
     $("#question").on('input', function(){
         var question_lenght = $("#question").val().trim().length;
         if(question_lenght < 36)
@@ -935,5 +935,5 @@ $(document).ready(function(){
             $('#about-count').html('You have ' + (50 - about_lenght) + ' characters remaining');
         else
             alert('Please ensure the length answer smaller than 50 character.!');
-    })
+    }) //@todo Reenable Restrictions*/
 });

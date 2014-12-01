@@ -88,10 +88,17 @@ class AjaxController extends SiteBaseController {
     {
         if(isset($_POST['gym']))
         {
+            $gym = Gym::model()->findByAttributes(array('name' => $_POST['gym']));
+            if($gym === null)
+            {
+                $gym = new Gym();
+                $gym->name = $_POST['gym'];
+                $gym->save();
+            }
             $user = User::model()->findByPk(Yii::app()->user->getId());
             if($user !== null)
             {
-                $user->gym = $_POST['gym'];
+                $user->gym = $gym->getPrimaryKey();
                 $user->save();
             }
         }
@@ -151,5 +158,16 @@ class AjaxController extends SiteBaseController {
                 }
             }
         }
+    }
+    public function actionGymAutocomplete($query)
+    {
+        $gyms = array();
+        foreach(Gym::model()->findAll(array('condition' => "name LIKE '%".$query."%'")) as $gym)
+        {
+            $element = array('value' => $gym->name, 'data' => $gym->name);
+            $gyms[] = $element;
+        }
+
+        print json_encode(array('query' => $query, 'suggestions' => $gyms));
     }
 }

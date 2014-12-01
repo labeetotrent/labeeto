@@ -1,6 +1,7 @@
 <?php
 $cs = Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_profile.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/autocomplete.js');
 $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_slider_override.css');
 $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.css');
 ?>
@@ -337,10 +338,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     </div>
                 </div>
                 <div class="col-md-12 value view">
-                    <?php if($this->user->gym) echo $this->user->gym ?>
+                    <?php if($this->user->inGym->name) echo $this->user->inGym->name; ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
-                    <input type="text" name="gym" id="gym" class="form-control" value="<?php if($this->user->gym) echo $this->user->gym; ?>"/>
+                    <input type="text" name="gym" id="gym" class="form-control" value="<?php if($this->user->inGym->name) echo $this->user->inGym->name; ?>"/>
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">

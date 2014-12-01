@@ -1,4 +1,5 @@
 @pink: #EA5A5A;
+@lightgray: #e8e5e5;
 .my-profile {
   .looking-for-stripe .text > i {
     font-size: 14pt;
@@ -116,4 +117,43 @@
     cursor: pointer;
     color: @pink;
   }
+}
+
+.autocomplete-suggestions {
+  border: 1px solid @lightgray;
+  background: #FFF;
+  cursor: default;
+  overflow: auto;
+  -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.autocomplete-suggestion {
+  padding: 4px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  strong {
+    color: @pink;
+    font-weight: bold;
+  }
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.autocomplete-no-suggestion {
+  padding: 2px 5px;
+}
+.autocomplete-selected {
+  background: #F0F0F0;
+}
+.autocomplete-group {
+  padding: 2px 5px;
+}
+.autocomplete-group strong {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  display: block;
+  border-bottom: 1px solid #000;
 }

@@ -224,6 +224,11 @@ $(document).ready(function(){
             });
     });
 
+    /* GYMS */
+    $('#gym').autocomplete({
+        serviceUrl:'/ajax/gymAutocomplete'
+    });
+
     /* EDIT BUTTONS */
     $('.description-edit-icon').click(function(){
         var block = $(this).parent().parent();
