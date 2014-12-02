@@ -233,3 +233,19 @@ textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
 .popover-content {
     padding: 0;
 }
+
+.first-infor .vote .upvote.active {
+    background: url('../images/upvote_active.png') no-repeat; /*grey_arrows.png*/
+}
+.first-infor .vote .downvote.active {
+    background: url('../images/downvote_active.png') no-repeat; /*grey_arrows.png*/
+}
+.first-infor .vote .upvote.notactive {
+    background: url('../images/upvote.png') no-repeat; /*grey_arrows.png*/
+}
+.first-infor .vote .downvote.notactive {
+    background: url('../images/downvote.png') no-repeat; /*grey_arrows.png*/
+}
+.first-infor .vote .vote_amount.active {
+    color: #EB4E62;
+}

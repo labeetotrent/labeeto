@@ -84,6 +84,22 @@ $(document).ready(function(){
 
                 if(response.result == 'VOTED')
                 {
+                    if(response.direction == 'UP')
+                    {
+                        $(ul).find('.upvote').addClass('active');
+                        $(ul).find('.upvote').removeClass('notactive');
+                        $(ul).find('.downvote').removeClass('active');
+                        $(ul).find('.downvote').addClass('notactive');
+                        $(ul).find('span.vote_amount').addClass('active');
+                    }
+                    else if (response.direction == 'DOWN')
+                    {
+                        $(ul).find('.upvote').removeClass('active');
+                        $(ul).find('.downvote').addClass('notactive');
+                        $(ul).find('.downvote').removeClass('notactive');
+                        $(ul).find('.downvote').addClass('active');
+                        $(ul).find('span.vote_amount').addClass('active');
+                    }
                     $(ul).find('span.vote_amount').text(response.amount);
                 }
             });

@@ -3626,13 +3626,14 @@ li.message_search input{
     list-style: none;
     overflow: hidden;
 }
-.first-infor .vote .upvote{
+.first-infor .vote .upvote {
     background: url('../images/upvote.png') no-repeat; /*grey_arrows.png*/
     height: 15px;
     cursor: pointer;
     width: 15px;
     display: inline-block;
 }
+
 .save-search-func{
     cursor: pointer;
 }

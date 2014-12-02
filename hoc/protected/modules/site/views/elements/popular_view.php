@@ -1,4 +1,13 @@
-<?php $user = User::model()->findByPk($data->user_id); 
+<?php $user = User::model()->findByPk($data->user_id);
+$vote = Vote::model()->findByAttributes(array('achievements_id' => $data->id, 'user_id' => $this->user->id));
+$active = 'NONE';
+if($vote !== null)
+{
+    if($vote->up_vote == '1' && $vote->down_vote == '0')
+        $active = 'UP';
+    elseif($vote->up_vote == '0' && $vote->down_vote == '1')
+        $active = 'DOWN';
+}
 if($user){?>
 <div class="post">
     <div class="first-infor">
@@ -27,9 +36,9 @@ if($user){?>
         </div>
         <div class="vote">
             <ul>
-                <li><span class="upvote" id="upvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
-                <li><span class="vote_amount change_vote_<?php echo $data->id; ?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
-                <li><span class="downvote" id="downvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
+                <li><span class="upvote<?=($active == 'UP') ? ' active' : ' notactive';?>" id="upvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
+                <li><span class="vote_amount change_vote_<?php echo $data->id; ?><?=($active !== 'NONE') ? ' active' : ' notactive';?>"><?php echo Achievements::model()->getCore($data->id); ?></span></li>
+                <li><span class="downvote<?=($active == 'DOWN') ? ' active' : ' notactive';?>" id="downvote_<?php echo $data->id; ?>" data-id=<?php echo $data->id; ?>></span></li>
             </ul>
         </div>
     </div>
