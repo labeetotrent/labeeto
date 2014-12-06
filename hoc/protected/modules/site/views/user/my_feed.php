@@ -63,9 +63,9 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
             <div>
                 <div class="content-tab">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
-                        <li><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
-                        <li class="<?php if(isset($_GET['search'])) echo "active"; ?>"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
+                        <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>" tab="popular"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
+                        <li tab="recent"><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                        <li class="<?php if(isset($_GET['search'])) echo "active"; ?>" tab="search"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
                     </ul>
                 </div>
                 <!--<div class="my-tabs">

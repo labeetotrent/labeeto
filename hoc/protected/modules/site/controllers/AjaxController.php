@@ -272,16 +272,50 @@ class AjaxController extends SiteBaseController {
                         'limit' => self::PAGE_SIZE,
                 ));
             }
-            elseif(1)
+            elseif($_GET['type'] == 'RECENT')
             {
-
+                $posts = Achievements::model()->findAll(array(
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'order' => 'id DESC ',
+                        'offset' => $_GET['offset'],
+                        'limit' => self::PAGE_SIZE,
+                ));
+            }
+            elseif($_GET['type'] == 'SEARCH')
+            {
+                $search = '';
+                if(isset($_GET['search'])){
+                    $search = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']);
+                    $str_search = Achievements::model()->getIdSearch($search);
+                    SearchTrending::model()->addNewCharacter($search);
+                    $posts = Achievements::model()->findAll(array(
+                            'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition . $str_search,
+                            'order' => 'id DESC ',
+                            'offset' => $_GET['offset'],
+                            'limit' => self::PAGE_SIZE,
+                    ));
+                }
+                else
+                {
+                    $posts = Achievements::model()->findAll(array(
+                            'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                            'order' => 'id DESC ',
+                            'offset' => $_GET['offset'],
+                            'limit' => self::PAGE_SIZE,
+                    ));
+                }
             }
             $finished = (count($posts) < self::PAGE_SIZE) ? 1 : 0;
 
             $output = '';
             foreach($posts as $post)
             {
-                $output .= $this->renderPartial('/elements/popular_view', array('data' => $post), true);
+                if($_GET['type'] == 'POPULAR')
+                    $output .= $this->renderPartial('/elements/popular_view', array('data' => $post), true);
+                elseif($_GET['type'] == 'RECENT')
+                    $output .= $this->renderPartial('/elements/recent_view', array('data' => $post), true);
+                elseif($_GET['type'] == 'RECENT')
+                    $output .= $this->renderPartial('/elements/trending_view', array('data' => $post), true);
             }
 
             $response = array('finished' => $finished, 'output' => $output);

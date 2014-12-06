@@ -149,15 +149,17 @@ class UserController extends SiteBaseController {
                 $condition .= " AND t.user_id NOT IN (". $reported .") ";
             if( $suspended != 0 )
                 $condition .= " AND t.user_id NOT IN (". $suspended .") ";
+
             $achievement = new CActiveDataProvider('Achievements', array(
                 'criteria' => array(
                     'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
                     'order' => 'id DESC ',
+                    'offset' => 0,
+                    'limit' => self::PAGE_SIZE,
                 ),
-                'pagination'=>array(
-                    'pageSize'=> self::PAGE_SIZE,
-                )
+                'pagination' => false,
             ));
+
             $popular = new CActiveDataProvider('Achievements', array(
                 'criteria' => array(
                     'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
@@ -176,20 +178,20 @@ class UserController extends SiteBaseController {
                     'criteria' => array(
                         'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition . $str_search,
                         'order' => 'id DESC ',
+                        'offset' => 0,
+                        'limit' => self::PAGE_SIZE,
                     ),
-                    'pagination'=>array(
-                        'pageSize'=> self::PAGE_SIZE,
-                    )
+                    'pagination' => false,
                 ));
             }else{
                 $search = new CActiveDataProvider('Achievements', array(
                     'criteria' => array(
                         'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
                         'order' => 'id DESC ',
+                        'offset' => 0,
+                        'limit' => self::PAGE_SIZE,
                     ),
-                    'pagination'=>array(
-                        'pageSize'=> self::PAGE_SIZE,
-                    )
+                    'pagination' => false,
                 ));
             }
             $this->user = User::model()->findByPk(Yii::app()->user->id);
