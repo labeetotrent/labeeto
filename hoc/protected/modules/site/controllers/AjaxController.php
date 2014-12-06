@@ -1,5 +1,6 @@
 <?php
 class AjaxController extends SiteBaseController {
+    const PAGE_SIZE = 10;
     public function actionUserUpdateAbout()
     {
         if(isset($_POST['about']))
@@ -245,5 +246,47 @@ class AjaxController extends SiteBaseController {
         }
 
         print json_encode($response);
+    }
+
+    public function actionGetPosts()
+    {
+        if(isset($_GET['offset']) && isset($_GET['type']))
+        {
+            $posts = array();
+            $info_user  = User::model()->findByPk(Yii::app()->user->id);
+            $reported   = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
+            $suspended  = User::model()->getSuspendedUser();
+            $trending = SearchTrending::model()->getTop5Search();
+            $condition = '';
+            if($reported != 0)
+                $condition .= " AND t.user_id NOT IN (". $reported .") ";
+            if( $suspended != 0 )
+                $condition .= " AND t.user_id NOT IN (". $suspended .") ";
+
+            if($_GET['type'] == 'POPULAR')
+            {
+                $posts = Achievements::model()->findAll(array(
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'order' => 'vote DESC',
+                        'offset' => $_GET['offset'],
+                        'limit' => self::PAGE_SIZE,
+                ));
+            }
+            elseif(1)
+            {
+
+            }
+            $finished = (count($posts) < self::PAGE_SIZE) ? 1 : 0;
+
+            $output = '';
+            foreach($posts as $post)
+            {
+                $output .= $this->renderPartial('/elements/popular_view', array('data' => $post), true);
+            }
+
+            $response = array('finished' => $finished, 'output' => $output);
+
+            print json_encode($response);
+        }
     }
 }

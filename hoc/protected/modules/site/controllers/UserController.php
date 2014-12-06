@@ -161,11 +161,11 @@ class UserController extends SiteBaseController {
             $popular = new CActiveDataProvider('Achievements', array(
                 'criteria' => array(
                     'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
-                    'order' => 'vote DESC ',
+                    'order' => 'vote DESC',
+                    'offset' => 0,
+                    'limit' => self::PAGE_SIZE,
                 ),
-                'pagination'=>array(
-                    'pageSize'=> self::PAGE_SIZE,
-                )
+                'pagination' => false,
             ));
             $search = '';
             if(isset($_GET['search'])){

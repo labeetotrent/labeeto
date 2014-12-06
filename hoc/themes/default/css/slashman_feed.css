@@ -249,3 +249,7 @@ textarea.post-textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
 .first-infor .vote .vote_amount.active {
     color: #EB4E62;
 }
+.loading-spin {
+    text-align: center;
+    font-size: 20pt;
+}

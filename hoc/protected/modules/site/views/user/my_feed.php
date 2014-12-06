@@ -3,6 +3,7 @@
 $cs = Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/foursquare.autocomplete.js');
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed_autoload.js');
 $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css');
 ?>
 <div class="content-main-1" >
@@ -115,19 +116,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
                                     <input type="text" name="search" class="form-control seach-tab" value="<?php if(isset($_GET['search'])) echo '#'. preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']); ?>"/>
                                 </form>
                             </div>
-                            <!--<div class="my-tabs-footer">
-                                <p>CURRENTLY TRENDING <span id="toggle">Menu toggel</span></p>
-                                <?php if($trending){ ?>
-                                <div class="menu-slide">
-                                    <span></span>
-                                    <ul>
-                                        <?php //foreach($trending as $value){ ?>
-                                        <li><a href="/my_feed?search=<?php //echo $value['text'] ?>">#<?php //echo $value['text'] ?></a></li>
-                                        <?php // } ?>
-                                    </ul>
-                                </div>
-                                <?php } ?>
-                            </div>-->
                             <div class="content-search-trending">
                                 <ul style="width: 30%;">
                                     <li><a href="#">#LOL</a></li>

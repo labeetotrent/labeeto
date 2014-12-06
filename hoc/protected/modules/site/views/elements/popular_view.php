@@ -1,5 +1,5 @@
 <?php $user = User::model()->findByPk($data->user_id);
-$vote = Vote::model()->findByAttributes(array('achievements_id' => $data->id, 'user_id' => $this->user->id));
+$vote = Vote::model()->findByAttributes(array('achievements_id' => $data->id, 'user_id' => Yii::app()->user->getId()));
 $active = 'NONE';
 if($vote !== null)
 {
