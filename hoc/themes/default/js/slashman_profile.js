@@ -228,6 +228,9 @@ $(document).ready(function(){
     $('#gym').autocomplete({
         serviceUrl:'/ajax/gymAutocomplete'
     });
+    $('#passion').autocomplete({
+        serviceUrl:'/ajax/passionAutocomplete'
+    });
 
     /* EDIT BUTTONS */
     $('.description-edit-icon').click(function(){

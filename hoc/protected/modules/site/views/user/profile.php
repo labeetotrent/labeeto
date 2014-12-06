@@ -321,11 +321,12 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="passion-save">Save</button>
+                        <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="passion-save">Add</button>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
                     </div>
+
                 </div>
             </div>
             <div class="col-md-12 info-block">

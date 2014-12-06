@@ -171,6 +171,17 @@ class AjaxController extends SiteBaseController {
 
         print json_encode(array('query' => $query, 'suggestions' => $gyms));
     }
+    public function actionPassionAutocomplete($query)
+    {
+        $fitnessInterests = array();
+        foreach(FitnessInterest::model()->findAll(array('condition' => "name LIKE '%".$query."%'")) as $fitnessInterest)
+        {
+            $element = array('value' => $fitnessInterest->name, 'data' => $fitnessInterest->name);
+            $fitnessInterests[] = $element;
+        }
+
+        print json_encode(array('query' => $query, 'suggestions' => $fitnessInterests));
+    }
 
     public function actionVote()
     {

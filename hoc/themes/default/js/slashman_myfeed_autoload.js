@@ -17,6 +17,8 @@ $(document).ready(function(){
     /* Используйте вариант $('#more').click(function() для того, чтобы дать пользователю возможность управлять процессом, кликая по кнопке "Дальше" под блоком статей (см. файл index.php) */
     $(window).scroll(function() {
 
+        fixRightColumn();
+
         if($('.nav.nav-tabs li.active').attr('tab') == 'recent')
         {
             type = 'RECENT';
@@ -88,3 +90,28 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
+function fixRightColumn()
+{
+    var winTop = $(this).scrollTop();
+    var winBottom = $(this).scrollTop() + $(this).height();
+    var right = $('.right-content');
+    var rightBottom = $(right).height();
+    var shift = winTop - rightBottom + $(this).height() - 150;
+
+    if(winBottom >= rightBottom)
+    {
+        right.css({
+            'top': shift + 'px',
+            'position' : 'relative'
+        });
+    }
+    else
+    {
+        right.css({
+            'top': '0px'
+        });
+    }
+}
