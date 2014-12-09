@@ -118,23 +118,32 @@ $(document).ready(function(){
         });
     });
     $(document).on('click', '.add-comment-btn', function(){
-        var ul = $(this).parent().parent().parent().find('.comment-post-home ul:first');
-        var postId = $(this).parent().parent().attr('post-id');
-        var comment = $(this).parent().parent().find('.comment_post_txt').val();
-
-        $.post( Yii.app.createUrl('ajax/addComment'),
-            {
-                postId: postId,
-                comment: comment
-            }).done(function(response){
-                var $newLi = $(response);
-                $(ul).append($newLi);
-                $newLi.show('slow');
-            });
+        postComment($(this));
+    });
+    $(document).on('keypress', '.comment_post_txt', function(e){
+        var code = e.keyCode || e.which;
+        if(code == 13)
+            postComment($(this));
     });
 });
 
+function postComment(obj)
+{
 
+    var ul = $(obj).parent().parent().parent().find('.comment-post-home ul:first');
+    var postId = $(obj).parent().parent().attr('post-id');
+    var comment = $(obj).parent().parent().find('.comment_post_txt').val();
+    $(obj).parent().parent().find('.comment_post_txt').val('');
+    $.post( Yii.app.createUrl('ajax/addComment'),
+        {
+            postId: postId,
+            comment: comment
+        }).done(function(response){
+            var $newLi = $(response);
+            $(ul).append($newLi);
+            $newLi.show('slow');
+        });
+}
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
