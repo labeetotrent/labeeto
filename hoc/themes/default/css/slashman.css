@@ -114,7 +114,8 @@ button.btn-cancel-st {
 button.btn-save-st,
 .btn-save-search,
 .btn-search-page,
-.post-btn {
+.post-btn,
+.add-comment-btn {
     background: url('../images/ok-btn-bg.png') repeat-x !important;
     border-radius: 4px;
     color: white !important;

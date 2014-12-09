@@ -105,7 +105,33 @@ $(document).ready(function(){
             });
     });
 
+    $(document).on('focus', '.comment_post_txt', function(){
+        $(this).parent().parent().find('.add-comment-container').animate({
+            height: '40px',
+            opacity: '1'
+        });
+    });
+    $(document).on('focusout', '.comment_post_txt', function(){
+        $(this).parent().parent().find('.add-comment-container').animate({
+            height: '0',
+            opacity: '0'
+        });
+    });
+    $(document).on('click', '.add-comment-btn', function(){
+        var ul = $(this).parent().parent().parent().find('.comment-post-home ul:first');
+        var postId = $(this).parent().parent().attr('post-id');
+        var comment = $(this).parent().parent().find('.comment_post_txt').val();
 
+        $.post( Yii.app.createUrl('ajax/addComment'),
+            {
+                postId: postId,
+                comment: comment
+            }).done(function(response){
+                var $newLi = $(response);
+                $(ul).append($newLi);
+                $newLi.show('slow');
+            });
+    });
 });
 
 

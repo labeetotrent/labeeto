@@ -576,7 +576,8 @@ a{
 .seach-tab:focus{
     border: none;
 }
-.post-btn {
+.post-btn,
+.add-comment-btn {
     float: right;
     margin-top: 10px;
     background: url(../images/post-feed.png) no-repeat;

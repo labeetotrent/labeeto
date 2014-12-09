@@ -8,7 +8,8 @@
     padding-left: 0;
 }
 
-.post-btn {
+.post-btn,
+.add-comment-btn {
     font-family: "Proxima Nova Regular" !important;
     /*    background: #ea5a5a repeat-x !important;*/
     font-size: 16px;
@@ -260,4 +261,8 @@ header {
 }
 div.container {
     margin-top: 50px !important;
+}
+.add-comment-container {
+    opacity: 0;
+    height: 0;
 }

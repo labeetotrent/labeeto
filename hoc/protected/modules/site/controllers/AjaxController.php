@@ -334,4 +334,19 @@ class AjaxController extends SiteBaseController {
             print json_encode($response);
         }
     }
+
+    public function actionAddComment()
+    {
+        if(isset($_POST['postId']) && isset($_POST['comment']))
+        {
+            $comment = new AchievementComment();
+            $comment->achievement_id = $_POST['postId'];
+            $comment->content = $_POST['comment'];
+            $comment->created = new CDbExpression('NOW()');
+            $comment->user_id = Yii::app()->user->getId();
+            $comment->save();
+
+            print $this->renderPartial('/elements/achievement_comment', array('data' => $comment, 'hidden' => 1), true);
+        }
+    }
 }

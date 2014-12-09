@@ -72,6 +72,7 @@ class Achievements extends CActiveRecord
 		return array(
           'user' => array(self::BELONGS_TO, 'User', 'user_id'),
           'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+          'comments' => array(self::HAS_MANY, 'AchievementComment', 'achievement_id'),
 		);
 	}
 
