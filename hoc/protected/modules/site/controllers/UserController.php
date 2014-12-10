@@ -239,6 +239,25 @@ class UserController extends SiteBaseController {
         $achievement->content = $content;
         $achievement->user_id = Yii::app()->user->id;
         $achievement->save();
+
+        preg_match_all('/(\s|^)#\w+/', $content, $tags);
+
+        foreach($tags[0] as $tag)
+        {
+            $tag = str_replace('#','',trim($tag));
+            if($dbTag = Tag::model()->findByAttributes(array('name' => $tag)))
+            {
+                $dbTag->posts++;
+                $dbTag->save();
+            }
+            else
+            {
+                $dbTag = new Tag();
+                $dbTag->name = $tag;
+                $dbTag->posts = 1;
+                $dbTag->save();
+            }
+        }
         $this->redirect('/my_feed');
 
     }

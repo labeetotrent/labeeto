@@ -30,6 +30,9 @@ input.seach-tab {
     font-size: 20px;
     color: #404040;
 }
+.content-post h3.my_posted .link_2 {
+    color: rgb(234, 90, 90);
+}
 .content-post h3 span.link_1 {
     font-family: "Proxima Nova ExtraBold";
     color: rgb(234, 90, 90);
