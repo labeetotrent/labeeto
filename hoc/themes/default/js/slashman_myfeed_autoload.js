@@ -76,14 +76,17 @@ $(document).ready(function(){
                     if($('.nav.nav-tabs li.active').attr('tab') == 'recent')
                     {
                         recentFrom += 10;
+                        recentFinished = finished;
                     }
                     else if ($('.nav.nav-tabs li.active').attr('tab') == 'popular')
                     {
                         popularFrom += 10;
+                        popularFinished = finished;
                     }
                     else if ($('.nav.nav-tabs li.active').attr('tab') == 'search')
                     {
                         searchFrom += 10;
+                        searchFinished = finished;
                     }
                 }
                 $('.loading-spin').remove();
