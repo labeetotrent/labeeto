@@ -89,6 +89,14 @@ class AjaxController extends SiteBaseController {
             $interestToUser->fitness_interest_id = $interest->getPrimaryKey();
             $interestToUser->users_id = Yii::app()->user->getId();
             $interestToUser->save();
+            print $interest->getPrimaryKey();
+        }
+    }
+    public function actionDeletePassion()
+    {
+        if(isset($_POST['id']))
+        {
+            UserFitnessInterest::model()->deleteAllByAttributes(array('users_id' => Yii::app()->user->getId(), 'fitness_interest_id' => $_POST['id']));
         }
     }
     public function actionUserUpdateGym()

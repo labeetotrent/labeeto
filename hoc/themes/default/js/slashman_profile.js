@@ -120,7 +120,7 @@ $(document).ready(function(){
                 passion: passion
             }).done(function(response){
                 $(replaceText).append('<i class="fa fa-tag"></i> ' + passion);
-                $(infoBlock).find('ul.fitness-tags-list-edit li:last').append('<li><i class="fa fa-tag"></i> ' + passion + '</li>');
+                $(infoBlock).find('ul.fitness-tags-list-edit li:last').append('<li interest-id="' + response + '"><i class="fa fa-tag"></i> ' + passion + ' <i class="fa fa-close remove-tag"></i></li>');
                 hideInfoBlock(infoBlock);
             });
     });
@@ -152,6 +152,19 @@ $(document).ready(function(){
                     $('.left-custom > div:last').after(response);
                 });
         }
+    });
+
+    /*DELETE TAG */
+    $(document).on('click', '.remove-tag', function(){
+        var id = $(this).parent().attr('interest-id');
+
+        $.post( Yii.app.createUrl('ajax/deletePassion'),
+            {
+                id: id
+            }).done(function(response){
+                $('li[interest-id=' + id + ']').remove();
+                $('span[interest-id=' + id + ']').remove();
+            });
     });
 
     /* SAVE CUSTOM QUESTION */

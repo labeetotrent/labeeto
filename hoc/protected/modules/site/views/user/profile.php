@@ -318,7 +318,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     foreach($this->user->fitnessInterests as $interest)
                     {
                     ?>
-                        <i class="fa fa-tag"></i> <?=$interest->name;?>
+                        <span interest-id="<?=$interest->getPrimaryKey();?>"><i class="fa fa-tag"></i> <?=$interest->name;?></span>
                     <?php
                     }
                     ?>
@@ -333,7 +333,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         foreach($this->user->fitnessInterests as $interest)
                         {
                         ?>
-                            <li><i class="fa fa-tag"></i> <?=$interest->name;?></li>
+                            <li interest-id="<?=$interest->getPrimaryKey();?>"><i class="fa fa-tag"></i> <?=$interest->name;?> <i class="fa fa-close remove-tag"></i></li>
                         <?php
                         }
                         echo '</ul>';
@@ -345,7 +345,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         <button type="submit" class="btn btn-default btn-sm btn-save-st col-md-12" id="passion-save">Add</button>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Cancel</button>
+                        <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Close</button>
                     </div>
 
                 </div>

@@ -51,6 +51,9 @@
 .my-profile .info-block .value .fitness-tags-list-edit li i {
   color: #ea5a5a;
 }
+.my-profile .info-block .value .fitness-tags-list-edit li i.fa-close {
+  cursor: pointer;
+}
 .my-profile .new-question input.custom-question-input {
   width: 100%;
   margin: 5px 0;
