@@ -63,8 +63,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
             <div>
                 <div class="content-tab">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="<?php if(!isset($_GET['search'])) echo "active"; ?>" tab="popular"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
-                        <li tab="recent"><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                        <li tab="recent" class="<?php if(!isset($_GET['search'])) echo "active"; ?>"><a href="#recent" role="tab" data-toggle="tab">Recent</a></li>
+                        <li tab="popular"><a href="#popular" role="tab" data-toggle="tab">Popular</a></li>
                         <li class="<?php if(isset($_GET['search'])) echo "active"; ?>" tab="search"><a href="#trending" role="tab" data-toggle="tab">Trending</a></li>
                     </ul>
                 </div>
@@ -76,27 +76,27 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
                     </ul>
                 </div>-->
                 <div class="tab-content">
-                    <div id="popular" class="tab-pane  <?php if(!isset($_GET['search'])) echo "active"; ?>">
+                    <div id="recent" class="tab-pane <?php if(!isset($_GET['search'])) echo "active"; ?>">
+                        <?php
+                        $this->widget('zii.widgets.CListView', array(
+                            'dataProvider'=>$achievement,
+                            'itemView'=>'../elements/achievement_view',
+                            'summaryText'=>'',
+                            'viewData'=>array('infor'=>$info_user),
+                            'pager'        => array(
+                                'firstPageLabel' => '<<',
+                                'prevPageLabel'  => '<',
+                                'nextPageLabel'  => '>',
+                                'lastPageLabel'  => '>>',
+                            ),
+                        ));
+                        ?>
+                    </div>
+                    <div id="popular" class="tab-pane">
                         <?php
                           $this->widget('zii.widgets.CListView', array(
                               'dataProvider'=>$popular,
                               'itemView'=>'../elements/popular_view',
-                              'summaryText'=>'',
-                              'viewData'=>array('infor'=>$info_user),
-                              'pager'        => array(
-                                    'firstPageLabel' => '<<',
-                                    'prevPageLabel'  => '<',
-                                    'nextPageLabel'  => '>',
-                                    'lastPageLabel'  => '>>',
-                              ),
-                          ));
-                          ?>
-                    </div>
-                    <div id="recent" class="tab-pane">
-                        <?php
-                          $this->widget('zii.widgets.CListView', array(
-                              'dataProvider'=>$achievement,
-                              'itemView'=>'../elements/achievement_view',
                               'summaryText'=>'',
                               'viewData'=>array('infor'=>$info_user),
                               'pager'        => array(
