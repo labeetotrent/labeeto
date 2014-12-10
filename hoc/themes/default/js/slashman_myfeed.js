@@ -125,6 +125,21 @@ $(document).ready(function(){
         if(code == 13)
             postComment($(this));
     });
+    $(document).on('click','.comment_txt', function(){
+        if($(this).parent().parent().find('ul').css('display') == 'none')
+        {
+            $(this).parent().parent().find('ul').slideDown(300, function(){
+                $(this).parent().parent().parent().find('.my_comment').slideDown(300);
+            });
+        }
+        else
+        {
+            $(this).parent().parent().parent().find('.my_comment').slideUp(300, function(){
+                $(this).parent().parent().find('ul').slideUp(300);
+            });
+        }
+
+    });
 });
 
 function postComment(obj)

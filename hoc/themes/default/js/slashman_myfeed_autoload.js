@@ -1,3 +1,5 @@
+var lastScrollPos = $(window).scrollTop();
+
 $(document).ready(function(){
 
     /* Переменная-флаг для отслеживания того, происходит ли в данный момент ajax-запрос. В самом начале даем ей значение false, т.е. запрос не в процессе выполнения */
@@ -89,6 +91,8 @@ $(document).ready(function(){
             });
         }
     });
+
+
 });
 
 
@@ -98,20 +102,46 @@ function fixRightColumn()
     var winTop = $(this).scrollTop();
     var winBottom = $(this).scrollTop() + $(this).height();
     var right = $('.right-content');
+    var rightPosition = $(right).position();
+    var rightTop = rightPosition.top;
     var rightBottom = $(right).height();
-    var shift = winTop - rightBottom + $(this).height() - 150;
+    var shiftDown = winTop - rightBottom + $(this).height() - 150;
+    var shiftUp = winTop;
 
-    if(winBottom >= rightBottom)
+    var footerPosition = $('footer').position();
+
+    if(winTop > lastScrollPos)
     {
-        right.css({
-            'top': shift + 'px',
-            'position' : 'relative'
-        });
+        if(winBottom >= rightBottom)
+        {
+            if((rightTop + rightBottom) < (footerPosition.top - 400))
+            {
+                right.css({
+                    'top': shiftDown + 'px',
+                    'position' : 'relative'
+                });
+            }
+        }
+        else
+        {
+            right.css({
+                'top': '0px'
+            });
+        }
     }
-    else
+    else if(winTop < lastScrollPos)
     {
-        right.css({
-            'top': '0px'
-        });
+        if(winTop <= rightTop)
+        {
+            right.css({
+                'top': shiftUp + 'px',
+                'position' : 'relative'
+            });
+        }
+        else
+        {
+            //
+        }
     }
+    lastScrollPos = winTop;
 }
