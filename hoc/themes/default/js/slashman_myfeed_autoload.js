@@ -95,8 +95,6 @@ $(document).ready(function(){
 
 });
 
-
-
 function fixRightColumn()
 {
     var winTop = $(this).scrollTop();
