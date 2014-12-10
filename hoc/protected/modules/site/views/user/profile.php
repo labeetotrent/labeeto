@@ -314,7 +314,14 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     </div>
                 </div>
                 <div class="col-md-12 value view">
-                    <?php if($this->user->passion) echo $this->user->passion ?>
+                    <?php
+                    foreach($this->user->fitnessInterests as $interest)
+                    {
+                    ?>
+                        <i class="fa fa-tag"></i> <?=$interest->name;?>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
                     <input type="text" name="passion" id="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>

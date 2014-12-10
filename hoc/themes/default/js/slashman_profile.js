@@ -16,12 +16,12 @@ $(document).ready(function(){
     });
     $(document).on({
         mouseenter: function () {
-            $(this).find('i').animate({
+            $(this).find('i.fa-pencil-square-o').animate({
                 opacity: 1
             }, 500);
         },
         mouseleave: function () {
-            $(this).find('i').animate({
+            $(this).find('i.fa-pencil-square-o').animate({
                 opacity: 0
             }, 500);
         }

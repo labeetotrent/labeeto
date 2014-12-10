@@ -124,6 +124,7 @@ class User extends CActiveRecord
             'photo' => array(self::HAS_MANY, 'Photo', 'user_id'),
             'votes' => array(self::HAS_MANY, 'Vote', 'user_id'),
             'inGym' => array(self::BELONGS_TO, 'Gym', 'gym'), //@todo Do it as gym_id
+            'fitnessInterests' => array(self::MANY_MANY, 'FitnessInterest', 'user_fitness_interest(users_id, fitness_interest_id)')
 		);
 	}
 
