@@ -1,6 +1,7 @@
 <?php
 class AjaxController extends SiteBaseController {
     const PAGE_SIZE = 10;
+    public $user;
     public function actionUserUpdateAbout()
     {
         if(isset($_POST['about']))
@@ -263,6 +264,7 @@ class AjaxController extends SiteBaseController {
     {
         if(isset($_GET['offset']) && isset($_GET['type']))
         {
+            $this->user = User::model()->findByPk(Yii::app()->user->id);
             $posts = array();
             $info_user  = User::model()->findByPk(Yii::app()->user->id);
             $reported   = ReportUser::model()->getBlockedUser(Yii::app()->user->id) ;//"1,2,5,4,15";
