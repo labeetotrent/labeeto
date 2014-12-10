@@ -44,6 +44,13 @@
   min-height: 50px;
   resize: none;
 }
+.my-profile .info-block .value .fitness-tags-list-edit {
+  padding-left: 5px;
+  margin-top: 5px;
+}
+.my-profile .info-block .value .fitness-tags-list-edit li i {
+  color: #ea5a5a;
+}
 .my-profile .new-question input.custom-question-input {
   width: 100%;
   margin: 5px 0;

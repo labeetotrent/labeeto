@@ -325,6 +325,20 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 </div>
                 <div class="col-md-12 value edit hidden-element">
                     <input type="text" name="passion" id="passion" class="form-control" value="<?php if($this->user->passion) echo $this->user->passion; ?>"/>
+
+                    <?php
+                    if(count($this->user->fitnessInterests) > 0)
+                    {
+                        echo '<ul class="fitness-tags-list-edit">';
+                        foreach($this->user->fitnessInterests as $interest)
+                        {
+                        ?>
+                            <li><i class="fa fa-tag"></i> <?=$interest->name;?></li>
+                        <?php
+                        }
+                        echo '</ul>';
+                    }
+                    ?>
                 </div>
                 <div class="col-md-12 edit-buttons hidden-element">
                     <div class="col-md-6">

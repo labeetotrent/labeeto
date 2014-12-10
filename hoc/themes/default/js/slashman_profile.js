@@ -119,7 +119,8 @@ $(document).ready(function(){
             {
                 passion: passion
             }).done(function(response){
-                $(replaceText).text(passion);
+                $(replaceText).append('<i class="fa fa-tag"></i> ' + passion);
+                $(infoBlock).find('ul.fitness-tags-list-edit li:last').append('<li><i class="fa fa-tag"></i> ' + passion + '</li>');
                 hideInfoBlock(infoBlock);
             });
     });

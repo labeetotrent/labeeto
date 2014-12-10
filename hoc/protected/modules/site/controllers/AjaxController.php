@@ -78,12 +78,17 @@ class AjaxController extends SiteBaseController {
     {
         if(isset($_POST['passion']))
         {
-            $user = User::model()->findByPk(Yii::app()->user->getId());
-            if($user !== null)
+            $interest = FitnessInterest::model()->findByAttributes(array('name' => $_POST['passion']));
+            if($interest === null)
             {
-                $user->passion = $_POST['passion'];
-                $user->save();
+                $interest = new FitnessInterest();
+                $interest->name = $_POST['passion'];
+                $interest->save();
             }
+            $interestToUser = new UserFitnessInterest();
+            $interestToUser->fitness_interest_id = $interest->getPrimaryKey();
+            $interestToUser->users_id = Yii::app()->user->getId();
+            $interestToUser->save();
         }
     }
     public function actionUserUpdateGym()
