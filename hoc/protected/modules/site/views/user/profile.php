@@ -307,7 +307,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     <div class="col-md-10">
-                        Fitness passion
+                        Fitness interests
                     </div>
                     <div class="col-md-2">
                         <i class="fa fa-pencil-square-o pull-right edit-info-block"></i>
