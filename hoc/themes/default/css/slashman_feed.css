@@ -277,3 +277,17 @@ div.container {
 .my_comment {
     display: none;
 }
+.content-search-trending {
+    padding: 15px;
+}
+.content-search-trending div {
+    padding: 5px 0;
+    text-align: center;
+}
+.content-search-trending div a,
+.content-search-trending div a:hover {
+    font-family: "Proxima Nova SemiBold";
+    font-size: 14pt;
+    color: #ed7070;
+    cursor: pointer;
+}

@@ -117,27 +117,12 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
                                 </form>
                             </div>
                             <div class="content-search-trending">
-                                <ul style="width: 30%;">
-                                    <li><a href="#">#LOL</a></li>
-                                    <li><a href="#">#iPhone6Plus</a></li>
-                                    <li><a href="#">#RIPBebeYash</a></li>
-                                    <li><a href="#">#YASSS</a></li>
-                                    <li><a href="#">#PaidHoliday</a></li>
-                                </ul>
-                                <ul style="width: 30%;">
-                                    <li><a href="#">#Haggard</a></li>
-                                    <li><a href="#">#JLONewApt</a></li>
-                                    <li><a href="#">#2NE1onBH</a></li>
-                                    <li><a href="#">#HowAboutNO</a></li>
-                                    <li><a href="#">#BreakingNews</a></li>
-                                </ul>
-                                <ul style="width: 40%;">
-                                    <li><a href="#">#StealMyGirlVideoToday</a></li>
-                                    <li><a href="#">#TillaCaroUKTour</a></li>
-                                    <li><a href="#">#OttoPorterToSouthBeach</a></li>
-                                    <li><a href="#">#MessageToSelf</a></li>
-                                    <li><a href="#">#TeamGWEN</a></li>
-                                </ul>
+                                <?php
+                                foreach(Tag::model()->findAll(array('order' => 'posts DESC')) as $tag)
+                                {
+                                    echo '<div class="col-md-4"><a href="'.$this->createUrl('my_feed', array('search' => $tag->name)).'">#'.$tag->name.'</a></div>';
+                                }
+                                ?>
                             </div>
                         </div>
                         
