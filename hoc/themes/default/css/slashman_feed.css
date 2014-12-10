@@ -269,6 +269,10 @@ div.container {
 .comment_txt {
     cursor: pointer;
 }
+.content-post > div.col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
 .comment-post-home ul,
 .my_comment {
     display: none;
