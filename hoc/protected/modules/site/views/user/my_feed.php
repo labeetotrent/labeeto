@@ -118,7 +118,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
                             </div>
                             <div class="content-search-trending">
                                 <?php
-                                foreach(Tag::model()->findAll(array('order' => '(posts + searches) DESC')) as $tag)
+                                foreach(Tag::model()->findAll(array('order' => '(posts + searches) DESC', 'limit' => 15)) as $tag)
                                 {
                                     echo '<div class="col-md-4"><a href="'.$this->createUrl('my_feed', array('search' => $tag->name)).'">#'.$tag->name.'</a></div>';
                                 }
