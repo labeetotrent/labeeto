@@ -1,23 +1,18 @@
 <?php
 
 /**
- * This is the model class for table "tag".
+ * This is the model class for table "achievement_tags".
  *
- * The followings are the available columns in table 'tag':
- * @property integer $id
- * @property string $name
- * @property integer $posts
- * @property integer $searches
- *
- * The followings are the available model relations:
- * @property Achievements[] $achievements
+ * The followings are the available columns in table 'achievement_tags':
+ * @property integer $tag_id
+ * @property integer $achievements_id
  */
-class Tag extends CActiveRecord
+class AchievementTags extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Tag the static model class
+	 * @return AchievementTags the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -29,7 +24,7 @@ class Tag extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tag';
+		return 'achievement_tags';
 	}
     public function behaviors()
     {
@@ -44,12 +39,11 @@ class Tag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('posts, searches', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>128),
+			array('tag_id, achievements_id', 'required'),
+			array('tag_id, achievements_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, posts, searches', 'safe', 'on'=>'search'),
+			array('tag_id, achievements_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +55,6 @@ class Tag extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'achievements' => array(self::MANY_MANY, 'Achievements', 'achievement_tags(tag_id, achievements_id)'),
 		);
 	}
 
@@ -71,10 +64,8 @@ class Tag extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => Yii::t('global', 'ID'),
-			'name' => Yii::t('global', 'Name'),
-			'posts' => Yii::t('global', 'Posts'),
-			'searches' => Yii::t('global', 'Searches'),
+			'tag_id' => Yii::t('global', 'Tag'),
+			'achievements_id' => Yii::t('global', 'Achievements'),
 		);
 	}
 
@@ -89,10 +80,8 @@ class Tag extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('posts',$this->posts);
-		$criteria->compare('searches',$this->searches);
+		$criteria->compare('tag_id',$this->tag_id);
+		$criteria->compare('achievements_id',$this->achievements_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

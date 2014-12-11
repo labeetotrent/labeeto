@@ -172,15 +172,26 @@ class UserController extends SiteBaseController {
             $search = '';
             if(isset($_GET['search'])){
                 $search = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']);
-                $str_search = Achievements::model()->getIdSearch($search);
-                SearchTrending::model()->addNewCharacter($search);
+                $tag = Tag::model()->findByAttributes(array('name' => $search));
+
+                $criteria = new CDbCriteria();
+                $criteria->with = array('tags');
+                $criteria->condition = 'status = '.Achievements::STATUS_ACTIVE . $condition;
+                $criteria->order = 'vote DESC';
+                $criteria->offset = 0;
+                $criteria->together = true;
+                $criteria->limit = self::PAGE_SIZE;
+                if($tag)
+                {
+                    $criteria->condition .= ' AND tags.id = ' . $tag->getPrimaryKey();
+                    $tag->searches++;
+                    $tag->save();
+                }
+                else
+                    $criteria->condition .= ' AND tags.id = 0';
+
                 $search = new CActiveDataProvider('Achievements', array(
-                    'criteria' => array(
-                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition . $str_search,
-                        'order' => 'id DESC ',
-                        'offset' => 0,
-                        'limit' => self::PAGE_SIZE,
-                    ),
+                    'criteria' => $criteria,
                     'pagination' => false,
                 ));
             }else{
