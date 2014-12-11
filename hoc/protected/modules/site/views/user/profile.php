@@ -433,7 +433,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     <div class="col-md-8 slider-container">
                         <div class="slider" id="exercise-slider"></div>
                     </div>
-                    <div class="col-md-2" id="v">
+                    <div class="col-md-2">
                         Often
                     </div>
                 </div>
@@ -449,7 +449,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     <div class="col-md-8 slider-container">
                         <div class="slider" id="drink-slider"></div>
                     </div>
-                    <div class="col-md-2" id="v">
+                    <div class="col-md-2">
                         Often
                     </div>
                 </div>
@@ -465,7 +465,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     <div class="col-md-8 slider-container">
                         <div class="slider" id="smoke-slider"></div>
                     </div>
-                    <div class="col-md-2" id="v">
+                    <div class="col-md-2">
                         Often
                     </div>
                 </div>

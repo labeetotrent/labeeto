@@ -1072,7 +1072,7 @@ class UserController extends SiteBaseController {
             $video = Video::model()->findAll('is_public = 0 AND user_id='.$id . ' AND is_approval = 1 ORDER BY id DESC');
             $online = User::model()->findByPk(Yii::app()->user->id);
             if($model)
-                $this->render('¶', compact('model', 'question','photos','private', 'achievements', 'user', 'favorite', 'online', 'video'));
+                $this->render('profile_other', compact('model', 'question','photos','private', 'achievements', 'user', 'favorite', 'online', 'video'));
             else
                 $this->render('my_feed');
         }else{
