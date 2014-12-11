@@ -268,6 +268,10 @@ class UserController extends SiteBaseController {
                 $dbTag->posts = 1;
                 $dbTag->save();
             }
+            $tagToAchievement = new AchievementTags();
+            $tagToAchievement->achievements_id = $achievement->getPrimaryKey();
+            $tagToAchievement->tag_id = $dbTag->getPrimaryKey();
+            $tagToAchievement->save();
         }
         $this->redirect('/my_feed');
 
