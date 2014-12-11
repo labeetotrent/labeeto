@@ -309,25 +309,41 @@ class AjaxController extends SiteBaseController {
             }
             elseif($_GET['type'] == 'SEARCH')
             {
-                $search = '';
                 if(isset($_GET['search'])){
-                    $search = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['search']);
-                    $str_search = Achievements::model()->getIdSearch($search);
-                    SearchTrending::model()->addNewCharacter($search);
-                    $posts = Achievements::model()->findAll(array(
-                            'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition . $str_search,
-                            'order' => 'id DESC ',
-                            'offset' => $_GET['offset'],
-                            'limit' => self::PAGE_SIZE,
+                    $search = preg_replace('/[^A-Za-z0-9\-]/', '', $_GET['searchString']);
+                    $tag = Tag::model()->findByAttributes(array('name' => $search));
+
+                    $criteria = new CDbCriteria();
+                    $criteria->with = array('tags');
+                    $criteria->condition = 'status = '.Achievements::STATUS_ACTIVE . $condition;
+                    $criteria->order = 'vote DESC';
+                    $criteria->offset = $_GET['offset'];
+                    $criteria->together = true;
+                    $criteria->limit = self::PAGE_SIZE;
+                    if($tag)
+                    {
+                        $criteria->condition .= ' AND tags.id = ' . $tag->getPrimaryKey();
+                        $tag->searches++;
+                        $tag->save();
+                    }
+                    else
+                        $criteria->condition .= ' AND tags.id = 0';
+
+                    $posts = new CActiveDataProvider('Achievements', array(
+                        'criteria' => $criteria,
+                        'pagination' => false,
                     ));
                 }
                 else
                 {
-                    $posts = Achievements::model()->findAll(array(
+                    $posts = new CActiveDataProvider('Achievements', array(
+                        'criteria' => array(
                             'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
                             'order' => 'id DESC ',
                             'offset' => $_GET['offset'],
                             'limit' => self::PAGE_SIZE,
+                        ),
+                        'pagination' => false,
                     ));
                 }
             }

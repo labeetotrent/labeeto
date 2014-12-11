@@ -50,7 +50,7 @@ $(document).ready(function(){
             $.ajax({
                 url: 'ajax/GetPosts',
                 method: 'POST',
-                data: {offset: startFrom, type: 'POPULAR'},
+                data: {offset: startFrom, type: type, searchString: getParameterByName('search')},
                 beforeSend:
                     function() {
                         inProgress = true;
@@ -145,4 +145,11 @@ function fixRightColumn()
         }
     }
     lastScrollPos = winTop;
+}
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }

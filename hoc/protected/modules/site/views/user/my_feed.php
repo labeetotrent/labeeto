@@ -6,8 +6,10 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.j
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed_autoload.js');
 $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css');
 ?>
+<script>
+    var searchString = '<?=(isset($searchString) ? $searchString : '');?>';
+</script>
 <div class="content-main-1" >
-    <?php //$this->widget('widgets.admin.notifications'); ?>
      <!-- Content Left  -->
     <div class="left-content">
         <!-- Form first -->
@@ -120,7 +122,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
                                 <?php
                                 foreach(Tag::model()->findAll(array('order' => '(posts + searches) DESC', 'limit' => 15)) as $tag)
                                 {
-                                    echo '<div class="col-md-4"><a href="'.$this->createUrl('my_feed', array('search' => $tag->name)).'">#'.$tag->name.'</a></div>';
+                                    echo '<div class="col-md-4"><a href="/my_feed?search='.$tag->name.'">#'.$tag->name.'</a></div>';
                                 }
                                 ?>
                             </div>
