@@ -355,8 +355,8 @@ class AjaxController extends SiteBaseController {
                 if($_GET['type'] == 'POPULAR')
                     $output .= $this->renderPartial('/elements/popular_view', array('data' => $post), true);
                 elseif($_GET['type'] == 'RECENT')
-                    $output .= $this->renderPartial('/elements/recent_view', array('data' => $post), true);
-                elseif($_GET['type'] == 'RECENT')
+                    $output .= $this->renderPartial('/elements/achievement_view', array('data' => $post), true);
+                elseif($_GET['type'] == 'SEARCH')
                     $output .= $this->renderPartial('/elements/trending_view', array('data' => $post), true);
             }
 

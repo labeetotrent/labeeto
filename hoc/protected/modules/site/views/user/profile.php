@@ -347,7 +347,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-default btn-sm btn-cancel-st col-md-12">Close</button>
                     </div>
-
                 </div>
             </div>
             <div class="col-md-12 info-block">

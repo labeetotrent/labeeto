@@ -8,7 +8,11 @@ if($user){?>
             <?php }else{ ?>
                 <img src="../uploads/avatar/<?php echo Utils::getAvatar($user->photo); ?>">
             <?php } ?>
-            <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
+            <?php if($user->is_online == '1') { ?>
+                <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/online-icon.png" />
+            <?php } else { ?>
+                <img class="online-icon-p" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/office-icon.png" />
+            <?php } ?>
             <div class="crycle-img">
                 <h2>
                     <a href="/user/detail/<?php echo $user->id; ?>"><?php echo $user->username; ?></a>

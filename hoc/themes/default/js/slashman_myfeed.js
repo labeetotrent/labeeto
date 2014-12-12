@@ -154,8 +154,15 @@ $(document).ready(function(){
 
 function postComment(obj)
 {
+    var ulHidden = false;
+    if($(obj).parent().parent().parent().find('.comment-post-home ul:first').length == 0)
+    {
+        $(obj).parent().parent().parent().find('.comment-post-home').append('<ul></ul>');
+        ulHidden = true;
+    }
 
     var ul = $(obj).parent().parent().parent().find('.comment-post-home ul:first');
+
     var postId = $(obj).parent().parent().attr('post-id');
     var comment = $(obj).parent().parent().find('.comment_post_txt').val();
     $(obj).parent().parent().find('.comment_post_txt').val('');
@@ -164,6 +171,9 @@ function postComment(obj)
             postId: postId,
             comment: comment
         }).done(function(response){
+            if(ulHidden)
+                ul.show('fast');
+
             var $newLi = $(response);
             $(ul).append($newLi);
             $newLi.show('slow');
