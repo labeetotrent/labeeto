@@ -89,7 +89,7 @@ if($user){?>
                 <?php
                 foreach($data->comments as $comment)
                 {
-                    $this->renderPartial('../elements/achievement_comment', array('data' => $comment));
+                    $this->renderPartial('/elements/achievement_comment', array('data' => $comment));
                 }
                 ?>
             </ul>

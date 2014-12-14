@@ -329,21 +329,15 @@ class AjaxController extends SiteBaseController {
                     else
                         $criteria->condition .= ' AND tags.id = 0';
 
-                    $posts = new CActiveDataProvider('Achievements', array(
-                        'criteria' => $criteria,
-                        'pagination' => false,
-                    ));
+                    $posts = Achievements::model()->findAll($criteria);
                 }
                 else
                 {
-                    $posts = new CActiveDataProvider('Achievements', array(
-                        'criteria' => array(
-                            'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
-                            'order' => 'id DESC ',
-                            'offset' => $_GET['offset'],
-                            'limit' => self::PAGE_SIZE,
-                        ),
-                        'pagination' => false,
+                    $posts = Achievements::model()->findAll(array(
+                        'condition' => "status = ".Achievements::STATUS_ACTIVE . $condition,
+                        'order' => 'id DESC ',
+                        'offset' => $_GET['offset'],
+                        'limit' => self::PAGE_SIZE,
                     ));
                 }
             }
