@@ -7,25 +7,25 @@
 <div class="content-main-1">
     <div class="row col-md-12 profile-header">
         <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
-            <?php if($this->user->photo =='undefined'){ ?>
+            <?php if($model->photo =='undefined'){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png" class="avatar-image img-circle">
             <?php } else { ?>
-                <img src="/uploads/avatar/<?php echo $this->user->photo ?>" class="avatar-image img-circle" />
+                <img src="/uploads/avatar/<?php echo $model->photo ?>" class="avatar-image img-circle" />
             <?php } ?>
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/<?php echo ($online->is_online ==  User::USER_ONLINE)? 'online-circle.png' :'offline-circle.png'; ?>" class="online-circle"/>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4 profile-info">
             <div class="row col-md-12 user-name">
-                <?=$this->user->username;?>
+                <?=$model->username;?>
             </div>
             <div class="row col-md-12 profile-data">
-                <?= date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?>
+                <?= date("Y") - date('Y', strtotime($model->birthday));  ?>, <?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
             <div class="row col-md-12 job">
-                <?php if($this->user->career) echo $this->user->career; ?>
+                <?php if($model->career) echo $model->career; ?>
             </div>
             <div class="row col-md-12 location">
-                <?php if($this->user->address) echo $this->user->address; ?>
+                <?php if($model->address) echo $model->address; ?>
             </div>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2 container-element">
@@ -61,7 +61,7 @@
     </div>
     <div class="row col-md-12 profile-description">
         <div class="col-md-7 desc-text">
-            <?php if($this->user->about) echo $this->user->about; ?>
+            <?php if($model->about) echo $model->about; ?>
         </div>
         <div class="col-md-2 col-md-offset-3 desc-buttons">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/message-icon.png"/>
@@ -77,7 +77,7 @@
                 Gender:
             </div>
             <div class="col-md-3 text">
-                <?php if($this->user->gender_look == 1) echo "Female"; else echo 'Male'; ?>
+                <?php if($model->gender_look == 1) echo "Female"; else echo 'Male'; ?>
             </div>
             <div class="col-md-2">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
@@ -88,7 +88,7 @@
                 Relationship:
             </div>
             <div class="col-md-3 text">
-                <?php if($this->user->relations_look) echo $this->user->relations_look; ?>
+                <?php if($model->relations_look) echo $model->relations_look; ?>
             </div>
             <div class="col-md-2">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
@@ -99,7 +99,7 @@
                 <span class="pull-right">Age:</span>
             </div>
             <div class="col-md-4 text">
-                <?php if($this->user->age) echo $this->user->age; ?>
+                <?php if($model->age) echo $model->age; ?>
             </div>
             <div class="col-md-4">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
@@ -113,7 +113,7 @@
                     Education
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->education) echo Education::model()->getNameEducation($this->user->education); ?>
+                    <?php if($model->education) echo Education::model()->getNameEducation($model->education); ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -121,7 +121,7 @@
                     Religion
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->religion) echo Religion::model()->getNameReligion($this->user->religion) ?>
+                    <?php if($model->religion) echo Religion::model()->getNameReligion($model->religion) ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -129,7 +129,7 @@
                     Religion
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->religion) echo Religion::model()->getNameReligion($this->user->religion) ?>
+                    <?php if($model->religion) echo Religion::model()->getNameReligion($model->religion) ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -137,7 +137,7 @@
                     Height
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->height) echo $this->user->height . Yii::t('global', ' FEET')?>
+                    <?php if($model->height) echo $model->height . Yii::t('global', ' FEET')?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -145,7 +145,7 @@
                     Children
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->children) echo Children::model()->getNameChildren($this->user->children) ?>
+                    <?php if($model->children) echo Children::model()->getNameChildren($model->children) ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-md-12 value">
                     <?php
-                    foreach($this->user->fitnessInterests as $interest)
+                    foreach($model->fitnessInterests as $interest)
                     {
                     ?>
                         <span interest-id="<?=$interest->getPrimaryKey();?>"><i class="fa fa-tag"></i> <?=$interest->name;?></span>
@@ -168,7 +168,7 @@
                     Gym membership
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->inGym->name) echo $this->user->inGym->name; ?>
+                    <?php if($model->inGym->name) echo $model->inGym->name; ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -176,7 +176,7 @@
                     Diet
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->diet) echo $this->user->diet ?>
+                    <?php if($model->diet) echo $model->diet ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -184,7 +184,7 @@
                     Goals
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($this->user->goal) echo $this->user->goal ?>
+                    <?php if($model->goal) echo $model->goal ?>
                 </div>
             </div>
             <div class="col-md-12 info-block">
@@ -255,7 +255,7 @@
             </div>
             <div class="col-md-12 body">
                 <?php
-                foreach(Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => $this->user->id)) as $photo)
+                foreach(Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => $model->id)) as $photo)
                 {
                 ?>
                     <div class="col-md-4 photo-container">
@@ -270,7 +270,7 @@
             </div>
             <div class="col-md-12 body">
                 <?php
-                foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => $this->user->id)) as $photo)
+                foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => $model->id)) as $photo)
                 {
                     ?>
                     <div class="col-md-4 photo-container">
@@ -284,7 +284,7 @@
                 Videos
             </div>
             <div class="col-md-12 body">
-                <?php foreach(Video::model()->findAllByAttributes(array('user_id' => $this->user->id)) as $video) { ?>
+                <?php foreach(Video::model()->findAllByAttributes(array('user_id' => $model->id)) as $video) { ?>
                     <div class="col-md-4 photo-container">
                         <video class="projekktor" style="margin: 0 auto; width: " title="this is projekktor" controls>
                             <source src="<?=Yii::app()->request->baseUrl.'/uploads/video/'.$video->video;?>" />
@@ -345,9 +345,9 @@
 </div>
 <script>
     $(document).ready(function(){
-        $('#exercise-slider').val(<?php if($this->user->excercise) echo $this->user->excercise;?>);
-        $('#drink-slider').val(<?php if($this->user->drink) echo $this->user->drink;?>);
-        $('#smoke-slider').val(<?php if($this->user->smoke) echo $this->user->smoke;?>);
+        $('#exercise-slider').val(<?php if($model->excercise) echo $model->excercise;?>);
+        $('#drink-slider').val(<?php if($model->drink) echo $model->drink;?>);
+        $('#smoke-slider').val(<?php if($model->smoke) echo $model->smoke;?>);
     });
 </script>
 

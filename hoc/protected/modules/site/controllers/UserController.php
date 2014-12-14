@@ -381,7 +381,7 @@ class UserController extends SiteBaseController {
     }
 
     
-    public function actionProfile_other(){
+    public function actionProfile_other($id){
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $this->user = User::model()->findByPk(Yii::app()->user->id);
