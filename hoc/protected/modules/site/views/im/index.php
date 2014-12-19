@@ -78,6 +78,138 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 dialog">
+                <div class="col-md-3 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-7 text">
+                    <div class="row nickname">
+                        slurtyfox201
+                    </div>
+                    <div class="row last-message">
+                        Hello, My name is Aleesa. How do you do,
+                        and where are you from?
+                    </div>
+                </div>
+                <div class="col-md-2 info">
+                    <div class="row date">
+                        Nov 15
+                    </div>
+                    <div class="row messages-count">
+                        <span class="badge" style="display: none;">3</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-md-7 messages-column">
@@ -131,6 +263,66 @@
                 </div>
                 <div class="col-md-2 avatar">
                     <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+            </div>
+            <div class="col-md-12 message my">
+                <div class="col-md-10">
+                    <div class="row message-info">
+                        <span class="date">Nov 12, 6:41pm</span>
+                        <span class="nickname">ME</span>
+                    </div>
+                    <div class="row message-content">
+                        onec at quam id felis luctus dapibus. Integer luctus metus in maximus dapibus. Phasellus
+                        eleifend, urna et interdum scelerisque, est odio rhoncus lectus
+                    </div>
+                </div>
+                <div class="col-md-2 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+            </div>
+            <div class="col-md-12 message">
+                <div class="col-md-2 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-10">
+                    <div class="row message-info">
+                        <span class="nickname">themissymiley</span>
+                        <span class="date">Nov 12, 6:41pm</span>
+                    </div>
+                    <div class="row message-content">
+                        onec at quam id felis luctus dapibus. Integer luctus metus in maximus dapibus. Phasellus
+                        eleifend, urna et interdum scelerisque, est odio rhoncus lectus
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 message">
+                <div class="col-md-2 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-10">
+                    <div class="row message-info">
+                        <span class="nickname">themissymiley</span>
+                        <span class="date">Nov 12, 6:41pm</span>
+                    </div>
+                    <div class="row message-content">
+                        onec at quam id felis luctus dapibus. Integer luctus metus in maximus dapibus. Phasellus
+                        eleifend, urna et interdum scelerisque, est odio rhoncus lectus
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 message">
+                <div class="col-md-2 avatar">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-10">
+                    <div class="row message-info">
+                        <span class="nickname">themissymiley</span>
+                        <span class="date">Nov 12, 6:41pm</span>
+                    </div>
+                    <div class="row message-content">
+                        onec at quam id felis luctus dapibus. Integer luctus metus in maximus dapibus. Phasellus
+                        eleifend, urna et interdum scelerisque, est odio rhoncus lectus
+                    </div>
                 </div>
             </div>
         </div>
