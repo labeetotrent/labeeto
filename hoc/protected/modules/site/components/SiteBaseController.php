@@ -41,4 +41,12 @@ class SiteBaseController extends BaseController {
 			)
 		);
 	}
+
+    public function filterMember($filterChain)
+    {
+        if(!Yii::app()->user->isGuest)
+            $filterChain->run();
+        else
+            $this->redirect('/');
+    }
 }
