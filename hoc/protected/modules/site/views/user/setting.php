@@ -1,6 +1,12 @@
-<!--<div class="banner-ad-top">
-    <img src="<?php //echo Yii::app()->themeManager->baseUrl; ?>/images/ads-top.png" />
-</div>-->
+<?php
+$cs = Yii::app()->clientScript;
+//    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/foursquare.autocomplete.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery-ui.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery.mousewheel.min.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery.smoothdivscroll-1.3-min.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
+//    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed_autoload.js');
+?>
 <div class="content-main-setting">
 <div class="scroll-container">
     <div class="col-md-12 text-center featured-scroll-header">
@@ -78,29 +84,29 @@
                 <select class="form-control select-day" id="days">
                     <?php for($i = 01; $i < 32; $i++ ){
                         $select = "";
-                        if($arr[0] == $i) $select = "selected";
+                        if(isset($arr[0])){if($arr[0] == $i) $select = "selected";}
                         if($i < 10) $i = '0'.$i;
                         echo "<option ". $select ."> " . $i . "</option>";
                     } ?>
                 </select>
-                <input type="hidden" id="ss_days" value="<?php echo $arr[0]; ?>" />
+                <input type="hidden" id="ss_days" value="<?php if(isset($arr[0])) { echo $arr[0]; }?>" />
                 <select class="form-control select-month" id="months">
                     <?php for($i = 1; $i < 13; $i++ ){
                         $select = "";
-                        if($arr[1] == $i) $select = "selected";
+                        if(isset($arr[1])){if($arr[1] == $i) $select = "selected";}
                         if($i < 10) $i = '0'.$i;
                         echo "<option ". $select ."> " . $i . "</option>";
                     } ?>
                 </select>
-                <input type="hidden" id="ss_months" value="<?php echo $arr[1]; ?>" />
+                <input type="hidden" id="ss_months" value="<?php if(isset($arr[1])) { echo $arr[1];} ?>" />
                 <select class="form-control select-month" id="years">
                     <?php for($i = 1970; $i < date("Y")+1; $i++ ){
                         $select = "";
-                        if($arr[2] == $i) $select = "selected";
+                        if(isset($arr[2])){if($arr[2] == $i) $select = "selected";}
                         echo "<option ". $select ."> " . $i . "</option>";
                     } ?>
                 </select>
-                <input type="hidden" id="ss_years" value="<?php echo $arr[2]; ?>" />
+                <input type="hidden" id="ss_years" value="<?php if(isset($arr[2])) { echo $arr[2];} ?>" />
             </div>
             <div class="form-group">
                 <label for="InputEmail" class="label-text" style="padding-top: 15px;">Email address</label>
@@ -381,21 +387,6 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    // Initialize the plugin with no custom options
-    $(document).ready(function() {
-        $("#mixedContent").smoothDivScroll({
-            autoScrollingMode: "onStart",
-            autoScrollingStep: 1,
-            manualContinuousScrolling: true,
-            hiddenOnStart: false
-        });
-        $("#mixedContent .contentBox").on('hover', function(){
-            $("#mixedContent").smoothDivScroll("stopAutoScrolling");
-        });
-    });
-</script>
 <!--End Search References--!>
     </div>
     </div>

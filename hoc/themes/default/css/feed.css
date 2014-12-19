@@ -901,13 +901,13 @@ span.minuten{
     top: 25px;
 }
 
-.message{
-    color: #fc5b6e; 
-    background: url(../images/icon-mess.png) no-repeat 0px; 
-    text-indent: 30px; 
+/*.message{
+    color: #fc5b6e;
+    background: url(../images/icon-mess.png) no-repeat 0px;
+    text-indent: 30px;
     display: inline-block;
     font:normal 10pt/normal Helvetica Neue LT Pro Lt;
-}
+}*/
 .report-user{
     background: url(../images/icon-user.png) no-repeat 0px; 
     text-indent: 20px; 

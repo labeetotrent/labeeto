@@ -21,6 +21,7 @@
             </div>
             <div class="message-request"> <!-- Class active: message-active -->
                 <!--<div class="notice-notify">45</div>-->
+                <a href="<?=$this->createUrl('/im');?>" class="menu-item"></a>
             </div>
             <div class="notify-request notify-active" id="toggle-notification">
                 <div class="notice-notify clicked-notification">45</div>
