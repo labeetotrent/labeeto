@@ -1,0 +1,291 @@
+.pink-button {
+  padding: 8px 25px 5px 25px;
+  background-color: #ed4c5f;
+  border: none;
+  border-bottom: 2px solid #b43443;
+  border-radius: 4px;
+  font-family: "Proxima Nova Regular";
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 11pt;
+  cursor: pointer;
+}
+.pink-button:hover {
+  color: white;
+  text-decoration: none;
+}
+.pink-button.simple {
+  border-bottom: none;
+  background-color: #ea5a5a;
+  padding: 5px 10px 3px 10px;
+  text-transform: none;
+  font-family: "Proxima Nova Light";
+}
+.container {
+  height: 100%;
+  min-height: 100%;
+}
+.container .im-wrapper {
+  padding: 50px;
+}
+.container .im-wrapper .dialogs-column {
+  background-color: #fefefe;
+  border: 1px solid #cdc7c7;
+  border-right: none;
+  padding-right: 0;
+  padding-left: 0;
+  min-height: 750px;
+}
+.container .im-wrapper .dialogs-column .dialogs-search {
+  padding: 25px 15px;
+  height: 80px;
+}
+.container .im-wrapper .dialogs-column .dialogs-search input {
+  color: #cdcdcd;
+  border-radius: 10px;
+  border: 1px solid #d6d6d6;
+  background-color: transparent;
+}
+.container .im-wrapper .dialogs-column .dialogs-search input :-moz-placeholder,
+.container .im-wrapper .dialogs-column .dialogs-search input ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #cdcdcd;
+  opacity: 1;
+}
+.container .im-wrapper .dialogs-column .dialogs-search input ::-webkit-input-placeholder,
+.container .im-wrapper .dialogs-column .dialogs-search input :-ms-input-placeholder {
+  color: #cdcdcd;
+}
+.container .im-wrapper .dialogs-column .dialogs-search i.fa-search {
+  position: absolute;
+  left: 90%;
+  bottom: 38%;
+  font-size: 12pt;
+  color: #a0a0a0;
+}
+.container .im-wrapper .dialogs-column .dialogs {
+  height: 670px;
+  overflow-y: scroll !important;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog {
+  width: 100%;
+  border-top: 1px solid #ebeaea;
+  padding-left: 0;
+  cursor: pointer;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .avatar {
+  padding: 15px 10px;
+  border-left: 5px solid transparent;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .text {
+  padding: 15px;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .text .nickname {
+  color: #4d5a63;
+  font-family: "HelveticaNueveLtPro Bd";
+  font-size: 14pt;
+  padding: 5px 0;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .text .last-message {
+  color: #4d5a63;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 9.5pt;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .info {
+  padding: 15px;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .info .date {
+  color: #a6a6a6;
+  font-size: 10pt;
+  padding-top: 8px;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .info .messages-count {
+  padding: 10px 0 0 0;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .info .messages-count .badge {
+  background-color: #ea5a5a;
+  border-radius: 50%;
+  padding: 6px 7px 4px 8px;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog .info .date,
+.container .im-wrapper .dialogs-column .dialogs .dialog .info .messages-count {
+  text-align: right;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog.active,
+.container .im-wrapper .dialogs-column .dialogs .dialog.hovered {
+  background-color: #f4f2f2;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog.active .avatar,
+.container .im-wrapper .dialogs-column .dialogs .dialog.hovered .avatar {
+  border-left: 5px solid #ea5a5a;
+}
+.container .im-wrapper .dialogs-column .dialogs .dialog.has-new .text .nickname {
+  color: #ea5a5a;
+}
+.container .im-wrapper .messages-column {
+  min-height: 750px;
+  background-color: #fefefe;
+  border: 1px solid #cdc7c7;
+  padding-right: 0;
+  padding-left: 0;
+}
+.container .im-wrapper .messages-column .messages-header {
+  padding-left: 0;
+  height: 81px;
+  border-bottom: 1px solid #ebeaea;
+}
+.container .im-wrapper .messages-column .messages-header .avatar {
+  padding: 9px 10px 0 12px;
+}
+.container .im-wrapper .messages-column .messages-header .text .nickname {
+  color: #4d5a63;
+  font-family: "HelveticaNueveLtPro Bd";
+  font-size: 14pt;
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+.container .im-wrapper .messages-column .messages-header .text .address {
+  font-family: "HelveticaNueveLtPro Roman";
+  color: #a39c9c;
+  font-size: 11pt;
+}
+.container .im-wrapper .messages-column .messages-header .buttons {
+  padding: 8px 15px;
+}
+.container .im-wrapper .messages-column .messages-header .buttons .new-message {
+  margin-bottom: 5px;
+}
+.container .im-wrapper .messages-column .messages-header .buttons .actions a {
+  padding: 5px 25px 4px 25px;
+}
+.container .im-wrapper .messages-column .messages-header .buttons .actions a .bulls {
+  position: relative;
+  bottom: 1px;
+  padding-left: 8px;
+  letter-spacing: 2px;
+  font-size: 14pt;
+}
+.container .im-wrapper .messages-column .messages {
+  padding-left: 0;
+  padding-right: 0;
+  overflow-y: scroll;
+  height: 519px;
+  margin-bottom: 150px;
+}
+.container .im-wrapper .messages-column .messages .message {
+  padding: 5px 10px 5px 0;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.container .im-wrapper .messages-column .messages .message .avatar {
+  padding: 9px 10px 0 12px;
+}
+.container .im-wrapper .messages-column .messages .message .message-info {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.container .im-wrapper .messages-column .messages .message .message-info .nickname {
+  color: #4d5a63;
+}
+.container .im-wrapper .messages-column .messages .message .message-info .date {
+  color: #aab2bd;
+  float: right;
+}
+.container .im-wrapper .messages-column .messages .message .message-content {
+  background-color: #f1f1f1;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
+  color: #707f89;
+}
+.container .im-wrapper .messages-column .messages .message.my {
+  padding: 5px 0 5px 10px;
+}
+.container .im-wrapper .messages-column .messages .message.my .message-info .date {
+  float: none;
+}
+.container .im-wrapper .messages-column .messages .message.my .message-info .nickname {
+  float: right;
+}
+.container .im-wrapper .messages-column .messages .message.my .message-content {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.container .im-wrapper .messages-column .message-form {
+  padding: 10px;
+  border-top: 1px solid #cdc7c7;
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+}
+.container .im-wrapper .messages-column .message-form .form-panel {
+  height: 100%;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea {
+  border: 1px solid #cdc7c7;
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 70%;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea textarea {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border: none;
+  padding: 10px;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #707f89;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea textarea :-moz-placeholder,
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea textarea ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #707f89;
+  opacity: 1;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea textarea ::-webkit-input-placeholder,
+.container .im-wrapper .messages-column .message-form .form-panel .message-textarea textarea :-ms-input-placeholder {
+  color: #707f89;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-panel-footer {
+  height: 30%;
+  border: 1px solid #cdc7c7;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: #f6f6f6;
+  padding-left: 0;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-panel-footer .icons {
+  padding-left: 0;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-panel-footer .icons i {
+  font-size: 16pt;
+  padding-left: 10px;
+  padding-top: 8px;
+  cursor: pointer;
+  background-color: #949494;
+  color: transparent;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-panel-footer .icons i:hover {
+  background-color: #EF2929;
+  color: transparent;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+.container .im-wrapper .messages-column .message-form .form-panel .message-panel-footer .send-button-container {
+  text-align: right;
+  padding-top: 12px;
+}
