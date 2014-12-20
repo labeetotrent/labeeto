@@ -18,7 +18,7 @@ function dialogs(response, postData) {
     response.writeHead(200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
 
     var myId = querystring.parse(postData).myId;
-    //var myId = "42";
+
     if(typeof myId !== 'undefined')
     {
         connection.query('SELECT * FROM (SELECT MAX(created) AS created, CASE user_from WHEN ' + myId + ' THEN user_to ELSE user_from END AS userid, (SELECT message FROM chat WHERE userid = user_from OR userid = user_to ORDER BY created DESC LIMIT 1) lastMessage , (SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages, (SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = ' + myId + ' AND user_from = userid)) as unreadMessages FROM chat GROUP BY userid ORDER BY created DESC) dialogs LEFT OUTER JOIN (SELECT id,username,photo,address FROM users) users ON dialogs.userid = users.id', function(err, rows) {
@@ -65,10 +65,8 @@ function messages(response, postData) {
     console.log("Request handler 'dialogs' was called.");
     response.writeHead(200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
 
-    //var myId = querystring.parse(postData).myId;
-    //var toId = querystring.parse(postDate).toId;
-    var myId = "42";
-    var toId = "45";
+    var myId = querystring.parse(postData).myId;
+    var toId = querystring.parse(postDate).toId;
 
     if(typeof myId !== 'undefined' && typeof toId !== 'undefined')
     {
@@ -77,16 +75,16 @@ function messages(response, postData) {
             connection.query('SELECT c.id as id, c.user_from as user_from, c.user_to as user_to, c.is_read as is_read, c.message as message, c.created as created, u.photo as photo, u.username as username FROM chat c LEFT OUTER JOIN users u ON u.id = c.user_from WHERE ((user_from = ' + myId + ' AND user_to = ' + toId + ') OR (user_from = ' + toId + ' AND user_to = ' + myId + ')) AND is_read = 0', function(err, rows) {
                 if(rows.length > 0)
                 {
-                    connection.query('UPDATE chat SET is_read = 1 WHERE ((user_from = ' + myId + ' AND user_to = ' + toId + ') OR (user_from = ' + toId + ' AND user_to = ' + myId + ')) AND is_read = 0');
                     response.write(JSON.stringify(rows));
                     response.end();
+                    connection.query('UPDATE chat SET is_read = 1 WHERE user_from = ' + toId + ' AND user_to = ' + myId + ' AND is_read = 0');
                     return 0;
                 }
                 else
                 {
                     setTimeout(function() {
                         refresh(connection, response, myId, toId);
-                    }, 2000);
+                    }, 1000);
                 }
             });
         }

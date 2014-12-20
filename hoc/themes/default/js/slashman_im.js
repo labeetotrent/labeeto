@@ -191,7 +191,6 @@ function messageForm(option)
 
 function monitorDialogs()
 {
-    //var timestamp = new Date().getTime();
     $.ajax({
         type: "POST",
         url: 'http://91.203.194.185:8888/dialogs',
@@ -223,7 +222,6 @@ function updateDialogs(data)
 }
 function monitorMessages()
 {
-    //var timestamp = new Date().getTime();
     $.ajax({
         type: "POST",
         url: 'http://91.203.194.185:8888/messages',
