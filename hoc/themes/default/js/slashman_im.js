@@ -194,7 +194,7 @@ function monitorDialogs()
     //var timestamp = new Date().getTime();
     $.ajax({
         type: "POST",
-        url: '91.203.194.185:8888/dialogs',
+        url: 'http://91.203.194.185:8888/dialogs',
         async: true,
         cache: false,
         data: {myId: myId},
@@ -226,7 +226,7 @@ function monitorMessages()
     //var timestamp = new Date().getTime();
     $.ajax({
         type: "POST",
-        url: '91.203.194.185:8888/messages',
+        url: 'http://91.203.194.185:8888/messages',
         async: true,
         cache: false,
         data: {myId: myId, toId: $('#toId').val()},
