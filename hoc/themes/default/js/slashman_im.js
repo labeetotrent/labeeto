@@ -144,8 +144,8 @@ function sendMessage()
                 $('.messages .message').after(response);
             else
             {
-                drawHeader(to);
-                drawDialog(to);
+                drawNew(to);
+
                 $('.messages').html(response);
             }
 
@@ -154,27 +154,28 @@ function sendMessage()
         });
 }
 
-function drawHeader(id)
+function drawNew(id)
 {
-    $.post(
+    $.get(
         Yii.app.createUrl('im/getUserInfo'),
         {
-            to: to,
-            message: message
+            id: id
         }
     )
     .done(function(response) {
             response = JSON.parse(response);
+
             $('.messages-header .avatar img').attr('src', Yii.app.baseUrl + '/uploads/avatar/' + response.photo);
             $('.messages-header .nickname').text(response.name);
             $('.messages-header .address').text(response.address);
-            $('.messages').append(response.message);
+
+            $('.dialogs .dialog').removeClass('active');
+            $('.dialogs').prepend(response.dialog);
+            $('.dialogs .dialog:first').addClass('active');
+
+            $('.new-message-to').hide();
+            $('.messages-header').show();
     });
-}
-
-function drawDialog(id)
-{
-
 }
 
 function messageForm(option)

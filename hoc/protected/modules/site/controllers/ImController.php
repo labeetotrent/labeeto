@@ -131,8 +131,9 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         if($user && $message)
         {
             $messageArray = array('created' => $message->created, 'unreadMessages' => 0, 'photo' => $user->photo, 'username' => $user->username, 'lastMessage' => $message->message, 'userid' => $user->getPrimaryKey());
-            $outputMessage = $this->renderPartial('/elements/im/_double', array('data' => $messageArray), true);
-            print json_encode(array('name' => $user->username, 'address' => $user->address, 'photo' => $user->photo, 'message' => $outputMessage));
+            $outputDialog = $this->renderPartial('/elements/im/_dialog', array('data' => $messageArray), true);
+            $outputMessage = $this->renderPartial('/elements/im/_myMessage', array('data' => $message), true);
+            print json_encode(array('name' => $user->username, 'address' => $user->address, 'photo' => $user->photo, 'message' => $outputMessage, 'dialog' => $outputDialog));
         }
     }
 }
