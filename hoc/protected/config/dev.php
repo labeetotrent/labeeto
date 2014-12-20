@@ -7,7 +7,7 @@ $development = array(
 	'components' => array(
 		'db' =>  array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=localhost;dbname=labeeto',
+            'connectionString' => 'mysql:host=91.203.194.185;dbname=labeeto',
             'username' => 'root',
             'password' => '884088',
             'charset' => 'UTF8',
