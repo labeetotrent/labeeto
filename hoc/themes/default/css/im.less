@@ -52,7 +52,6 @@
         margin-right: 0;
         margin-left: 0;
         border-top: 1px solid @lightgray-border;
-
         .dialog {
           width: 100%;
           border-bottom: 1px solid @lightgray-border;
@@ -162,6 +161,28 @@
                 font-size: 14pt;
               }
             }
+          }
+        }
+      }
+      .new-message-to {
+        padding-left: 0;
+        height: @header-height + 1;
+        border-bottom: 1px solid @lightgray-border;
+        font-family: "Proxima Nova SemiBold";
+        .to {
+          text-transform: uppercase;
+          color: #313541;
+          font-size: 12pt;
+          padding: 35px 15px;
+        }
+        .to-input-container {
+          padding: 33px 0;
+          .to-input {
+            width: 100%;
+            font-size: 12pt;
+            color: #a39c9c;
+            border: none;
+            padding-left: 15px;
           }
         }
       }
@@ -297,5 +318,14 @@
         }
       }
     }
+  }
+}
+
+.autocomplete-suggestions {
+  padding-top: @header-height;
+  width: 100%;
+  .user-suggestion {
+    padding: 16px 0;
+    font-size: 10pt;
   }
 }

@@ -65,7 +65,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         $messagesCriteria->params = array(':id' => Yii::app()->user->getId(), ':to' => $to);
         $messages = Chat::model()->findAll($messagesCriteria);
 
-        Chat::model()->updateAll(array('is_read' => 1), $messagesCriteria);
+        //Chat::model()->updateAll(array('is_read' => 1), $messagesCriteria);
 
         $user = User::model()->findByPk($to);
 
@@ -104,11 +104,35 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
 
     public function actionReadMessages($to)
     {
-        Chat::model()->updateAll(array('is_read' => 1), array('user_to' => Yii::app()->user->getId(), 'user_from' => $to));
+        Chat::model()->updateAll(array('is_read' => 1), 'user_to = :from AND user_from = :to', array(':from' => Yii::app()->user->getId(), ':to' => $to));
     }
 
     public function actionGetDialogs($to)
     {
 
+    }
+
+    public function actionUserAutocomplete($query)
+    {
+        $users = array();
+        foreach(User::model()->findAll(array('condition' => "username LIKE '%".$query."%' AND id <> ".Yii::app()->user->getId())) as $user)
+        {
+            $element = array('value' => $this->renderPartial('/elements/im/_autocompleteUser', array('data' => $user), true), 'data' => $user->username);
+            $users[] = $element;
+        }
+
+        print json_encode(array('query' => '', 'suggestions' => $users));
+    }
+    public function actionGetUserInfo($id)
+    {
+        $user = User::model()->findByPk($id);
+        $message = Chat::model()->findByAttributes(array('user_to' => $id, 'user_from' => Yii::app()->user->getId()), array('order' => 'created DESC'));
+
+        if($user && $message)
+        {
+            $messageArray = array('created' => $message->created, 'unreadMessages' => 0, 'photo' => $user->photo, 'username' => $user->username, 'lastMessage' => $message->message, 'userid' => $user->getPrimaryKey());
+            $outputMessage = $this->renderPartial('/elements/im/_double', array('data' => $messageArray), true);
+            print json_encode(array('name' => $user->username, 'address' => $user->address, 'photo' => $user->photo, 'message' => $outputMessage));
+        }
     }
 }

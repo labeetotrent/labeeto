@@ -22,6 +22,9 @@ $(document).ready(function(){
         $('.messages').html('<i class="fa fa-spin fa-refresh"></i>');
         $(this).find('.messages-count').fadeOut(500);
 
+        $('.messages-header').show();
+        $('.new-message-to').hide();
+
 
         $.get( Yii.app.createUrl('im/getMessages'),
             {
@@ -48,6 +51,35 @@ $(document).ready(function(){
         if (!e.shiftKey && e.keyCode == 13) {
             e.preventDefault();
             sendMessage();
+        }
+    });
+
+    $(document).on('click', '#new-message', function(){
+        $('.messages-header').hide();
+        $('.new-message-to').show();
+        $('.messages').html('');
+        $('.dialog').removeClass('active');
+        $('#to-input').focus();
+    });
+
+    $('#to-input').autocomplete({
+        serviceUrl: Yii.app.createUrl('im/userAutocomplete'),
+        doStrong: false,
+        appendTo: '.new-message-to',
+        onSelect: function(suggestion) {
+            var html = $($.parseHTML(suggestion.value));
+
+            var userName = $(html).attr('user-name');
+            var userId = $(html).attr('user-id');
+
+            $(this).val(userName);
+            $('#toId').val(userId);
+
+            if($('.dialogs .dialog[user-id=' + userId + ']').length > 0)
+            {
+                $('.dialogs .dialog[user-id=' + userId + ']:first').trigger('click');
+                $(this).val('');
+            }
         }
     });
 });
@@ -93,8 +125,42 @@ function sendMessage()
         })
         .done(function(response){
             $('.message-textarea textarea').val('');
-            $('.messages .message').after(response);
+
+
+
+            if($('.messages .message').length > 0)
+                $('.messages .message').after(response);
+            else
+            {
+                drawHeader(to);
+                drawDialog(to);
+                $('.messages').html(response);
+            }
+
             $('.messages .message:last').fadeIn(300);
             scrollMessages(true);
         });
+}
+
+function drawHeader(id)
+{
+    $.post(
+        Yii.app.createUrl('im/getUserInfo'),
+        {
+            to: to,
+            message: message
+        }
+    )
+    .done(function(response) {
+            response = JSON.parse(response);
+            $('.messages-header .avatar img').attr('src', Yii.app.baseUrl + '/uploads/avatar/' + response.photo);
+            $('.messages-header .nickname').text(response.name);
+            $('.messages-header .address').text(response.address);
+            $('.messages').append(response.message);
+    });
+}
+
+function drawDialog(id)
+{
+
 }
