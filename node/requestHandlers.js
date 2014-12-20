@@ -66,7 +66,7 @@ function messages(response, postData) {
     response.writeHead(200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
 
     var myId = querystring.parse(postData).myId;
-    var toId = querystring.parse(postDate).toId;
+    var toId = querystring.parse(postData).toId;
 
     if(typeof myId !== 'undefined' && typeof toId !== 'undefined')
     {
