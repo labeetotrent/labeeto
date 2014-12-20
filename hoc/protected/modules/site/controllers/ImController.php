@@ -107,9 +107,19 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         Chat::model()->updateAll(array('is_read' => 1), 'user_to = :from AND user_from = :to', array(':from' => Yii::app()->user->getId(), ':to' => $to));
     }
 
-    public function actionGetDialogs($to)
+    public function actionGetDialogs()
     {
+        if(isset($_POST['content']))
+        {
+            $content = $_POST['content'];
+            $output = '';
+            foreach($content as $dialog)
+            {
+                $output .= $this->renderPartial('/elements/im/_dialog', array('data' => $dialog), true);
+            }
 
+            print $output;
+        }
     }
 
     public function actionUserAutocomplete($query)
@@ -134,6 +144,95 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
             $outputDialog = $this->renderPartial('/elements/im/_dialog', array('data' => $messageArray), true);
             $outputMessage = $this->renderPartial('/elements/im/_myMessage', array('data' => $message), true);
             print json_encode(array('name' => $user->username, 'address' => $user->address, 'photo' => $user->photo, 'message' => $outputMessage, 'dialog' => $outputDialog));
+        }
+    }
+    public function actionMonitorDialogs()
+    {
+        $myId = Yii::app()->user->getId();
+
+        $dialogsOld = $dialogs = Yii::app()->db->createCommand('SELECT
+    *
+FROM
+    (SELECT
+        MAX(created) AS created,
+            CASE user_from
+                WHEN :id THEN user_to
+                ELSE user_from
+            END AS userid,
+            (SELECT
+                    message
+                FROM
+                    chat
+                WHERE
+                    userid = user_from OR userid = user_to
+                ORDER BY created DESC
+                LIMIT 1) lastMessage ,
+			(SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages,
+			(SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = :id AND user_from = userid)) as unreadMessages
+    FROM
+        chat
+    GROUP BY userid
+    ORDER BY created DESC) dialogs
+LEFT OUTER JOIN
+	(SELECT id,username,photo,address FROM users) users
+ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
+        $counter = 0;
+        while($dialogs === $dialogsOld && $counter < 10)
+        {
+            $dialogs = Yii::app()->db->createCommand('SELECT
+    *
+FROM
+    (SELECT
+        MAX(created) AS created,
+            CASE user_from
+                WHEN :id THEN user_to
+                ELSE user_from
+            END AS userid,
+            (SELECT
+                    message
+                FROM
+                    chat
+                WHERE
+                    userid = user_from OR userid = user_to
+                ORDER BY created DESC
+                LIMIT 1) lastMessage ,
+			(SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages,
+			(SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = :id AND user_from = userid)) as unreadMessages
+    FROM
+        chat
+    GROUP BY userid
+    ORDER BY created DESC) dialogs
+LEFT OUTER JOIN
+	(SELECT id,username,photo,address FROM users) users
+ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
+            sleep(1);
+            $counter++;
+        }
+
+        $output = '';
+        foreach($dialogs as $dialog)
+        {
+            $output .= $this->render('/elements/im/_dialog', array('data' => $dialog), true);
+        }
+
+        print $output;
+    }
+
+    public function actionAppendMessages()
+    {
+        if(isset($_POST['content']))
+        {
+            $content = $_POST['content'];
+            $output = '';
+            foreach($content as $message)
+            {
+                if($message['user_from'] == Yii::app()->user->getId())
+                    $output .= $this->renderPartial('/elements/im/_myMessage', array('data' => $message), true);
+                else
+                    $output .= $this->renderPartial('/elements/im/_message', array('data' => $message), true);
+            }
+
+            print $output;
         }
     }
 }

@@ -205,6 +205,7 @@
 .container .im-wrapper .messages-column .messages {
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 20px;
   overflow-y: scroll;
   height: 519px;
   margin-bottom: 150px;

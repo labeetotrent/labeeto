@@ -94,6 +94,8 @@ $(document).ready(function(){
         $('.dialogs .dialog:first').trigger('click');
         messageForm('show');
     });
+    monitorDialogs();
+    monitorMessages();
 });
 
 function scrollMessages(animate)
@@ -184,4 +186,70 @@ function messageForm(option)
         $('.message-form').fadeIn(200);
     else
         $('.message-form').fadeOut(200);
+}
+
+
+function monitorDialogs()
+{
+    //var timestamp = new Date().getTime();
+    $.ajax({
+        type: "POST",
+        url: Yii.app.hostInfo + ':8888/dialogs',
+        async: true,
+        cache: false,
+        data: {myId: myId},
+        success: function(data){
+            if(data != '')
+                updateDialogs(data);
+
+            setTimeout("monitorDialogs()",1000);
+        },
+        error: function(XMLHttpRequest,textStatus,errorThrown) {
+            console.log("POLL ERROR: "+textStatus + " "+ errorThrown );
+            setTimeout("monitorDialogs()",1000);
+        }
+    });
+}
+
+function updateDialogs(data)
+{
+    $.post( Yii.app.createUrl('im/getDialogs'),
+        {
+            content: data
+        })
+        .done(function(response){
+            $('.dialogs').html(response);
+        });
+}
+function monitorMessages()
+{
+    //var timestamp = new Date().getTime();
+    $.ajax({
+        type: "POST",
+        url: Yii.app.hostInfo + ':8888/messages',
+        async: true,
+        cache: false,
+        data: {myId: myId, toId: $('#toId').val()},
+        success: function(data){
+            if(data != '')
+                updateMessages(data);
+
+            setTimeout("monitorMessages()",1000);
+        },
+        error: function(XMLHttpRequest,textStatus,errorThrown) {
+            console.log("POLL ERROR: "+textStatus + " "+ errorThrown );
+            setTimeout("monitorMessages()",1000);
+        }
+    });
+}
+function updateMessages(data)
+{
+    $.post( Yii.app.createUrl('im/appendMessages'),
+        {
+            content: data
+        })
+        .done(function(response){
+            $('.messages').append(response);
+            scrollMessages(false);
+        });
 }

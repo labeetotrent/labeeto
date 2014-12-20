@@ -6,6 +6,9 @@
     $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_im.js');
     $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
 ?>
+<script>
+    var myId = '<?=Yii::app()->user->getId();?>';
+</script>
 <div class="row im-wrapper">
     <div class="col-md-5 dialogs-column">
         <div class="col-md-12 dialogs-search">
