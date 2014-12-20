@@ -196,6 +196,12 @@
   border: none;
   padding-left: 15px;
 }
+.container .im-wrapper .messages-column .new-message-to .cancel-new {
+  color: #a39c9c;
+  font-size: 14pt;
+  padding: 32px 0;
+  cursor: pointer;
+}
 .container .im-wrapper .messages-column .messages {
   padding-left: 0;
   padding-right: 0;
@@ -327,10 +333,22 @@
   padding-top: 12px;
 }
 .autocomplete-suggestions {
-  padding-top: 80px;
+  top: 80px;
+  max-height: 520px;
+  overflow-y: scroll;
   width: 100%;
 }
-.autocomplete-suggestions .user-suggestion {
+.autocomplete-suggestions .autocomplete-suggestion {
+  background-color: #fefefe;
+}
+.autocomplete-suggestions .autocomplete-suggestion .user-suggestion {
   padding: 16px 0;
   font-size: 10pt;
+  cursor: pointer;
+}
+.autocomplete-suggestions .autocomplete-suggestion .user-suggestion .nickname {
+  padding: 20px 0;
+}
+.autocomplete-suggestions .autocomplete-suggestion :hover {
+  background-color: #f4f2f2;
 }

@@ -92,6 +92,7 @@
                 showNoSuggestionNotice: false,
                 noSuggestionNotice: 'No results',
                 orientation: 'bottom',
+                noHeight: false,
                 forceFixPosition: false
             };
 
@@ -231,11 +232,21 @@
             options.orientation = that.validateOrientation(options.orientation, 'bottom');
 
             // Adjust height, width and z-index:
-            $(that.suggestionsContainer).css({
-                'max-height': options.maxHeight + 'px',
-                'width': options.width + 'px',
-                'z-index': options.zIndex
-            });
+            if(options.noHeight)
+            {
+                $(that.suggestionsContainer).css({
+                    'width': options.width + 'px',
+                    'z-index': options.zIndex
+                });
+            }
+            else
+            {
+                $(that.suggestionsContainer).css({
+                    'max-height': options.maxHeight + 'px',
+                    'width': options.width + 'px',
+                    'z-index': options.zIndex
+                });
+            }
         },
 
 
@@ -319,6 +330,9 @@
             // -2px to account for suggestions border.
             if (that.options.width === 'auto') {
                 styles.width = (that.el.outerWidth() - 2) + 'px';
+            }
+            if (that.options.width === 'full') {
+                styles.width = '100%';
             }
 
             $container.css(styles);

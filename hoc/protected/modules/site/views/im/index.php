@@ -49,8 +49,11 @@
             <div class="col-md-1 to">
                 To:
             </div>
-            <div class="col-md-11 to-input-container">
+            <div class="col-md-10 to-input-container">
                 <input type="text" id="to-input" class="to-input"/>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-close cancel-new"></i>
             </div>
         </div>
         <div class="col-md-12 messages">

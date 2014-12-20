@@ -185,6 +185,12 @@
             padding-left: 15px;
           }
         }
+        .cancel-new {
+          color: #a39c9c;
+          font-size: 14pt;
+          padding: 32px 0;
+          cursor: pointer;
+        }
       }
       .messages {
         padding-left: 0;
@@ -322,10 +328,22 @@
 }
 
 .autocomplete-suggestions {
-  padding-top: @header-height;
+  top: @header-height;
+  max-height: @height - @header-height - @message-form-height;
+  overflow-y: scroll;
   width: 100%;
-  .user-suggestion {
-    padding: 16px 0;
-    font-size: 10pt;
+  .autocomplete-suggestion {
+    background-color: #fefefe;
+    .user-suggestion {
+      padding: 16px 0;
+      font-size: 10pt;
+      cursor: pointer;
+      .nickname {
+        padding: 20px 0;
+      }
+    }
+    :hover {
+      background-color: #f4f2f2;
+    }
   }
 }

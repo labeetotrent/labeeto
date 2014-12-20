@@ -21,6 +21,7 @@ $(document).ready(function(){
         $(this).addClass('active');
         $('.messages').html('<i class="fa fa-spin fa-refresh"></i>');
         $(this).find('.messages-count').fadeOut(500);
+        messageForm('show');
 
         $('.messages-header').show();
         $('.new-message-to').hide();
@@ -57,6 +58,7 @@ $(document).ready(function(){
     $(document).on('click', '#new-message', function(){
         $('.messages-header').hide();
         $('.new-message-to').show();
+        messageForm('hide');
         $('.messages').html('');
         $('.dialog').removeClass('active');
         $('#to-input').focus();
@@ -66,11 +68,15 @@ $(document).ready(function(){
         serviceUrl: Yii.app.createUrl('im/userAutocomplete'),
         doStrong: false,
         appendTo: '.new-message-to',
+        width: 'full',
+        zIndex: 99,
+        noHeight: true,
         onSelect: function(suggestion) {
             var html = $($.parseHTML(suggestion.value));
 
             var userName = $(html).attr('user-name');
             var userId = $(html).attr('user-id');
+            messageForm('show');
 
             $(this).val(userName);
             $('#toId').val(userId);
@@ -81,6 +87,12 @@ $(document).ready(function(){
                 $(this).val('');
             }
         }
+    });
+
+    $(document).on('click', '.new-message-to .cancel-new', function(){
+        $('#to-input').val('');
+        $('.dialogs .dialog:first').trigger('click');
+        messageForm('show');
     });
 });
 
@@ -163,4 +175,12 @@ function drawHeader(id)
 function drawDialog(id)
 {
 
+}
+
+function messageForm(option)
+{
+    if(option == 'show')
+        $('.message-form').fadeIn(200);
+    else
+        $('.message-form').fadeOut(200);
 }
