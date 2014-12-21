@@ -73,18 +73,25 @@ function messages(response, postData) {
         function refresh(connection, response, myId, toId)
         {
             connection.query('SELECT c.id as id, c.user_from as user_from, c.user_to as user_to, c.is_read as is_read, c.message as message, c.created as created, u.photo as photo, u.username as username FROM chat c LEFT OUTER JOIN users u ON u.id = c.user_from WHERE user_from = ' + toId + ' AND user_to = ' + myId + ' AND is_read = 0', function(err, rows) {
-                if(rows.length > 0)
+                if(typeof rows !== 'undefined')
                 {
-                    response.write(JSON.stringify(rows));
-                    response.end();
-                    connection.query('UPDATE chat SET is_read = 1 WHERE user_from = ' + toId + ' AND user_to = ' + myId + ' AND is_read = 0');
-                    return 0;
+                    if(rows.length > 0)
+                    {
+                        response.write(JSON.stringify(rows));
+                        response.end();
+                        connection.query('UPDATE chat SET is_read = 1 WHERE user_from = ' + toId + ' AND user_to = ' + myId + ' AND is_read = 0');
+                        return 0;
+                    }
+                    else
+                    {
+                        setTimeout(function() {
+                            refresh(connection, response, myId, toId);
+                        }, 1000);
+                    }
                 }
                 else
                 {
-                    setTimeout(function() {
-                        refresh(connection, response, myId, toId);
-                    }, 1000);
+                    console.log(err.toString());
                 }
             });
         }
