@@ -77,7 +77,7 @@ class UserController extends SiteBaseController {
         }
         $userOff = User::model()->findByPk( Yii::app()->user->id );
         $userOff->is_online = User::USER_OFFLINE;
-        echo $userOff->birthdate; die();
+        echo $userOff->birthday; die();
         $userOff->save(array('is_online'));
 
         Yii::app()->user->logout(true);
