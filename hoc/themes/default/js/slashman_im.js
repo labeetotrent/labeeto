@@ -217,7 +217,9 @@ function updateDialogs(data)
             content: data
         })
         .done(function(response){
+            var activeDialog = $('.dialogs .dialog.active').attr('user-id'); //@todo Сохранение активности
             $('.dialogs').html(response);
+            $('.dialogs .dialog[user-id=' + activeDialog + ']').addClass('active');
         });
 }
 function monitorMessages()
