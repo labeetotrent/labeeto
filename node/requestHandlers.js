@@ -21,13 +21,13 @@ function dialogs(response, postData) {
 
     if(typeof myId !== 'undefined')
     {
-        connection.query('SELECT * FROM (SELECT MAX(created) AS created, CASE user_from WHEN ' + myId + ' THEN user_to ELSE user_from END AS userid, (SELECT message FROM chat WHERE userid = user_from OR userid = user_to ORDER BY created DESC LIMIT 1) lastMessage , (SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages, (SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = ' + myId + ' AND user_from = userid)) as unreadMessages FROM chat GROUP BY userid ORDER BY created DESC) dialogs LEFT OUTER JOIN (SELECT id,username,photo,address FROM users) users ON dialogs.userid = users.id', function(err, rows) {
+        connection.query('SELECT * FROM (SELECT MAX(created) AS created, CASE user_from WHEN ' + myId + ' THEN user_to ELSE user_from END AS userid, (SELECT message FROM chat WHERE (userid = user_from AND ' + myId + ' = user_to) OR (userid = user_to AND ' + myId + ' = user_from) ORDER BY created DESC LIMIT 1) lastMessage , (SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages, (SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = ' + myId + ' AND user_from = userid)) as unreadMessages FROM chat GROUP BY userid ORDER BY created DESC) dialogs LEFT OUTER JOIN (SELECT id,username,photo,address FROM users) users ON dialogs.userid = users.id', function(err, rows) {
             //response.write(JSON.stringify(rows));
             var oldRows = JSON.stringify(rows);
 
             function refresh(connection, oldRows, response)
             {
-                connection.query('SELECT * FROM (SELECT MAX(created) AS created, CASE user_from WHEN ' + myId + ' THEN user_to ELSE user_from END AS userid, (SELECT message FROM chat WHERE userid = user_from OR userid = user_to ORDER BY created DESC LIMIT 1) lastMessage , (SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages, (SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = ' + myId + ' AND user_from = userid)) as unreadMessages FROM chat GROUP BY userid ORDER BY created DESC) dialogs LEFT OUTER JOIN (SELECT id,username,photo,address FROM users) users ON dialogs.userid = users.id', function(err, newRows) {
+                connection.query('SELECT * FROM (SELECT MAX(created) AS created, CASE user_from WHEN ' + myId + ' THEN user_to ELSE user_from END AS userid, (SELECT message FROM chat WHERE (userid = user_from AND ' + myId + ' = user_to) OR (userid = user_to AND ' + myId + ' = user_from) ORDER BY created DESC LIMIT 1) lastMessage , (SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages, (SELECT COUNT(*) FROM chat WHERE is_read = 0 AND (user_to = ' + myId + ' AND user_from = userid)) as unreadMessages FROM chat GROUP BY userid ORDER BY created DESC) dialogs LEFT OUTER JOIN (SELECT id,username,photo,address FROM users) users ON dialogs.userid = users.id', function(err, newRows) {
                     //response.write(JSON.stringify(rows));
                     if(JSON.stringify(newRows) !== oldRows)
                     {
