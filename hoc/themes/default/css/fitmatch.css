@@ -1,0 +1,133 @@
+#content-feed {
+  padding-bottom: 0;
+}
+.fitmatch-container .fitmatch-header {
+  padding: 30px 0 20px 5px;
+  color: #ea5a5a;
+  font-size: 21pt;
+  text-transform: uppercase;
+  font-family: "Proxima Nova SemiBold";
+  border-bottom: 1px solid #d7d7d7;
+}
+.fitmatch-container .fitmatch-body {
+  padding: 60px 0;
+}
+.fitmatch-container .fitmatch-body .card-container {
+  border: 1px solid #e8e5e5;
+  background-color: white;
+  padding: 20px 0 0 0;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e8e5e5;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .avatar {
+  padding-right: 0;
+  padding-left: 0;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .avatar img {
+  margin: 0 auto;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .nickname-info .nickname {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 20pt;
+  color: #ea5a5a;
+  font-family: "HelveticaNueveLtPro Bd";
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info div {
+  padding-left: 0;
+  padding-right: 0;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .birth,
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .job,
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .location {
+  font-family: "Proxima Nova SemiBold";
+  font-size: 10pt;
+  color: #687381;
+  padding-left: 25px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 18px;
+  line-height: 18px;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .birth {
+  background-image: url('../images/fish/profile-icon.png');
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .job {
+  background-image: url('../images/fish/work-icon.png');
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .personal-info .location {
+  background-image: url('../images/fish/location-icon.png');
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .about-info {
+  color: #a39c9c;
+  font-size: 12pt;
+  font-family: "Proxima Nova Regular Italic";
+  padding: 10px 0;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .tags .tag {
+  width: auto;
+  display: inline-block;
+  color: white;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .tags .tag div {
+  display: inline-block;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .tags .tag .tag-left {
+  left: 0;
+  top: 0;
+  background: url('../images/tag-left.png');
+  width: 16px;
+  height: 30px;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .tags .tag .tag-right {
+  background: url('../images/tag-right.png') no-repeat;
+  width: 4px;
+  height: 30px;
+  position: relative;
+  right: 6px;
+}
+.fitmatch-container .fitmatch-body .card-container .card-info .user-info .tags .tag .tag-middle {
+  position: relative;
+  bottom: 12px;
+  right: 3px;
+  font-size: 10pt;
+  padding: 0 10px;
+  white-space: nowrap;
+  height: 30px;
+  line-height: 30px;
+  background: url('../images/tag-middle.png') repeat-x 0 1px;
+}
+.fitmatch-container .fitmatch-body .card-container .card-photos .photos-header {
+  color: #868f9a;
+  font-family: "Proxima Nova SemiBold";
+  font-size: 14pt;
+  padding: 20px 15px;
+}
+.fitmatch-container .fitmatch-body .card-container .card-photos .photos {
+  padding-bottom: 30px;
+}
+.fitmatch-container .fitmatch-body .card-decision {
+  background-color: #e4e4e4;
+}
+.fitmatch-container .fitmatch-body .card-decision .decision-header {
+  color: #ea5a5a;
+  text-transform: uppercase;
+  font-family: "Proxima Nova SemiBold";
+  font-size: 18pt;
+  text-align: center;
+  padding: 15px 0;
+}
+.fitmatch-container .fitmatch-body .card-decision .decision-buttons {
+  padding: 0 0 15px 0;
+}
+.fitmatch-container .fitmatch-body .card-decision .decision-buttons div {
+  padding: 5px 150px;
+}
+.fitmatch-container .fitmatch-body .card-decision .decision-buttons div button {
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
