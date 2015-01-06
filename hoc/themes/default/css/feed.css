@@ -2243,11 +2243,11 @@ input[type="range"]::-ms-fill-lower {
     color: #ffffff;
     font: normal 18px/normal Proxima Nova Bold;
 }*/
-.btn-save-st:hover,
-.btn-cancel-st:hover{
-    color: #ffffff;
-    font: normal 18px/normal Proxima Nova Bold;
-}
+/*.btn-save-st:hover,*/
+/*.btn-cancel-st:hover{*/
+    /*color: #ffffff;*/
+    /*font: normal 18px/normal Proxima Nova Bold;*/
+/*}*/
 .btn-block-list{
     background: url('../images/cancel.png') no-repeat !important;
     width: 125px;

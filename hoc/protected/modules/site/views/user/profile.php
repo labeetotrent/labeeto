@@ -35,7 +35,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <div class="row col-md-12 job">
                 <?php if($this->user->career) echo $this->user->career; ?>
             </div>
-            <div class="row col-md-12 location"><?php if($this->user->address) echo $this->user->address; ?>
+            <div class="row col-md-12 location">
+                <?php if($this->user->address) echo $this->user->address; ?>
             </div>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2 container-element">
