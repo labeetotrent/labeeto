@@ -98,6 +98,11 @@
   color: #313541;
   font-family: "Proxima Nova SemiBold";
 }
+.notifications-container .notifications .notifications-body .notification-container span {
+  font-size: 8pt;
+  color: #a4a4a4;
+  font-family: "Proxima Nova Reguler", Helvetice, sans-serif;
+}
 .notifications-container .notifications .notifications-body .message-notification {
   padding: 15px 0 10px 30px;
   background: url('../images/notification/message.png') no-repeat left center;

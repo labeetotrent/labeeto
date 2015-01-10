@@ -16,10 +16,10 @@
                 Today
             </div>
             <div class="col-md-12 notification-container message-notification">
-                <a href="#" class="nickname">thesweetgirl09</a> sent you a message
+                <a href="#" class="nickname">thesweetgirl09</a> sent you a message <span>12:36 pm</span>
             </div>
             <div class="col-md-12 notification-container favour-notification">
-                <a href="#">georgiamayjagger</a> favourited your <a href="#">post</a>
+                <a href="#">georgiamayjagger</a> favourited your <a href="#">post</a> <span>12:36 pm</span>
             </div>
         </div>
     </div>
