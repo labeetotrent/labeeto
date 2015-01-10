@@ -1,5 +1,5 @@
 .menu-notification {
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 34px;
   right: -13px;

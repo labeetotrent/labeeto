@@ -22,8 +22,12 @@ $(document).ready(function(){
     });
    
     $("#toggle-notification").click(function(){
-        $(".menu-notification").toggle();
-        $(".clicked-notification").hide();
+        if($('.menu-notification').css('opacity') == '0')
+            $('.menu-notification').animate({opacity: '1'}, 200);
+        else
+            $('.menu-notification').animate({opacity: '0'}, 200);
+        //$(".menu-notification").toggle();
+        //$(".clicked-notification").hide();
     });
 
 
