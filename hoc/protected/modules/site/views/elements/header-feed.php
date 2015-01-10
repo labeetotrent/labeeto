@@ -26,74 +26,45 @@
             <div class="notify-request notify-active" id="toggle-notification">
                 <div class="notice-notify clicked-notification">45</div>
                 <div class="menu-notification">
-                    <span class="only-this-span"></span>
-                    <ul>
-                        <li>
-                            <span class="notification-header">NOTIFICATIONS</span>
-                            <span class="notification-number">(45)</span>
-                            <span class="notification-seeall">See All</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/1_avarta.png">
-                                <h6>SAORI TABATA <span class="active-infor">likes your</span><span class="content-infor">post</span></h6>
-                                <span class="minuten">16 mins</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/2_avata.png">
-                                <h6>EMMA ROSE BUNTON <span class="active-infor">likes your</span><span class="content-infor">post</span></h6>
-                                <span class="minuten">18 mins</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
-                                <h6>MIRIAM REGALADO <span class="active-infor">likes your</span><span class="content-infor">ROFILE PICTURE</span></h6>
-                                <span class="minuten">2 hr</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
-                                <h6>MIRIAM REGALADO <span class="active-infor">wants access to your</span><span class="content-infor">pRIVATE PHOTOS</span></h6>
-                                <span class="minuten">2 hr</span>
-                            </a>
-                            <div class="content-active">
-                                <span class="delete-post"></span><span class="check-post"></span>
+                    <div class="notification-balloon"></div>
+                    <div class="notification-dropdown-items col-md-12 row">
+                        <div class="col-md-12 notification-dropdown-item">
+                            <div class="col-md-1 notification-photo">
+                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
                             </div>
-
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/4_avata.png">
-                                <h6>ASH PONCE <span class="active-infor">likes your</span><span class="content-infor">post</span></h6>
-                                <span class="minuten">2 hr</span>
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/3_avata.png">
-                                <h6>MIRIAM REGALADO <span class="active-infor">wants to</span><span class="content-infor">CHAT</span></h6>
-                                <span class="minuten">2 hr</span>
-                            </a>
-                            <div class="content-active">
-                                <span class="delete-post"></span><span class="check-post"></span>
+                            <div class="col-md-9 notification-content">
+                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
                             </div>
-
-                        </li>
-
-                    </ul>
+                            <div class="col-md-2 notification-time">
+                                12:36 pm
+                            </div>
+                        </div>
+                        <div class="col-md-12 notification-dropdown-item">
+                            <div class="col-md-1 notification-photo">
+                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
+                            </div>
+                            <div class="col-md-9 notification-content">
+                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
+                            </div>
+                            <div class="col-md-2 notification-time">
+                                12:36 pm
+                            </div>
+                        </div>
+                        <div class="col-md-12 notification-dropdown-item">
+                            <div class="col-md-1 notification-photo">
+                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
+                            </div>
+                            <div class="col-md-9 notification-content">
+                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
+                            </div>
+                            <div class="col-md-2 notification-time">
+                                12:36 pm
+                            </div>
+                        </div>
+                        <div class="col-md-12 notification-dropdown-all">
+                            <a href="#">View all notifications</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

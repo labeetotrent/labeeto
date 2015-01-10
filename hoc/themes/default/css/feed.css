@@ -804,67 +804,6 @@ a.report-user:hover{
 .menu-slide ul li a:hover{
     color: #ff6476;
 }
-
-.menu-notification{
-    border-top: 8px solid #fc5b6e !important; 
-}
-.menu-notification span.only-this-span{
-    position: absolute; 
-    background: url(../images/up.png) no-repeat; 
-    width: 20px; 
-    height: 11px; 
-    top: -17px; 
-    right: 10px;
-}
-.menu-notification{
-    display: none;
-    z-index: 999; 
-    position:absolute;
-    top:34px;
-    right: -13px;
-    background: url(../images/bg-slide.png) repeat;
-    width:400px;
-    border-radius:4px;
-    overflow:inherit !important;
-}
-.menu-notification ul{
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-.menu-notification ul li a{
-    overflow: hidden;
-    display:block;
-    padding: 5px 10px 5px 10px;
-    border-top:1px solid #20303b;
-    text-decoration: none; 
-    color: white; 
-    font-size: 16px;
-}
-.menu-notification ul li a:last-child{
-    border-bottom: transparent;
-}
-.menu-notification ul li a:hover{
-    color: #0015ca;
-}
-.menu-notification ul li{
-    position: relative;
-}
-.menu-notification ul li:first-child{
-    background-color: #2d3c46; 
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2d3c46', endColorstr='#2d3c46'); /* IE */
-    padding: 10px 0px 10px 5px;
-}
-.menu-notification li a img{ 
-    width: 40px; 
-    height: 40px; 
-    border-radius: 100%; 
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    behavior: url('../pie/PIE.htc');
-    float: left; 
-    margin: 0px 10px 10px 0;
-}
 .check-post{
     background: url(../images/check.png) no-repeat; 
     float: right; 
