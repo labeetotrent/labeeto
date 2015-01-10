@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 notification-dropdown-all">
-                            <a href="#">View all notifications</a>
+                            <a href="<?=$this->createUrl('/notification/index');?>">View all notifications</a>
                         </div>
                     </div>
                 </div>

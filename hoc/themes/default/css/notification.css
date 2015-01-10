@@ -60,3 +60,58 @@
   font-family: "Proxima Nova SemiBold", Helvetica, sans-serif;
   font-size: 12pt;
 }
+.notifications-container {
+  padding: 50px;
+}
+.notifications-container .notifications {
+  border: 1px solid #cdc7c7;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.notifications-container .notifications .notifications-header {
+  font-size: 16pt;
+  text-transform: uppercase;
+  font-family: "Proxima Nova Semibold";
+  color: #4c505a;
+  padding: 40px 20px;
+  border-bottom: 1px solid #ebeaea;
+  background-color: #fefefe;
+}
+.notifications-container .notifications .notifications-body {
+  background-color: #fefefe;
+  padding: 0 20px 20px 20px;
+}
+.notifications-container .notifications .notifications-body .notification-date-separator {
+  color: #6d7282;
+  font-size: 14pt;
+  font-family: "Proxima Nova Semibold", Helvetica, sans-serif;
+  padding: 30px 0;
+}
+.notifications-container .notifications .notifications-body .notification-container {
+  font-size: 10pt;
+  color: #313541;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
+.notifications-container .notifications .notifications-body .notification-container a,
+.notifications-container .notifications .notifications-body .notification-container a:hover {
+  color: #313541;
+  font-family: "Proxima Nova SemiBold";
+}
+.notifications-container .notifications .notifications-body .message-notification {
+  padding: 15px 0 10px 30px;
+  background: url('../images/notification/message.png') no-repeat left center;
+}
+.notifications-container .notifications .notifications-body .friend-notification {
+  background: url('../images/notification/friend.png') no-repeat left center;
+}
+.notifications-container .notifications .notifications-body .favour-notification {
+  padding: 15px 0 15px 30px;
+  background: url('../images/notification/favour.png') no-repeat left center;
+}
+.notifications-container .notifications .notifications-body .video-notification {
+  background: url('../images/notification/video.png') no-repeat left center;
+}
+.notifications-container .notifications .notifications-body .photo-notification {
+  background: url('../images/notification/photo.png') no-repeat left center;
+}

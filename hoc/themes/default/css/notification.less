@@ -1,4 +1,5 @@
 @import "variables";
+
 .menu-notification{
   display: none;
   //z-index: 999;
@@ -43,7 +44,6 @@
           color: #313541;
           font-family: "Proxima Nova SemiBold";
         }
-
       }
       .notification-time {
         padding-top: 11px;
@@ -62,6 +62,65 @@
         color: @pink;
         font-family: "Proxima Nova SemiBold", Helvetica, sans-serif;
         font-size: 12pt;
+      }
+    }
+  }
+}
+
+
+.notifications-container {
+  padding: 50px;
+  .notifications {
+    border: 1px solid #cdc7c7;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+    .notifications-header {
+      font-size: 16pt;
+      text-transform: uppercase;
+      font-family: "Proxima Nova Semibold";
+      color: #4c505a;
+      padding: 40px 20px;
+      border-bottom: 1px solid #ebeaea;
+      background-color: #fefefe;
+    }
+    .notifications-body {
+      background-color: #fefefe;
+      padding: 0 20px 20px 20px;
+
+      .notification-date-separator {
+        color: #6d7282;
+        font-size: 14pt;
+        font-family: "Proxima Nova Semibold", Helvetica, sans-serif;
+        padding: 30px 0;
+      }
+      .notification-container {
+        font-size: 10pt;
+        color: #313541;
+        font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+        a,
+        a:hover{
+          color: #313541;
+          font-family: "Proxima Nova SemiBold";
+        }
+      }
+      .message-notification {
+        padding: 15px 0 10px 30px;
+        background: url('../images/notification/message.png') no-repeat left center;
+      }
+      .friend-notification {
+        background: url('../images/notification/friend.png') no-repeat left center;
+      }
+      .favour-notification {
+        padding: 15px 0 15px 30px;
+        background: url('../images/notification/favour.png') no-repeat left center;
+      }
+      .video-notification {
+        background: url('../images/notification/video.png') no-repeat left center;
+      }
+      .photo-notification {
+        background: url('../images/notification/photo.png') no-repeat left center;
       }
     }
   }
