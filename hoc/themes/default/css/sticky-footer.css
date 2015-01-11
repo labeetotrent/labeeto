@@ -4,6 +4,7 @@ body,
   height: 100%;
 }
 body > #wrapper {
+  height: auto;
   min-height: 100%;
 }
 #wrapper {
@@ -18,5 +19,6 @@ footer {
   clear: both;
 }
 #content-feed {
-  height: 100%;
+  min-height: 100%;
+  height: auto;
 }
