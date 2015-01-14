@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Yii template
+protected/widgets/ckeditor/assets/ckeditor.js
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+
+

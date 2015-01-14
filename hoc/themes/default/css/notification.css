@@ -22,6 +22,12 @@
   width: 100%;
   margin: 8px 0 0 0;
 }
+.menu-notification .notification-dropdown-items .no-notifications {
+  padding: 20px 0;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 12pt;
+  color: #313541;
+}
 .menu-notification .notification-dropdown-items .notification-dropdown-item {
   padding: 10px 5px;
   border-bottom: 1px solid #eeeeee;

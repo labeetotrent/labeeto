@@ -121,10 +121,12 @@ class User extends CActiveRecord
             'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
             'reportuser' => array(self::HAS_MANY, 'ReportUser', 'user_id'),
             'question' => array(self::HAS_MANY, 'Question', 'user_id'),
-            'photo' => array(self::HAS_MANY, 'Photo', 'user_id'),
+            'photos' => array(self::HAS_MANY, 'Photo', 'user_id'),
             'votes' => array(self::HAS_MANY, 'Vote', 'user_id'),
             'inGym' => array(self::BELONGS_TO, 'Gym', 'gym'), //@todo Do it as gym_id
-            'fitnessInterests' => array(self::MANY_MANY, 'FitnessInterest', 'user_fitness_interest(users_id, fitness_interest_id)')
+            'fitnessInterests' => array(self::MANY_MANY, 'FitnessInterest', 'user_fitness_interest(users_id, fitness_interest_id)'),
+            'fitmatchMy' => array(self::HAS_MANY, 'Fitmatch', 'from_user'),
+            'fitmatchMe' => array(self::HAS_MANY, 'Fitmatch', 'to_user'),
 		);
 	}
 

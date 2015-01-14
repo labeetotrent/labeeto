@@ -15,6 +15,51 @@ class FitmatchController extends SiteBaseController
     public function actionIndex()
     {
         $this->user = User::model()->findByPk(Yii::app()->user->id);
-        $this->render('index');
+        $attributes = array();
+        $condition = '';
+        $criteria = new CDbCriteria();
+
+        if($this->user->gender_look != "2")
+        {
+            //$criteria->addCondition('gender = '.$this->user->gender_look);
+        }
+
+        //Optimize
+
+        $criteria->with = array('fitmatchMy', 'fitmatchMe');
+
+        $criteria->addCondition('t.id <> :id');
+        $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
+        $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
+
+        $criteria->params = array(':id' => Yii::app()->user->getId());
+
+        $criteria->order = 'RAND()';
+
+        $fitmatch = User::model()->find($criteria);
+
+        $newFitmatch = new Fitmatch();
+
+        if(isset($_POST['Fitmatch']))
+        {
+            $newFitmatch->attributes = $_POST['Fitmatch'];
+            $newFitmatch->from_user = Yii::app()->user->getId();
+            if($newFitmatch->validate())
+            {
+                if($newFitmatch->save() && $newFitmatch->result == 1)
+                {
+                    $notification = new Notification();
+                    $notification->author_id = Yii::app()->user->getId();
+                    $notification->type = 'FITMATCH';
+                    $notification->user_id = $newFitmatch->to_user;
+                    $notification->save();
+                    $this->redirect(array('/fitmatch/index'));
+                }
+            }
+        }
+
+
+
+        $this->render('index', compact('fitmatch'));
     }
 }

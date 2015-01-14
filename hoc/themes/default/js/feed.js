@@ -23,7 +23,17 @@ $(document).ready(function(){
    
     $("#toggle-notification").click(function(){
         if($('.menu-notification').css('opacity') == '0')
+        {
+            $.post(
+                Yii.app.createUrl('notification/ajaxReadNotifications'),
+                {}
+            ).done(
+                function(response){
+                    $('#notifications-counter').animate({opacity: '0'}, 200);
+                }
+            );
             $('.menu-notification').animate({opacity: '1'}, 200);
+        }
         else
             $('.menu-notification').animate({opacity: '0'}, 200);
         //$(".menu-notification").toggle();

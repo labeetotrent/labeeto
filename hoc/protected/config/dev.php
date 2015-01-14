@@ -34,11 +34,11 @@ $development = array(
                                         'class'=>'CProfileLogRoute',
                                         'enabled' => false,
                                 ),
-								/*array(
+								array(
 								          'class'=>'application.extensions.yiidebugtb.XWebDebugRouter',
 								          'config'=>'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
 								          'levels'=>'error, warning, trace, profile, info',
-								     ),*/
+								     ),
 								
                         ),
                 ),

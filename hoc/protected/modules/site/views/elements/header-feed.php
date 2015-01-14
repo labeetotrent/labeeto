@@ -1,3 +1,6 @@
+<?php
+$notificationsCount = Notification::countNotifications();
+?>
 <div class="head-feed">
     <div class="content-head">
         <a href="/my_feed" id="logo">
@@ -14,7 +17,7 @@
                 <a href="/user/advanceSearch" class="menu-item"></a> 
             </div>
             <div class="olock-request">
-                
+                <a href="<?=$this->createUrl('/fitmatch/index');?>" class="menu-item"></a>
             </div>
             <div class="friend-request friend-active">
                 <div class="notice-notify">8</div>
@@ -24,43 +27,27 @@
                 <a href="<?=$this->createUrl('/im');?>" class="menu-item"></a>
             </div>
             <div class="notify-request notify-active" id="toggle-notification">
-                <div class="notice-notify clicked-notification">45</div>
+                <?php if($notificationsCount > 0) { ?> <div class="notice-notify clicked-notification" id="notifications-counter"><?=$notificationsCount;?></div> <?php } ?>
                 <div class="menu-notification">
                     <div class="notification-balloon"></div>
                     <div class="notification-dropdown-items col-md-12 row">
-                        <div class="col-md-12 notification-dropdown-item">
-                            <div class="col-md-1 notification-photo">
-                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
-                            </div>
-                            <div class="col-md-9 notification-content">
-                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
-                            </div>
-                            <div class="col-md-2 notification-time">
-                                12:36 pm
-                            </div>
-                        </div>
-                        <div class="col-md-12 notification-dropdown-item">
-                            <div class="col-md-1 notification-photo">
-                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
-                            </div>
-                            <div class="col-md-9 notification-content">
-                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
-                            </div>
-                            <div class="col-md-2 notification-time">
-                                12:36 pm
-                            </div>
-                        </div>
-                        <div class="col-md-12 notification-dropdown-item">
-                            <div class="col-md-1 notification-photo">
-                                <img src="<?=Yii::app()->themeManager->baseUrl;?>/images/fish/avatar.png" class="img-responsive img-circle"/>
-                            </div>
-                            <div class="col-md-9 notification-content">
-                                <a href="#" class="nickname">thesweetgirl09</a> commented your <a href="#" class="target-link">photo</a>
-                            </div>
-                            <div class="col-md-2 notification-time">
-                                12:36 pm
-                            </div>
-                        </div>
+                        <?php
+                        $lastNotifications = Notification::getLastNotifications();
+                        if(count($lastNotifications) > 0)
+                        {
+                            foreach(Notification::getLastNotifications() as $notification)
+                            {
+                                $this->renderPartial('/elements/notification/_dropdownNotification', array('data' => $notification));
+                            }
+                        }
+                        else
+                        {
+                        ?>
+                            <div class="text-center col-md-12 no-notifications">You have no notifications yet..</div>
+                        <?php
+                        }
+                        ?>
+
                         <div class="col-md-12 notification-dropdown-all">
                             <a href="<?=$this->createUrl('/notification/index');?>">View all notifications</a>
                         </div>
