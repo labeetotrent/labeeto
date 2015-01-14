@@ -147,11 +147,15 @@
   padding: 9px 10px 0 12px;
 }
 .container .im-wrapper .messages-column .messages-header .text .nickname {
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+.container .im-wrapper .messages-column .messages-header .text .nickname a,
+.container .im-wrapper .messages-column .messages-header .text .nickname a:hover {
   color: #4d5a63;
   font-family: "HelveticaNueveLtPro Bd";
   font-size: 14pt;
-  padding-top: 25px;
-  padding-bottom: 5px;
+  text-decoration: none;
 }
 .container .im-wrapper .messages-column .messages-header .text .address {
   font-family: "HelveticaNueveLtPro Roman";

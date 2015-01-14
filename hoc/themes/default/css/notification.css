@@ -2,7 +2,7 @@
   opacity: 0;
   position: absolute;
   top: 34px;
-  right: -13px;
+  right: -99999px;
   width: 400px;
 }
 .menu-notification .notification-balloon {
@@ -131,7 +131,4 @@
 }
 .notifications-container .notifications .notifications-body .photo-notification {
   background: url('../images/notification/photo.png') no-repeat left center;
-}
-#content-feed {
-  height: 750px;
 }

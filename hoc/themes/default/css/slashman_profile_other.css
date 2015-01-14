@@ -115,6 +115,7 @@ div.avatar-container {
 .profile-description .desc-buttons {
     padding-top: 10px;
     padding-left: 50px;
+    text-align: right;
 }
 
 .looking-for-stripe {

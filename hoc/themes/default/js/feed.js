@@ -32,10 +32,10 @@ $(document).ready(function(){
                     $('#notifications-counter').animate({opacity: '0'}, 200);
                 }
             );
-            $('.menu-notification').animate({opacity: '1'}, 200);
+            $('.menu-notification').css('right', '-13px').animate({opacity: '1'}, 200);
         }
         else
-            $('.menu-notification').animate({opacity: '0'}, 200);
+            $('.menu-notification').css('right', '-99999px').animate({opacity: '0'}, 200);
         //$(".menu-notification").toggle();
         //$(".clicked-notification").hide();
     });

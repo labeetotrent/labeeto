@@ -28,11 +28,11 @@
         <?php if(count($dialogs) > 0) { ?>
             <div class="col-md-12 messages-header">
                 <div class="col-md-2 avatar">
-                    <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialogs[0]['photo'];?>" class="img-circle img-responsive"/>
+                    <a href="<?=$this->createUrl('/user/detail', array('id' => $dialogs[0]['id']));?>"><img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialogs[0]['photo'];?>" class="img-circle img-responsive"/></a>
                 </div>
                 <div class="col-md-6 text">
                     <div class="row nickname">
-                        <?=$dialogs[0]['username'];?>
+                        <a href="<?=$this->createUrl('/user/detail', array('id' => $dialogs[0]['id']));?>"><?=$dialogs[0]['username'];?></a>
                     </div>
                     <div class="row address">
                         <?=$dialogs[0]['address'];?>

@@ -134,5 +134,8 @@ class Chat extends CActiveRecord
     function getUsername(){
         return Yii::app()->user->username;
     }
+    public static function countNewMessages(){
+        return self::model()->countByAttributes(array('user_to' => Yii::app()->user->getId(), 'is_read' => 0));
+    }
 
 }

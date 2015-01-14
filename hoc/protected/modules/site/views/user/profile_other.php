@@ -65,7 +65,7 @@
         </div>
         <div class="col-md-2 col-md-offset-3 desc-buttons">
             <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/message-icon.png"/>
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/chat-icon.png"/>
+<!--            <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/fish/chat-icon.png"/>-->
         </div>
     </div>
     <div class="row col-md-12 looking-for-stripe">

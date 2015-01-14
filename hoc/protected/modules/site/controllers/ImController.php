@@ -65,7 +65,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         $messagesCriteria->params = array(':id' => Yii::app()->user->getId(), ':to' => $to);
         $messages = Chat::model()->findAll($messagesCriteria);
 
-        //Chat::model()->updateAll(array('is_read' => 1), $messagesCriteria);
+        Chat::model()->updateAll(array('is_read' => 1), $messagesCriteria);
 
         $user = User::model()->findByPk($to);
 
@@ -79,7 +79,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
                 $outputMessages .= $this->renderPartial('/elements/im/_myMessage', array('data' => $message), true);
         }
 
-        $userArray = array('username' => $user->username, 'photo' => $user->photo, 'address' => $user->address);
+        $userArray = array('id' => $user->getPrimaryKey(), 'username' => $user->username, 'photo' => $user->photo, 'address' => $user->address);
 
 
         print json_encode(array('messages' => $outputMessages, 'user' => $userArray));

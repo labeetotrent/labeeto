@@ -37,7 +37,7 @@ $(document).ready(function(){
                 $('.messages').html(response.messages);
 
                 $('.messages-header .avatar img').attr('src',Yii.app.baseUrl + '/uploads/avatar/' + response.user.photo);
-                $('.messages-header .nickname').text(response.user.username);
+                $('.messages-header .nickname').html('<a href="' + Yii.app.createUrl('user/detail', {id: response.user.id}) + '">' + response.user.username + '</a>');
                 $('.messages-header .address').text(response.user.address);
 
                 scrollMessages();
@@ -94,8 +94,8 @@ $(document).ready(function(){
         $('.dialogs .dialog:first').trigger('click');
         messageForm('show');
     });
-    monitorDialogs();
-    monitorMessages();
+    //monitorDialogs();
+    //monitorMessages();
 });
 
 function scrollMessages(animate)
@@ -167,8 +167,9 @@ function drawNew(id)
     .done(function(response) {
             response = JSON.parse(response);
 
-            $('.messages-header .avatar img').attr('src', Yii.app.baseUrl + '/uploads/avatar/' + response.photo);
-            $('.messages-header .nickname').text(response.name);
+            $('.messages-header .avatar a').attr('href', Yii.app.createUrl('/user/detail', {id: response.id}));
+            $('.messages-header .avatar a img').attr('src', Yii.app.baseUrl + '/uploads/avatar/' + response.photo);
+            $('.messages-header .nickname').html('<a href="' + Yii.app.createUrl('/user/detail', {id: response.id}) + '">' + response.name + '</a>');
             $('.messages-header .address').text(response.address);
 
             $('.dialogs .dialog').removeClass('active');

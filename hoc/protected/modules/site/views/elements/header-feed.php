@@ -1,5 +1,6 @@
 <?php
 $notificationsCount = Notification::countNotifications();
+$messagesCount = Chat::countNewMessages();
 ?>
 <div class="head-feed">
     <div class="content-head">
@@ -23,7 +24,7 @@ $notificationsCount = Notification::countNotifications();
                 <div class="notice-notify">8</div>
             </div>
             <div class="message-request"> <!-- Class active: message-active -->
-                <!--<div class="notice-notify">45</div>-->
+                <?php if($messagesCount > 0) { ?><div class="notice-notify"><?=$messagesCount;?></div><?php } ?>
                 <a href="<?=$this->createUrl('/im');?>" class="menu-item"></a>
             </div>
             <div class="notify-request notify-active" id="toggle-notification">
