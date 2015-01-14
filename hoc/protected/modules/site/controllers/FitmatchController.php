@@ -21,7 +21,7 @@ class FitmatchController extends SiteBaseController
 
         if($this->user->gender_look != "2")
         {
-            //$criteria->addCondition('gender = '.$this->user->gender_look);
+            $criteria->addCondition('gender = '.$this->user->gender_look);
         }
 
         //Optimize

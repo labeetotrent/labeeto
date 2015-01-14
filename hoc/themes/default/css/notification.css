@@ -88,6 +88,12 @@
   background-color: #fefefe;
   padding: 0 20px 20px 20px;
 }
+.notifications-container .notifications .notifications-body .no-notifications {
+  padding: 20px 0 0 0;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  font-size: 12pt;
+  color: #313541;
+}
 .notifications-container .notifications .notifications-body .notification-date-separator {
   color: #6d7282;
   font-size: 14pt;
@@ -125,4 +131,7 @@
 }
 .notifications-container .notifications .notifications-body .photo-notification {
   background: url('../images/notification/photo.png') no-repeat left center;
+}
+#content-feed {
+  height: 750px;
 }
