@@ -4,10 +4,14 @@
 //    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed.js');
     $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/autocomplete.js');
     $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_im.js');
+    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/strophe/strophe.min.js');
+    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/strophe/im.js');
     $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
 ?>
 <script>
     var myId = '<?=Yii::app()->user->getId();?>';
+    var xmppUser = '<?=$this->user->id.'@10.18.36.122';?>';
+    var xmppPass = '<?=$this->user->password;?>';
 </script>
 <div class="row im-wrapper">
     <div class="col-md-5 dialogs-column">
