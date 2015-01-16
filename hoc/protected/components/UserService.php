@@ -28,9 +28,9 @@
 **/
 class UserService{
 	private $secret="884088";
-	private $host="10.18.36.122";
+	private $host="zhilin.skib6.ru";
 	private $header="http";//or https to avoid sniff,require ssl cert
-	private $port="9090";
+	private $port="20590";
 	private $plugin = "plugins/userService/userservice";//plugin dir
 	private $curlEnable=true;
 	private $cmd=array();
