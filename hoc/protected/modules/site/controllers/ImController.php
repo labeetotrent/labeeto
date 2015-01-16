@@ -164,6 +164,16 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         }
     }
 
+    public function actionAjaxGetXmppUser()
+    {
+        if(isset($_POST['id']))
+        {
+            $data = explode('@', $_POST['id']);
+            $user = User::model()->findByPk($data[0]);
+            print json_encode(array('user' => array('username' => $user->username, 'avatar' => Yii::app()->baseUrl.'/uploads/avatar/'.$user['photo']), 'date' => date('d M, g:ia')));
+        }
+    }
+
     public function actionCreateUsers()
     {
         foreach(User::model()->findAll() as $user)

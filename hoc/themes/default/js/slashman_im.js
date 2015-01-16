@@ -45,13 +45,15 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.send-message-button', function(){
-        sendMessage();
+        //sendMessage();
+        xmppSendMessage();
     });
 
     $('.message-textarea textarea').keydown(function (e) {
         if (!e.shiftKey && e.keyCode == 13) {
             e.preventDefault();
-            sendMessage();
+            //sendMessage();
+            xmppSendMessage();
         }
     });
 
@@ -127,34 +129,6 @@ function hideCurrentBadge()
         });
 }
 
-function sendMessage()
-{
-    var message = $('.message-textarea textarea').val();
-    var to = $('#toId').val();
-
-    $.post( Yii.app.createUrl('im/sendMessage'),
-        {
-            to: to,
-            message: message
-        })
-        .done(function(response){
-            $('.message-textarea textarea').val('');
-
-
-
-            if($('.messages .message').length > 0)
-                $('.messages .message').after(response);
-            else
-            {
-                drawNew(to);
-
-                $('.messages').html(response);
-            }
-
-            $('.messages .message:last').fadeIn(300);
-            scrollMessages(true);
-        });
-}
 
 function drawNew(id)
 {
