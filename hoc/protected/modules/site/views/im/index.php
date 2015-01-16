@@ -10,6 +10,7 @@
 ?>
 <script>
     var myId = '<?=Yii::app()->user->getId();?>';
+    var userId = '<?=$dialogs[0]['id'];?>';
     var xmppUser = '<?=$this->user->id.'@10.18.36.122';?>';
     var xmppPass = '<?=$this->user->password;?>';
 </script>
