@@ -178,7 +178,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
     {
         foreach(User::model()->findAll() as $user)
         {
-            $ofUser = new UserService(false);
+            $ofUser = new UserService(true);
             $ofUser->api('add', array($user->id, $user->password, $user->username, $user->email));
         }
     }
