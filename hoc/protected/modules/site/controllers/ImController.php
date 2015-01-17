@@ -178,6 +178,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
     {
         foreach(User::model()->findAll() as $user)
         {
+            echo 1;
             $ofUser = new UserService(true);
             $ofUser->api('add', array($user->id, $user->password, $user->username, $user->email));
         }
@@ -187,7 +188,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
     {
         foreach(User::model()->findAll() as $user)
         {
-            $ofUser = new UserService(false);
+            $ofUser = new UserService(true);
             if($user->username != 'admin')
             {
                 $ofUser->api('delete', array($user->username));
