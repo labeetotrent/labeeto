@@ -28,15 +28,15 @@
 **/
 class UserService{
 	private $secret="884088";
-	private $host="zhilin.skib6.ru";
+	private $host="localhost";
 	private $header="http";//or https to avoid sniff,require ssl cert
-	private $port="20590";
+	private $port="9090";
 	private $plugin = "plugins/userService/userservice";//plugin dir
 	private $curlEnable=true;
 	private $cmd=array();
 	private $base;
 	public function __construct($curl=true){
-		$this->curlEnable=$curl;
+		$this->curlEnable=$curl || true;
 		$this->base=$this->header."://".$this->host;
 		if(!$curl){
 			$this->base.=":".$this->port;
