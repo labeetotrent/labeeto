@@ -75,10 +75,10 @@ class UserService{
 			}
 		}
 		return $data;
-	
+
 	}
 	private function post($data){
-		if($this->curlEnable || true){
+		if($this->curlEnable){
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL,$this->base);
 			curl_setopt($ch, CURLOPT_PORT,$this->port);

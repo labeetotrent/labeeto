@@ -194,4 +194,8 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
             }
         }
     }
+    public function actionInfo()
+    {
+        phpinfo();
+    }
 }
