@@ -36,7 +36,7 @@ class UserService{
 	private $cmd=array();
 	private $base;
 	public function __construct($curl=true){
-		$this->curlEnable=$curl || true;
+		$this->curlEnable=$curl;
 		$this->base=$this->header."://".$this->host;
 		if(!$curl){
 			$this->base.=":".$this->port;
