@@ -70,7 +70,6 @@ function xmppSendMessage()
         });
 
     renderMessage(xmppName(userId), message, 'out');
-    scrollMessages(true);
 }
 
 function xmppName(id)
@@ -106,6 +105,7 @@ function renderMessage(xmppId, message, type)
             }
 
             $('.messages').append(messageBlock);
+            scrollMessages(true);
         }
     );
 }
