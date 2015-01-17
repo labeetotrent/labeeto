@@ -84,6 +84,7 @@ class UserService{
 			curl_setopt($ch, CURLOPT_PORT,$this->port);
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+            curl_setopt($ch, CURLOPT_VERBOSE, true);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			$res = curl_exec ($ch);
 			curl_close ($ch);
