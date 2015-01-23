@@ -65,10 +65,10 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
         SETTINGS
     </div>
     <ul class="settings-categories col-md-12">
-        <li class="li-GeneralSettings col-md-3 active"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'GENERAL') ?></a>
-        <li class="li-SearchReferences col-md-3"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
-        <li class="li-Notifications col-md-3"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
-        <li class="li-Blocklist col-md-3"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
+        <li class="li-GeneralSettings col-md-3 active"><a href="#" class="link-GeneralSettings"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
+        <li class="li-SearchReferences col-md-4"><a href="#" class="link-SearchReferences"><?php echo Yii::t('global', 'SEARCH PREFERENCES') ?></a>
+        <li class="li-Notifications col-md-4"><a href="#" class="link-Notifications"><?php echo Yii::t('global', 'NOTIFICATIONS') ?></a></li>
+        <li class="li-Blocklist col-md-4"><a href="#" class="link-Blocklist"><?php echo Yii::t('global', 'BLOCKLIST') ?></a></li>
     </ul>
 </div>
 <div class="settings-header col-md-12">

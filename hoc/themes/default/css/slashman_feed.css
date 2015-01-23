@@ -106,13 +106,27 @@ input.seach-tab {
     font-family: "Proxima Nova Regular", Helvetica, sans-serif;
     font-size: 15px;
 }
-
+.content-textarea {
+    width: calc(100% - 100px);
+    margin-left: 100px;
+    margin-right: 0;
+}
+.content-avatar,
+.content-textarea {
+    padding-left: 0;
+    padding-right: 0;
+}
+.post-input-row {
+    padding-left: 0;
+    padding-right: 0;
+}
 textarea.post-textarea {
     font-family: "Proxima Nova Regular", Helvetica, sans-serif;
     padding-top: 15px;
     font-size: 12pt;
     resize: none;
     border: none;
+    width: 100%;
 }
 textarea.post-textarea::-webkit-input-placeholder { /* WebKit browsers */
     color:    #d2dbe2;

@@ -32,7 +32,7 @@ $(document).ready(function(){
                     $('#notifications-counter').animate({opacity: '0'}, 200);
                 }
             );
-            $('.menu-notification').css('right', '-2px').animate({opacity: '1'}, 200);
+            $('.menu-notification').css('right', '-2    px').animate({opacity: '1'}, 200);
         }
         else
             $('.menu-notification').css('right', '-99999px').animate({opacity: '0'}, 200);

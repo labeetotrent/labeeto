@@ -497,15 +497,16 @@ a{
  }
 .content-main-1{
     width: 100%;
-    padding: 40px 30px 70px 30px;
+    /*padding: 40px 30px 70px 30px;*/
     overflow: hidden;
+    padding: 40px 0 70px 0;
 }
  .content-main-setting {
      width: 100%;
  }
  .left-content{
-     float: left;
-     width: 545px;
+     /*float: left;*/
+     /*width: 545px;*/
  }
  .post-home {
      float: left;
@@ -597,7 +598,7 @@ a{
     float: right;
     width: 345px;
     min-height: 100px;
-    padding: 0 0 0 20px;
+    /*padding: 0 0 0 20px;*/
 }
 .tabs{
     float: left;
@@ -885,8 +886,9 @@ span.minuten{
 }
 .first-infor .profile{
     overflow: hidden;
-    width:83%;
+    /*width:83%;*/
     float:left;
+    width: 90%;
 }
 .first-infor .profile img{
     float:left;
@@ -3559,7 +3561,7 @@ li.message_search input{
     color: #404040;
     font: normal 16px/normal Helvetica Neue LTPro Bd;
     font-weight: bold;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     /*margin-top: 5px;*/
     text-align: center
 }
@@ -3588,6 +3590,9 @@ li.message_search input{
     cursor: pointer;
     width: 15px;
     display: inline-block;
+}
+.first-infor .vote ul {
+    padding-left: 0;
 }
 .search-block-special  input[type="range"] {width: 248px !important;height: 9px;border-radius: 5px;background: #ec5268;-webkit-appearance: none;cursor: pointer;border: 0;outline: none;padding: 0;margin: 0 0;}
 
@@ -3821,3 +3826,5 @@ ul li .user_name_f a img{
     border-right: 10px solid transparent;
     border-bottom: 12px solid #ea5a5a;
 }
+
+

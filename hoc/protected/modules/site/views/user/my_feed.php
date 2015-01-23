@@ -9,18 +9,20 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
 <script>
     var searchString = '<?=(isset($searchString) ? $searchString : '');?>';
 </script>
-<div class="content-main-1" >
+<div class="content-main-1 col-lg-12" >
      <!-- Content Left  -->
-    <div class="left-content">
+    <div class="left-content col-lg-8 col-md-7 col-sm-12 col-xs-12">
         <!-- Form first -->
         <form id="form-achievement" class="post-home" method="post" action="/achievement" enctype="multipart/form-data">
-            <div class="content-avatar">
-                <div class="avatar-post">
-                    <img src="../uploads/avatar/<?php echo Utils::getAvatar($info_user->photo); ?>" class="new-photo-achievement">
+            <div class="col-md-12 post-input-row">
+                <div class="content-avatar">
+                    <div class="avatar-post">
+                        <img src="../uploads/avatar/<?php echo Utils::getAvatar($info_user->photo); ?>" class="new-photo-achievement img-responsive">
+                    </div>
                 </div>
-            </div>
-            <div class="content-textarea">
-                <textarea class="post-textarea" placeholder="Post an achievement..." name="content"></textarea>
+                <div class="content-textarea">
+                    <textarea class="post-textarea" placeholder="Post an achievement..." name="content"></textarea>
+                </div>
             </div>
             <div class="col-md-12 footer-post">
                 <div class="thumb-container col-md-1 col-md-offset-1">
@@ -152,7 +154,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
     </div>
     <!--End Content Left  -->
     <!-- Content Right -->
-    <div class="right-content">
+    <div class="right-content col-lg-4 col-md-5 hidden-sm hidden-xs">
         <div class="content_all_user">
             <div class="featured">
                 FEATURED USERS

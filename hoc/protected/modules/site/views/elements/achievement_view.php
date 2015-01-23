@@ -23,8 +23,6 @@ if($user){?>
                     <div id="ach-<?=$data->id;?>" class="hidden"><img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$data->location->lat.','.$data->location->lon;?>&zoom=12&size=100x100&markers=color:red|<?=$data->location->lat.','.$data->location->lon;?>" width="100" style="width: 100px; height: 100px;"/></div>
                     <span class="geo-info">at <span class="at-location" data-contentwrapper="#ach-<?=$data->id;?>" rel="popover"><?=$data->location->name;?></span></span>
                     <?php } ?>
-                    <img class="premium-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/premium_2.png" />
-                    <img class="check-icon" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/icon_check.png" />
                 </h2>
                 <h2>
                     <span class="time-location">18 F, CA,</span> 
