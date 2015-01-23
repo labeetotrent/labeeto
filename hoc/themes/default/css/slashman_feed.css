@@ -262,9 +262,9 @@ header {
     z-index: 100;
     width: 100%;
 }
-div.container {
+/*div.container {
     margin-top: 50px !important;
-}
+}*/
 .add-comment-container {
     opacity: 0;
     height: 0;

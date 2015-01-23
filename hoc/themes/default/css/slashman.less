@@ -1,3 +1,5 @@
+@import "variables";
+
 @font-face {
   font-family: "Proxima Nova SemiBold";
   src: url('../fonts/proximanova-semibold-webfont.ttf');
@@ -30,10 +32,12 @@
   font-family: "Proxima Nova ExtraBold";
   src: url('../fonts/ProximaNova-Extrabold.otf');
 }
+
 body,
 .label-text {
   font-family: "Proxima Nova Bold" !important;
 }
+
 .label-text {
   font-size: 14px;
   font-style: normal;
@@ -41,9 +45,11 @@ body,
   color: #a4a4a4;
   margin-bottom: 10px;
 }
+
 #wrapper {
   background-color: white;
 }
+
 .container {
   /*background-color: #f1f1f1;*/
 }
@@ -60,6 +66,7 @@ body,
   text-shadow: 1px 1px black;
   font-family: "Proxima Nova SemiBold";
 }
+
 ul.settings-categories {
   background-color: #f8f7f7;
   padding: 0;
@@ -77,30 +84,35 @@ ul.settings-categories > li {
 ul.settings-categories > li.active {
   background-color: #f0eeee;
 }
+
 ul.settings-categories > li:hover {
   background-color: #f0eeee;
 }
+
 ul.settings-categories > li > a {
   display: block;
   font-size: 12.23px;
   font-family: "Proxima Nova SemiBold";
-  color: #313541;
+  color: rgb(49, 53, 65);
   margin: 0 auto;
 }
+
 div.setting-detail {
   padding-top: 20px;
   padding-bottom: 50px;
   background-color: white;
 }
+
 button.btn-save-st,
 button.btn-cancel-st {
   height: 30px;
   border: none;
   color: #ffffff;
-  font: normal 18px / normal Proxima Nova Bold;
+  font: normal 18px/normal Proxima Nova Bold;
   font-family: "Proxima Nova Bold";
   text-transform: none;
 }
+
 button.btn-save-st,
 .btn-save-search,
 .btn-search-page,
@@ -112,6 +124,7 @@ button.btn-save-st,
   font-size: 16px;
   font-family: "Proxima Nova Bold" !important;
 }
+
 button.btn-cancel-st {
   background: url('../images/cancel-btn-bg.png') repeat-x !important;
   margin-left: 0;
@@ -123,6 +136,7 @@ button.btn-cancel-st {
   padding-left: 0;
   padding-right: 0;
 }
+
 .select-day,
 .select-month,
 .select-gender {
@@ -139,6 +153,7 @@ select {
   color: #a4a4a4 !important;
   font-family: "Proxima Nova Regular" !important;
 }
+
 .content-notification .col-sm-12 .checkbox label {
   padding-left: 5px;
   top: 2px;
@@ -146,9 +161,11 @@ select {
   font-family: "Proxima Nova Regular";
   color: #a4a4a4;
 }
+
 .content-notification .form-group {
   margin-bottom: 350px;
 }
+
 .gender-block {
   padding-left: 0;
   margin-bottom: 10px;
@@ -164,18 +181,20 @@ select {
 .content-references > form > div > label {
   padding-left: 0;
 }
+
 .who-is-block {
   margin-bottom: 20px;
 }
-.radio > label {
+.radio > label{
   color: #a4a4a4;
   font-family: "Proxima Nova Regular";
   font-size: 16px;
   top: 10px;
   position: relative;
 }
+
 input[type="radio"] {
-  display: none;
+  display:none;
 }
 .who-is-block .label-gender {
   margin-bottom: 0;
@@ -183,15 +202,18 @@ input[type="radio"] {
 div.radio {
   padding-left: 0;
 }
-input[type="radio"] + label {
+input[type="radio"] + label
+{
   background: url('../images/radio.png') no-repeat;
   height: 26px;
   line-height: 26px;
   width: 100%;
-  display: inline-block;
+  display:inline-block;
   padding: 0 0 0 40px;
 }
-input[type="radio"]:checked + label {
+
+input[type="radio"]:checked + label
+{
   background: url('../images/radio-active.png') no-repeat;
   height: 26px;
   line-height: 26px;
@@ -199,6 +221,7 @@ input[type="radio"]:checked + label {
   display: inline-block;
   padding: 0 0 0 40px;
 }
+
 .radio {
   margin-top: 0;
 }
@@ -216,6 +239,7 @@ input[type="radio"]:checked + label {
   position: relative;
   overflow-y: hidden;
 }
+
 #mixedContent .contentBox {
   position: relative;
   width: auto;
@@ -234,6 +258,7 @@ input[type="radio"]:checked + label {
   user-select: none;
   text-align: center;
 }
+
 #mixedContent .contentBox img {
   margin-bottom: 10px;
   cursor: pointer;
@@ -241,7 +266,7 @@ input[type="radio"]:checked + label {
 div.featured-scroll-header {
   font-size: 11pt;
   font-family: "Proxima Nova SemiBold";
-  color: #313541;
+  color: rgb(49, 53, 65);
   text-transform: uppercase;
   padding: 10px 0;
 }
@@ -260,6 +285,7 @@ p.f-data {
 .input-text {
   width: 560px;
 }
+
 .main-search label {
   color: #a4a4a4;
   font-family: "Proxima Nova Bold";
@@ -273,12 +299,13 @@ p.f-data {
   line-height: 42px;
   padding: 0 10px;
 }
+
 .main-search input {
   font-family: "Proxima Nova Regular";
   color: #a4a4a4;
   padding: 10px 15px;
   background: #fff;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#fff', endColorstr='#fff');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fff', endColorstr='#fff');
   border: 1px solid #a4a4a4;
   width: 65px;
   font-size: 14px;
@@ -293,31 +320,37 @@ p.f-data {
 .text-explore input {
   text-align: left;
 }
+
 .checkbox input {
-  width: 20px;
+  width:20px;
   height: auto;
-  vertical-align: middle;
+  vertical-align:middle;
   position: relative;
   bottom: 2px;
 }
+
 .checkbox > label {
-  display: inline-block;
-  vertical-align: middle;
+  display:inline-block;
+  vertical-align:middle;
   font-family: "Proxima Nova Bold";
 }
+
 .checkbox-row {
   padding-left: 0;
   padding-top: 10px;
 }
+
 .checkbox-row > .search-block-02 {
   margin-right: 16px;
 }
 .checkbox-row > .search-block-02 > div > label > input {
   right: 4px;
 }
+
 .main-search .search-block {
   padding: 30px 0 15px 20px;
 }
+
 .main-search .search-block ul li {
   font-family: "Proxima Nova SemiBold";
   font-size: 13px;
@@ -330,12 +363,15 @@ p.f-data {
 .main-search .search-block .text-explore select {
   border-radius: 0;
 }
+
 .main-search .last-block {
   padding: 30px 0;
 }
+
 .hidden-element {
   display: none;
 }
+
 .content-head .notify .head-settings a {
   font-size: 14pt;
   width: 22px;
@@ -343,13 +379,20 @@ p.f-data {
   position: relative;
   float: left;
 }
-body .navbar {
-  background-color: #313541;
-}
-body .navbar .navbar-icons {
-  font-size: 12pt;
-  color: #687380;
-}
-body .navbar .navbar-icons li a:hover {
-  color: #ea5a5a;
+
+body {
+  .navbar {
+    background-color: #313541;
+    .navbar-icons {
+      font-size: 12pt;
+      color: #687380;
+      li {
+        a {
+          &:hover {
+            color: @pink;
+          }
+        }
+      }
+    }
+  }
 }
