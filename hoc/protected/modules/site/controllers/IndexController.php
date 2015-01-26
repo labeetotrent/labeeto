@@ -49,7 +49,7 @@ class IndexController extends SiteBaseController {
             //CVarDumper::dump($session, 100, true);
             try {
                 $facebook = new Facebook($session);
-
+                echo '1';
                 if($facebook->register()) // If user is new
                 {
                     $this->redirect(array('/site/my_feed'));

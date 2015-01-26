@@ -69,6 +69,7 @@ class Facebook {
             }
             else
             {
+                echo '2';
                 $dbUser = new User();
                 $dbUser->username = $user_info->getName();
                 $dbUser->email = $user_info->getEmail();
@@ -79,6 +80,8 @@ class Facebook {
                 $dbUser->address = '';
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
+
+                return true;
             }
         }
     }
