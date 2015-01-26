@@ -2,6 +2,7 @@
 /**
  * Index controller Home page
  */
+
 class IndexController extends SiteBaseController {
 	
 	public $login;
@@ -24,13 +25,13 @@ class IndexController extends SiteBaseController {
 
     public function actionFbcheck()
     {
-        $helper = new FacebookRedirectLoginHelper();
+        $helper = new \Facebook\FacebookRedirectLoginHelper();
         try {
             $session = $helper->getSessionFromRedirect();
-        } catch(FacebookRequestException $ex) {
+        } catch(\Facebook\FacebookRequestException $ex) {
             // When Facebook returns an error
             CVarDumper::dump($ex, 100, true);
-        } catch(\Exception $ex) {
+        } catch(Exception $ex) {
             // When validation fails or other local issues
             CVarDumper::dump($ex, 100, true);
         }
