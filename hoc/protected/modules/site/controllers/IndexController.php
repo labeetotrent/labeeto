@@ -25,20 +25,25 @@ class IndexController extends SiteBaseController {
 
     public function actionFbcheck()
     {
+        echo '0';
         $helper = new FacebookRedirectLoginHelper();
         try {
             $session = $helper->getSessionFromRedirect();
         } catch(FacebookRequestException $ex) {
+            echo '1';
             // When Facebook returns an error
             CVarDumper::dump($ex->getRawResponse(), 100, true);
         } catch(Exception $ex) {
+            echo '2';
             // When validation fails or other local issues
             CVarDumper::dump($ex, 100, true);
         }
         if ($session) {
+            echo '3';
             CVarDumper::dump($session, 100, true);
             // Logged in.
         }
+        echo '4';
     }
 
 	public function actionIndex() {
