@@ -27,7 +27,6 @@ class IndexController extends SiteBaseController {
     {
         echo '0';
         $helper = new FacebookRedirectLoginHelper();
-        var_dump($helper);
         try {
             $session = $helper->getSessionFromRedirect();
         } catch(FacebookRequestException $ex) {
@@ -44,6 +43,9 @@ class IndexController extends SiteBaseController {
             CVarDumper::dump($session, 100, true);
             // Logged in.
         }
+        else
+            var_dump($session);
+
         echo '4';
     }
 
