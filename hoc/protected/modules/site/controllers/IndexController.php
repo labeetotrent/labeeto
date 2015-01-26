@@ -23,7 +23,7 @@ class IndexController extends SiteBaseController {
     public function actionFb()
     {
         $facebook = new \Facebook\FacebookRedirectLoginHelper();
-        echo '<a href="' . $facebook->getLoginUrl(array('email', 'user_birthday', 'user_hometown', 'user_interests', 'user_location', 'user_photos'), null, true) . '">Login with Facebook</a>';
+        echo '<a href="' . $facebook->getLoginUrl(Yii::app()->params['Facebook']['scope']) . '">Login with Facebook</a>';
     }
 
     public function actionFbcheck()

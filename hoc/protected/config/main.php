@@ -76,6 +76,11 @@ return array(
 							'default_group' => 'user',
                             'defaultPageSize' => 10,
                             'pageSizeOptions'=>array(10=>10,25=>25,50=>50,100=>100),
+                            'Facebook' => array(
+                                'app_id' => '1466917230217660',
+                                'app_secret' => '507220a0129d453e24887bc70a44b158',
+                                'scope' => array('email', 'user_birthday', 'user_hometown', 'user_interests', 'user_location', 'user_photos')
+                            ),
        ),
         'aliases' => array(
                 'helpers' => 'application.widgets',
