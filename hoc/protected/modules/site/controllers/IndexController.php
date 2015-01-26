@@ -33,6 +33,18 @@ class IndexController extends SiteBaseController {
 		$this->render('index',compact('model', 'facebookLoginUrl'));
 	}
 
+    public function actionAuthorize()
+    {
+        $identity = new FacebookIdentity('856074661082591', 'token');
+        if($identity->authenticate())
+        {
+            Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
+            $this->redirect(array('/my_feed'));
+        }
+
+        $this->redirect(array('/'));
+    }
+
     public function actionFacebookSignup()
     {
         $helper = new \Facebook\FacebookRedirectLoginHelper();
@@ -50,12 +62,9 @@ class IndexController extends SiteBaseController {
             try {
                 $facebook = new Facebook($session);
                 $result = $facebook->register();
-                var_dump($result);
-                var_dump($_SESSION);
-                die();
+
                 if($result == Facebook::RESULT_REGISTERED) // If user is new
                 {
-                    echo
                     $this->redirect(array('/my_feed'));
                 }
                 elseif($result == Facebook::RESULT_SUCCESS) //If user was already registered
