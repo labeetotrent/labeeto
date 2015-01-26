@@ -28,7 +28,6 @@ class IndexController extends SiteBaseController {
 
     public function actionFbcheck()
     {
-        echo '0';
         $helper = new \Facebook\FacebookRedirectLoginHelper();
         try {
             $session = $helper->getSessionFromRedirect();
@@ -42,7 +41,7 @@ class IndexController extends SiteBaseController {
             CVarDumper::dump($ex, 100, true);
         }
         if ($session) {
-            CVarDumper::dump($session, 100, true);
+            //CVarDumper::dump($session, 100, true);
             try {
 
                 $user_profile = (new FacebookRequest(
@@ -50,6 +49,7 @@ class IndexController extends SiteBaseController {
                 ))->execute()->getGraphObject(GraphUser::className());
 
                 echo "Name: " . $user_profile->getName();
+                CVarDumper::dump($user_profile, 100, true);
 
             } catch(FacebookRequestException $e) {
 
@@ -62,8 +62,6 @@ class IndexController extends SiteBaseController {
         {
             //SESSION ERROR
         }
-
-        echo '4';
     }
 
 	public function actionIndex() {
