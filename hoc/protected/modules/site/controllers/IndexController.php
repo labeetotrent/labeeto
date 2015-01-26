@@ -30,7 +30,7 @@ class IndexController extends SiteBaseController {
             $session = $helper->getSessionFromRedirect();
         } catch(FacebookRequestException $ex) {
             // When Facebook returns an error
-            CVarDumper::dump($ex, 100, true);
+            CVarDumper::dump($ex->getRawResponse(), 100, true);
         } catch(Exception $ex) {
             // When validation fails or other local issues
             CVarDumper::dump($ex, 100, true);
