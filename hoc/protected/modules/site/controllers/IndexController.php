@@ -25,10 +25,10 @@ class IndexController extends SiteBaseController {
 
     public function actionFbcheck()
     {
-        $helper = new \Facebook\FacebookRedirectLoginHelper();
+        $helper = new FacebookRedirectLoginHelper();
         try {
             $session = $helper->getSessionFromRedirect();
-        } catch(\Facebook\FacebookRequestException $ex) {
+        } catch(FacebookRequestException $ex) {
             // When Facebook returns an error
             CVarDumper::dump($ex, 100, true);
         } catch(Exception $ex) {
@@ -36,6 +36,7 @@ class IndexController extends SiteBaseController {
             CVarDumper::dump($ex, 100, true);
         }
         if ($session) {
+            CVarDumper::dump($session, 100, true);
             // Logged in.
         }
     }
