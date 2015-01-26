@@ -45,10 +45,19 @@ class IndexController extends SiteBaseController {
             echo '2';
             // When validation fails or other local issues
         }
-        CVarDumper::dump($session, 100, true);
         if ($session) {
             //CVarDumper::dump($session, 100, true);
             try {
+                $facebook = new Facebook($session);
+                echo '1';
+                if($facebook->register()) // If user is new
+                {
+                    $this->redirect(array('/site/my_feed'));
+                }
+                else //If user was already registered
+                {
+                    $this->redirect(array('/site/my_feed'));
+                }
 
                 $user_profile = (new FacebookRequest(
                     $session, 'GET', '/me'
