@@ -57,6 +57,8 @@ return array(
                             'application.components.*',
                             'application.components.WideImage.*',
                             'application.components.facebook.src.Facebook.*',
+                            'application.components.facebook.src.Facebook.Entities.*',
+                            'application.components.facebook.src.Facebook.HttpClients.*',
                             'application.models.*',
                             'application.extensions.*',
         ),
