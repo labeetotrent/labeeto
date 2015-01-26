@@ -51,6 +51,7 @@ class IndexController extends SiteBaseController {
                 $facebook = new Facebook($session);
                 $result = $facebook->register();
                 var_dump($result);
+                var_dump($_SESSION);
                 die();
                 if($result == Facebook::RESULT_REGISTERED) // If user is new
                 {

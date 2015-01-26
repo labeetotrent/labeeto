@@ -72,7 +72,9 @@ class Facebook {
             {
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->save();
-                return self::RESULT_SUCCESS; //Already registered
+
+                if($this->login($dbUser->facebook_id, $dbUser->facebook_token))
+                    return self::RESULT_SUCCESS; //Already registered
             }
             else
             {
