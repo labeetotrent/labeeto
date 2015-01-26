@@ -279,11 +279,6 @@ class UserController extends SiteBaseController {
 
     }
 
-    public function actionLogin(){
-        Yii::app()->Facebook->facebook();
-        echo '<script type="text/javascript"> window.close();</script>';
-    }
-
     public function actionLogoutFacebook(){
 
         if(isset($_SESSION['User']) && !empty($_SESSION['User'])){

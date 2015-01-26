@@ -19,14 +19,21 @@ class IndexController extends SiteBaseController {
 		parent::init();
 	}
 
+	public function actionIndex() {
+        if( Yii::app()->user->id )
+            $this->redirect('/my_feed');
+        $model =  new User();
+        if(isset($_POST['SignUp'])) {
+            $this->redirect('/my_feed?type=registration');
+        }
 
-    public function actionFb()
-    {
         $facebook = new \Facebook\FacebookRedirectLoginHelper();
-        echo '<a href="' . $facebook->getLoginUrl(Yii::app()->params['Facebook']['scope']) . '">Login with Facebook</a>';
-    }
+        $facebookLoginUrl = $facebook->getLoginUrl(Yii::app()->params['Facebook']['scope']);
 
-    public function actionFbcheck()
+		$this->render('index',compact('model', 'facebookLoginUrl'));
+	}
+
+    public function actionFacebookSignup()
     {
         $helper = new \Facebook\FacebookRedirectLoginHelper();
         try {
@@ -63,24 +70,6 @@ class IndexController extends SiteBaseController {
             //SESSION ERROR
         }
     }
-
-	public function actionIndex() {
-        if( Yii::app()->user->id )
-            $this->redirect('/my_feed');
-        $model =  new User();
-        if(isset($_POST['SignUp'])) {
-            /*$model->username= $_POST['SignUp']['username'];
-            $model->email= $_POST['SignUp']['email'];
-            $model->password= sha1(md5($_POST['SignUp']['password']));*/
-           /* $data = array(
-                'username'=>$_POST['SignUp']['username'],
-                'email'=>$_POST['SignUp']['email'],
-                'password'=>$_POST['SignUp']['password']
-            );*/
-            $this->redirect('/my_feed?type=registration');
-        }
-		$this->render('index',compact('model'));
-	}
 
     public function actionHome(){
         $this->login = 1; // set template user login to check

@@ -150,8 +150,7 @@ class MembersController extends SiteBaseController {
     }
 
     public function actionLogin(){
-        Yii::app()->Facebook->facebook();
-        echo '<script type="text/javascript"> window.close();</script>';
+
     }
     public function actionLogoutFacebook(){
 

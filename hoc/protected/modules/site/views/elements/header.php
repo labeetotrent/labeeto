@@ -5,7 +5,7 @@
     <?php if(!Yii::app()->user->isGuest){ ?>
             <a href="<?php echo $this->createUrl('/user/logout'); ?>" class="deleteSessionAjax" style="color: #A10EA1;"><?php echo Yii::t('global', '(Logout)'); ?></a>
     <?php } else { ?>
-        <a href="#facebook-fancybox" class="fancybox" id="login-btn">LOGIN</a>
+<!--        <a href="#facebook-fancybox" class="fancybox" id="login-btn">LOGIN</a>-->
     <?php } ?>
 </div>
 <!-- Fancybox come here -->
