@@ -11,7 +11,7 @@ class Facebook {
 
     public function __construct($session = null)
     {
-        if(!$session) {
+        if($session == null) {
             if (!Yii::app()->isGuest)
             {
                 $user = User::model()->findByPk(Yii::app()->user->getId());
@@ -19,7 +19,7 @@ class Facebook {
             }
             else
             {
-                $this->_brokenSession();
+                $this->_brokenSession('Guest');
                 return false;
             }
         }
