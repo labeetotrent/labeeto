@@ -25,24 +25,25 @@ class Facebook {
         }
         else
         {
-            $this->_session = new \Facebook\FacebookSession($session);
+            $this->_session = $session;
         }
 
         try {
             $this->_session->validate();
         } catch (FacebookRequestException $ex) {
             // Session not valid, Graph API returned an exception with the reason.
-            $this->_brokenSession();
             echo $ex->getMessage();
+            $this->_brokenSession('FacebookRequestException');
         } catch (\Exception $ex) {
             // Graph API returned info, but it may mismatch the current app or have expired.
-            $this->_brokenSession();
             echo $ex->getMessage();
+            $this->_brokenSession('Exception');
         }
     }
 
-    private function _brokenSession()
+    private function _brokenSession($message = '')
     {
+        die($message);
         Yii::app()->redirect('http://ya.ru');
     }
 
