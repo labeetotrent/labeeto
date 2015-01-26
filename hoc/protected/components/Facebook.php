@@ -50,7 +50,7 @@ class Facebook {
     public function updateToken()
     {
         $longSession = $this->_session->getLongLivedSession();
-        $this->_session = $longSession = $longSession->getToken();
+        $this->_session = $longSession->getToken();
         var_dump($this->_session);
     }
 
