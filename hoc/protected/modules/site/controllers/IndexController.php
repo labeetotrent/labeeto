@@ -65,6 +65,7 @@ class IndexController extends SiteBaseController {
 
                 if($result == Facebook::RESULT_REGISTERED) // If user is new
                 {
+                    $facebook->getAvatar();
                     $this->redirect(array('/my_feed'));
                 }
                 elseif($result == Facebook::RESULT_SUCCESS) //If user was already registered

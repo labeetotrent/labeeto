@@ -79,6 +79,7 @@ class Facebook {
             else
             {
                 echo '2';
+                $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getName();
                 $dbUser->email = $user_info->getEmail();
@@ -86,7 +87,7 @@ class Facebook {
                 $dbUser->lname = $user_info->getLastName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
-                var_dump($dbUser->facebook_token);
+                $dbUser->photo = $this->saveAvatar($avatar);
                 $dbUser->address = '';
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
@@ -117,7 +118,33 @@ class Facebook {
             return true;
         }
 
-        return false;
+        return null;
+    }
+    public function getAvatar()
+    {
+        $request = new \Facebook\FacebookRequest(
+            $this->_session,
+            'GET',
+            '/me/picture',
+            array (
+                'redirect' => false,
+                'height' => '200',
+                'type' => 'normal',
+                'width' => '200',
+            )
+        );
+        $response = $request->execute();
+        return $response->getGraphObject()->asArray();
+    }
+    public function saveAvatar($graphArray)
+    {
+        $file = explode('.', $graphArray['url']);
+        $fileName = md5($graphArray['url'].rand()).$file[count($file)-1];
+
+        if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,$graphArray['url']))
+            return $fileName;
+        else
+            return false;
     }
 
     public function getUserInfo()

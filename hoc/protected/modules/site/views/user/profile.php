@@ -233,7 +233,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 </div>
                 <div class="col-md-12 value view">
                     <?php if($this->user->height) echo $this->user->height . Yii::t('global', ' FEET')?>
-                    <?php $arr = explode(".",$this->user->height); //@todo Костыль ?>
                 </div>
                 <div class="col-md-12 value edit hidden-element">
                     <div class="col-md-6">
@@ -241,7 +240,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                             <?php
 
                             for($i=0; $i<=10; $i++) {
-                                if($arr[0] == $i)
+                                if($this->user->getFeet() == $i)
                                     $l = 'selected';
                                 else
                                     $l = '';
@@ -253,7 +252,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                         <select class="form-control" id="inches" name="inches">
                             <?php
                                 for($i=0; $i<=9; $i++) {
-                                    if($arr[1] == $i)
+                                    if($this->user->getInches() == $i)
                                         $h = 'selected';
                                     else
                                         $h = '';
@@ -734,7 +733,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                                 <?php 
                                 
                                 for($i=18; $i<=50; $i++) {
-                                    if($arr_age[0] == $i)
+                                    if($this->user->getAge(0) == $i)
                                         $l = 'selected';
                                     else
                                         $l = '';
@@ -745,7 +744,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                                 <?php 
                                 
                                 for($i=19; $i<=50; $i++) {
-                                    if($arr_age[1] == $i)
+                                    if($this->user->getAge(1) == $i)
                                         $l = 'selected';
                                     else
                                         $l = '';

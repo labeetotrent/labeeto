@@ -24,6 +24,7 @@
  * @property string $excercise
  * @property string $passion
  * @property string $goal
+ * @property string $age
  * @property string $smoke
  * @property string $relations
  * @property string $zipcode
@@ -108,7 +109,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified, facebook_token, facebook_id', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, age, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -501,6 +502,41 @@ class User extends CActiveRecord
             return $user;
         else
             return false;
+    }
+
+
+    public function getFeet()
+    {
+        if($this->height)
+        {
+            $arr = explode(".",$this->height);
+
+            if(isset($arr[0]))
+                return $arr[0];
+        }
+        return 5;
+    }
+    public function getInches()
+    {
+        if($this->height)
+        {
+            $arr = explode(".",$this->height);
+
+            if(isset($arr[1]))
+                return $arr[1];
+        }
+        return 5;
+    }
+    public function getAge($pos = 0)
+    {
+        if($this->age)
+        {
+            $arr = explode("-",$this->age);
+
+            if(isset($arr[$pos]))
+                return $arr[$pos];
+        }
+        return 0;
     }
 
 }
