@@ -56,9 +56,6 @@ return array(
         'import' => array(
                             'application.components.*',
                             'application.components.WideImage.*',
-                            'application.components.Facebook.*',
-                            'application.components.Facebook.Entities.*',
-                            'application.components.Facebook.HttpClients.*',
                             'application.models.*',
                             'application.extensions.*',
         ),
@@ -141,9 +138,6 @@ return array(
                 'Paypal' => array(
                     'class'=>'application.components.Paypal',                    
                 ),
-                'Facebook' => array(
-					'class'=>'application.extensions.facebook.Social',
-				),
                 'counter' => array(
                     'class' => 'UserCounter',
                 ),
