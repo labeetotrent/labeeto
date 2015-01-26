@@ -50,9 +50,11 @@ class IndexController extends SiteBaseController {
             try {
                 $facebook = new Facebook($session);
                 $result = $facebook->register();
-
+                var_dump($result);
+                die();
                 if($result == Facebook::RESULT_REGISTERED) // If user is new
                 {
+                    echo
                     $this->redirect(array('/my_feed'));
                 }
                 elseif($result == Facebook::RESULT_SUCCESS) //If user was already registered
