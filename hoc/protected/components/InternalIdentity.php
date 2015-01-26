@@ -1,6 +1,6 @@
 <?php
 /**
- * Internal Identity Class
+ * Facebook Identity Class
  * Basically verifies a member by his email from the DB
  * 
  * 
