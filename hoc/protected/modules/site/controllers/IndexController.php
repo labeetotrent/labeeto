@@ -15,6 +15,30 @@ class IndexController extends SiteBaseController {
 		parent::init();
 	}
 
+
+    public function actionFb()
+    {
+        $facebook = new FacebookRedirectLoginHelper();
+        echo '<a href="' . $facebook->getLoginUrl() . '">Login with Facebook</a>';
+    }
+
+    public function actionFbcheck()
+    {
+        $helper = new FacebookRedirectLoginHelper();
+        try {
+            $session = $helper->getSessionFromRedirect();
+        } catch(FacebookRequestException $ex) {
+            // When Facebook returns an error
+            CVarDumper::dump($ex, 100, true);
+        } catch(\Exception $ex) {
+            // When validation fails or other local issues
+            CVarDumper::dump($ex, 100, true);
+        }
+        if ($session) {
+            // Logged in.
+        }
+    }
+
 	public function actionIndex() {
         if( Yii::app()->user->id )
             $this->redirect('/my_feed');

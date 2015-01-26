@@ -56,6 +56,7 @@ return array(
         'import' => array(
                             'application.components.*',
                             'application.components.WideImage.*',
+                            'application.components.Facebook.*',
                             'application.models.*',
                             'application.extensions.*',
         ),
