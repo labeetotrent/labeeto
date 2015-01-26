@@ -38,6 +38,8 @@
  * @property integer $is_online
  * @property integer $membership
  * @property integer $verified
+ * @property integer $facebook_id
+ * @property integer $facebook_token
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -103,10 +105,10 @@ class User extends CActiveRecord
 			array('zipcode', 'length', 'max'=>5),
 			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
-            array('email', 'uniqueEmail','on'=>'create'),
+            array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, joined, role, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
