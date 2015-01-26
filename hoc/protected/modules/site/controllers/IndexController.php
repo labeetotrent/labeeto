@@ -45,6 +45,7 @@ class IndexController extends SiteBaseController {
             echo '2';
             // When validation fails or other local issues
         }
+        CVarDumper::dump($session, 100, true);
         if ($session) {
             //CVarDumper::dump($session, 100, true);
             try {
