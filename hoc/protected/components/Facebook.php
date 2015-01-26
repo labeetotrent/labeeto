@@ -143,7 +143,7 @@ class Facebook {
         $fileExtension = $fileExtension[0];
         $fileName = md5($graphArray['url'].rand()).'.'.$fileExtension;
 
-        if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,$graphArray['url']))
+        if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,file_get_contents($graphArray['url'])))
             return $fileName;
         else
             die(':(');
