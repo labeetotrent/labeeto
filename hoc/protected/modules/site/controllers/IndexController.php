@@ -2,6 +2,9 @@
 /**
  * Index controller Home page
  */
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
 
 class IndexController extends SiteBaseController {
 	
@@ -38,13 +41,27 @@ class IndexController extends SiteBaseController {
             // When validation fails or other local issues
             CVarDumper::dump($ex, 100, true);
         }
-        if (isset($session)) {
-            echo '3';
+        if ($session) {
             CVarDumper::dump($session, 100, true);
-            // Logged in.
+            try {
+
+                $user_profile = (new FacebookRequest(
+                    $session, 'GET', '/me'
+                ))->execute()->getGraphObject(GraphUser::className());
+
+                echo "Name: " . $user_profile->getName();
+
+            } catch(FacebookRequestException $e) {
+
+                echo "Exception occured, code: " . $e->getCode();
+                echo " with message: " . $e->getMessage();
+
+            }
         }
         else
-            var_dump($session);
+        {
+            //SESSION ERROR
+        }
 
         echo '4';
     }
