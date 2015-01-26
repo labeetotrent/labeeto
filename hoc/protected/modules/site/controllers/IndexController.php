@@ -27,6 +27,7 @@ class IndexController extends SiteBaseController {
     {
         echo '0';
         $helper = new FacebookRedirectLoginHelper();
+        var_dump($helper->getSessionFromRedirect());
         try {
             $session = $helper->getSessionFromRedirect();
         } catch(FacebookRequestException $ex) {
