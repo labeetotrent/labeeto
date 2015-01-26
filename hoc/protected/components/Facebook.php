@@ -7,6 +7,13 @@
  */
 
 class Facebook {
+
+    const RESULT_ERROR = 'ERROR';
+    const RESULT_SUCCESS = 'SUCCESS';
+    const RESULT_REGISTERED = 'REGISTERED';
+    const RESULT_LOGON = 'LOGON';
+
+
     private $_session;
 
     public function __construct($session = null)
@@ -65,7 +72,7 @@ class Facebook {
             {
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->save();
-                return false; //Already registered
+                return self::RESULT_SUCCESS; //Already registered
             }
             else
             {
@@ -82,9 +89,33 @@ class Facebook {
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
 
-                return true;
+                if($dbUser->validate())
+                {
+                    if($dbUser->save())
+                    {
+                        if($this->login($dbUser->facebook_id, $dbUser->facebook_token))
+                            return self::RESULT_REGISTERED;
+                    }
+                }
             }
         }
+        return self::RESULT_ERROR;
+    }
+
+    public function login($facebookUid, $session)
+    {
+        if(!Yii::app()->user->isGuest)
+            Yii::app()->user->logout(true);
+
+
+        $identity = new FacebookIdentity($facebookUid, $session);
+        if($identity->authenticate())
+        {
+            Yii::app()->user->login($identity, (Yii::app()->params['loggedInDays'] * 60 * 60 * 24 ));
+            return true;
+        }
+
+        return false;
     }
 
     public function getUserInfo()

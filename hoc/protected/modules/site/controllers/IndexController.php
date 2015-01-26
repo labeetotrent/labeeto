@@ -49,14 +49,15 @@ class IndexController extends SiteBaseController {
             //CVarDumper::dump($session, 100, true);
             try {
                 $facebook = new Facebook($session);
-                echo '1';
-                if($facebook->register()) // If user is new
+                $result = $facebook->register();
+
+                if($result == Facebook::RESULT_REGISTERED) // If user is new
                 {
-                    $this->redirect(array('/site/my_feed'));
+                    $this->redirect(array('/my_feed'));
                 }
-                else //If user was already registered
+                elseif($result == Facebook::RESULT_SUCCESS) //If user was already registered
                 {
-                    $this->redirect(array('/site/my_feed'));
+                    $this->redirect(array('/my_feed'));
                 }
 
                 $user_profile = (new FacebookRequest(
