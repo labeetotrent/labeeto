@@ -50,8 +50,7 @@ class Facebook {
     public function updateToken()
     {
         $longSession = $this->_session->getLongLivedSession();
-        $this->_session = $longSession->getToken();
-        var_dump($this->_session);
+        $this->_session = new \Facebook\FacebookSession($longSession->getToken());
     }
 
     public function register()
@@ -78,6 +77,7 @@ class Facebook {
                 $dbUser->lname = $user_info->getLastName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
+                var_dump($dbUser->facebook_token);
                 $dbUser->address = '';
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
