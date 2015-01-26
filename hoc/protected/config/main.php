@@ -56,9 +56,9 @@ return array(
         'import' => array(
                             'application.components.*',
                             'application.components.WideImage.*',
-                            'application.components.facebook.src.Facebook.*',
-                            'application.components.facebook.src.Facebook.Entities.*',
-                            'application.components.facebook.src.Facebook.HttpClients.*',
+                            'application.components.Facebook.*',
+                            'application.components.Facebook.Entities.*',
+                            'application.components.Facebook.HttpClients.*',
                             'application.models.*',
                             'application.extensions.*',
         ),
