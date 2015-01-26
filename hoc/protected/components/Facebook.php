@@ -51,6 +51,7 @@ class Facebook {
     {
         $longSession = $this->_session->getLongLivedSession();
         $this->_session = $longSession = $longSession->getToken();
+        var_dump($this->_session);
     }
 
     public function register()
