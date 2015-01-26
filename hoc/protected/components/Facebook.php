@@ -144,7 +144,7 @@ class Facebook {
         if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,$graphArray['url']))
             return $fileName;
         else
-            return false;
+            die(':(');
     }
 
     public function getUserInfo()
