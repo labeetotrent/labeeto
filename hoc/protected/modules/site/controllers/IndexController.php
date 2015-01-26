@@ -39,7 +39,7 @@ class IndexController extends SiteBaseController {
             // When validation fails or other local issues
             CVarDumper::dump($ex, 100, true);
         }
-        if ($session) {
+        if (isset($session)) {
             echo '3';
             CVarDumper::dump($session, 100, true);
             // Logged in.
