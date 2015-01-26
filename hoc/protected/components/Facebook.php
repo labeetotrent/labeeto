@@ -139,7 +139,9 @@ class Facebook {
     public function saveAvatar($graphArray)
     {
         $file = explode('.', $graphArray['url']);
-        $fileName = md5($graphArray['url'].rand()).$file[count($file)-1];
+        $fileExtension = explode('?', $file[count($file)-1]);
+        $fileExtension = $fileExtension[0];
+        $fileName = md5($graphArray['url'].rand()).'.'.$fileExtension;
 
         if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,$graphArray['url']))
             return $fileName;
