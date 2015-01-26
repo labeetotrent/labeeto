@@ -41,11 +41,9 @@ class IndexController extends SiteBaseController {
         } catch(\Facebook\FacebookRequestException $ex) {
             echo '1';
             // When Facebook returns an error
-            CVarDumper::dump($ex->getRawResponse(), 100, true);
         } catch(Exception $ex) {
             echo '2';
             // When validation fails or other local issues
-            CVarDumper::dump($ex, 100, true);
         }
         if ($session) {
             //CVarDumper::dump($session, 100, true);
@@ -57,6 +55,13 @@ class IndexController extends SiteBaseController {
 
                 echo "Name: " . $user_profile->getName();
                 CVarDumper::dump($user_profile, 100, true);
+
+                $avatar = (new FacebookRequest(
+                    $session, 'GET', '/me/picture?width=140&height=110'
+                ))->execute();
+                CVarDumper::dump($avatar, 100, true);
+
+
 
             } catch(FacebookRequestException $e) {
 

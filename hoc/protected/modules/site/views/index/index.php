@@ -27,5 +27,5 @@
 </p>
 -->
 <a href="<?=$facebookLoginUrl?>" id="signin-fb">
-    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" id='facebook' alt="Sign in with Facebook"/>
+    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/signin_fb.png" alt="Sign in with Facebook"/>
 </a>
