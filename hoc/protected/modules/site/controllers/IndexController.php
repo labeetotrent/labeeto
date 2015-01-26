@@ -56,10 +56,20 @@ class IndexController extends SiteBaseController {
                 echo "Name: " . $user_profile->getName();
                 CVarDumper::dump($user_profile, 100, true);
 
-                $avatar = (new FacebookRequest(
-                    $session, 'GET', '/me/picture?width=140&height=110'
-                ))->execute();
-                CVarDumper::dump($avatar, 100, true);
+                $request = new FacebookRequest(
+                    $session,
+                    'GET',
+                    '/me/picture',
+                    array (
+                        'redirect' => false,
+                        'height' => '200',
+                        'type' => 'normal',
+                        'width' => '200',
+                    )
+                );
+                $response = $request->execute();
+                $graphObject = $response->getGraphObject();
+                CVarDumper::dump($graphObject, 100, true);
 
 
 
