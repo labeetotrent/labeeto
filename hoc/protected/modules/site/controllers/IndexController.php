@@ -19,18 +19,18 @@ class IndexController extends SiteBaseController {
 
     public function actionFb()
     {
-        $facebook = new FacebookRedirectLoginHelper();
+        $facebook = new \Facebook\FacebookRedirectLoginHelper();
         echo '<a href="' . $facebook->getLoginUrl() . '">Login with Facebook</a>';
     }
 
     public function actionFbcheck()
     {
         echo '0';
-        $helper = new FacebookRedirectLoginHelper();
+        $helper = new \Facebook\FacebookRedirectLoginHelper();
         var_dump($helper->getSessionFromRedirect());
         try {
             $session = $helper->getSessionFromRedirect();
-        } catch(FacebookRequestException $ex) {
+        } catch(\Facebook\FacebookRequestException $ex) {
             echo '1';
             // When Facebook returns an error
             CVarDumper::dump($ex->getRawResponse(), 100, true);
