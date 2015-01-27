@@ -19,6 +19,7 @@
 div.avatar-container {
     padding: 0 15px;
     height: 120px;
+    margin-bottom: 10px;
 }
 .avatar-image {
     width: 120px;
@@ -26,14 +27,23 @@ div.avatar-container {
 }
 .online-circle {
     position: relative;
-    bottom: 62px;
-    left: 52%;
+    bottom: 64px;
+    /* left: 52%; */
+    left: 36px;
 }
 .profile-info {
     padding: 0 15px;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .profile-info {
+        text-align: inherit !important;
+    }
 }
 .profile-info > div {
     margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
 .profile-info > .user-name {
     font-family: "Helvetica Neue LTPro Bd";
@@ -47,23 +57,23 @@ div.avatar-container {
     font-family: "Proxima Nova SemiBold";
     font-size: 10pt;
     color: #687381;
-    padding-left: 30px;
+    /*padding-left: 30px;*/
     background-position: left center;
     background-repeat: no-repeat;
     height: 18px;
     line-height: 18px;
 }
-.profile-info .profile-data {
+/*.profile-info .profile-data {
     background-image: url('../images/fish/profile-icon.png');
-}
-.profile-info .job {
-    background-image: url('../images/fish/work-icon.png');
-}
+}*/
+/*.profile-info .job {*/
+    /*background-image: url('../images/fish/work-icon.png');*/
+/*}*/
 
-.profile-info .location {
-    background-image: url('../images/fish/location-icon.png');
-    background-position: 0.8% center;
-}
+/*.profile-info .location {*/
+    /*background-image: url('../images/fish/location-icon.png');*/
+    /*background-position: 0.8% center;*/
+/*}*/
 
 .profile-header .container-element {
     padding: 0 15px;
@@ -191,6 +201,17 @@ div.avatar-container {
 }
 .profile-right {
     padding-right: 0;
+}
+@media (max-width: 768px) {
+    .profile-right {
+        padding-left: 0;
+    }
+    .profile-header .container-element {
+        padding: 0;
+    }
+    .profile-header .header-container {
+        border: none;
+    }
 }
 .profile-right .header {
     background-color: #f8f8f7;

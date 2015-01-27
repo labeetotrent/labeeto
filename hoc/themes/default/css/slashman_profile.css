@@ -4,6 +4,9 @@
   padding-right: 15px;
   cursor: pointer;
 }
+.my-profile .profile-description {
+  margin-bottom: 20px;
+}
 .my-profile .profile-description .description-edit {
   margin-top: 15px;
 }
@@ -64,14 +67,14 @@
   margin: 5px 0;
   resize: none;
 }
-.my-profile .right-element .header {
+.my-profile .right-element .header div.row {
   line-height: 10px;
 }
-.my-profile .right-element .header span {
-  padding: 8px 0;
+.my-profile .right-element .header div.row span {
+  padding: 8px 10px;
   position: absolute;
 }
-.my-profile .right-element .header .add-new-btn {
+.my-profile .right-element .header div.row .add-new-btn {
   background-color: #313541;
   color: #FFFFFF;
   padding: 8px;
@@ -80,6 +83,15 @@
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
+  margin-right: 10px;
+}
+.my-profile .right-element .body .no-photos {
+  font-family: "Proxima Nova Light";
+  font-size: 12pt;
+  color: #a5a5a5;
+  border-bottom: 1px solid #e8e5e5;
+  text-align: center;
+  padding: 15px 0;
 }
 .my-profile #avatar-form {
   display: none;
@@ -89,7 +101,6 @@
   font-size: 20pt;
   position: relative;
   bottom: 61%;
-  left: 31%;
   cursor: pointer;
 }
 .my-profile .avatar-upload-popover i {

@@ -480,7 +480,7 @@ a{
      margin: 0px auto;
  }
  #content-feed {
-     border: 1px solid #ddd;
+     /*border: 1px solid #ddd;*/
      border-bottom: none;
      border-top: none;
      /*width: 80%;*/

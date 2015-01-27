@@ -9,6 +9,7 @@
   }
   .profile-description
   {
+    margin-bottom: 20px;
     .description-edit {
       margin-top: 15px;
       i.description-edit-icon {
@@ -87,20 +88,33 @@
 
   .right-element {
     .header {
-      line-height: 10px;
-      span {
-        padding: 8px 0;
-        position: absolute;
+      div.row {
+        line-height: 10px;
+        span {
+          padding: 8px 10px;
+          position: absolute;
+        }
+        .add-new-btn {
+          background-color: #313541;
+          color: #FFFFFF;
+          padding: 8px;
+          font-family: "Proxima Nova Regular";
+          font-size: 8pt;
+          text-transform: uppercase;
+          border-radius: 5px;
+          border: none;
+          margin-right: 10px;
+        }
       }
-      .add-new-btn {
-        background-color: #313541;
-        color: #FFFFFF;
-        padding: 8px;
-        font-family: "Proxima Nova Regular";
-        font-size: 8pt;
-        text-transform: uppercase;
-        border-radius: 5px;
-        border: none;
+    }
+    .body {
+      .no-photos {
+        font-family: "Proxima Nova Light";
+        font-size: 12pt;
+        color: #a5a5a5;
+        border-bottom: 1px solid #e8e5e5;
+        text-align: center;
+        padding: 15px 0;
       }
     }
   }
@@ -113,7 +127,7 @@
     font-size: 20pt;
     position: relative;
     bottom: 61%;
-    left: 31%;
+//    left: 31%;
     cursor: pointer;
     i {
       color: @pink;
