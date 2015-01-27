@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                var_dump($user_info->getBirthday());
+                var_dump($this->getBirthday($user_info->getBirthday()));
                 die();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
@@ -90,6 +90,7 @@ class Facebook {
                 $dbUser->photo = $this->saveAvatar($avatar);
                 $dbUser->address = $user_info->getLocation()->getProperty('name');
                 $dbUser->gender = $this->getGender($user_info->getGender());
+                $dbUser->birthday = $this->getBirthday($user_info->getBirthday());
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
 
@@ -127,6 +128,11 @@ class Facebook {
             return 0;
         else
             return 1;
+    }
+
+    public function getBirthday($birthday)
+    {
+        return $birthday->date;
     }
     public function getAvatar()
     {
