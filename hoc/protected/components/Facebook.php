@@ -81,7 +81,7 @@ class Facebook {
                 echo '2';
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
-                $dbUser->username = $user_info->getName();
+                $dbUser->username = $user_info->getFirstName();
                 $dbUser->email = $user_info->getEmail();
                 $dbUser->fname = $user_info->getFirstName();
                 $dbUser->lname = $user_info->getLastName();

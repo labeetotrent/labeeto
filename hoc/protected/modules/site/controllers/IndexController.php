@@ -72,31 +72,6 @@ class IndexController extends SiteBaseController {
                 {
                     $this->redirect(array('/my_feed'));
                 }
-
-                $user_profile = (new FacebookRequest(
-                    $session, 'GET', '/me'
-                ))->execute()->getGraphObject(GraphUser::className());
-
-                echo "Name: " . $user_profile->getName();
-                CVarDumper::dump($user_profile, 100, true);
-
-                $request = new FacebookRequest(
-                    $session,
-                    'GET',
-                    '/me/picture',
-                    array (
-                        'redirect' => false,
-                        'height' => '200',
-                        'type' => 'normal',
-                        'width' => '200',
-                    )
-                );
-                $response = $request->execute();
-                $graphObject = $response->getGraphObject();
-                CVarDumper::dump($graphObject, 100, true);
-
-
-
             } catch(FacebookRequestException $e) {
 
                 echo "Exception occured, code: " . $e->getCode();
