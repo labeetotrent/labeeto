@@ -37,17 +37,17 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <i class="fa fa-map-marker"></i> <?=$this->user->address; ?>
             </div>
             <?php endif; ?>
-        </div>
+        </div><!--
         <div class="col-md-2 col-sm-2 col-xs-12 container-element pull-right">
             <div class="header-container col-md-12 photos">
                 <div class="col-md-12 photos-thumb">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
+                    <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
                 </div>
                 <div class="col-md-12 desc">
                     PHOTOS
                 </div>
             </div>
-        </div><!--
+        </div>--><!--
         <div class="col-md-2 col-sm-2 col-xs-2 container-element">
             <div class="header-container col-md-12 private">
                 <div class="col-md-12 photos-thumb">
