@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                var_dump($user_info->getProperty('bio'));
+                var_dump();
                 die();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
@@ -91,6 +91,7 @@ class Facebook {
                 $dbUser->address = $user_info->getLocation()->getProperty('name');
                 $dbUser->gender = $this->getGender($user_info->getGender());
                 $dbUser->birthday = $this->getBirthday($user_info->getBirthday());
+                $dbUser->about = $user_info->getProperty('bio');
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
 

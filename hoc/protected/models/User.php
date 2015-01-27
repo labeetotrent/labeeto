@@ -21,6 +21,7 @@
  * @property string $last_logged
  * @property string $created
  * @property string $updated
+ * @property string $about
  * @property integer $is_online
  * @property integer $facebook_id
  * @property integer $facebook_token
@@ -90,7 +91,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
+			array('id, username, gender, email, password, role, age, fname, about, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
