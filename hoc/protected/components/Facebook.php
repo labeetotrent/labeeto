@@ -50,7 +50,7 @@ class Facebook {
 
     private function _brokenSession($message = '')
     {
-        die($message);
+        die($message); //@todo Remove
         Yii::app()->redirect('http://ya.ru');
     }
 
@@ -87,7 +87,8 @@ class Facebook {
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->photo = $this->saveAvatar($avatar);
-                $dbUser->address = '';
+                $dbUser->address = $user_info->getLocation()->getCountry().', '.$user_info->getLocation()->getCity();
+                $dbUser->gender = $this->getGender($user_info->getGender());
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
 
@@ -118,6 +119,10 @@ class Facebook {
         }
 
         return null;
+    }
+    public function getGender($gender)
+    {
+        return $gender;
     }
     public function getAvatar()
     {
