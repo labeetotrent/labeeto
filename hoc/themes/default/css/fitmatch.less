@@ -12,25 +12,30 @@
     border-bottom: 1px solid #d7d7d7;
   }
   .fitmatch-body {
-    padding: 60px 0;
+    padding: 30px 0;
     .card-container {
       border: 1px solid #e8e5e5;
       background-color: white;
-      padding: 20px 0 0 0;
+      padding: 0;
       .card-info {
         padding-right: 0;
         padding-left: 0;
         padding-bottom: 30px;
+        padding-top: 20px;
 
         border-bottom: 1px solid #e8e5e5;
         .avatar {
           padding-right: 0;
           padding-left: 0;
+          margin-bottom: 10px;
           img {
             margin: 0 auto;
           }
         }
         .user-info {
+          @media (max-width: @xs-width) {
+            text-align: center;
+          }
           .nickname-info {
             .nickname {
               padding-left: 0;
@@ -56,15 +61,9 @@
               background-repeat: no-repeat;
               height: 18px;
               line-height: 18px;
-            }
-            .birth {
-              background-image: url('../images/fish/profile-icon.png');
-            }
-            .job {
-              background-image: url('../images/fish/work-icon.png');
-            }
-            .location {
-              background-image: url('../images/fish/location-icon.png');
+              @media (max-width: @xs-width) {
+                padding-left: 0;
+              }
             }
           }
           .about-info {
@@ -138,6 +137,10 @@
       .decision-buttons {
         padding: 0 0 15px 0;
         div {
+          @media (max-width: @xs-width) {
+            text-align: center;
+            padding: 5px 0 !important;
+          }
           padding: 5px 150px;
           button {
             font-family: "Proxima Nova Regular", Helvetica, sans-serif;

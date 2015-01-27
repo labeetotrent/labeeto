@@ -19,15 +19,12 @@ class FitmatchController extends SiteBaseController
         $condition = '';
         $criteria = new CDbCriteria();
 
-        if($this->user->gender_look != "2")
-        {
-            $criteria->addCondition('gender = '.$this->user->gender_look);
-        }
 
         //Optimize
 
         $criteria->with = array('fitmatchMy', 'fitmatchMe');
 
+        $criteria->addCondition('gender <> '.$this->user->gender);
         $criteria->addCondition('t.id <> :id');
         $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
         $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
