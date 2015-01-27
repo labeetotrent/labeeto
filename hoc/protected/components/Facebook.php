@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                var_dump($user_info->getProperty('bio'));
+                var_dump($user_info);
                 die();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
