@@ -78,8 +78,6 @@ class Facebook {
             }
             else
             {
-                var_dump($this->getGender($user_info->getGender()));
-
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
@@ -123,7 +121,10 @@ class Facebook {
     }
     public function getGender($gender)
     {
-        return $gender;
+        if($gender == 'male')
+            return 0;
+        else
+            return 1;
     }
     public function getAvatar()
     {
