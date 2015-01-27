@@ -350,6 +350,7 @@ body .navbar .navbar-icons {
   font-size: 12pt;
   color: #687380;
 }
-body .navbar .navbar-icons li a:hover {
+body .navbar .navbar-icons li a:hover,
+body .navbar .navbar-icons li a:focus {
   color: #ea5a5a;
 }
