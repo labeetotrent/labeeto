@@ -17,8 +17,6 @@
  * @property string $excercise
  * @property string $age
  * @property string $zipcode
- * @property string $latitude
- * @property string $longtitude
  * @property integer $status
  * @property string $last_logged
  * @property string $created
@@ -88,12 +86,11 @@ class User extends CActiveRecord
 			array('role', 'length', 'max'=>30),
 			array('excercise', 'length', 'max'=>255),
 			array('zipcode', 'length', 'max'=>5),
-			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, latitude, longtitude, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
+			array('id, username, gender, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -135,8 +132,6 @@ class User extends CActiveRecord
 			'address' => Yii::t('global', 'Address'),
 			'excercise' => Yii::t('global', 'Excercise'),
 			'zipcode' => Yii::t('global', 'Zipcode'),
-			'latitude' => Yii::t('global', 'Latitude'),
-			'longtitude' => Yii::t('global', 'Longtitude'),
 			'status' => Yii::t('global', 'Status'),
 			'last_logged' => Yii::t('global', 'Last Logged'),
             'created' => Yii::t('global', 'Created'),
@@ -169,8 +164,6 @@ class User extends CActiveRecord
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('excercise',$this->excercise,true);
 		$criteria->compare('zipcode',$this->zipcode,true);
-		$criteria->compare('latitude',$this->latitude,true);
-		$criteria->compare('longtitude',$this->longtitude,true);
 		$criteria->compare('status',$this->status);
         if ($this->last_logged)
             $criteria->compare('t.last_logged', date('Y-m-d ', strtotime($this->last_logged)), true);
