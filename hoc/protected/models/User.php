@@ -84,7 +84,6 @@ class User extends CActiveRecord
             array('username','required'),
 			array('gender, status, is_online', 'numerical', 'integerOnly'=>true),
 			array('username, email, photo, address', 'length', 'max'=>155),
-			array('career, height, smoke', 'length', 'max'=>100),
 			array('fname', 'length', 'max'=>40),
 			array('role', 'length', 'max'=>30),
 			array('excercise', 'length', 'max'=>255),
@@ -94,7 +93,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, latitude, longtitude, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
+			array('id, username, gender, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, latitude, longtitude, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
