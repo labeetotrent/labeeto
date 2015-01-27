@@ -261,8 +261,9 @@ $(document).ready(function(){
         block.find('.edit').hide();
         block.find('.view').show();
     });
-    $('.info-block .edit-info-block').click(function(){
+    $('.info-block').click(function(){
         var infoBlock = $(this).parent().parent().parent();
+        infoBlock = $(this);
 
         infoBlock.find('.edit-buttons').show();
         infoBlock.find('.view').hide();
