@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                echo '2';
+                echo $user_info->getLocation()->getCountry().', '.$user_info->getLocation()->getCity();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
