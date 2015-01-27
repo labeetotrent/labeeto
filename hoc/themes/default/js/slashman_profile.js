@@ -268,7 +268,7 @@ $(document).ready(function(){
         infoBlock.find('.edit-buttons').show();
         infoBlock.find('.view').hide();
         infoBlock.find('.edit').show();
-        $(this).hide();
+        $(this).find('i').hide();
     });
     $('.info-block .btn-cancel-st').click(function(){
         var infoBlock = $(this).parent().parent().parent();
