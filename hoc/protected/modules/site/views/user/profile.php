@@ -422,17 +422,17 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             </div>-->
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
-                    How often do you exercise?
+                    Training Intensity
                 </div>
                 <div class="col-md-12 value">
                     <div class="col-md-2">
-                        Nope
+                        Relax
                     </div>
                     <div class="col-md-8 slider-container">
                         <div class="slider" id="exercise-slider"></div>
                     </div>
                     <div class="col-md-2">
-                        Often
+                        Intensive
                     </div>
                 </div>
             </div>
