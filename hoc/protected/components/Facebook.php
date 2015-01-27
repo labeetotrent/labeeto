@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                var_dump($user_info);
+                var_dump($this->getAbout());
                 die();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
@@ -146,6 +146,16 @@ class Facebook {
                 'type' => 'normal',
                 'width' => '200',
             )
+        );
+        $response = $request->execute();
+        return $response->getGraphObject()->asArray();
+    }
+    public function getAbout()
+    {
+        $request = new \Facebook\FacebookRequest(
+            $this->_session,
+            'GET',
+            '/me/about'
         );
         $response = $request->execute();
         return $response->getGraphObject()->asArray();
