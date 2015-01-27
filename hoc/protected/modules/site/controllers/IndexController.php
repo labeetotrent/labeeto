@@ -55,6 +55,7 @@ class IndexController extends SiteBaseController {
             // When Facebook returns an error
         } catch(Exception $ex) {
             echo '2';
+            var_dump($ex);
             // When validation fails or other local issues
         }
         if ($session) {
