@@ -84,7 +84,6 @@ class Facebook {
                 $dbUser->username = $user_info->getFirstName();
                 $dbUser->email = $user_info->getEmail();
                 $dbUser->fname = $user_info->getFirstName();
-                $dbUser->lname = $user_info->getLastName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->photo = $this->saveAvatar($avatar);
