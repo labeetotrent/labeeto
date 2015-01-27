@@ -32,9 +32,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             <div class="row col-md-12 profile-data">
                 <?= date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
-            <div class="row col-md-12 job">
-                <?php if($this->user->career) echo $this->user->career; ?>
-            </div>
             <div class="row col-md-12 location">
                 <?php if($this->user->address) echo $this->user->address; ?>
             </div>
