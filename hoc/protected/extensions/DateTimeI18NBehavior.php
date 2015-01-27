@@ -14,8 +14,8 @@ class DateTimeI18NBehavior  extends CActiveRecordBehavior
 	public $dateOutcomeFormat = 'Y-m-d';
 	public $dateTimeOutcomeFormat = 'Y-m-d H:i:s';
 
-	public $dateIncomeFormat = 'yyyy.MM.dd';
-	public $dateTimeIncomeFormat = 'yyyy.MM.dd hh:mm:ss';
+	public $dateIncomeFormat = 'yyyy-MM-dd';
+	public $dateTimeIncomeFormat = 'yyyy-MM-dd hh:mm:ss';
 
 	public function beforeSave($event){
 		
@@ -85,7 +85,7 @@ class DateTimeI18NBehavior  extends CActiveRecordBehavior
                     $event->sender->$columnName = '';
                 else
 				    $event->sender->$columnName =  Yii::app()->dateFormatter->formatDateTime(
-    							CDateTimeParser::parse($event->sender->$columnName,	$this->dateTimeIncomeFormat), 
+    							CDateTimeParser::parse($event->sender->$columnName,	$this->dateTimeIncomeFormat),
 							'medium', 'medium');
 			}
 		}

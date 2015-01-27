@@ -45,6 +45,7 @@ class IndexController extends SiteBaseController {
         $this->redirect(array('/'));
     }
 
+
     public function actionFacebookSignup()
     {
         $helper = new \Facebook\FacebookRedirectLoginHelper();

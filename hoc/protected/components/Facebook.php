@@ -130,7 +130,7 @@ class Facebook {
 
     public function getBirthday($birthday)
     {
-        return $birthday->format('Y.m.d');
+        return $birthday->format('Y-m-d');
     }
     public function getAvatar()
     {
