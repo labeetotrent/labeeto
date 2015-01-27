@@ -7,38 +7,23 @@
  * @property integer $id
  * @property string $username
  * @property integer $gender
- * @property string $career
  * @property string $email
  * @property string $password
- * @property integer $joined
  * @property string $role
- * @property string $ehtnicity
  * @property string $fname
- * @property string $lname
  * @property string $birthday
  * @property string $photo
  * @property string $address
- * @property string $education
- * @property string $religion
- * @property string $height
  * @property string $excercise
- * @property string $passion
- * @property string $goal
  * @property string $age
- * @property string $smoke
- * @property string $relations
  * @property string $zipcode
  * @property string $latitude
  * @property string $longtitude
- * @property string $drink
  * @property integer $status
  * @property string $last_logged
  * @property string $created
  * @property string $updated
- * @property string $verify_profile
  * @property integer $is_online
- * @property integer $membership
- * @property integer $verified
  * @property integer $facebook_id
  * @property integer $facebook_token
  *
@@ -97,19 +82,19 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
             array('username','required'),
-			array('gender, joined, status, is_online,membership, verified', 'numerical', 'integerOnly'=>true),
-			array('username, email, photo, address, gender_look', 'length', 'max'=>155),
+			array('gender, status, is_online, verified', 'numerical', 'integerOnly'=>true),
+			array('username, email, photo, address', 'length', 'max'=>155),
 			array('career, height, smoke', 'length', 'max'=>100),
-			array('password, fname, lname, education, religion', 'length', 'max'=>40),
-			array('role, ehtnicity', 'length', 'max'=>30),
-			array('excercise, passion, goal, relations, drink', 'length', 'max'=>255),
+			array('fname', 'length', 'max'=>40),
+			array('role', 'length', 'max'=>30),
+			array('excercise', 'length', 'max'=>255),
 			array('zipcode', 'length', 'max'=>5),
 			array('latitude, longtitude', 'length', 'max'=>50),
 			array('birthday, last_logged', 'safe'),
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, career, email, password, joined, role, age, ehtnicity, fname, lname, birthday, photo, address, education, religion, height, excercise, passion, goal, smoke, relations, zipcode, latitude, longtitude, gender_look, drink, status, last_logged, , created, updated, is_online, verified, facebook_token, facebook_id', 'safe', 'on'=>'search'),
+			array('id, username, gender, career, email, password, role, age, fname, birthday, photo, address, excercise, passion, zipcode, latitude, longtitude, status, last_logged, created, updated, is_online, facebook_token, facebook_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -142,37 +127,22 @@ class User extends CActiveRecord
 			'id' => Yii::t('global', 'ID'),
 			'username' => Yii::t('global', 'Username'),
 			'gender' => Yii::t('global', 'Gender'),
-			'career' => Yii::t('global', 'Career'),
 			'email' => Yii::t('global', 'Email'),
 			'password' => Yii::t('global', 'Password'),
-			'joined' => Yii::t('global', 'Joined'),
 			'role' => Yii::t('global', 'Role'),
-			'ehtnicity' => Yii::t('global', 'Ehtnicity'),
 			'fname' => Yii::t('global', 'Fname'),
-			'lname' => Yii::t('global', 'Lname'),
 			'birthday' => Yii::t('global', 'Birthday'),
 			'photo' => Yii::t('global', 'Photo'),
 			'address' => Yii::t('global', 'Address'),
-			'education' => Yii::t('global', 'Education'),
-			'religion' => Yii::t('global', 'Religion'),
-			'height' => Yii::t('global', 'Height'),
 			'excercise' => Yii::t('global', 'Excercise'),
-			'passion' => Yii::t('global', 'Passion'),
-			'goal' => Yii::t('global', 'Goal'),
-			'smoke' => Yii::t('global', 'Smoke'),
-			'relations' => Yii::t('global', 'Relations'),
 			'zipcode' => Yii::t('global', 'Zipcode'),
 			'latitude' => Yii::t('global', 'Latitude'),
 			'longtitude' => Yii::t('global', 'Longtitude'),
-			'drink' => Yii::t('global', 'Drink'),
 			'status' => Yii::t('global', 'Status'),
 			'last_logged' => Yii::t('global', 'Last Logged'),
             'created' => Yii::t('global', 'Created'),
             'updated' => Yii::t('global', 'Updated'),
             'is_online' => Yii::t('global', 'Status'),
-            'membership' => Yii::t('global', 'Membership'),
-            'verified' => Yii::t('global', 'Verified'),
-            'gender_look' => Yii::t('global', 'Gender Looking'),
 		);
 	}
 
@@ -190,30 +160,18 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('gender',$this->gender);
-		$criteria->compare('career',$this->career,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('joined',$this->joined);
 		$criteria->compare('role',$this->role,true);
-		$criteria->compare('ehtnicity',$this->ehtnicity,true);
 		$criteria->compare('fname',$this->fname,true);
-		$criteria->compare('lname',$this->lname,true);
         if ($this->birthday)
             $criteria->compare('t.birthday', date('Y-m-d ', $this->birthday), true);
 		$criteria->compare('photo',$this->photo,true);
 		$criteria->compare('address',$this->address,true);
-		$criteria->compare('education',$this->education,true);
-		$criteria->compare('religion',$this->religion,true);
-		$criteria->compare('height',$this->height,true);
 		$criteria->compare('excercise',$this->excercise,true);
-		$criteria->compare('passion',$this->passion,true);
-		$criteria->compare('goal',$this->goal,true);
-		$criteria->compare('smoke',$this->smoke,true);
-		$criteria->compare('relations',$this->relations,true);
 		$criteria->compare('zipcode',$this->zipcode,true);
 		$criteria->compare('latitude',$this->latitude,true);
 		$criteria->compare('longtitude',$this->longtitude,true);
-		$criteria->compare('drink',$this->drink,true);
 		$criteria->compare('status',$this->status);
         if ($this->last_logged)
             $criteria->compare('t.last_logged', date('Y-m-d ', strtotime($this->last_logged)), true);
@@ -221,10 +179,6 @@ class User extends CActiveRecord
             $criteria->compare('t.created', date('Y-m-d ', strtotime($this->created)), true);
         $criteria->compare('updated',$this->updated,true);
         $criteria->compare('is_online',$this->is_online);
-        $criteria->compare('membership',$this->membership);
-        $criteria->compare('verified',$this->verified);
-        $criteria->compare('gender_look',$this->gender_look);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort'=>array(
@@ -502,30 +456,6 @@ class User extends CActiveRecord
             return $user;
         else
             return false;
-    }
-
-
-    public function getFeet()
-    {
-        if($this->height)
-        {
-            $arr = explode(".",$this->height);
-
-            if(isset($arr[0]))
-                return $arr[0];
-        }
-        return 5;
-    }
-    public function getInches()
-    {
-        if($this->height)
-        {
-            $arr = explode(".",$this->height);
-
-            if(isset($arr[1]))
-                return $arr[1];
-        }
-        return 5;
     }
     public function getAge($pos = 0)
     {
