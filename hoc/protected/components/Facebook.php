@@ -155,7 +155,7 @@ class Facebook {
         $request = new \Facebook\FacebookRequest(
             $this->_session,
             'GET',
-            '/me/about'
+            '/me'
         );
         $response = $request->execute();
         return $response->getGraphObject()->asArray();
