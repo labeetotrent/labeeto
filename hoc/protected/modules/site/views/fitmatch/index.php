@@ -46,7 +46,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
                         </div>
                     </div>
                     <div class="row about-info">
-                        <?php if($this->user->about) echo $this->user->about; ?>
+                        <?php if($fitmatch->about) echo $fitmatch->about; ?>
                     </div>
                     <div class="row tags">
                         <?php
