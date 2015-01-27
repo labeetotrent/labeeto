@@ -21,27 +21,6 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
 
         </div>
         <div class="col-md-8 card-container">
-            <div class="col-md-12 card-decision visible-xs">
-                <div class="col-md-12 decision-header">
-                    Interested?
-                </div>
-                <div class="col-md-12 decision-buttons">
-                    <div class="col-md-12">
-                        <form method="POST">
-                            <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
-                            <input type="hidden" name="Fitmatch[result]" value="0"/>
-                            <button type="submit" class="btn btn-default btn-cancel-st col-md-12">Sorry, next, please!</button>
-                        </form>
-                    </div>
-                    <div class="col-md-12">
-                        <form method="POST">
-                            <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
-                            <input type="hidden" name="Fitmatch[result]" value="1"/>
-                            <button type="submit" class="btn btn-default btn-save-st col-md-12">Yes, yes, YES!</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-12 card-info">
                 <div class="col-md-4 avatar">
                     <img src="/uploads/avatar/<?php echo $fitmatch->photo ?>" class="img-responsive img-circle"/>
@@ -112,7 +91,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
                     */?>
                 </div>
             </div>-->
-            <div class="col-md-12 card-decision hidden-xs">
+            <div class="col-md-12 card-decision">
                 <div class="col-md-12 decision-header">
                     Interested?
                 </div>
