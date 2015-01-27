@@ -78,7 +78,7 @@ class Facebook {
             }
             else
             {
-                echo var_dump($user_info->getLocation());
+                var_dump($user_info->getLocation());
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
