@@ -78,8 +78,8 @@ class Facebook {
             }
             else
             {
-                var_dump($user_info->getLocation());
-                var_dump($user_info->getLocation()->getProperty('name'));
+                var_dump($this->getGender($user_info->getGender()));
+
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
@@ -88,7 +88,7 @@ class Facebook {
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->photo = $this->saveAvatar($avatar);
-                $dbUser->address = $user_info->getLocation()->getCountry().', '.$user_info->getLocation()->getCity();
+                $dbUser->address = $user_info->getLocation()->getProperty('name');
                 $dbUser->gender = $this->getGender($user_info->getGender());
                 $dbUser->created = new CDbExpression('NOW()');
                 $dbUser->updated = new CDbExpression('NOW()');
