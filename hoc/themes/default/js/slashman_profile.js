@@ -261,7 +261,7 @@ $(document).ready(function(){
         block.find('.edit').hide();
         block.find('.view').show();
     });
-    $('.info-block').click(function(){
+    $('.info-block').click(function(e){
         var infoBlock = $(this).parent().parent().parent();
         infoBlock = $(this);
 
@@ -270,9 +270,10 @@ $(document).ready(function(){
         infoBlock.find('.edit').show();
         $(this).find('i').hide();
     });
-    $('.info-block .btn-cancel-st').click(function(){
+    $('.info-block .btn-cancel-st').click(function(e){
         var infoBlock = $(this).parent().parent().parent();
         hideInfoBlock(infoBlock);
+        e.stopPropagation();
     });
     $('.left-custom .new-question .custom-question-btn').click(function(){
         var infoBlock = $(this).parent().parent();
