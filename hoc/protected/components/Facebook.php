@@ -78,8 +78,6 @@ class Facebook {
             }
             else
             {
-                var_dump();
-                die();
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
