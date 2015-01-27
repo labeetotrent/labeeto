@@ -97,7 +97,10 @@
               }
               .tag-middle {
                 position: relative;
-                bottom: 13px;
+                bottom: 12px;
+                @media (max-width: @xs-width) {
+                  bottom: 13px;
+                }
                 right: 3px;
                 font-size: 10pt;
                 padding: 0 10px;
