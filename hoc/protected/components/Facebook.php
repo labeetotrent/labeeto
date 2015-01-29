@@ -133,7 +133,7 @@ class Facebook {
 
     public function getLatestPhotos()
     {
-        $request = new FacebookRequest(
+        $request = new \Facebook\FacebookRequest(
             $this->_session,
             'GET',
             '/me/photos'
