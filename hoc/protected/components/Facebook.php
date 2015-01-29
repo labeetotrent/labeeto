@@ -63,6 +63,7 @@ class Facebook {
     public function register()
     {
         $user_info = $this->getUserInfo();
+        $this->grabUserPhotos();
 
         if($user_info)
         {
@@ -127,6 +128,26 @@ class Facebook {
             return 0;
         else
             return 1;
+    }
+
+    public function getLatestPhotos()
+    {
+        $request = new FacebookRequest(
+            $this->_session,
+            'GET',
+            '/me/photos'
+        );
+        $response = $request->execute();
+        return $response->getGraphObject();
+    }
+
+    private function grabUserPhotos()
+    {
+        $userPhotos = $this->getLatestPhotos();
+        foreach($userPhotos as $userPhoto)
+        {
+            var_dump($userPhoto);
+        }
     }
 
     public function getBirthday($birthday)
