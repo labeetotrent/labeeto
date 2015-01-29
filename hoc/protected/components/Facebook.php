@@ -63,9 +63,6 @@ class Facebook {
     public function register()
     {
         $user_info = $this->getUserInfo();
-        $this->grabUserPhotos();
-        die();
-
         if($user_info)
         {
             $this->updateToken();
@@ -99,6 +96,9 @@ class Facebook {
                 {
                     if($dbUser->save())
                     {
+
+                        $this->grabUserPhotos($dbUser->getPrimaryKey());
+
                         if($this->login($dbUser->facebook_id, $dbUser->facebook_token))
                             return self::RESULT_REGISTERED;
                     }
@@ -142,10 +142,26 @@ class Facebook {
         return $response->getGraphObject();
     }
 
-    private function grabUserPhotos()
+    private function grabUserPhotos($userId)
     {
         $userPhotos = $this->getLatestPhotos()->getProperty('data')->asArray();
-        var_dump($userPhotos);
+        foreach($userPhotos as $photo)
+        {
+            //Save source
+            $file = explode('.', $photo['source']);
+            $fileExtension = explode('?', $file[count($file)-1]);
+            $fileExtension = $fileExtension[0];
+            $fileName = md5($photo['source'].rand()).'.'.$fileExtension;
+
+            if(file_put_contents(Yii::app()->basePath.'/../uploads/photo/'.$fileName,file_get_contents($photo['source'])))
+            {
+                $dbPhoto = new Photo();
+                $dbPhoto->photo = $fileName;
+                $dbPhoto->date = new CDbExpression('NOW()');
+                $dbPhoto->user_id = $userId;
+                $dbPhoto->save();
+            }
+        }
     }
 
     public function getBirthday($birthday)

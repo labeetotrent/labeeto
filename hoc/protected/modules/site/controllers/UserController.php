@@ -723,11 +723,6 @@ class UserController extends SiteBaseController {
                 $folder = Yii::app()->basePath.'/../uploads/photo/';
                 $filename = $this->generateRandomString().$_FILES['photos']['name'];
                 if (move_uploaded_file($_FILES['photos']['tmp_name'], $folder.$filename)){
-
-                    $img = WideImage::load($folder.$filename);
-                    $img = $img->resizeDown(140,140,'fill');
-                    $img->saveToFile($folder.'tb-'.$filename);
-
                     $photo = new Photo();
                     $photo->photo = $filename;
                     $photo->thumb = 'tb-'.$filename;

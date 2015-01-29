@@ -114,6 +114,17 @@ class Photo extends CActiveRecord
             ),
 		));
 	}
+
+    function beforeSave()
+    {
+        $folder = Yii::app()->basePath.'/../uploads/photo/';
+
+        $img = WideImage::load($folder.$this->photo);
+        $img = $img->resizeDown(140,140,'fill');
+        $img->saveToFile($folder.'tb-'.$this->photo);
+
+        $this->thumb = 'tb-'.$this->photo;
+    }
     
     function showAdminPhoto()
     {
