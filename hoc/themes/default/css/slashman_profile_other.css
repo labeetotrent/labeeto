@@ -239,6 +239,7 @@ div.avatar-container {
 }
 .profile-right .body > .photo-container img {
     box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+    margin: 0 auto;
 }
 .profile-right .featured-users .body {
     padding: 20px;
