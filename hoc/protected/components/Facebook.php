@@ -160,7 +160,6 @@ class Facebook {
                 $dbPhoto->date = new CDbExpression('NOW()');
                 $dbPhoto->user_id = $userId;
                 $dbPhoto->save();
-                var_dump($dbPhoto->errors); die();
             }
         }
     }
