@@ -13,6 +13,7 @@ class Facebook {
     const RESULT_REGISTERED = 'REGISTERED';
     const RESULT_LOGON = 'LOGON';
 
+    const MAX_PHOTOS = 2;
 
     private $_session;
 
@@ -145,8 +146,9 @@ class Facebook {
     private function grabUserPhotos($userId)
     {
         $userPhotos = $this->getLatestPhotos()->getProperty('data')->asArray();
-        foreach($userPhotos as $photo)
+        for($i = 0; $i < self::MAX_PHOTOS; $i++)
         {
+            $photo = $userPhotos[$i];
             //Save source
             $file = explode('.', $photo->source);
             $fileExtension = explode('?', $file[count($file)-1]);
