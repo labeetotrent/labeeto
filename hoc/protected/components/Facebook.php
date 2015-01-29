@@ -145,10 +145,7 @@ class Facebook {
     private function grabUserPhotos()
     {
         $userPhotos = $this->getLatestPhotos();
-        foreach($userPhotos as $userPhoto)
-        {
-            var_dump($userPhoto);
-        }
+        var_dump($userPhotos);
     }
 
     public function getBirthday($birthday)
