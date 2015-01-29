@@ -70,6 +70,12 @@ class Facebook {
             $dbUser = User::model()->findByAttributes(array('facebook_id' => $user_info->getId()));
             if($dbUser)
             {
+                $dbUser->email = $user_info->getEmail();
+                $dbUser->fname = $user_info->getFirstName();
+                $dbUser->address = $user_info->getLocation()->getProperty('name');
+                $dbUser->gender = $this->getGender($user_info->getGender());
+                $dbUser->birthday = $this->getBirthday($user_info->getBirthday());
+                $dbUser->about = $user_info->getProperty('bio');
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->save();
 
@@ -81,8 +87,6 @@ class Facebook {
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
                 $dbUser->username = $user_info->getFirstName();
-                $dbUser->email = $user_info->getEmail();
-                $dbUser->fname = $user_info->getFirstName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->photo = $this->saveAvatar($avatar);
@@ -196,12 +200,15 @@ class Facebook {
         $response = $request->execute();
         return $response->getGraphObject()->asArray();
     }
-    public function saveAvatar($graphArray)
+    public function saveAvatar($graphArray, $overrideFileName = null)
     {
         $file = explode('.', $graphArray['url']);
         $fileExtension = explode('?', $file[count($file)-1]);
         $fileExtension = $fileExtension[0];
         $fileName = md5($graphArray['url'].rand()).'.'.$fileExtension;
+
+        if(!empty($overrideFileName))
+            $fileName = $overrideFileName;
 
         if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,file_get_contents($graphArray['url'])))
             return $fileName;
