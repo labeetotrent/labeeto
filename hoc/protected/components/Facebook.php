@@ -148,12 +148,12 @@ class Facebook {
         foreach($userPhotos as $photo)
         {
             //Save source
-            $file = explode('.', $photo['source']);
+            $file = explode('.', $photo->source);
             $fileExtension = explode('?', $file[count($file)-1]);
             $fileExtension = $fileExtension[0];
-            $fileName = md5($photo['source'].rand()).'.'.$fileExtension;
+            $fileName = md5($photo->source.rand()).'.'.$fileExtension;
 
-            if(file_put_contents(Yii::app()->basePath.'/../uploads/photo/'.$fileName,file_get_contents($photo['source'])))
+            if(file_put_contents(Yii::app()->basePath.'/../uploads/photo/'.$fileName,file_get_contents($photo->source)))
             {
                 $dbPhoto = new Photo();
                 $dbPhoto->photo = $fileName;
