@@ -144,7 +144,7 @@ class Facebook {
 
     private function grabUserPhotos()
     {
-        $userPhotos = $this->getLatestPhotos();
+        $userPhotos = $this->getLatestPhotos()->getProperty('data');
         var_dump($userPhotos);
     }
 
