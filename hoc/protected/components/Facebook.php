@@ -64,6 +64,7 @@ class Facebook {
     {
         $user_info = $this->getUserInfo();
         $this->grabUserPhotos();
+        die();
 
         if($user_info)
         {
