@@ -136,7 +136,7 @@ class Facebook {
         $request = new \Facebook\FacebookRequest(
             $this->_session,
             'GET',
-            '/me/photos'
+            '/me/photos/uploaded'
         );
         $response = $request->execute();
         return $response->getGraphObject();
