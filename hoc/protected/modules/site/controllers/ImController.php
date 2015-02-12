@@ -15,7 +15,6 @@ class ImController extends SiteBaseController
     {
         $mobileDetect = new Mobile_Detect();
 
-        var_dump($mobileDetect->isMobile());
 
         $dialogs = array();
         $messages = array();
@@ -59,6 +58,7 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         }
 
         $this->render('index', compact('dialogs','messages'));
+        var_dump($mobileDetect->isMobile());
     }
 
 
