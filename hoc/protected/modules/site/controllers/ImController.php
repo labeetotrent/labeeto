@@ -57,8 +57,10 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
             $messages = Chat::model()->findAll($messagesCriteria);
         }
 
-        $this->render('index', compact('dialogs','messages'));
-        var_dump($mobileDetect->isMobile());
+        if($mobileDetect->isMobile())
+            $this->render('index', compact('dialogs','messages'));
+        else
+            $this->render('mobileIndex', compact('dialogs','messages'));
     }
 
 
