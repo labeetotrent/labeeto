@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta charset="UTF-8">
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <!-- Bootstrap -->
@@ -22,11 +24,9 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/smoothDivScroll.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fa/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/nouislider/jquery.nouislider.min.css" rel="stylesheet">
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_slider_override.css" rel="stylesheet">
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman.css" rel="stylesheet">
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_feed.css" rel="stylesheet">
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_profile_other.css" rel="stylesheet">
-    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/notification.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/css/framework7.min.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/css/my-app.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -70,30 +70,13 @@
 
 </head>
 <body>
-<?php $this->renderPartial('../elements/header-feed'); ?>
-<div class="container" id="content-feed">
+<?php //$this->renderPartial('../elements/header-feed'); ?>
     <?php echo $content ?>
-</div>
 
-<!-- Modal WantToChat -->
-<div class="modal fade" id="WantToChat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content special-border">
-            <div class="modal-header header-report">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title request-title">Do you wish to chat with this person? </h4>
-
-            </div>
-            <div class="modal-footer footer-report">
-                <div class="avatar-model">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/avatar-post-small.png">
-                    <span class="request-romeo username-chat-system"></span>
-                </div>
-                <a type="button" class="btn btn-primary my-report" data-id="">Send Chat Request</a>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/js/my-app.js"></script>
 
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl . '/js/jquery.session.js' ?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/feed.js"></script>

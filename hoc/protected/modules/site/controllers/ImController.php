@@ -57,13 +57,13 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
             $messages = Chat::model()->findAll($messagesCriteria);
         }
 
-        if($mobileDetect->isMobile())
+        if($mobileDetect->isMobile() && false)
+            $this->render('index', compact('dialogs','messages'));
+        else
         {
             $this->layout = 'mobile_feed';
-            $this->render('index', compact('dialogs','messages'));
-        }
-        else
             $this->render('mobileIndex', compact('dialogs','messages'));
+        }
     }
 
 
@@ -204,8 +204,9 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
             }
         }
     }
-    public function actionInfo()
+    public function actionAbout()
     {
-        phpinfo();
+        $this->layout = 'mobile_feed';
+        $this->render('about');
     }
 }
