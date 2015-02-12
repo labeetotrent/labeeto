@@ -58,7 +58,10 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         }
 
         if($mobileDetect->isMobile())
+        {
+            $this->layout = 'mobile_feed';
             $this->render('index', compact('dialogs','messages'));
+        }
         else
             $this->render('mobileIndex', compact('dialogs','messages'));
     }
