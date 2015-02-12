@@ -15,7 +15,7 @@ class ImController extends SiteBaseController
     {
         $mobileDetect = new Mobile_Detect();
 
-        echo $mobileDetect->isMobile();
+        var_dump($mobileDetect->isMobile());
 
         $dialogs = array();
         $messages = array();
