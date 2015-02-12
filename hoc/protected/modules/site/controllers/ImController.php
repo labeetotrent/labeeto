@@ -13,6 +13,10 @@ class ImController extends SiteBaseController
 
     public function actionIndex()
     {
+        $mobileDetect = new Mobile_Detect();
+
+        echo $mobileDetect->isMobile();
+
         $dialogs = array();
         $messages = array();
 
