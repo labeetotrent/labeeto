@@ -208,9 +208,6 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
 
     public function actionDeleteUsers()
     {
-        $ofUser = new UserService(false);
-        for($i = 38; $i <= 61; $i++)
-            $ofUser->api('delete', array($i));
         foreach(User::model()->findAll() as $user)
         {
             $ofUser = new UserService(false);
