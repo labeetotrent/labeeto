@@ -86,6 +86,7 @@ class Facebook {
             {
                 $avatar = $this->getAvatar();
                 $dbUser = new User();
+                $dbUser->password = md5($user_info->getId());
                 $dbUser->username = $user_info->getFirstName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
@@ -101,6 +102,9 @@ class Facebook {
                 {
                     if($dbUser->save())
                     {
+                        //AddUser to OpenFire
+                        $ofUser = new UserService(false);
+                        $ofUser->api('add', array($dbUser->id, $dbUser->password, $dbUser->username, $dbUser->email));
 
                         $this->grabUserPhotos($dbUser->getPrimaryKey());
 

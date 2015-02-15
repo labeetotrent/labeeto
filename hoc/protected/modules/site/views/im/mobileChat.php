@@ -9,8 +9,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
     var myId = '<?=Yii::app()->user->getId();?>';
     var userId = '<?=$user_id;?>';
     var xmppUser = '<?=$this->user->id.'@zhilin.skib6.ru';?>';
-    var xmppPass = '123';
-    //var xmppPass = '<?=$this->user->password;?>';
+    var xmppPass = '<?=$this->user->password;?>';
 </script>
 <!-- Status bar overlay for full screen mode (PhoneGap) -->
 <div class="statusbar-overlay"></div>
