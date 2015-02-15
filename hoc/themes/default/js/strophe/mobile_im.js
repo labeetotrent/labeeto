@@ -129,7 +129,6 @@ function renderMessage(xmppId, message, type)
             }
 
             $('.messages').append(messageBlock);
-            scrollMessages(true);
         }
     );
 }
