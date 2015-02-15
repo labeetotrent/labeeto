@@ -46,3 +46,12 @@ function createContentPage() {
     );
 	return;
 }
+
+
+var conversationStarted = false;
+
+
+$$('.messagebar .link').on('click', function () {
+    xmppSendMessage();
+    conversationStarted = true;
+});

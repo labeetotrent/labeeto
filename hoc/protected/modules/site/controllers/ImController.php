@@ -66,6 +66,20 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         }
     }
 
+    public function actionMobileChat($user_id)
+    {
+        $this->user = User::model()->findByPk(Yii::app()->user->id);
+
+        $messagesCriteria = new CDbCriteria();
+        $messagesCriteria->condition = '(user_to = :id OR user_from = :id) AND (user_to = :to OR user_from = :to)';
+        $messagesCriteria->params = array(':id' => Yii::app()->user->getId(), ':to' => $user_id);
+        $messages = Chat::model()->findAll($messagesCriteria);
+
+
+        $this->layout = 'mobile_feed';
+        $this->render('mobileChat', compact('messages', 'user_id'));
+    }
+
 
     public function actionGetMessages($to)
     {

@@ -43,7 +43,7 @@
                         <ul>
                             <?php foreach($dialogs as $dialog): ?>
                                 <li>
-                                    <a href="#" class="item-link item-content">
+                                    <a href="<?=$this->createUrl('/im/mobileChat', ['user_id' => $dialog['id']]);?>" class="item-link item-content external">
                                         <div class="item-media"><img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" width="80"></div>
                                         <div class="item-inner">
                                             <div class="item-title-row">
@@ -63,12 +63,12 @@
             </div>
         </div>
         <!-- Bottom Toolbar-->
-        <div class="toolbar">
-            <div class="toolbar-inner">
-                <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
-                <a href="#" class="link">Link 2</a>
-            </div>
-        </div>
+<!--        <div class="toolbar">-->
+<!--            <div class="toolbar-inner">-->
+<!--                <!-- Toolbar links -->-->
+<!--                <a href="#" class="link">Link 1</a>-->
+<!--                <a href="#" class="link">Link 2</a>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
