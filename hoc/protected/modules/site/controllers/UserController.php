@@ -436,6 +436,7 @@ class UserController extends SiteBaseController {
     }
     
     public function actionSetting(){
+        $mobileDetect = new Mobile_Detect();
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){
             $blocked = ReportUser::model()->getBlockedUser() ;//"1,2,5,4,15";
@@ -454,7 +455,14 @@ class UserController extends SiteBaseController {
                 )
             ));
             $this->user = User::model()->findByPk(Yii::app()->user->id);
-            $this->render('setting', compact('report'));
+
+            if($mobileDetect->isMobile() && false)
+                $this->render('setting',compact('report'));
+            else
+            {
+                $this->layout = 'mobile_feed';
+                $this->render('setting_mobile',compact('report'));
+            }
         } else {
             $this->redirect('/');
         }

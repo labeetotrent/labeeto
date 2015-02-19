@@ -27,6 +27,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/css/framework7.min.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/fw7/css/my-app.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/settings.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/im.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
