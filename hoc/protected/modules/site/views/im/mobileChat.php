@@ -35,7 +35,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
                     </a>
                 </div>
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="center sliding">Messages</div>
+                <div class="center sliding navtitle">Messages</div>
                 <div class="right">
                     <!--
                       Right link contains only icon - additional "icon-only" class

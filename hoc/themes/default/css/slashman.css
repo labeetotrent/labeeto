@@ -346,6 +346,9 @@ p.f-data {
 body .navbar {
   background-color: #313541;
 }
+body .navbar .navtitle {
+  color: white;
+}
 body .navbar .navbar-icons {
   font-size: 12pt;
   color: #687380;
