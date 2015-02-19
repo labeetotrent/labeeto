@@ -19,11 +19,11 @@
                 <div class="left">
                     <a href="<?=$this->createUrl('/my_feed');?>" class="link external">
                         <i class="icon icon-back-blue"></i>
-                        <span>Back</span>
+                        <span><i class="fa fa-chevron-left"></i></span>
                     </a>
                 </div>
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="center sliding">Messages</div>
+                <div class="center sliding">Inbox</div>
                 <div class="right">
                     <!--
                       Right link contains only icon - additional "icon-only" class
@@ -40,20 +40,35 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="list-block media-list">
-                        <ul>
+                        <ul class="mobile-dialogs">
                             <?php foreach($dialogs as $dialog): ?>
                                 <li>
-                                    <a href="<?=$this->createUrl('/im/mobileChat', ['user_id' => $dialog['id']]);?>" class="item-link item-content external">
-                                        <div class="item-media"><img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" width="80"></div>
+                                    <div class="row">
+                                        <div class="col-100 dialog">
+                                            <a href="<?=$this->createUrl('/im/mobileChat', ['user_id' => $dialog['id']]);?>" class="item-link item-content external row col-100">
+                                                <div class="col-20 avatar">
+                                                    <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" class="img-circle img-responsive img-thumbnail">
+                                                </div>
+                                                <div class="col-60">
+                                                    <div class="row username">
+                                                        <?=$dialog['username'];?>
+                                                    </div>
+                                                    <div class="row last-message">
+                                                        <?=$dialog['lastMessage'];?>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                        <!--<div class="item-media"><img src="<?/*=Yii::app()->baseUrl*/?>/uploads/avatar/<?/*=$dialog['photo'];*/?>" width="80" class="img-circle"></div>
                                         <div class="item-inner">
                                             <div class="item-title-row">
-                                                <div class="item-title"><?=$dialog['username'];?></div>
-                                                <div class="item-after"><?=$dialog['unreadMessages'];?></div>
+                                                <div class="item-title"><?/*=$dialog['username'];*/?></div>
+                                                <div class="item-after"><?/*=$dialog['unreadMessages'];*/?></div>
                                             </div>
-                                            <div class="item-subtitle"><?=date('d M', strtotime($dialog['created']));?></div>
-                                            <div class="item-text"><?=$dialog['lastMessage'];?></div>
-                                        </div>
-                                    </a>
+                                            <div class="item-subtitle"><?/*=date('d M', strtotime($dialog['created']));*/?></div>
+                                            <div class="item-text"><?/*=$dialog['lastMessage'];*/?></div>
+                                        </div>-->
                                 </li>
                             <?php endforeach; ?>
                         </ul>

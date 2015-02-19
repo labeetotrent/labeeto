@@ -31,7 +31,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
                 <div class="left">
                     <a href="<?=$this->createUrl('/im');?>" class="link external">
                         <i class="icon icon-back-blue"></i>
-                        <span>Back</span>
+                        <span><i class="fa fa-chevron-left"></i></span>
                     </a>
                 </div>
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->

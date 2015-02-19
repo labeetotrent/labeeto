@@ -97,7 +97,7 @@ button.btn-cancel-st {
   height: 30px;
   border: none;
   color: #ffffff;
-  font: normal 18px / normal Proxima Nova Bold;
+  font: normal 18px normal Proxima Nova Bold;
   font-family: "Proxima Nova Bold";
   text-transform: none;
 }
