@@ -1,7 +1,6 @@
 <?php /* @var $data array */ ?>
 <?php
 
-    $date = strtotime($data['created']);
     $first = false;
     if(isset($data['first']))
     {
@@ -23,7 +22,7 @@
     </div>
     <div class="col-md-2 info">
         <div class="row date">
-            <?=date('d M', $date);?>
+            <?=date('d M', strtotime($data['created']));?>
         </div>
         <?php if($data['unreadMessages'] > 0) { ?>
         <div class="row messages-count">

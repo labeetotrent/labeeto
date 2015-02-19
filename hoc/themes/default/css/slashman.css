@@ -97,7 +97,7 @@ button.btn-cancel-st {
   height: 30px;
   border: none;
   color: #ffffff;
-  font: normal 18px normal Proxima Nova Bold;
+  font: normal 18px / normal Proxima Nova Bold;
   font-family: "Proxima Nova Bold";
   text-transform: none;
 }
@@ -353,4 +353,13 @@ body .navbar .navbar-icons {
 body .navbar .navbar-icons li a:hover,
 body .navbar .navbar-icons li a:focus {
   color: #ea5a5a;
+}
+body .navbar .navbar-icons li a .link-label {
+  color: white;
+  padding-left: 10px;
+}
+@media (max-width: 767px) {
+  body .navbar .navbar-icons li a .link-label {
+    display: inline !important;
+  }
 }

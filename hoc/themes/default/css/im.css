@@ -357,9 +357,47 @@
 .autocomplete-suggestions .autocomplete-suggestion :hover {
   background-color: #f4f2f2;
 }
-.mobile-dialogs .dialog a {
+.view.view-main .navbar.labeeto {
+  border-color: transparent;
+  background-color: #313541;
+  height: initial;
+}
+.view.view-main .list-block.media-list {
+  margin: 0;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #687586;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog {
+  width: 100%;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a {
   text-decoration: none;
 }
-.mobile-dialogs .dialog a .avatar {
-  padding: 15px;
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar {
+  padding: 15px 0;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
+  width: 80px;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .username {
+  text-align: left;
+  justify-content: initial;
+  -webkit-justify-content: initial;
+  color: #FEFEFF;
+  font-size: 18pt;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .last-message {
+  text-align: left;
+  justify-content: initial;
+  -webkit-justify-content: initial;
+  color: #A5B5BF;
+}
+.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .date {
+  color: #FEFEFF;
+  font-size: 12pt;
+  bottom: 10px;
+  position: relative;
 }

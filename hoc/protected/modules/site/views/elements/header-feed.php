@@ -22,17 +22,17 @@ $messagesCount = Chat::countNewMessages();
             <ul class="nav navbar-nav navbar-right navbar-icons">
                 <li>
                     <a href="<?=$this->createUrl('/fitmatch/index');?>">
-                        <i class="fa fa-clock-o"></i>
+                        <i class="fa fa-clock-o"></i><span class="link-label visible-xs">Fitmatch</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?=$this->createUrl('/im/index');?>">
-                        <i class="fa fa-envelope"></i>
+                        <i class="fa fa-envelope"></i><span class="link-label visible-xs">Inbox</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?=$this->createUrl('/notification/index');?>" class="visible-xs">
-                        <i class="fa fa-bell"></i>
+                        <i class="fa fa-bell"></i><span class="link-label visible-xs">Notifications</span>
                     </a>
                     <a href="#" class="hidden-xs" id="toggle-notification">
                         <i class="fa fa-bell"></i>
@@ -65,12 +65,12 @@ $messagesCount = Chat::countNewMessages();
                 </li>
                 <li>
                     <a href="/settings">
-                        <i class="fa fa-cog"></i>
+                        <i class="fa fa-cog"></i><span class="link-label visible-xs">Settings</span>
                     </a>
                 </li>
                 <li>
                     <a href="/profile">
-                        <i class="fa fa-user"></i>
+                        <i class="fa fa-user"></i><span class="link-label visible-xs">Profile</span>
                     </a>
                 </li>
             </ul>
