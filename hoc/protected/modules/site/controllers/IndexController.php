@@ -20,17 +20,26 @@ class IndexController extends SiteBaseController {
 	}
 
 	public function actionIndex() {
+        $mobileDetect = new Mobile_Detect();
+
         if( Yii::app()->user->id )
             $this->redirect('/my_feed');
         $model =  new User();
         if(isset($_POST['SignUp'])) {
             $this->redirect('/my_feed?type=registration');
         }
-
         $facebook = new \Facebook\FacebookRedirectLoginHelper();
         $facebookLoginUrl = $facebook->getLoginUrl(Yii::app()->params['Facebook']['scope']);
 
-		$this->render('index',compact('model', 'facebookLoginUrl'));
+
+
+        if($mobileDetect->isMobile() && false)
+            $this->render('index',compact('model', 'facebookLoginUrl'));
+        else
+        {
+            $this->layout = 'mobile_main';
+            $this->render('mobileIndex',compact('model', 'facebookLoginUrl'));
+        }
 	}
 
     public function actionAuthorize()
