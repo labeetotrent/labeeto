@@ -15,6 +15,10 @@
   border-bottom: 1px solid #f6f6f6;
   padding-bottom: 10px;
 }
+.settings-categories a .category .icon {
+  padding-left: 20px;
+  padding-right: 0;
+}
 .settings-categories a .category .icon i {
   font-size: 26pt;
   color: #cecece;
@@ -31,7 +35,7 @@
 }
 .settings-categories a .category .text {
   padding-top: 5px;
-  padding-left: 25px;
+  padding-left: 35px;
   padding-right: 0;
 }
 .settings-categories a .category .text .title {
