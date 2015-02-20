@@ -48,7 +48,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                         </a>
 
                         <a href="#" class="col-md-12">
-                            <div class="col-md-12 row category">
+                            <div class="col-md-12 row category catfix">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-cog"></i>
                                 </div>
