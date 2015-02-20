@@ -13,7 +13,7 @@
   justify-content: initial;
   -webkit-justify-content: initial;
   border-bottom: 1px solid #f6f6f6;
-  padding-bottom: 10px;
+  padding-bottom: 0 0 10px 0;
 }
 .settings-categories a .category .icon {
   padding-left: 20px;
