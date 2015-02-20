@@ -32,6 +32,7 @@
 .settings-categories a .category .text {
   padding-top: 5px;
   padding-left: 25px;
+  padding-right: 0;
 }
 .settings-categories a .category .text .title {
   font-size: 14pt;
