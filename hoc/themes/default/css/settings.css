@@ -14,6 +14,14 @@
   -webkit-justify-content: initial;
   border-bottom: 1px solid #f6f6f6;
   padding: 0 0 10px 0;
+  /*&.catfix {
+        padding-bottom: 0;
+        height: 76px;
+        .text {
+          padding-left: 80px;
+          bottom: 20px;
+        }
+      }*/
 }
 .settings-categories a .category .icon {
   padding-left: 20px;
@@ -45,14 +53,6 @@
 .settings-categories a .category .text .description {
   justify-content: initial;
   -webkit-justify-content: initial;
-  font-size: 10pt;
+  font-size: 8pt;
   color: #b0b1b0;
-}
-.settings-categories a .category.catfix {
-  padding-bottom: 0;
-  height: 76px;
-}
-.settings-categories a .category.catfix .text {
-  padding-left: 80px;
-  bottom: 20px;
 }
