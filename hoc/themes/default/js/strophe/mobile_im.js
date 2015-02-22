@@ -62,7 +62,7 @@ function xmppSendMessage()
 
     $.post( Yii.app.createUrl('im/sendMessage'),
         {
-            to: to,
+            to: userId,
             message: message
         }).done(function(response){
             var msg = $msg({to: xmppDomainName(userId), from: connection.jid, type: 'chat'}).c('body').t(message);
