@@ -368,7 +368,7 @@
 .view.view-main .list-block.media-list .mobile-dialogs li div.row {
   margin-left: 0;
   margin-right: 0;
-  background-color: #687586;
+  background-color: white;
 }
 .view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog {
   width: 100%;
@@ -386,7 +386,7 @@
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
-  color: #FEFEFF;
+  color: gray;
   font-size: 18pt;
 }
 .view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .last-message {
