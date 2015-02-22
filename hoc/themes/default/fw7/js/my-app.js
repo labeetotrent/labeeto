@@ -55,3 +55,24 @@ $$('.messagebar .link').on('click', function () {
     xmppSendMessage();
     conversationStarted = true;
 });
+$$('#actions').on('click', function () {
+    var buttons1 = [
+        {
+            text: 'Go to profile',
+            onClick: function () {
+                window.location.replace(Yii.app.createUrl('user/detail/', {id: userId}));
+            }
+        },
+        {
+            text: 'Report',
+        }
+    ];
+    var buttons2 = [
+        {
+            text: 'Cancel',
+            color: 'red'
+        }
+    ];
+    var groups = [buttons1, buttons2];
+    myApp.actions(groups);
+});

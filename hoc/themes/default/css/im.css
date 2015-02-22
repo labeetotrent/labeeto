@@ -357,6 +357,29 @@
 .autocomplete-suggestions .autocomplete-suggestion :hover {
   background-color: #f4f2f2;
 }
+.messages-title .left .link {
+  color: white;
+  text-decoration: none;
+}
+.messages-title .middle a {
+  text-decoration: none;
+}
+.messages-title .middle a img {
+  width: 30px;
+  display: inline;
+  top: 8px;
+  position: relative;
+}
+.messages-title .middle a span {
+  display: inline;
+  padding-left: 10px;
+  color: white;
+}
+.messages-title .right a {
+  text-decoration: none;
+  color: white;
+  padding-right: 15px;
+}
 .view.view-main .navbar.labeeto {
   border-color: transparent;
   background-color: #313541;
@@ -407,6 +430,7 @@
   justify-content: initial;
   -webkit-justify-content: initial;
   color: #A5B5BF;
+  font-size: 10pt;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .date {
   color: #FEFEFF;

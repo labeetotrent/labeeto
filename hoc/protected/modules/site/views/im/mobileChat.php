@@ -27,21 +27,24 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
     <div class="view view-main">
         <!-- Top Navbar-->
         <div class="navbar">
-            <div class="navbar-inner">
+            <div class="navbar-inner messages-title">
                 <div class="left">
                     <a href="<?=$this->createUrl('/im');?>" class="link external">
-                        <i class="icon icon-back-blue"></i>
-                        <span><i class="fa fa-chevron-left"></i></span>
+                        <span><i class="fa fa-chevron-left"></i> Back</span>
                     </a>
                 </div>
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="center sliding navtitle">Messages</div>
+                <div class="center sliding navtitle middle">
+                    <a href="#" class="external">
+                        <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-responsive img-circle"/>
+                        <span class="username">
+                            <?=$user->username;?>
+                        </span>
+                    </a>
+                </div>
                 <div class="right">
-                    <!--
-                      Right link contains only icon - additional "icon-only" class
-                      Additional "open-panel" class tells app to open panel when we click on this link
-                    -->
-                    <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+<!--                    <a href="#" class="link icon-only open-panel"><i class="fa fa-dollar"></i></a>-->
+                    <a href="#" class="link" id="actions"><i class="fa fa-ellipsis-h"></i></a>
                 </div>
             </div>
         </div>

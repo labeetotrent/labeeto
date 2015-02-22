@@ -3,10 +3,11 @@
     $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouislider.all.min.js');
     $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_profile_other.js');
     $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_slider_override.css');
+    $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.css');
 ?>
-<div class="content-main-1">
+<div class="content-main-1 my-profile other-profile">
     <div class="row col-md-12 profile-header">
-        <div class="col-md-2 col-sm-2 col-xs-2 avatar-container">
+        <div class="col-md-2 col-sm-2 col-xs-12 text-center avatar-container">
             <?php if($model->photo =='undefined'){ ?>
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/no-avatar.png" class="avatar-image img-circle">
             <?php } else { ?>
@@ -21,41 +22,8 @@
             <div class="row col-md-12 profile-data">
                 <?= date("Y") - date('Y', strtotime($model->birthday));  ?>, <?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
-            <div class="row col-md-12 job">
-                <?php if($model->career) echo $model->career; ?>
-            </div>
             <div class="row col-md-12 location">
                 <?php if($model->address) echo $model->address; ?>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
-            <div class="header-container col-md-12 photos">
-                <div class="col-md-12 photos-thumb">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
-                </div>
-                <div class="col-md-12 desc">
-                    PHOTOS
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
-            <div class="header-container col-md-12 private">
-                <div class="col-md-12 photos-thumb">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
-                </div>
-                <div class="col-md-12 desc">
-                    PRIVATE
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2 container-element">
-            <div class="header-container col-md-12 videos">
-                <div class="col-md-12 photos-thumb">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/no-photos.png" class="img-responsive no-thumb"/>
-                </div>
-                <div class="col-md-12 desc">
-                    VIDEOS
-                </div>
             </div>
         </div>
     </div>
@@ -64,10 +32,12 @@
             <?php if($model->about) echo $model->about; ?>
         </div>
         <div class="col-md-2 col-md-offset-3 desc-buttons">
-            <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/message-icon.png"/>
+            <a href="<?=$this->createUrl('im/toDialog', ['id' => $model->id])?>">
+                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/message-icon.png"/>
+            </a>
 <!--            <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/fish/chat-icon.png"/>-->
         </div>
-    </div>
+    </div><!--
     <div class="row col-md-12 looking-for-stripe">
         <div class="col-md-3 text">
             LOOKING FOR:
@@ -77,10 +47,10 @@
                 Gender:
             </div>
             <div class="col-md-3 text">
-                <?php if($model->gender_look == 1) echo "Female"; else echo 'Male'; ?>
+                <?php /*if($model->gender_look == 1) echo "Female"; else echo 'Male'; */?>
             </div>
             <div class="col-md-2">
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+                <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/pink-tick.png" class="pull-left"/>
             </div>
         </div>
         <div class="col-md-3 param">
@@ -88,10 +58,10 @@
                 Relationship:
             </div>
             <div class="col-md-3 text">
-                <?php if($model->relations_look) echo $model->relations_look; ?>
+                <?php /*if($model->relations_look) echo $model->relations_look; */?>
             </div>
             <div class="col-md-2">
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+                <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/pink-tick.png" class="pull-left"/>
             </div>
         </div>
         <div class="col-md-3 param">
@@ -99,55 +69,15 @@
                 <span class="pull-right">Age:</span>
             </div>
             <div class="col-md-4 text">
-                <?php if($model->age) echo $model->age; ?>
+                <?php /*if($model->age) echo $model->age; */?>
             </div>
             <div class="col-md-4">
-                <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/fish/pink-tick.png" class="pull-left"/>
+                <img src="<?php /*echo Yii::app()->themeManager->baseUrl; */?>/images/fish/pink-tick.png" class="pull-left"/>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="col-md-5 profile-left">
         <div class="left-info col-md-12">
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Education
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->education) echo Education::model()->getNameEducation($model->education); ?>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Religion
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->religion) echo Religion::model()->getNameReligion($model->religion) ?>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Religion
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->religion) echo Religion::model()->getNameReligion($model->religion) ?>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Height
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->height) echo $model->height . Yii::t('global', ' FEET')?>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Children
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->children) echo Children::model()->getNameChildren($model->children) ?>
-                </div>
-            </div>
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     Fitness Interests
@@ -170,23 +100,15 @@
                 <div class="col-md-12 value">
                     <?php if($model->inGym->name) echo $model->inGym->name; ?>
                 </div>
-            </div>
+            </div><!--
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     Diet
                 </div>
                 <div class="col-md-12 value">
-                    <?php if($model->diet) echo $model->diet ?>
+                    <?php /*if($model->diet) echo $model->diet */?>
                 </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Goals
-                </div>
-                <div class="col-md-12 value">
-                    <?php if($model->goal) echo $model->goal ?>
-                </div>
-            </div>
+            </div>-->
             <div class="col-md-12 info-block">
                 <div class="col-md-12 name">
                     How often do you exercise?
@@ -197,22 +119,6 @@
                     </div>
                     <div class="col-md-8 slider-container">
                         <div class="slider" id="exercise-slider" disabled></div>
-                    </div>
-                    <div class="col-md-2" id="v">
-                        Often
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 info-block">
-                <div class="col-md-12 name">
-                    Do you drink?
-                </div>
-                <div class="col-md-12 value">
-                    <div class="col-md-2">
-                        Nope
-                    </div>
-                    <div class="col-md-8 slider-container">
-                        <div class="slider" id="drink-slider" disabled></div>
                     </div>
                     <div class="col-md-2" id="v">
                         Often
@@ -254,100 +160,76 @@
                 Photos
             </div>
             <div class="col-md-12 body">
-                <?php
-                foreach(Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => $model->id)) as $photo)
-                {
-                ?>
-                    <div class="col-md-4 photo-container">
-                        <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
+                <?php $photos = Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => Yii::app()->user->getId())); ?>
+                <?php if(count($photos) > 0): ?>
+                    <?php foreach($photos as $photo) : ?>
+                        <div class="col-md-4 photo-container">
+                            <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
+                            <div class="set-profile">
+                                <i class="fa fa-user" photo-id="<?=$photo->id;?>"></i>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-md-12 no-photos">
+                        There are no photos yet...
                     </div>
-                <?php } ?>
+                <?php endif;?>
             </div>
         </div>
-        <div class="col-md-12 right-element private-photos hidden-element" id="private-photos-tab">
-            <div class="col-md-12 header">
-                Private Photos
-            </div>
-            <div class="col-md-12 body">
-                <?php
-                foreach(Photo::model()->findAllByAttributes(array('is_public' => 0, 'user_id' => $model->id)) as $photo)
-                {
-                    ?>
-                    <div class="col-md-4 photo-container">
-                        <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-        <div class="col-md-12 right-element videos hidden-element" id="videos-tab">
-            <div class="col-md-12 header">
-                Videos
-            </div>
-            <div class="col-md-12 body">
-                <?php foreach(Video::model()->findAllByAttributes(array('user_id' => $model->id)) as $video) { ?>
-                    <div class="col-md-4 photo-container">
-                        <video class="projekktor" style="margin: 0 auto; width: " title="this is projekktor" controls>
-                            <source src="<?=Yii::app()->request->baseUrl.'/uploads/video/'.$video->video;?>" />
-                        </video>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-
-        <div class="col-md-12 right-element featured-users">
-            <div class="col-md-12 header">
-                Featured users
-            </div>
-            <div class="col-md-12 body">
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-                <div class="col-md-3 featured-person">
-                    <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/f_avatar.png" class="img-rounded"/>
-                    <p class="f-nick">BrenWinton</p>
-                    <p class="f-data">38, Tules, MI</p>
-                </div>
-            </div>
-        </div>
+<!---->
+<!--        <div class="col-md-12 right-element featured-users">-->
+<!--            <div class="col-md-12 header">-->
+<!--                Featured users-->
+<!--            </div>-->
+<!--            <div class="col-md-12 body">-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--                <div class="col-md-3 featured-person">-->
+<!--                    <img src="--><?php //echo Yii::app()->themeManager->baseUrl; ?><!--/images/f_avatar.png" class="img-rounded"/>-->
+<!--                    <p class="f-nick">BrenWinton</p>-->
+<!--                    <p class="f-data">38, Tules, MI</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 <script>
     $(document).ready(function(){
         $('#exercise-slider').val(<?php if($model->excercise) echo $model->excercise;?>);
-        $('#drink-slider').val(<?php if($model->drink) echo $model->drink;?>);
-        $('#smoke-slider').val(<?php if($model->smoke) echo $model->smoke;?>);
     });
 </script>
 
