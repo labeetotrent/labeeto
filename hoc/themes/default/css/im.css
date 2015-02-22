@@ -374,7 +374,7 @@
   background-color: white;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   width: 100%;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a {
