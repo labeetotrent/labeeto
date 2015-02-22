@@ -93,7 +93,7 @@ function renderMessage(xmppId, message, type)
         Yii.app.createUrl('im/addMessage'),
         {
             type: type,
-            user: $('#toId').val(),
+            user: userId,
             message: message
         }
     ).done(function(){});
