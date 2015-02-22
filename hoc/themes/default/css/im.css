@@ -374,7 +374,7 @@
   background-color: white;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #c7c7c7;
   width: 100%;
   padding-left: 5px;
 }
@@ -383,15 +383,17 @@
   padding-left: 0;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar {
-  padding: 15px 0 0 0;
+  padding: 15px 0 15px 0;
+  width: 35%;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
   width: 80px;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container {
   padding-left: 0;
-  right: 30px;
-  bottom: 15px;
+  right: 40px;
+  bottom: 0px;
+  width: 65%;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .username {
   text-align: left;

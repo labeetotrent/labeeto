@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/my_feed">
+            <a class="navbar-brand external" href="/my_feed">
                 <img src="<?php echo Yii::app()->themeManager->baseUrl; ?>/images/new_logo.png" class="img-responsive" alt="Logo"/>
             </a>
         </div>

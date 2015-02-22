@@ -30,19 +30,14 @@
                                         <div class="col-md-12 dialog">
                                             <a href="<?=$this->createUrl('/im/mobileChat', ['user_id' => $dialog['id']]);?>" class="item-link item-content external">
                                                 <div class="col-md-1 avatar">
-                                                    <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" class="img-circle img-responsive img-thumbnail">
+                                                    <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" class="img-circle img-responsive">
                                                 </div>
-                                                <div class="col-md-10 text-container">
+                                                <div class="col-md-11 text-container">
                                                     <div class="row username">
                                                         <?=$dialog['username'];?>
                                                     </div>
                                                     <div class="row last-message">
                                                         <?=$dialog['lastMessage'];?>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="row date">
-                                                        <?=date('d M', strtotime($dialog['created']));?>
                                                     </div>
                                                 </div>
                                             </a>
