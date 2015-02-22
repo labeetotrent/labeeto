@@ -32,7 +32,7 @@
                                                 <div class="col-md-1 avatar">
                                                     <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" class="img-circle img-responsive img-thumbnail">
                                                 </div>
-                                                <div class="col-md-10">
+                                                <div class="col-md-10 text-container">
                                                     <div class="row username">
                                                         <?=$dialog['username'];?>
                                                     </div>

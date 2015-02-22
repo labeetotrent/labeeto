@@ -388,14 +388,19 @@
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
   width: 80px;
 }
-.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .username {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container {
+  padding-left: 0;
+  right: 30px;
+  bottom: 15px;
+}
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .username {
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
   color: gray;
-  font-size: 18pt;
+  font-size: 14pt;
 }
-.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .last-message {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .last-message {
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
