@@ -223,4 +223,27 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         $this->layout = 'mobile_feed';
         $this->render('about');
     }
+
+    public function actionAddMessage()
+    {
+        $chat = new Chat();
+
+        if($_POST['type'] == 'incoming')
+        {
+            $chat->user_from = $_POST['user'];
+            $chat->user_to = Yii::app()->user->getId();
+        }
+        else
+        {
+            $chat->user_from = Yii::app()->user->getId();
+            $chat->user_to = $_POST['user'];
+        }
+
+        $chat->message = $_POST['message'];
+        $chat->is_read = 1;
+        $chat->created = new CDbExpression('NOW()');
+        $chat->updated = new CDbExpression('NOW()');
+
+        $chat->save();
+    }
 }
