@@ -123,7 +123,7 @@ ON dialogs.userid = users.id WHERE user_from = :id OR user_to = :id')->bindParam
             $message->user_to = $_POST['to'];
             $message->created = new CDbExpression('NOW()');
             $message->updated = new CDbExpression('NOW()');
-            $message->message = $_POST['message'];
+            $message->message = CHtml::encode($_POST['message']);
             $message->save();
 
             $this->renderPartial('/elements/im/_myMessage', array('data' => Chat::model()->findByPk($message->getPrimaryKey()), 'hidden' => '1'));
@@ -245,7 +245,7 @@ ON dialogs.userid = users.id WHERE user_from = :id OR user_to = :id')->bindParam
             $chat->user_to = $_POST['user'];
         }
 
-        $chat->message = $_POST['message'];
+        $chat->message = CHtml::encode($_POST['message']);
         $chat->is_read = 1;
         $chat->created = new CDbExpression('NOW()');
         $chat->updated = new CDbExpression('NOW()');
