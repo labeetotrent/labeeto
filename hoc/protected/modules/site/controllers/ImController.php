@@ -46,7 +46,7 @@ FROM
     ORDER BY created DESC) dialogs
 LEFT OUTER JOIN
 	(SELECT id,username,photo,address FROM users) users
-ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
+ON dialogs.userid = users.id WHERE user_from = :id OR user_to = :id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
 
         if(count($dialogs) > 0)
         {
