@@ -362,41 +362,44 @@
   background-color: #313541;
   height: initial;
 }
-.view.view-main .list-block.media-list {
+.view.view-main .dialogs-page {
+  background-color: white;
+}
+.view.view-main .dialogs-page .list-block.media-list {
   margin: 0;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row {
   margin-left: 0;
   margin-right: 0;
   background-color: white;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog {
   border-bottom: 1px solid gray;
   width: 100%;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a {
   text-decoration: none;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar {
   padding: 15px 0;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
   width: 80px;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .username {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .username {
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
   color: gray;
   font-size: 18pt;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .last-message {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .last-message {
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
   color: #A5B5BF;
 }
-.view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a .date {
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .date {
   color: #FEFEFF;
   font-size: 12pt;
   bottom: 10px;

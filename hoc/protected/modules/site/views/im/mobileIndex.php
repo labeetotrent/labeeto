@@ -21,7 +21,7 @@
             <!-- Page, "data-page" contains page name -->
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->
-                <div class="page-content">
+                <div class="page-content dialogs-page">
                     <div class="list-block media-list">
                         <ul class="mobile-dialogs">
                             <?php foreach($dialogs as $dialog): ?>
