@@ -52,7 +52,6 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
-<!--                    <a href="--><?//=$this->createUrl('/im/about');?><!--">About app (test link)</a>-->
                 </div>
             </div>
         </div>
