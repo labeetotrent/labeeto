@@ -245,5 +245,6 @@ ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAl
         $chat->updated = new CDbExpression('NOW()');
 
         $chat->save();
+        var_dump($chat->errors);
     }
 }
