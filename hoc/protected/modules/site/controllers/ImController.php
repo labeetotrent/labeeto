@@ -35,7 +35,7 @@ FROM
                 FROM
                     chat
                 WHERE
-                    (userid = user_from AND :id = user_to) OR (userid = user_to AND :id = user_from)
+                    ((userid = user_from AND :id = user_to) OR (userid = user_to AND :id = user_from)) AND (user_from = :id OR user_to = :id)
                 ORDER BY created DESC
                 LIMIT 1) lastMessage ,
 			(SELECT COUNT(*) FROM chat WHERE user_to = userid OR user_from =userid) as totalMessages,
@@ -46,7 +46,7 @@ FROM
     ORDER BY created DESC) dialogs
 LEFT OUTER JOIN
 	(SELECT id,username,photo,address FROM users) users
-ON dialogs.userid = users.id WHERE user_from = :id OR user_to = :id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
+ON dialogs.userid = users.id')->bindParam(':id', $myId, PDO::PARAM_INT)->queryAll();
 
         if(count($dialogs) > 0)
         {
