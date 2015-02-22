@@ -371,6 +371,7 @@
   background-color: white;
 }
 .view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog {
+  border-bottom: 1px solid gray;
   width: 100%;
 }
 .view.view-main .list-block.media-list .mobile-dialogs li div.row .dialog a {
