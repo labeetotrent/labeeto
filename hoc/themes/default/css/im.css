@@ -422,7 +422,7 @@
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
-  color: gray;
+  color: black;
   font-size: 14pt;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .last-message {

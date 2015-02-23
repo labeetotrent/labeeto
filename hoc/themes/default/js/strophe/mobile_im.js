@@ -129,7 +129,7 @@ function renderMessage(xmppId, message, type)
                     // Random message type
                     type: 'sent',
                     // Avatar and name:
-                    avatar: response.user.avatar,
+                    //avatar: response.user.avatar,
                     name: 'ME',
                     // Day
                     day: !conversationStarted ? 'Today' : false,
