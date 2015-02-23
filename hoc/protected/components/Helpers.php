@@ -21,6 +21,9 @@ class Helper {
 
     public static function limitString($string, $limit)
     {
-        return mb_substr($string, 0, $limit);
+        if(mb_strlen($string) > $limit)
+            return mb_substr($string, 0, $limit).'...';
+        else
+            return $string;
     }
 }

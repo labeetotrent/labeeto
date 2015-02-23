@@ -37,7 +37,7 @@
                                                         <?=$dialog['username'];?>
                                                     </div>
                                                     <div class="row last-message">
-                                                        <?=Helper::limitString($dialog['lastMessage'], 100);?>
+                                                        <?=Helper::limitString($dialog['lastMessage'], 40);?>
                                                     </div>
                                                 </div>
                                             </a>
