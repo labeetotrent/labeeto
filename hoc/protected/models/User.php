@@ -69,7 +69,7 @@ class User extends CActiveRecord
 	}
     public function behaviors()
     {
-        return array('datetimeI18NBehavior' => array('class' => 'ext.DateTimeI18NBehavior')); 
+        //return array('datetimeI18NBehavior' => array('class' => 'ext.DateTimeI18NBehavior'));
     }
 
 	/**
