@@ -412,6 +412,13 @@
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar img {
   width: 80px;
 }
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .avatar .badge {
+  position: relative;
+  left: 60px;
+  bottom: 80px;
+  font-size: 13pt;
+  background-color: #ea5a5a;
+}
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container {
   padding-left: 0;
   right: 40px;

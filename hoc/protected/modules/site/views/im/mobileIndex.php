@@ -31,7 +31,7 @@
                                             <a href="<?=$this->createUrl('/im/mobileChat', ['user_id' => $dialog['id']]);?>" class="item-link item-content external">
                                                 <div class="col-md-1 avatar">
                                                     <img src="<?=Yii::app()->baseUrl?>/uploads/avatar/<?=$dialog['photo'];?>" class="img-circle img-responsive">
-                                                    <span class="badge">42</span>
+                                                    <?php if($dialog['unreadMessages'] > 0): ?><span class="badge"><?=$dialog['unreadMessages'];?></span><?php endif;?>
                                                 </div>
                                                 <div class="col-md-11 text-container">
                                                     <div class="row username">
