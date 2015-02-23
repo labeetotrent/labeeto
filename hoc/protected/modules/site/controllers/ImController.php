@@ -83,7 +83,7 @@ ON dialogs.userid = users.id WHERE lastMessage IS NOT NULL')->bindParam(':id', $
     }
     public function actionToDialog($id)
     {
-        $this->mobileChat($id);
+        $this->actionMobileChat($id);
     }
 
     public function actionGetMessages($to)
