@@ -35,12 +35,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/settings">
+                    <a href="/settings" class="external">
                         <i class="fa fa-cog"></i><span class="link-label visible-xs">Settings</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/profile">
+                    <a href="/profile" class="external">
                         <i class="fa fa-user"></i><span class="link-label visible-xs">Profile</span>
                     </a>
                 </li>
