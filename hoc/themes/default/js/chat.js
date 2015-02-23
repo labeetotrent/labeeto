@@ -242,7 +242,7 @@ function chatHeartbeat(){
 			}
 		}
 		
-		setTimeout('chatHeartbeat();',chatHeartbeatTime);
+		//setTimeout('chatHeartbeat();',chatHeartbeatTime); //@todo
 	}});
 }
 
