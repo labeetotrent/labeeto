@@ -174,7 +174,7 @@
 
         });
     }
-    setInterval("updateCheckStatus()", 10000);
+    //setInterval("updateCheckStatus()", 10000);
 
 
     $('.my-report').click(function() {
