@@ -57,7 +57,7 @@ function onMessage(msg) {
 
 function xmppSendMessage()
 {
-    var message = $('.message-textarea textarea').val().text();
+    var message = $('.message-textarea textarea').val();
     var to = $('#toId').val();
 
     $.post( Yii.app.createUrl('im/sendMessage'),
@@ -65,7 +65,7 @@ function xmppSendMessage()
             to: userId,
             message: message
         }).done(function(response){
-            var msg = $msg({to: xmppDomainName(userId), from: connection.jid, type: 'chat'}).c('body').t(message);
+            var msg = $msg({to: xmppDomainName(userId), from: connection.jid, type: 'chat'}).c('body').t(response.message);
             connection.send(msg.tree());
         });
 

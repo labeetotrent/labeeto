@@ -126,7 +126,7 @@ ON dialogs.userid = users.id WHERE lastMessage IS NOT NULL')->bindParam(':id', $
             $message->message = CHtml::encode($_POST['message']);
             $message->save();
 
-            $this->renderPartial('/elements/im/_myMessage', array('data' => Chat::model()->findByPk($message->getPrimaryKey()), 'hidden' => '1'));
+            $this->renderPartial('/elements/im/_myMessage', array('data' => Chat::model()->findByPk($message->getPrimaryKey()), 'hidden' => '1', 'message' => $message->message));
         }
     }
 
