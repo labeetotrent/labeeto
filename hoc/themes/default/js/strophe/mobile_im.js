@@ -67,9 +67,9 @@ function xmppSendMessage()
         }).done(function(response){
             var msg = $msg({to: xmppDomainName(userId), from: connection.jid, type: 'chat'}).c('body').t(response.message);
             connection.send(msg.tree());
+            renderMessage(xmppName(userId), response.message, 'out');
         });
 
-    renderMessage(xmppName(userId), message, 'out');
 }
 
 function xmppName(id)
