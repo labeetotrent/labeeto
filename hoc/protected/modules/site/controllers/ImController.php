@@ -72,6 +72,8 @@ ON dialogs.userid = users.id WHERE lastMessage IS NOT NULL')->bindParam(':id', $
 
         $user = User::model()->findByPk($user_id);
 
+        Chat::model()->updateAll(['is_read' => 1], 'user_from = :from AND user_to = :myid AND is_read = 0', [':from' => $user_id, ':to' => $user->id]);
+
         $messagesCriteria = new CDbCriteria();
         $messagesCriteria->condition = '(user_to = :id OR user_from = :id) AND (user_to = :to OR user_from = :to)';
         $messagesCriteria->params = array(':id' => Yii::app()->user->getId(), ':to' => $user_id);
