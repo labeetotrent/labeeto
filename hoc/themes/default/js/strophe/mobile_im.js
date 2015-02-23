@@ -90,15 +90,6 @@ function stripXmppName(name)
 function renderMessage(xmppId, message, type)
 {
     $.post(
-        Yii.app.createUrl('im/addMessage'),
-        {
-            type: type,
-            user: userId,
-            message: message
-        }
-    ).done(function(){});
-
-    $.post(
         Yii.app.createUrl('im/ajaxGetXmppUser'),
         {id: xmppId}
     ).done(
