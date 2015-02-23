@@ -445,3 +445,6 @@
   bottom: 10px;
   position: relative;
 }
+.message-text {
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
