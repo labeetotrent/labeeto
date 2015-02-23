@@ -36,7 +36,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                 <div class="center sliding navtitle middle">
                     <a href="#" class="external">
-                        <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fish/avatar.png" class="img-responsive img-circle"/>
+                        <img src="<?=Yii::app()->request->baseUrl?>/uploads/avatar/<?=$user->photo?>" class="img-responsive img-circle"/>
                         <span class="username">
                             <?=$user->username;?>
                         </span>

@@ -57,7 +57,7 @@ function onMessage(msg) {
 
 function xmppSendMessage()
 {
-    var message = $('.message-textarea textarea').val();
+    var message = $('.message-textarea textarea').val().text();
     var to = $('#toId').val();
 
     $.post( Yii.app.createUrl('im/sendMessage'),
