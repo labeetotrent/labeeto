@@ -1,3 +1,4 @@
+
 <?php
 $cs = Yii::app()->clientScript;
 
@@ -22,7 +23,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
     </div>
 </div>
 <!-- Views -->
-<div class="views">
+<div class="views mobile-chat">
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
         <!-- Top Navbar-->

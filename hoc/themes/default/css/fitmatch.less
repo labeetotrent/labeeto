@@ -3,6 +3,7 @@
   padding-bottom: 0;
 }
 .fitmatch-container {
+  margin-top: 15px;
   .fitmatch-header {
     padding: 30px 0 20px 5px;
     color: @pink;
@@ -18,10 +19,7 @@
       background-color: white;
       padding: 0;
       .card-info {
-        padding-right: 0;
-        padding-left: 0;
-        padding-bottom: 30px;
-        padding-top: 20px;
+        padding: 20px 0;
 
         border-bottom: 1px solid #e8e5e5;
         .avatar {
@@ -53,14 +51,12 @@
             .birth,
             .job,
             .location {
-              font-family: "Proxima Nova SemiBold";
-              font-size: 10pt;
+              font-family: "Proxima Nova Regular";
+              font-size: 8pt;
               color: #687381;
               padding-left: 25px;
               background-position: left center;
               background-repeat: no-repeat;
-              height: 18px;
-              line-height: 18px;
               @media (max-width: @xs-width) {
                 padding-left: 0;
               }
@@ -72,66 +68,13 @@
             font-family: "Proxima Nova Regular Italic";
             padding: 10px 0;
           }
-          .tags {
-            .tag {
-              width: auto;
-              display: inline-block;
-              div {
-                display: inline-block;
-              }
-              color: white;
-              font-family: "Proxima Nova Regular", Helvetica, sans-serif;
-              .tag-left {
-                left: 0;
-                top: 0;
-                background: url('../images/tag-left.png');
-                width: 16px;
-                height: 30px;
-              }
-              .tag-right {
-                background: url('../images/tag-right.png') no-repeat;
-                width: 4px;
-                height: 30px;
-                position: relative;
-                right: 6px;
-              }
-              .tag-middle {
-                position: relative;
-                bottom: 12px;
-                @media (max-width: @xs-width) {
-                  bottom: 13px;
-                }
-                right: 3px;
-                font-size: 10pt;
-                padding: 0 10px;
-                white-space: nowrap;
-                height: 30px;
-                line-height: 30px;
-                background: url('../images/tag-middle.png') repeat-x 0 1px;
-              }
-            }
-          }
-        }
-      }
-      .card-photos {
-        .photos-header {
-          color: #868f9a;
-          font-family: "Proxima Nova SemiBold";
-          font-size: 14pt;
-          padding: 20px 15px;
-        }
-        .photos {
-          padding-bottom: 30px;
-          .photo {
-          }
         }
       }
     }
     .card-decision {
-      background-color: #e4e4e4;
+      background-color: #5d6062;
       .decision-header {
-        color: @pink;
-        text-transform: uppercase;
+        color: #f76379;
         font-family: "Proxima Nova SemiBold";
         font-size: 18pt;
         text-align: center;
@@ -142,12 +85,31 @@
         div {
           @media (max-width: @xs-width) {
             text-align: center;
-            padding: 5px 0 !important;
+            padding: 5px 0;
           }
           padding: 5px 150px;
           button {
             font-family: "Proxima Nova Regular", Helvetica, sans-serif;
           }
+        }
+        .decision-button-container {
+          padding: 0 15px;
+          .decision-button {
+            height: 40px;
+            background-color: #5d6062;
+            border: 2px solid;
+            font-size: 13pt;
+            padding-top: 5px;
+            &.btn-next {
+              border-color: #f76379;
+              color: #f76379;
+            }
+            &.btn-yes {
+              border-color: #5cd496;
+              color: #5cd496;
+            }
+          }
+
         }
       }
     }

@@ -344,25 +344,71 @@ p.f-data {
   float: left;
 }
 body .navbar {
-  background-color: #313541;
+  background-color: #fbfeff;
+  text-align: center;
 }
-body .navbar .navtitle {
+body .navbar .container {
+  display: inline-block;
+  width: 217px !important;
+}
+body .navbar .container .navbar-header {
+  display: inline-block !important;
+}
+body .navbar .container .navbar-header .navbar-brand {
+  display: inline-block !important;
+  padding-top: 10px;
+}
+body .navbar .container .navtitle {
   color: white;
 }
-body .navbar .navbar-icons {
+body .navbar .container .navbar-icons {
   font-size: 12pt;
   color: #687380;
 }
-body .navbar .navbar-icons li a:hover,
-body .navbar .navbar-icons li a:focus {
+body .navbar .container .navbar-icons li a:hover,
+body .navbar .container .navbar-icons li a:focus {
   color: #ea5a5a;
 }
-body .navbar .navbar-icons li a .link-label {
+body .navbar .container .navbar-icons li a .link-label {
   color: white;
   padding-left: 10px;
 }
 @media (max-width: 767px) {
-  body .navbar .navbar-icons li a .link-label {
+  body .navbar .container .navbar-icons li a .link-label {
     display: inline !important;
   }
+}
+.footer-menu {
+  height: 60px;
+  background-color: #fbfeff;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9000;
+  border-top: 1px solid #e1e1e1;
+}
+.footer-menu .footer-link {
+  padding: 9px 0;
+}
+.footer-menu .footer-link a {
+  text-align: center;
+  color: #66696c;
+  text-decoration: none;
+}
+.footer-menu .footer-link a .link-icon i {
+  font-size: 20pt;
+}
+.footer-menu .footer-link a .text {
+  font-size: 12pt;
+  font-family: "Proxima Nova Light", Helvetica, sans-serif;
+}
+.footer-menu .footer-link:active a .link-icon i,
+.footer-menu .footer-link.active a .link-icon i {
+  color: #ea5a5a;
+}
+.footer-menu .footer-link:active a .text,
+.footer-menu .footer-link.active a .text {
+  color: #ea5a5a;
 }

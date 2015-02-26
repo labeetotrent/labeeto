@@ -27,6 +27,7 @@
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_feed.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/slashman_profile_other.css" rel="stylesheet">
     <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/notification.css" rel="stylesheet">
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/new_design.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -71,6 +72,7 @@
 </head>
 <body>
     <?php $this->renderPartial('../elements/header-feed'); ?>
+    <?php $this->renderPartial('../elements/footer-menu'); ?>
     <div class="container" id="content-feed">
         <?php echo $content ?>
     </div>

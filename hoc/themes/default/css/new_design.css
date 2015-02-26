@@ -1,0 +1,7 @@
+.views {
+  padding-bottom: 60px;
+  z-index: 10;
+}
+.views.mobile-chat {
+  padding-bottom: 0;
+}

@@ -391,13 +391,16 @@
 .view.view-main .dialogs-page .list-block.media-list {
   margin: 0;
 }
+.view.view-main .dialogs-page .list-block.media-list .mobile-dialogs {
+  border-bottom: none;
+  border-top: none;
+}
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row {
   margin-left: 0;
   margin-right: 0;
   background-color: white;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog {
-  border-bottom: 1px solid #c7c7c7;
   width: 100%;
   padding-left: 5px;
 }
@@ -447,4 +450,5 @@
 }
 .message-text {
   font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  padding-top: 10px;
 }

@@ -17,6 +17,7 @@
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->themeManager->baseUrl; ?>/js/jquery.placeholder.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <link type="text/css" href="<?php echo Yii::app()->themeManager->baseUrl; ?>/css/new_design.css" rel="stylesheet">
     <style>
         body {
             background-color: #0a0a0a;

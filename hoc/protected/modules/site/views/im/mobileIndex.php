@@ -1,4 +1,6 @@
 
+<?php $this->renderPartial('../elements/header-feed'); ?>
+<?php $this->renderPartial('../elements/footer-menu'); ?>
 <!-- Status bar overlay for full screen mode (PhoneGap) -->
 <div class="statusbar-overlay"></div>
 <!-- Panels overlay-->
@@ -15,9 +17,9 @@
     <div class="view view-main">
         <!-- Top Navbar-->
 
-        <?php $this->renderPartial('../elements/mobile_nav'); ?>
+        <?php //$this->renderPartial('../elements/mobile_nav'); ?>
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages toolbar-through">
             <!-- Page, "data-page" contains page name -->
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->

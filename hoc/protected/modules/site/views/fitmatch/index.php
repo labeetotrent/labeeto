@@ -48,67 +48,28 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
                     <div class="row about-info">
                         <?php if($fitmatch->about) echo $fitmatch->about; ?>
                     </div>
-                    <div class="row tags">
-                        <?php
-                        $counter = 0;
-                        $threshold = 10;
-                        foreach($fitmatch->fitnessInterests as $interest)
-                        {
-                        ?>
-                            <div class="tag">
-                                <div class="tag-left"></div>
-                                <div class="tag-middle"><?=$interest->name;?> </div>
-                                <div class="tag-right"></div>
-                            </div>
-                        <?php
-                            $counter++;
-                            if($counter == $threshold)
-                                break;
-                        }
-                        ?>
-                    </div>
                 </div>
             </div>
-            <!--<div class="col-md-12 card-photos">
-                <div class="col-md-12 photos-header">
-                    <?/*=$fitmatch->username;*/?> Photos
-                </div>
-                <div class="col-md-12 photos">
-                    <?php
-/*                    $counter = 0;
-                    $threshold = 6;
-                    foreach($fitmatch->photos as $photo)
-                    {
-                    */?>
-                        <div class="col-md-2 photo">
-                            <img src="/uploads/photo/<?/*=$photo->thumb;*/?>" class="img-responsive img-circle"/>
-                        </div>
-                    <?php
-/*                        $counter++;
-                        if($counter == $threshold)
-                            break;
-                    }
-                    */?>
-                </div>
-            </div>-->
             <div class="col-md-12 card-decision">
                 <div class="col-md-12 decision-header">
-                    Interested?
+                    Training buddy?
                 </div>
                 <div class="col-md-12 decision-buttons">
-                    <div class="col-md-12">
-                        <form method="POST">
-                            <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
-                            <input type="hidden" name="Fitmatch[result]" value="0"/>
-                            <button type="submit" class="btn btn-default btn-cancel-st col-md-12">Sorry, next, please!</button>
-                        </form>
-                    </div>
-                    <div class="col-md-12">
-                        <form method="POST">
-                            <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
-                            <input type="hidden" name="Fitmatch[result]" value="1"/>
-                            <button type="submit" class="btn btn-default btn-save-st col-md-12">Yes, yes, YES!</button>
-                        </form>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6 decision-button-container">
+                            <form method="POST">
+                                <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
+                                <input type="hidden" name="Fitmatch[result]" value="0"/>
+                                <button type="submit" class="decision-button btn-next col-xs-12">NO</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-xs-6 decision-button-container">
+                            <form method="POST">
+                                <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
+                                <input type="hidden" name="Fitmatch[result]" value="1"/>
+                                <button type="submit" class="decision-button btn-yes col-xs-12">YES</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
