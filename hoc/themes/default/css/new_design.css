@@ -1,3 +1,6 @@
+body {
+  background: #fbfeff;
+}
 .views {
   padding-bottom: 60px;
   z-index: 10;
