@@ -30,7 +30,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
             <!-- Page, "data-page" contains page name -->
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->
-                <div class="page-content" style="background-color: white;">
+                <div class="page-content" style="background-color: white; padding-top: 0;">
                     <div class="row settings-categories">
                         <a href="#" class="col-md-12">
                             <div class="col-md-12 row category">
