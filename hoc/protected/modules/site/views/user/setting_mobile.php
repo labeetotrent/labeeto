@@ -8,6 +8,8 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
 //    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed_autoload.js');
 ?>
 
+<?php $this->renderPartial('../elements/header-feed'); ?>
+<?php $this->renderPartial('../elements/footer-menu'); ?>
 <div class="statusbar-overlay"></div>
 <!-- Panels overlay-->
 <div class="panel-overlay"></div>
@@ -22,7 +24,6 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
         <!-- Top Navbar-->
-        <?php $this->renderPartial('../elements/mobile_nav'); ?>
 
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
