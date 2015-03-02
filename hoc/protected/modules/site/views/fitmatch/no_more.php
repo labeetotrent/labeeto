@@ -20,10 +20,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
         <div class="col-md-2 left-side">
 
         </div>
-        <div class="col-md-8 card-container">
+        <div class="col-md-8 text-center">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fitmatch-searching.gif" class="img-responsive">
+                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/fitmatch-searching.gif" class="img-responsive searching-gif">
                 </div>
             </div>
             <div class="row">
