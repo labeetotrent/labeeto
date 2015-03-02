@@ -61,7 +61,9 @@ class FitmatchController extends SiteBaseController
         }
 
 
-
-        $this->render('index', compact('fitmatch'));
+        if($fitmatch)
+            $this->render('index', compact('fitmatch'));
+        else
+            $this->render('no_more');
     }
 }
