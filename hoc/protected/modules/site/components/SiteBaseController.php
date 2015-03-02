@@ -8,6 +8,8 @@ class SiteBaseController extends BaseController {
 	public $baseUrl = '';
 	public $layout= 'main';
 	public $seprateCss;
+    public $activeFooter = '';
+
 	/**
 	 * Class constructor
 	 *

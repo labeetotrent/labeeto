@@ -391,11 +391,15 @@ body .navbar .container .navbar-icons li a .link-label {
 }
 .footer-menu .footer-link {
   padding: 9px 0;
+  height: 65px;
 }
 .footer-menu .footer-link a {
   text-align: center;
   color: #66696c;
   text-decoration: none;
+}
+.footer-menu .footer-link a .link-icon {
+  height: 31px;
 }
 .footer-menu .footer-link a .link-icon i {
   font-size: 20pt;

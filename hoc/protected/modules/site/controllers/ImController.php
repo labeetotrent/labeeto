@@ -11,6 +11,11 @@ class ImController extends SiteBaseController
         );
     }
 
+    function beforeAction($action) {
+        $this->activeFooter = 'inbox';
+        return true;
+    }
+
     public function actionIndex()
     {
         $mobileDetect = new Mobile_Detect();

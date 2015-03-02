@@ -139,6 +139,7 @@ class UserController extends SiteBaseController {
     }
 
     public function actionMy_feed(){
+        $this->activeFooter = 'feed';
         $this->layout = 'feed';
         //echo Achievements::model()->getCore(22); exit;
         if(!Yii::app()->user->isGuest){
@@ -436,6 +437,7 @@ class UserController extends SiteBaseController {
     }
     
     public function actionSetting(){
+        $this->activeFooter = 'settings';
         $mobileDetect = new Mobile_Detect();
         $this->layout = 'feed';
         if(!Yii::app()->user->isGuest){

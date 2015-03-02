@@ -12,6 +12,11 @@ class FitmatchController extends SiteBaseController
         );
     }
 
+    function beforeAction($action) {
+        $this->activeFooter = 'fitmatch';
+        return true;
+    }
+
     public function actionIndex()
     {
         $this->user = User::model()->findByPk(Yii::app()->user->id);
