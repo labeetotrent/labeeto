@@ -421,23 +421,28 @@
   bottom: 80px;
   font-size: 13pt;
   background-color: #ea5a5a;
+  border: 2px solid #fff;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container {
   padding-left: 0;
   right: 40px;
-  bottom: 0px;
   width: 65%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eeeeee;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .username {
   text-align: left;
   justify-content: initial;
   -webkit-justify-content: initial;
-  color: black;
+  font-family: "Proxima Nova Bold";
+  font-weight: bold;
+  color: #4e5053;
   font-size: 14pt;
 }
 .view.view-main .dialogs-page .list-block.media-list .mobile-dialogs li div.row .dialog a .text-container .last-message {
   text-align: left;
   justify-content: initial;
+  font-family: "Proxima Nova Light Italic";
   -webkit-justify-content: initial;
   color: #A5B5BF;
   font-size: 10pt;
