@@ -238,6 +238,7 @@ class Facebook {
     }
     public function saveCover($graphArray, $overrideFileName = null)
     {
+        var_dump($graphArray);die();
         $graphArray = $graphArray['source'];
         $file = explode('.', $graphArray->source);
         $fileExtension = explode('?', $file[count($file)-1]);
