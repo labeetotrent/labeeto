@@ -71,6 +71,7 @@ class Facebook {
             if($dbUser)
             {
                 $cover = $this->getCover();
+                var_dump($cover);die();
                 $dbUser->email = $user_info->getEmail();
                 $dbUser->fname = $user_info->getFirstName();
                 $dbUser->address = $user_info->getLocation()->getProperty('name');
