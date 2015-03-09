@@ -194,6 +194,19 @@ class Facebook {
         $response = $request->execute();
         return $response->getGraphObject()->asArray();
     }
+    public function getCover()
+    {
+        $request = new \Facebook\FacebookRequest(
+            $this->_session,
+            'GET',
+            '/me',
+            array (
+                'fields' => 'cover'
+            )
+        );
+        $response = $request->execute();
+        return $response->getGraphObject()->asArray();
+    }
     public function getAbout()
     {
         $request = new \Facebook\FacebookRequest(
@@ -215,6 +228,21 @@ class Facebook {
             $fileName = $overrideFileName;
 
         if(file_put_contents(Yii::app()->basePath.'/../uploads/avatar/'.$fileName,file_get_contents($graphArray['url'])))
+            return $fileName;
+        else
+            die(':(');
+    }
+    public function saveCover($graphArray, $overrideFileName = null)
+    {
+        $file = explode('.', $graphArray['source']);
+        $fileExtension = explode('?', $file[count($file)-1]);
+        $fileExtension = $fileExtension[0];
+        $fileName = $graphArray['id'].'.'.$fileExtension;
+
+        if(!empty($overrideFileName))
+            $fileName = $overrideFileName;
+
+        if(file_put_contents(Yii::app()->basePath.'/../uploads/cover/'.$fileName,file_get_contents($graphArray['source'])))
             return $fileName;
         else
             die(':(');
