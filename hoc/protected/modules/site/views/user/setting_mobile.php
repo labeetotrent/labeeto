@@ -31,8 +31,19 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content" style="background-color: white; padding-top: 0;">
-                    <div class="row settings-header">
-
+                    <div class="row settings-header" style="background-image: url('<?=Yii::app()->request->baseUrl?>/uploads/cover/<?=$this->user->facebook_cover;?>');">
+                        <div class="col-xs-4 profile-thumb">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="<?=Yii::app()->request->baseUrl?>/uploads/avatar/<?=$this->user->photo;?>" class="img-responsive"/>
+                                </div>
+                            </div>
+                            <div class="row view-profile-link">
+                                <div class="col-md-12">
+                                    <a href="/profile" class="external">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row settings-categories">
                         <a href="#" class="col-md-12">

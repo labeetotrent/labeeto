@@ -17,3 +17,31 @@ body {
 .searching-gif {
   margin: 0 auto 20px auto;
 }
+.settings-header {
+  height: 150px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.settings-header .profile-thumb {
+  padding-top: 15px;
+}
+.settings-header .profile-thumb img {
+  max-height: 100px;
+  max-width: 100px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+.settings-header .profile-thumb .view-profile-link {
+  padding-top: 5px;
+}
+.settings-header .profile-thumb .view-profile-link a {
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+  font-family: "Proxima Nova Light", Helvetica, sans-serif;
+  font-size: 14pt;
+}
