@@ -32,7 +32,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                 <!-- Scrollable page content -->
                 <div class="page-content" style="background-color: white; padding-top: 0;">
                     <div class="row settings-header" style="background-image: url('<?=Yii::app()->request->baseUrl?>/uploads/cover/<?=$this->user->facebook_cover;?>');">
-                        <div class="col-xs-4 profile-thumb">
+                        <div class="profile-thumb">
                             <div class="row">
                                 <div class="col-md-12">
                                     <img src="<?=Yii::app()->request->baseUrl?>/uploads/avatar/<?=$this->user->photo;?>" class="img-responsive"/>
@@ -46,7 +46,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                         </div>
                     </div>
                     <div class="row settings-categories">
-                        <a href="#" class="col-md-12">
+                        <a href="<?=$this->createUrl('/settings/discovery')?>" class="col-md-12 external">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-lightbulb-o"></i>
@@ -61,8 +61,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                 </div>
                             </div>
                         </a>
-
-                        <a href="#" class="col-md-12">
+                        <a href="<?=$this->createUrl('/settings/system')?>" class="col-md-12 external">
                             <div class="col-md-12 row category catfix">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-cog"></i>
@@ -77,7 +76,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="col-md-12">
+                        <a href="mailto:admin@labeeto.com?subject=Labeeto%20Feedback" class="col-md-12 external">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-envelope"></i>
@@ -92,7 +91,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="col-md-12">
+                        <a href="mailto:?body=Check out the Labeeto at http://hoc.labeeto.zhilin.skib6.ru" class="col-md-12 external">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-share-alt"></i>

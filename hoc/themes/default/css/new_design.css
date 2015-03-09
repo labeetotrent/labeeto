@@ -45,3 +45,31 @@ body {
   font-family: "Proxima Nova Light", Helvetica, sans-serif;
   font-size: 14pt;
 }
+.settings-elements {
+  margin-top: 30px;
+}
+.settings-elements .list-block {
+  width: 100%;
+}
+.settings-elements .list-block li .item-content {
+  padding-left: 0;
+}
+.settings-elements .list-block li .item-content .item-inner .label {
+  color: #000;
+  padding-left: 15px;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+  text-align: left;
+}
+.settings-elements .list-block li .item-content .item-inner .item-input {
+  width: auto;
+}
+.settings-elements .list-block li a {
+  text-decoration: none;
+  font-family: "Proxima Nova Regular", Helvetica, sans-serif;
+}
+.settings-elements .list-block li a .item-inner {
+  text-align: center;
+  display: inline;
+  padding-top: 11px;
+  padding-right: 15px;
+}
