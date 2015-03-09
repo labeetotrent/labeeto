@@ -70,6 +70,7 @@ class Facebook {
             $dbUser = User::model()->findByAttributes(array('facebook_id' => $user_info->getId()));
             if($dbUser)
             {
+                $cover = $this->getCover();
                 $dbUser->email = $user_info->getEmail();
                 $dbUser->fname = $user_info->getFirstName();
                 $dbUser->address = $user_info->getLocation()->getProperty('name');
@@ -77,6 +78,7 @@ class Facebook {
                 $dbUser->birthday = $this->getBirthday($user_info->getBirthday());
                 $dbUser->about = $user_info->getProperty('bio');
                 $dbUser->facebook_token = $this->_session->getToken();
+                $dbUser->facebook_cover = $this->saveCover($cover);
                 $dbUser->save();
 
                 if($this->login($dbUser->facebook_id, $dbUser->facebook_token))
@@ -85,11 +87,13 @@ class Facebook {
             else
             {
                 $avatar = $this->getAvatar();
+                $cover = $this->getCover();
                 $dbUser = new User();
                 $dbUser->password = md5($user_info->getId());
                 $dbUser->username = $user_info->getFirstName();
                 $dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
+                $dbUser->facebook_cover = $this->saveCover($cover);
                 $dbUser->photo = $this->saveAvatar($avatar);
                 $dbUser->address = $user_info->getLocation()->getProperty('name');
                 $dbUser->gender = $this->getGender($user_info->getGender());
