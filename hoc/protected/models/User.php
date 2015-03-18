@@ -26,6 +26,10 @@
  * @property integer $facebook_id
  * @property integer $facebook_token
  * @property string $facebook_cover
+ * @property integer $fitmatch_distance
+ * @property integer $fitmatch_age_upper
+ * @property integer $fitmatch_age_lower
+ * @property integer $fitmatch_show_me
  *
  * The followings are the available model relations:
  * @property Achievements[] $achievements
@@ -92,7 +96,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, email, password, role, age, fname, about, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, is_online, facebook_token, facebook_id,facebook_cover', 'safe', 'on'=>'search'),
+			array('id, username, gender, email, password, role, age, fname, about, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, fitmatch_distance, fitmatch_age_upper, fitmatch_age_lower, fitmatch_show_me, is_online, facebook_token, facebook_id,facebook_cover', 'safe'),
 		);
 	}
 

@@ -55,6 +55,11 @@ body {
     width: 100%;
     li {
       .item-content {
+        &.tall-item {
+          .item-inner {
+            padding: 20px 20px 20px 0;
+          }
+        }
         padding-left: 0;
         .item-inner {
           .label {
@@ -64,7 +69,12 @@ body {
             text-align: left;
           }
           .item-input {
-            width: auto;
+            width: 70%;
+            .label-switch input[type=checkbox]:checked+.checkbox,
+            #distance-slider.noUi-connect,
+            #age-slider .noUi-connect {
+              background: @pink;
+            }
           }
         }
       }
@@ -79,5 +89,22 @@ body {
         }
       }
     }
+  }
+}
+.modal.modal-in {
+  z-index: 99999;
+  overflow: visible;
+  overflow-y: visible;
+  display: block;
+}
+
+.noUi-handle {
+  width: 28px !important;
+  border-radius: 50% !important;;
+  &:before {
+    content: none !important;;
+  }
+  &:after {
+    content: none !important;;
   }
 }

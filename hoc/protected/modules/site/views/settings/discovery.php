@@ -5,6 +5,8 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery-ui.js');
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery.mousewheel.min.js');
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/jquery.smoothdivscroll-1.3-min.js');
 $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
+$cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouislider.all.min.js');
+$cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouislider.min.css');
 //    $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/slashman_myfeed_autoload.js');
 ?>
 
@@ -56,7 +58,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                                 Show me</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
-                                                    <input type="checkbox">
+                                                    <input type="checkbox" id="show-me" <?=$this->user->fitmatch_show_me ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
@@ -64,40 +66,42 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="item-content">
+                                    <div class="item-content tall-item">
                                         <div class="item-inner">
                                             <div class="label">Distance</div>
                                             <div class="item-input">
-                                                <div class="range-slider">
-                                                    <input type="range" min="2" max="180" value="60" step="1">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <span id="distance-value">40</span> km.
+                                                    </div>
                                                 </div>
+                                                <div id="distance-slider"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="item-content">
+                                    <div class="item-content tall-item">
                                         <div class="item-inner">
-                                            <div class="label">Age from</div>
+                                            <div class="label">Age</div>
                                             <div class="item-input">
-                                                <div class="range-slider">
-                                                    <input type="range" min="18" max="40" value="22" step="1">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <span id="age-lower-value">16</span>
+                                                        <span id="age-upper-value" class="pull-right">25</span>
+                                                    </div>
                                                 </div>
+                                                <div id="age-slider"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="item-content">
+                                    <a href="#" id="save-discovery" class="item-link item-content external">
                                         <div class="item-inner">
-                                            <div class="label">Age to</div>
-                                            <div class="item-input">
-                                                <div class="range-slider">
-                                                    <input type="range" min="18" max="50" value="22" step="1">
-                                                </div>
-                                            </div>
+                                            <div class="item-title">Save</div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -107,3 +111,65 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#distance-slider").noUiSlider({
+            start: <?=$this->user->fitmatch_distance?>,
+            connect: 'lower',
+            step: 1,
+            range: {
+                'min': 1,
+                'max': 160
+            },
+            format: {
+                to: function ( value ) {
+                    return parseInt(value);
+                },
+                from: function ( value ) {
+                    return parseInt(value);
+                }
+            }
+        });
+        $("#age-slider").noUiSlider({
+            start: [<?=$this->user->fitmatch_age_lower?>, <?=$this->user->fitmatch_age_upper?>],
+            connect: true,
+            range: {
+                'min': 18,
+                'max': 40
+            },
+            format: {
+                to: function ( value ) {
+                    return parseInt(value);
+                },
+                from: function ( value ) {
+                    return parseInt(value);
+                }
+            }
+        });
+        $("#distance-slider").Link('lower').to($("#distance-value"));
+
+        $("#age-slider").Link('lower').to($("#age-lower-value"));
+        $("#age-slider").Link('upper').to($("#age-upper-value"));
+
+
+        $('#save-discovery').click(function(e){
+            e.preventDefault();
+
+            $.post(
+                Yii.app.createUrl('settings/saveDiscovery'),
+                {
+                    fitmatch_age_upper: $('#age-slider').val()[1],
+                    fitmatch_age_lower: $('#age-slider').val()[0],
+                    fitmatch_distance: $('#distance-slider').val(),
+                    fitmatch_show_me: $('#show-me').val()
+                }
+            ).done(function(response){
+                if(response == 'OK') {
+                    myApp.alert('Your settings were saved', '');
+                }
+            });
+        });
+    })
+</script>

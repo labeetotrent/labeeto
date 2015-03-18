@@ -31,4 +31,22 @@ class SettingsController extends SiteBaseController
     {
         $this->render('share');
     }
+
+    public function actionSaveDiscovery()
+    {
+        $this->user->attributes = $_POST;
+        if($this->user->fitmatch_show_me == 'on') {
+            $this->user->fitmatch_show_me = 1;
+        }
+        else {
+            $this->user->fitmatch_show_me = 0;
+        }
+
+        if($this->user->validate())
+        {
+            $this->user->save();
+
+            echo 'OK';
+        }
+    }
 }
