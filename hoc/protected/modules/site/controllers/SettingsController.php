@@ -41,6 +41,12 @@ class SettingsController extends SiteBaseController
         else {
             $this->user->fitmatch_show_me = 0;
         }
+        if($this->user->fitmatch_gym_match == 'on') {
+            $this->user->fitmatch_gym_match = 1;
+        }
+        else {
+            $this->user->fitmatch_gym_match = 0;
+        }
 
         if($this->user->validate())
         {

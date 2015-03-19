@@ -354,4 +354,49 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fs-autocomplete.css
         if( content != '')
             $('#form-achievement').submit();
     });
+
+    $(document).ready(function(){
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
+        } else {
+            positionError(-1);
+        }
+    });
+
+
+    function positionSuccess(position) {
+        // Centre the map on the new location
+        var coords = position.coords || position.coordinate || position;
+        var lat = coords.latitude;
+        var lon = coords.longitude;
+
+        $.post(
+            Yii.app.createUrl('ajax/setLocation'),
+            {
+                lat: lat,
+                lon: lon
+            }
+        ).done(function(response){});
+    }
+    function positionError(err) {
+        var msg;
+        switch (err.code) {
+            case err.UNKNOWN_ERROR:
+                msg = "Unable to find your location";
+                break;
+            case err.PERMISSION_DENINED:
+                msg = "Permission denied in finding your location";
+                break;
+            case err.POSITION_UNAVAILABLE:
+                msg = "Your location is currently unknown";
+                break;
+            case err.BREAK:
+                msg = "Attempt to find location took too long";
+                break;
+            default:
+                msg = "Location detection not supported in browser";
+        }
+        console.log(msg);
+    }
 </script>

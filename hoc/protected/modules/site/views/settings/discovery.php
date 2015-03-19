@@ -66,6 +66,20 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                     </div>
                                 </li>
                                 <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="label">
+                                                Gym match</div>
+                                            <div class="item-input">
+                                                <label class="label-switch">
+                                                    <input type="checkbox" id="gym-match" <?=$this->user->fitmatch_gym_match ? 'checked' : ''?>>
+                                                    <div class="checkbox"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
                                     <div class="item-content tall-item">
                                         <div class="item-inner">
                                             <div class="label">Distance</div>
@@ -85,10 +99,12 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                         <div class="item-inner">
                                             <div class="label">Age</div>
                                             <div class="item-input">
-                                                <div class="row">
-                                                    <div class="col-md-12">
+                                                <div class="row" style="width: 100%;">
+                                                    <div style="width: 50%; text-align: left;">
                                                         <span id="age-lower-value">16</span>
-                                                        <span id="age-upper-value" class="pull-right">25</span>
+                                                    </div>
+                                                    <div style="text-align: right;">
+                                                        <span id="age-upper-value">25</span>
                                                     </div>
                                                 </div>
                                                 <div id="age-slider"></div>
@@ -163,7 +179,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                     fitmatch_age_upper: $('#age-slider').val()[1],
                     fitmatch_age_lower: $('#age-slider').val()[0],
                     fitmatch_distance: $('#distance-slider').val(),
-                    fitmatch_show_me: $('#show-me').val()
+                    fitmatch_show_me: $('#show-me').val(),
+                    fitmatch_gym_match: $('#gym-match').val()
                 }
             ).done(function(response){
                 if(response == 'OK') {

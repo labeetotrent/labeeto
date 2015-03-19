@@ -374,4 +374,19 @@ class AjaxController extends SiteBaseController {
             print $this->renderPartial('/elements/achievement_comment', array('data' => $comment, 'hidden' => 1), true);
         }
     }
+
+    public function actionSetLocation()
+    {
+        if(!empty($_POST['lat']) && !empty($_POST['lon']))
+        {
+            $user = User::model()->findByPk(Yii::app()->user->getId());
+            if($user)
+            {
+                $user->lat = $_POST['lat'];
+                $user->lon = $_POST['lon'];
+                $user->save();
+                echo 'OK';
+            }
+        }
+    }
 }

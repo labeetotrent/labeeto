@@ -23,7 +23,7 @@ class FitmatchController extends SiteBaseController
         $attributes = array();
         $condition = '';
         $criteria = new CDbCriteria();
-
+        $params = [];
 
         //Optimize
 
@@ -33,8 +33,23 @@ class FitmatchController extends SiteBaseController
         $criteria->addCondition('t.id <> :id');
         $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
         $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
+        $criteria->addCondition('t.fitmatch_show_me = 1');
+        $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) >= :fromAge');
+        $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) <= :toAge');
+        $criteria->addCondition('DISTANCE(t.lat, t.lon, :userId) <= :distance');
 
-        $criteria->params = array(':id' => Yii::app()->user->getId());
+        $params[':fromAge']  = $this->user->fitmatch_age_lower;
+        $params[':toAge']    = $this->user->fitmatch_age_upper;
+        $params[':distance'] = $this->user->fitmatch_distance;
+        $params[':userId']   = Yii::app()->user->getId();
+
+        if($this->user->fitmatch_gym_match && $this->user->gym) { //Gym Match
+            $criteria->addCondition('t.gym = :gym');
+            $params[':gym'] = $this->user->gym;
+        }
+
+        $params[':id'] = Yii::app()->user->getId();
+        $criteria->params = $params;
 
         $criteria->order = 'RAND()';
 
