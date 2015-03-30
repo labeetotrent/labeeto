@@ -27,7 +27,7 @@
 </head>
 <body >
 <div id="dvLoading"></div>
-<div id="wrapper" style="-ms-behavior: url('http://hoc.labeeto.com/backgroundsize.min.htc');">
+<div id="wrapper" style="-ms-behavior: url('<?=Yii::app()->params['siteUrl']?>/backgroundsize.min.htc');">
     <header class="clearfix">
         <?php $this->renderPartial('../elements/header'); ?>
     </header>

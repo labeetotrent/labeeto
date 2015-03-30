@@ -91,7 +91,7 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                 </div>
                             </div>
                         </a>
-                        <a href="mailto:?body=Check out the Labeeto at http://hoc.labeeto.zhilin.skib6.ru" class="col-md-12 external">
+                        <a href="mailto:?body=Check out the Labeeto at <?=Yii::app()->params['siteUrl']?>" class="col-md-12 external">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-share-alt"></i>

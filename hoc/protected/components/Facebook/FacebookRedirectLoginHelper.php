@@ -35,7 +35,7 @@ class FacebookRedirectLoginHelper
     /**
      * @var string
      */
-    private static $defaultRedirectUrl = 'http://hoc.labeeto.zhilin.skib6.ru/index/facebookSignup';
+  private static $defaultRedirectUrl = 'http://hoc.labeeto.zhilin.skib6.ru/index/facebookSignup';
   /**
    * @var string The application id
    */
