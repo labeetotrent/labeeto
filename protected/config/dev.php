@@ -7,9 +7,9 @@ $development = array(
 	'components' => array(
 		'db' =>  array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=23.229.168.105;dbname=labeeto',
+            'connectionString' => 'mysql:host=localhost;dbname=labeeto',
             'username' => 'lbadmin',
-            'password' => 'x22872Fkl123jnZZZlasd',
+            'password' => '884088',
             'charset' => 'UTF8',
             'tablePrefix' => '',
             'emulatePrepare' => true,

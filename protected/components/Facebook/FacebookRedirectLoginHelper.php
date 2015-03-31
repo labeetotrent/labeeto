@@ -35,7 +35,7 @@ class FacebookRedirectLoginHelper
     /**
      * @var string
      */
-  private static $defaultRedirectUrl = 'http://labeeto3.cloudapp.net/index/facebookSignup';
+  private static $defaultRedirectUrl = 'http://au.labeeto.com/index/facebookSignup';
   /**
    * @var string The application id
    */

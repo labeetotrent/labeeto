@@ -81,7 +81,7 @@ return array(
                                 'app_secret' => '507220a0129d453e24887bc70a44b158',
                                 'scope' => array('email', 'user_birthday', 'user_hometown', 'user_interests', 'user_location', 'user_photos','user_about_me','user_actions.fitness','user_relationship_details','user_interests')
                             ),
-                            'siteUrl' => 'http://beta.labeeto.com',
+                            'siteUrl' => 'http://au.labeeto.com',
        ),
         'aliases' => array(
                 'helpers' => 'application.widgets',
