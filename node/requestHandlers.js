@@ -8,7 +8,7 @@ function dialogs(response, postData) {
 
     var connection = mysql.createConnection({
         host     : 'localhost',
-        user     : 'root',
+        user     : 'lbadmin',
         password : '884088',
         database : 'labeeto'
     });
@@ -56,7 +56,7 @@ function messages(response, postData) {
 
     var connection = mysql.createConnection({
         host     : 'localhost',
-        user     : 'root',
+        user     : 'lbadmin',
         password : '884088',
         database : 'labeeto'
     });

@@ -8,8 +8,8 @@ $development = array(
 		'db' =>  array(
             'class' => 'CDbConnection',
             'connectionString' => 'mysql:host=localhost;dbname=labeeto',
-            'username' => 'root',
-            'password' => '884088',
+            'username' => 'lbadmin',
+            'password' => 'x22872Fkl123jnZZZlasd',
             'charset' => 'UTF8',
             'tablePrefix' => '',
             'emulatePrepare' => true,
