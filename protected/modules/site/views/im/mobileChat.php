@@ -9,7 +9,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
 <script>
     var myId = '<?=Yii::app()->user->getId();?>';
     var userId = '<?=$user_id;?>';
-    var xmppUser = '<?=$this->user->id.'@zhilin.skib6.ru';?>';
+    var xmppUser = '<?=$this->user->id.'@labeeto.com';?>';
     var xmppPass = '<?=$this->user->password;?>';
 </script>
 <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -29,8 +29,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
         <!-- Top Navbar-->
         <div class="navbar">
             <div class="navbar-inner messages-title">
-                <div class="left">
-                    <a href="<?=$this->createUrl('/im');?>" class="link external">
+                <div class="left" style="color:#007aff" >
+                    <a href="<?=$this->createUrl('/im');?>" style="text-decoration:none">
                         <span><i class="fa fa-chevron-left"></i> Back</span>
                     </a>
                 </div>
