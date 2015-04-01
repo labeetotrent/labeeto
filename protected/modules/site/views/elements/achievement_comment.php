@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-3">
             <div class="infor_comment">
-                <h5><span>cutesyjf24</span></h5>
+                <h5><span><?=$data->user->username;?></span></h5>
                 <h6><span class="minus_1"><?=$data->created;?> </span><!--- <span class="where_location"><?=$data->user->address;?></span>--></h6>
             </div>
         </div>
