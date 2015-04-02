@@ -29,16 +29,16 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
         <!-- Top Navbar-->
         <div class="navbar">
             <div class="navbar-inner messages-title">
-                <div class="left" style="color:#007aff" >
+                <div class="left" >
                     <a href="<?=$this->createUrl('/im');?>" style="text-decoration:none">
-                        <span><i class="fa fa-chevron-left"></i> Back</span>
+                        <span style="color:#ea5a5a"><i class="fa fa-chevron-left" style="color:#ea5a5a"></i> Back</span>
                     </a>
                 </div>
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                 <div class="center sliding navtitle middle">
                     <a href="<?=$this->createUrl('user/detail/', ['id' => $user->id])?>" class="external">
                         <img src="<?=Yii::app()->request->baseUrl?>/uploads/avatar/<?=$user->photo?>" class="img-responsive img-circle"/>
-                        <span class="username">
+                        <span class="username" style="color:#ea5a5a">
                             <?=$user->username;?>
                         </span>
                     </a>
