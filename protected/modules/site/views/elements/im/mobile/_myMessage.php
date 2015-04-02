@@ -12,7 +12,7 @@ else
 $date = strtotime($message['created']);
 ?>
 <!-- Another sent message -->
-<div class="message message-sent">
+<div class="message message-sent message-with-tail">
     <!-- Bubble with text -->
     <div class="message-text"><?=$message['message'];?></div>
 </div>

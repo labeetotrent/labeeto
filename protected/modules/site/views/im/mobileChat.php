@@ -30,7 +30,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
         <div class="navbar">
             <div class="navbar-inner messages-title">
                 <div class="left" >
-                    <a href="<?=$this->createUrl('/im');?>" style="text-decoration:none">
+                    <a href="#" onClick="history.go(-1)" style="text-decoration:none">
                         <span style="color:#ea5a5a"><i class="fa fa-chevron-left" style="color:#ea5a5a"></i> Back</span>
                     </a>
                 </div>
@@ -38,7 +38,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
                 <div class="center sliding navtitle middle">
                     <a href="<?=$this->createUrl('user/detail/', ['id' => $user->id])?>" class="external">
                         <img src="<?=Yii::app()->request->baseUrl?>/uploads/avatar/<?=$user->photo?>" class="img-responsive img-circle"/>
-                        <span class="username" style="color:#ea5a5a">
+                        <span class="username" style="color:#66696c">
                             <?=$user->username;?>
                         </span>
                     </a>
@@ -50,7 +50,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/im.css');
             </div>
         </div>
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+                <div class="pages navbar-through toolbar-through">
             <!-- Page, "data-page" contains page name -->
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->

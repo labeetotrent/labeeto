@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-10">
         <div class="row message-info">
-            <span class="nickname"><?=$message['username']?></span>
+          <span class="nickname"><?=$message['username']?></span> 
             <span class="date"><?=date('d M, g:ia', $date);?></span>
         </div>
         <div class="row message-content">

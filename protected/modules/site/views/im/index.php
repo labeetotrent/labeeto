@@ -11,7 +11,7 @@
 <script>
     var myId = '<?=Yii::app()->user->getId();?>';
     var userId = '<?=$dialogs[0]['id'];?>';
-    var xmppUser = '<?=$this->user->id.'@zhilin.skib6.ru';?>';
+    var xmppUser = '<?=$this->user->id.'@labeeto.com';?>';
     var xmppPass = '<?=$this->user->password;?>';
 </script>
 <div class="row im-wrapper">

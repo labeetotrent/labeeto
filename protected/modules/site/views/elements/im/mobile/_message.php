@@ -11,9 +11,9 @@ else
     $message = $data;
 $date = strtotime($message['created']);
 ?>
-<div class="message message-with-avatar message-received">
+<div class="message message-with-avatar message-with-tail message-received">
     <!-- Sender name -->
-    <div class="message-name"><?=$message['username']?></div>
+<!--    <div class="message-name"><?=$message['username']?></div>  --->
 
     <!-- Bubble with text -->
     <div class="message-text"><?=$message['message'];?></div>
