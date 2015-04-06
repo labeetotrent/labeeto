@@ -6,6 +6,8 @@
     $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.css');
 ?>
 <div class="content-main-1 my-profile other-profile">
+
+
     <div class="row col-md-12 profile-header">
         <div class="col-md-2 col-sm-2 col-xs-12 text-center avatar-container">
             <?php if($model->photo =='undefined'){ ?>
@@ -160,7 +162,7 @@
                 Photos
             </div>
             <div class="col-md-12 body">
-                <?php $photos = Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => Yii::app()->user->getId())); ?>
+                <?php $photos = Photo::model()->findAllByAttributes(array('user_id' => $model->id)); ?>
                 <?php if(count($photos) > 0): ?>
                     <?php foreach($photos as $photo) : ?>
                         <div class="col-md-4 photo-container">
