@@ -521,7 +521,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
             </div>
             <div class="col-md-12 body">
                 <?php if(count($this->user->photos) > 0): ?>
-                    <?php foreach(Photo::model()->findAllByAttributes(array('is_public' => 1, 'user_id' => Yii::app()->user->getId())) as $photo) : ?>
+                    <?php foreach(Photo::model()->findAllByAttributes(array('user_id' => Yii::app()->user->getId())) as $photo) : ?>
                     <div class="col-md-4 photo-container">
                         <img src="/uploads/photo/<?=$photo->thumb;?>" class="img-responsive"/>
                         <div class="set-profile">

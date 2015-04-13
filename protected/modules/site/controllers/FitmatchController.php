@@ -29,7 +29,7 @@ class FitmatchController extends SiteBaseController
 
         $criteria->with = array('fitmatchMy', 'fitmatchMe');
 
-  //      $criteria->addCondition('gender <> '.$this->user->gender);
+        $criteria->addCondition('gender <> '.$this->user->gender or 'gender == '.$this->user->gender);
         $criteria->addCondition('t.id <> :id');
 
 //temp removing check for saved fitmatch for testing purposes

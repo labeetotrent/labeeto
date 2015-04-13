@@ -63,7 +63,8 @@ class Facebook {
 
     public function register()
     {
-        $user_info = $this->getUserInfo();
+        
+	$user_info = $this->getUserInfo();
         if($user_info)
         {
             $this->updateToken();
@@ -200,7 +201,10 @@ class Facebook {
     }
     public function getCover()
     {
-        $request = new \Facebook\FacebookRequest(
+        
+
+
+		$request = new \Facebook\FacebookRequest(
             $this->_session,
             'GET',
             '/me',
@@ -208,8 +212,12 @@ class Facebook {
                 'fields' => 'cover'
             )
         );
+	
         $response = $request->execute();
+	
+
         return $response->getGraphObject()->asArray();
+	
     }
     public function getAbout()
     {
@@ -238,20 +246,29 @@ class Facebook {
     }
     public function saveCover($graphArray, $overrideFileName = null)
     {
-        $graphArray = $graphArray['cover'];
+      
+  
+  if (isset($graphArray['cover'])) {
+	 $graphArray = $graphArray['cover'];
         $file = explode('.', $graphArray->source);
         $fileExtension = explode('?', $file[count($file)-1]);
         $fileExtension = $fileExtension[0];
         $fileName = $graphArray->id.'.'.$fileExtension;
 
-        if(!empty($overrideFileName))
-            $fileName = $overrideFileName;
-
-        if(file_put_contents(Yii::app()->basePath.'/../uploads/cover/'.$fileName,file_get_contents($graphArray->source)))
+        
+       if(file_put_contents(Yii::app()->basePath.'/../uploads/cover/'.$fileName,file_get_contents($graphArray->source)))
             return $fileName;
         else
             die(':(');
-    }
+}
+
+else {
+$filename = 'blank.jpg';
+return $filename;
+}
+
+
+}
 
     public function getUserInfo()
     {
