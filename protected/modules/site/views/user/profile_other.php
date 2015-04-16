@@ -22,7 +22,7 @@
                 <?=$model->username;?>
             </div>
             <div class="row col-md-12 profile-data">
-                <?= date("Y") - date('Y', strtotime($model->birthday));  ?>, <?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?>
+                <?= intval(substr(date('Ymd') - date('Ymd', strtotime($model->birthday)), 0, -4));  ?>, <?php  if($model->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
             <div class="row col-md-12 location">
                 <?php if($model->address) echo $model->address; ?>

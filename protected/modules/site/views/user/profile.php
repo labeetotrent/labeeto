@@ -30,7 +30,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/slashman_profile.cs
                 <?=$this->user->username;?>
             </div>
             <div class="row col-md-12 profile-data">
-                <i class="fa fa-user"></i> <?= date("Y") - date('Y', strtotime($this->user->birthday));  ?>, <?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?>
+                <i class="fa fa-user"></i> <?=  intval(substr(date('Ymd') - date('Ymd', strtotime($this->user->birthday)), 0, -4));  ?>, <?php  if($this->user->gender == 1) echo "Female"; else echo 'Male'; ?>
             </div>
             <?php if($this->user->address):?>
             <div class="row col-md-12 location">

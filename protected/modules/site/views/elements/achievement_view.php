@@ -25,7 +25,7 @@ if($user){?>
                     <?php } ?>
                 </h2>
                 <h2>
-                    <span class="time-location"><?= date("Y") - date('Y', strtotime($user->birthday));  ?> <?php  if($user->gender == 1) echo "F"; else echo 'M'; ?> - <?= $user->address; ?></span> 
+                    <span class="time-location"><?= intval(substr(date('Ymd') - date('Ymd', strtotime($user->birthday)), 0, -4)); ?> <?php  if($user->gender == 1) echo "F"; else echo 'M'; ?> - <?= $user->address; ?></span> 
                     <span class="dot-icon"> <?php echo Achievements::time_elapsed_string($data->created); ?></span>
                 </h2>
                 <!--<a class="message" data-id="<?php //echo $user->id; ?>" data-toggle="modal" data-target="#SendaMessage">Send a Message</a>
