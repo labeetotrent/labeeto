@@ -75,12 +75,12 @@ function xmppSendMessage()
 
 function xmppName(id)
 {
-    return id + '@zhilin.skib6.ru';
+    return id + '@labeeto.com';
 }
 
 function xmppDomainName(id)
 {
-    return id + '@zhilin.skib6.ru';
+    return id + '@labeeto.com';
 }
 
 function stripXmppName(name)

@@ -67,11 +67,20 @@ class FitmatchController extends SiteBaseController
             {
                 if($newFitmatch->save() && $newFitmatch->result == 1)
                 {
-                    $notification = new Notification();
-                    $notification->author_id = Yii::app()->user->getId();
-                    $notification->type = 'FITMATCH';
-                    $notification->user_id = $newFitmatch->to_user;
-                    $notification->save();
+		$message = new Chat();
+            $message->is_read = 0;
+            $message->user_from = Yii::app()->user->getId();
+            $message->user_to = $newFitmatch->to_user;
+            $message->created = new CDbExpression('NOW()');
+            $message->updated = new CDbExpression('NOW()');
+            $message->message = CHtml::encode('[FITMATCH]');
+            $message->save();
+
+                 //   $notification = new Notification();
+                 //   $notification->author_id = Yii::app()->user->getId();
+                 //   $notification->type = 'FITMATCH';
+                 //   $notification->user_id = $newFitmatch->to_user;
+                 //   $notification->save();
                     $this->redirect(array('/fitmatch/index'));
                 }
             }
