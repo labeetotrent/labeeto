@@ -73,7 +73,9 @@ class FitmatchController extends SiteBaseController
             $message->user_to = $newFitmatch->to_user;
             $message->created = new CDbExpression('NOW()');
             $message->updated = new CDbExpression('NOW()');
-            $message->message = CHtml::encode('[FITMATCH]');
+ 	    $message->message = "I saw you on Fitmatch!";       
+
+//$message->message = CHtml::encode('[FITMATCH]');
             $message->save();
 
                  //   $notification = new Notification();

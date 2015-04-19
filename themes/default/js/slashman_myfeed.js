@@ -27,7 +27,7 @@ $(document).ready(function(){
         },
         function (error) {
             if (error.code == error.PERMISSION_DENIED)
-                alert("DEBUG: Geolocation was denied.");
+                alert("Please turn location services on to get the most from this app");
             //@todo Get ip via another stuff
         });
     } else {

@@ -1,3 +1,20 @@
+#navunread {
+position: relative;
+  left: 16px;
+  bottom: 57px;
+  font-size: 11pt;
+  background-color: #ea5a5a;
+  border: 2px solid #fff;
+display: inline-block;
+  color: #fff;
+ 
+  border-radius: 20px;
+  padding: 1px 7px;
+}
+
+
+
+
 @font-face {
   font-family: "Proxima Nova SemiBold";
   src: url('../fonts/proximanova-semibold-webfont.ttf');

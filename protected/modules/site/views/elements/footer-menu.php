@@ -1,15 +1,20 @@
 
+
 <div class="footer-menu col-xs-12 col-sm-12">
     <div class="col-xs-3 footer-link <?=$this->activeFooter == 'inbox' ? 'active' : ''?>">
-        <a href="<?=$this->createUrl('/im/index');?>" class="external">
+<a href="<?=$this->createUrl('/im/index');?>" class="external">
             <div class="row">
+
                 <div class="col-xs-12 link-icon text-center">
-                    <img src="<?=Yii::app()->themeManager->baseUrl?>/images/inbox-icon<?=$this->activeFooter == 'inbox' ? '-active' : ''?>.png">
-                </div>
-                <div class="col-xs-12 text text-center">
-                    Inbox
+                   <img src="<?=Yii::app()->themeManager->baseUrl?>/images/inbox-icon<?=$this->activeFooter == 'inbox' ? '-active' : ''?>.png">
+                
+</div>
+<div class="col-xs-12 text text-center">
+Inbox
 
 </div>
+<?php if (Chat::countNewMessages() > 0) : ?><span class="badge" id="navunread">&nbsp;</span><?php endif; ?>      
+
             </div>
         </a>
     </div>
