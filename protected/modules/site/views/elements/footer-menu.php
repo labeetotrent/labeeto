@@ -8,7 +8,8 @@
                 </div>
                 <div class="col-xs-12 text text-center">
                     Inbox
-                </div>
+
+</div>
             </div>
         </a>
     </div>
