@@ -67,18 +67,28 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
                             <form method="POST">
                                 <input type="hidden" name="Fitmatch[to_user]" value="<?=$fitmatch->getPrimaryKey();?>"/>
                                 <input type="hidden" name="Fitmatch[result]" value="1"/>
-                                <button type="submit" class="decision-button btn-yes col-xs-12">YES</button>
+                                <button type="submit" id="fitsubmit" class="decision-button btn-yes col-xs-12">YES</button>
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
         <div class="col-md-2 right-side">
 
         </div>
     </div>
+			<div class="col-md-12 text-center" id="msg" style="font-size:14px;color:#687381;">Message has been sent</div>
+
 </div>
 <script>
     //$('.photo img').centerImage();
+$("#msg").hide();
+ $(document).ready( function() {
+        $("#fitsubmit").click(function(){
+        $("#msg").show();
+    });    
+});
 </script>

@@ -1,3 +1,4 @@
+
 <?php
 class FitmatchController extends SiteBaseController
 {
@@ -76,9 +77,9 @@ class FitmatchController extends SiteBaseController
  	    $message->message = "I saw you on Fitmatch!";       
 
 //$message->message = CHtml::encode('[FITMATCH]');
-            $message->save();
-
-                 //   $notification = new Notification();
+            
+$message->save();
+                //   $notification = new Notification();
                  //   $notification->author_id = Yii::app()->user->getId();
                  //   $notification->type = 'FITMATCH';
                  //   $notification->user_id = $newFitmatch->to_user;
