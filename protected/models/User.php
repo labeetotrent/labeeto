@@ -99,7 +99,7 @@ class User extends CActiveRecord
             array('email', 'uniqueEmail', 'on'=>'create'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, gender, email, password, role, age, fname, about, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, fitmatch_distance, fitmatch_age_upper, fitmatch_age_lower, fitmatch_show_me, fitmatch_gym_match, lat, lon,  is_online, facebook_token, facebook_id,facebook_cover', 'safe'),
+			array('id, username, gender, email, password, role, age, fname, about, birthday, photo, address, excercise, passion, zipcode, status, last_logged, created, updated, fitmatch_distance, fitmatch_age_upper, fitmatch_age_lower, fitmatch_show_me, fitmatch_gym_match, matchm, matchf, lat, lon,  is_online, facebook_token, facebook_id,facebook_cover', 'safe'),
 		);
 	}
 

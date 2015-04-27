@@ -36,7 +36,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
                     </div>
                     <div class="row personal-info">
                         <div class="col-md-4 birth">
-                            <i class="fa fa-user"></i> <?= date("Y") - date('Y', strtotime($fitmatch->birthday));  ?>, <?php if($fitmatch->gender == 1) echo "Female"; else echo 'Male'; ?>
+                            <i class="fa fa-user"></i>  <?= intval(substr(date('Ymd') - date('Ymd', strtotime($fitmatch->birthday)), 0, -4));  ?>, <?php if($fitmatch->gender == 1) echo "Female"; else echo 'Male'; ?>
                         </div><!--
                         <div class="col-md-4 job">
                             <?/*=$fitmatch->career;*/?>
