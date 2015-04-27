@@ -29,13 +29,23 @@ class FitmatchController extends SiteBaseController
         //Optimize
 
         $criteria->with = array('fitmatchMy', 'fitmatchMe');
-
+	if ($this->user->matchf == 1 && $this->user->matchm == 1) {
         $criteria->addCondition('gender <> '.$this->user->gender or 'gender == '.$this->user->gender);
+	}
+	elseif ($this->user->matchf == 1) {
+	$criteria->addCondition('gender = 1');
+	}
+	elseif ($this->user->matchm == 1) {
+	$criteria->addCondition('gender = 0');
+	}
+	else {
+	$criteria->addCondition('gender = 3');
+	}
         $criteria->addCondition('t.id <> :id');
 
 //temp removing check for saved fitmatch for testing purposes
-//        $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
-//        $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
+//      $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
+  //      $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
         $criteria->addCondition('t.fitmatch_show_me = 1');
         $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) >= :fromAge');
         $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) <= :toAge');
@@ -46,10 +56,10 @@ class FitmatchController extends SiteBaseController
         $params[':distance'] = $this->user->fitmatch_distance;
         $params[':userId']   = Yii::app()->user->getId();
 
-        if($this->user->fitmatch_gym_match && $this->user->gym) { //Gym Match
-            $criteria->addCondition('t.gym = :gym');
-            $params[':gym'] = $this->user->gym;
-        }
+  //      if($this->user->fitmatch_gym_match && $this->user->gym) { //Gym Match
+  //          $criteria->addCondition('t.gym = :gym');
+  //          $params[':gym'] = $this->user->gym;
+  //      }
 
         $params[':id'] = Yii::app()->user->getId();
         $criteria->params = $params;

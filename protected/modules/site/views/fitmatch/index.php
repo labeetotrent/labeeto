@@ -79,8 +79,9 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/css/fitmatch.css');
         <div class="col-md-2 right-side">
 
         </div>
-    </div>
 			<div class="col-md-12 text-center" id="msg" style="font-size:14px;color:#687381;">Message has been sent</div>
+
+    </div>
 
 </div>
 <script>
