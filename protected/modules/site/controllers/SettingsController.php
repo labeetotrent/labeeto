@@ -35,17 +35,32 @@ class SettingsController extends SiteBaseController
     public function actionSaveDiscovery()
     {
         $this->user->attributes = $_POST;
-        if($this->user->fitmatch_show_me == 'on') {
+       if ($this->user->fitmatch_show_me == 'on') {
             $this->user->fitmatch_show_me = 1;
         }
         else {
             $this->user->fitmatch_show_me = 0;
-        }
+      }
+    
+
         if($this->user->fitmatch_gym_match == 'on') {
             $this->user->fitmatch_gym_match = 1;
-        }
+       }
         else {
             $this->user->fitmatch_gym_match = 0;
+        }
+    
+       if($this->user->matchm == 'on') {
+           $this->user->matchm = 1;
+        }
+        else {
+           $this->user->matchm = 0;
+        }
+ if($this->user->matchf == 'on') {
+           $this->user->matchf = 1;
+        }
+        else {
+            $this->user->matchf = 0;
         }
 
         if($this->user->validate())

@@ -55,6 +55,20 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                     <div class="item-content">
                                         <div class="item-inner">
                                             <div class="label">
+                                                Gym match</div>
+                                            <div class="item-input">
+                                                <label class="label-switch">
+                                                    <input type="checkbox" id="gym-match" <?=$this->user->fitmatch_gym_match ? 'checked' : ''?>>
+                                                    <div class="checkbox"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="label">
                                                 Show me</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
@@ -69,16 +83,33 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                     <div class="item-content">
                                         <div class="item-inner">
                                             <div class="label">
-                                                Gym match</div>
+                                                Fimatch Men</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
-                                                    <input type="checkbox" id="gym-match" <?=$this->user->fitmatch_gym_match ? 'checked' : ''?>>
+                                                    <input type="checkbox" id="show-m" <?=$this->user->matchm ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="label">
+                                                Fitmatch Women</div>
+                                            <div class="item-input">
+                                                <label class="label-switch">
+                                                    <input type="checkbox" id="show-f" <?=$this->user->matchf ? 'checked' : ''?>>
+                                                    <div class="checkbox"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
                                 <li>
                                     <div class="item-content tall-item">
                                         <div class="item-inner">
@@ -153,7 +184,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
             connect: true,
             range: {
                 'min': 18,
-                'max': 40
+                'max': 60
             },
             format: {
                 to: function ( value ) {
@@ -172,6 +203,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
 
         $('#save-discovery').click(function(e){
             e.preventDefault();
+	myApp.alert($('#show-f').val(),'');
 
             $.post(
                 Yii.app.createUrl('settings/saveDiscovery'),
@@ -180,8 +212,11 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                     fitmatch_age_lower: $('#age-slider').val()[0],
                     fitmatch_distance: $('#distance-slider').val(),
                     fitmatch_show_me: $('#show-me').val(),
-                    fitmatch_gym_match: $('#gym-match').val()
-                }
+                    fitmatch_gym_match: $('#gym-match').val(),
+		    matchm: $('#show-m').val(),
+		    matchf: $('#show-f').val()
+        
+        }
             ).done(function(response){
                 if(response == 'OK') {
                     myApp.alert('Your settings were saved', '');
