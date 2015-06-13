@@ -58,8 +58,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                                 Gym match</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
-
-				<input type="checkbox" id="gym-match" name="gym-match"  <?=$this->user->fitmatch_gym_match ? 'checked' : ''?>/>
+				<input type="checkbox" id="gym-match" name="match-gym"  <?=$this->user->fitmatch_gym_match ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
@@ -74,7 +73,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                             <div class="item-input">
                                                 <label class="label-switch">
 
-                                                    <input type="checkbox" id="show-me" name="show-me" <?=$this->user->fitmatch_show_me ? 'checked' : ''?>/>
+                                                    <input type="checkbox" id="show-me" <?=$this->user->fitmatch_show_me ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
@@ -85,11 +84,11 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                     <div class="item-content">
                                         <div class="item-inner">
                                             <div class="label">
-                                                Fitmatch Men</div>
+                                                Fimatch Men</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
-						
-                                                    <input type="checkbox" id="show-m" name="show-m" <?=$this->user->matchm ? 'checked' : ''?>/>
+
+                                                    <input type="checkbox" id="show-m" <?=$this->user->matchm ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
@@ -103,7 +102,8 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
                                                 Fitmatch Women</div>
                                             <div class="item-input">
                                                 <label class="label-switch">
-                                                    <input type="checkbox" id="show-f" name="show-f" <?=$this->user->matchf ? 'checked' : ''?>/>
+
+                                                    <input type="checkbox" id="show-f" <?=$this->user->matchf ? 'checked' : ''?>>
                                                     <div class="checkbox"></div>
                                                 </label>
                                             </div>
@@ -164,7 +164,10 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
 
 <script>
     $(document).ready(function(){
-	
+
+     $('#show-me').val() == 0;
+     $('#gym-match').val() =$('#show-m').val(),
+		    matchf: $('#show-f').val()
 
 
         $("#distance-slider").noUiSlider({
@@ -208,15 +211,7 @@ $cs->registerCssFile(Yii::app()->themeManager->baseUrl.'/nouislider/jquery.nouis
 
         $('#save-discovery').click(function(e){
             e.preventDefault();
-var fShow = $('#show-me:checked').val();
-var gShow = $('#gym-match:checked').val();
-var maShow = $('#show-m:checked').val();
-var feShow = $('#show-f:checked').val();
-
-
 	
-    
-
 
             $.post(
                 Yii.app.createUrl('settings/saveDiscovery'),
@@ -224,14 +219,13 @@ var feShow = $('#show-f:checked').val();
                     fitmatch_age_upper: $('#age-slider').val()[1],
                     fitmatch_age_lower: $('#age-slider').val()[0],
                     fitmatch_distance: $('#distance-slider').val(),
-                    fitmatch_show_me: fShow,
-                    fitmatch_gym_match: gShow,
-		    matchm: maShow,
-		    matchf: feShow
+                    fitmatch_show_me: $('#show-me').val(),
+                    fitmatch_gym_match: $('#gym-match').val(),
+		    matchm: $('#show-m').val(),
+		    matchf: $('#show-f').val()
+        
         }
             ).done(function(response){
-		  
-
                 if(response == 'OK') {
                     myApp.alert('Your settings were saved', '');
                 }

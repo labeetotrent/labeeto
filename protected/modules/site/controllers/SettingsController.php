@@ -31,6 +31,25 @@ class SettingsController extends SiteBaseController
     {
         $this->render('share');
     }
+    public function actionFeedback()
+    {
+	$this->render('feedback');
+	}
+    public function actionSaveFeedback()
+	{
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$feedback = $_POST['feedback'];
+
+$to = "vip@labeeto.com";
+$subject = "Site Feedback";
+$txt = "Feedback from ". $name . " (" . $email . ")\n\n\n". $feedback;
+$headers = "From: noreply@labeeto.com";
+mail($to,$subject,$txt,$headers);
+
+echo 'OK';
+	}
+
 
     public function actionSaveDiscovery()
     {

@@ -333,44 +333,44 @@ function checkChatBoxInputKey(event,chatboxtextarea,chatboxtitle) {
 }
 
 function startChatSession(){  
-	$.ajax({
-	  url: "/chat/startchatsession",
-	  cache: false,
-	  dataType: "json",
-	  success: function(data) {
+//	$.ajax({
+//	  url: "/chat/startchatsession",
+//	  cache: false,
+//	  dataType: "json",
+//	  success: function(data) {
  
-		username = data.username;
+//		username = data.username;
+//
+//		$.each(data.items, function(i,item){
+//			if (item)	{ // fix strange ie bug
 
-		$.each(data.items, function(i,item){
-			if (item)	{ // fix strange ie bug
+//				chatboxtitle = item.f;
 
-				chatboxtitle = item.f;
-
-				if ($("#chatbox_"+chatboxtitle).length <= 0) {
-					createChatBox(chatboxtitle,1);
-				}
-				
-				if (item.s == 1) {
-					item.f = username;
-				}
-
-				if (item.s == 2) {
-					$("#chatbox_"+chatboxtitle+" .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxinfo">'+item.m+'</span></div>');
-				} else {
-					$("#chatbox_"+chatboxtitle+" .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">'+item.f+':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">'+item.m+'</span></div>');
-				}
-			}
-		});
+//				if ($("#chatbox_"+chatboxtitle).length <= 0) {
+//					createChatBox(chatboxtitle,1);
+//				}
+//				
+//				if (item.s == 1) {
+//					item.f = username;
+//				}
+//
+//				if (item.s == 2) {
+//					$("#chatbox_"+chatboxtitle+" .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxinfo">'+item.m+'</span></div>');
+//				} else {
+//					$("#chatbox_"+chatboxtitle+" .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">'+item.f+':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">'+item.m+'</span></div>');
+//				}
+//			}
+//		});
 		
-		for (i=0;i<chatBoxes.length;i++) {
-			chatboxtitle = chatBoxes[i];
-			$("#chatbox_"+chatboxtitle+" .chatboxcontent").scrollTop($("#chatbox_"+chatboxtitle+" .chatboxcontent")[0].scrollHeight);
-			setTimeout('$("#chatbox_"+chatboxtitle+" .chatboxcontent").scrollTop($("#chatbox_"+chatboxtitle+" .chatboxcontent")[0].scrollHeight);', 100); // yet another strange ie bug
-		}
-	
-	//setTimeout('chatHeartbeat();',chatHeartbeatTime);
+//		for (i=0;i<chatBoxes.length;i++) {
+//			chatboxtitle = chatBoxes[i];
+//			$("#chatbox_"+chatboxtitle+" .chatboxcontent").scrollTop($("#chatbox_"+chatboxtitle+" .chatboxcontent")[0].scrollHeight);
+//			setTimeout('$("#chatbox_"+chatboxtitle+" .chatboxcontent").scrollTop($("#chatbox_"+chatboxtitle+" .chatboxcontent")[0].scrollHeight);', 100); // yet another strange ie bug
+//		}
+//	
+//	//setTimeout('chatHeartbeat();',chatHeartbeatTime);
 		
-	}});
+//	}});
 }
 
 /**

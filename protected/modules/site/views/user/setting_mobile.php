@@ -10,6 +10,9 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
 
 <?php $this->renderPartial('../elements/header-feed'); ?>
 <?php $this->renderPartial('../elements/footer-menu'); ?>
+
+
+
 <div class="statusbar-overlay"></div>
 <!-- Panels overlay-->
 <div class="panel-overlay"></div>
@@ -76,22 +79,22 @@ $cs->registerScriptFile(Yii::app()->themeManager->baseUrl.'/js/settings.js');
                                 </div>
                             </div>
                         </a>
-                        <a href="mailto:admin@labeeto.com?subject=Labeeto%20Feedback" class="col-md-12 external">
+                        <a href="<?=$this->createUrl('/settings/feedback')?>" class="col-md-12 external">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <div class="col-md-10 text">
                                     <div class="col-md-12 title">
-                                        Contact Labeeto
+                                        Feedback
                                     </div>
                                     <div class="col-md-12 description">
-                                        We want to hear it all
+                                        We need your help
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <a href="mailto:?body=Check out the Labeeto at <?=Yii::app()->params['siteUrl']?>" class="col-md-12 external">
+                        <a href="#" class="col-md-12 external" id="shareLink">
                             <div class="col-md-12 row category">
                                 <div class="col-md-2 icon">
                                     <i class="fa fa-share-alt"></i>
