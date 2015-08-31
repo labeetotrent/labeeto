@@ -44,8 +44,8 @@ class FitmatchController extends SiteBaseController
         $criteria->addCondition('t.id <> :id');
 
 //temp removing check for saved fitmatch for testing purposes
-//      $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
-  //      $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
+      $criteria->addCondition('t.id NOT IN(SELECT to_user FROM fitmatch WHERE from_user = :id)');
+        $criteria->addCondition('t.id NOT IN(SELECT from_user FROM fitmatch WHERE to_user = :id)');
         $criteria->addCondition('t.fitmatch_show_me = 1');
         $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) >= :fromAge');
         $criteria->addCondition('YEAR(NOW()) - YEAR(t.birthday) <= :toAge');

@@ -92,7 +92,9 @@ class Facebook {
                 $dbUser = new User();
                 $dbUser->password = md5($user_info->getId());
                 $dbUser->username = $user_info->getFirstName();
-                $dbUser->facebook_id = $user_info->getId();
+                $dbUser->email = $user_info->getEmail();
+                
+		$dbUser->facebook_id = $user_info->getId();
                 $dbUser->facebook_token = $this->_session->getToken();
                 $dbUser->facebook_cover = $this->saveCover($cover);
                 $dbUser->photo = $this->saveAvatar($avatar);
